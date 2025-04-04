@@ -1,0 +1,78 @@
+.welcome-tag {
+    font-size: 45px;
+    font-weight: 400;
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+.udaan-name {
+    color: #705BA4;
+    font-size: 50px;
+    /* font-family: 'Lobster', cursive; */
+    font-family: 'Merriweather', serif;
+    ;
+    font-weight: 900;
+}
+
+
+.start-child-cont {
+    width: 30%;
+    margin-top: 40px;
+}
+
+.start-parent-cont {
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* .start-parent-cont2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+    gap: 30px;
+
+} */
+
+.home-cards-section-heading {
+    font-family: "Hanken Grotesk", sans-serif;
+    margin-top: 25px;
+}
+
+.inner-container {
+    background-image: url(../assets/home2.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("../assets/flute.jpg");
+
+    /* Set a specific height */
+    min-height: 300px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width:1200px) {
+    .step-card-cont {
+        width: 100%;
+    }
+
+    .start-child-cont {
+        width: 70%;
+    }
+}
+
+@media (max-width:425px) {
+    .start-child-cont {
+        width: 80%;
+    }
+}

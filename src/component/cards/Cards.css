@@ -1,0 +1,117 @@
+.step-card-cont {
+    width: 75%;
+    height: 280px;
+    background-color: #ffffff;
+    position: relative;
+    border-radius: 5px;
+    padding: 30px;
+    font-family: "Hanken Grotesk", sans-serif;
+    color: rgba(10, 10, 10, 0.79);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Fixed Hover Effects */
+.step-1-card:hover {
+    background-color: #e33a2b;
+    color: #ffffff;
+}
+
+.step-2-card:hover {
+    background-color: #9364D4;
+    color: #ffffff;
+}
+
+.step-3-card:hover {
+    background-color: #8cbdfa;
+    color: #ffffff;
+}
+
+.step-4-card:hover {
+    background-color: #317ad2;
+    color: #ffffff;
+}
+
+.step-5-card:hover {
+    background-color: #f07931;
+    color: #ffffff;
+}
+
+.card-1-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgicon-card-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.icon-cont {
+    width: 45px;
+}
+
+.icon-cont img {
+    width: 100%;
+}
+
+.card-1-head-cont {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    line-height: 24px;
+}
+
+.card-1-button-cont {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: 40px;
+    bottom: -25px;
+    display: inline-block;
+    background-color: #fff;
+    padding: 8px;
+    transform: rotate(45deg);
+    border-radius: 5px;
+}
+
+.card-1-button-cont button {
+    width: 45px;
+    height: 45px;
+    font-size: 29px;
+    border: none;
+    border-radius: 5px;
+}
+
+.button-rotated-icon {
+    transform: rotate(-45deg);
+}
+
+.step-1-button {
+    background-color: #e33a2b;
+}
+
+.step-2-button {
+    background-color: #9364D4;
+}
+
+.step-3-button {
+    background-color: #8cbdfa;
+}
+
+.step-4-button {
+    background-color: #317ad2;
+}
+
+.step-5-button {
+    background-color: #f07931;
+}
+
+@media (max-width:1200px) {
+    .step-card-cont {
+        width: 100%;
+    }
+}
