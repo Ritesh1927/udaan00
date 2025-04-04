@@ -1,0 +1,19 @@
+.video-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.know-heading {
+    font-size: 25px;
+    font-family: "Hanken Grotesk", sans-serif;
+    margin-bottom: 25px;
+}
+
+.background-img-container {
+    background-image: url(../../assets/videoback.png);
+    background-size: cover;
+    background-position: center;
+    width: 73%;
+    height: 490px;
+}

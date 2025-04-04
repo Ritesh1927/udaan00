@@ -4,6 +4,44 @@
     font-family: "Hanken Grotesk", sans-serif;
 }
 
+.left-home-container {
+    width: 50%;
+}
+
+.home-banner-img {
+    width: 50%;
+    margin-top: 20px;
+}
+
+.english-shloak {
+    font-size: 16px;
+    margin-top: 30px;
+    line-height: 33px;
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+.home-banner-img img {
+    width: 100%;
+}
+
+.shloak-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.upper-shloak {
+    font-size: 32px;
+    font-weight: 600;
+    color: #DAA322;
+}
+
+.lower-shloak {
+    color: #DAA322;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 32px;
+}
+
 .udaan-name {
     color: #705BA4;
     font-size: 50px;
@@ -13,6 +51,9 @@
     font-weight: 900;
 }
 
+.welcome-heading {
+    justify-content: space-between;
+}
 
 .start-child-cont {
     width: 30%;

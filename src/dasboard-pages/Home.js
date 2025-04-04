@@ -7,15 +7,45 @@ import Img2 from "../assets/card2.png";
 import Img3 from "../assets/icon1.png";
 import Img4 from "../assets/advisor.png";
 import Img5 from "../assets/confidence.png";
+import Homeimg from "../assets/home.png";
+import Videobg from "../component/videobg/Videobg";
+
 const Home = () => {
   return (
     <>
       <section className="container">
         <div className="inner-container">
-          <div className="welcome-heading inline mt15">
-            <p className="welcome-tag">
-              Welcome to <span className="udaan-name">UDAAN</span>
-            </p>
+          <div className="welcome-heading inline mt20">
+            <div className="left-home-container">
+              <p className="welcome-tag">
+                Welcome to <span className="udaan-name">UDAAN</span>
+              </p>
+              <div className="shloak-container">
+                <h1 className="upper-shloak">
+                  <span className="">"</span> विद्यां चाविद्यां च यस्तद्वेदोभयं
+                  सह।
+                </h1>
+                <h1 className="lower-shloak">
+                  अविद्यया मृत्युं तीर्त्वा विद्ययामृतमश्नुते॥ <span>"</span>
+                </h1>
+
+                <div>
+                  <h2 className="english-shloak">
+                    "One who understands both knowledge (Vidya) and ignorance
+                    (Avidya) together, transcends ignorance and attains
+                    immortality through knowledge."
+                  </h2>
+                </div>
+              </div>
+            </div>
+
+            <div className="home-banner-img">
+              <img src={Homeimg} alt="" />
+            </div>
+          </div>
+          {/* ////////////////video tag /////////////////// */}
+          <div className="video-container-wrapper">
+            <Videobg />
           </div>
 
           {/* Cards Section */}
