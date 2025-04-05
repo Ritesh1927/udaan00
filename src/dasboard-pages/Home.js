@@ -105,6 +105,10 @@ const Home = () => {
         </div>
       </section>
       <div className="parallax mt40"></div>
+      <div className="Form-forward-container">
+        {/* /////////// form forward container ///////////// */}
+        <div className="background-set-forward"></div>
+      </div>
     </>
   );
 };
