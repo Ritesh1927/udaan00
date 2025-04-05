@@ -1,12 +1,11 @@
 import React, { Fragment , useState } from 'react'
 import "./Contact.css"
-import { Link, useNavigate } from 'react-router-dom'
 // import axios from 'axios';
-// import { toast, ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Conatct = () => {
 
-  //  const navigate = useNavigate();
+ 
   const [data , setdata] = useState();
 
   const getdata =(e)=> {
@@ -125,7 +124,7 @@ console.log(data);
           </div>
         </div>
       </div>
-      {/* <ToastContainer /> */}
+      <ToastContainer />
     </Fragment>
   )
 }
