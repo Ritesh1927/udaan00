@@ -1,19 +1,117 @@
-.video-container {
+.video-section {
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    /* background-color: #f9f9f9; */
+    margin-bottom: 60px;
+}
+
+.video-description {
+    font-size: 25px;
+    color: #333;
+    max-width: 700px;
+    margin-bottom: 20px;
+    text-align: start;
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+.video-wrapper {
+    position: relative;
     width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 85px 20px 20px 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.know-heading {
-    font-size: 25px;
-    font-family: "Hanken Grotesk", sans-serif;
-    margin-bottom: 25px;
+/* Background image */
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    z-index: 1;
+    pointer-events: none;
 }
 
-.background-img-container {
-    background-image: url(../../assets/videoback.png);
-    background-size: cover;
-    background-position: center;
-    width: 73%;
-    height: 490px;
+/* Video box */
+.video-box {
+    position: relative;
+    z-index: 2;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Thumbnail */
+.thumbnail {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+/* Play button */
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ff0000;
+    color: white;
+    font-size: 28px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.play-btn:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* Responsive tweaks */
+
+@media (max-width:925px) {
+    .video-wrapper {
+        padding: 20px;
+    }
+
+    .video-section {
+        margin-bottom: 10px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .video-box {
+        width: 90%;
+    }
+
+    .video-description {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+
+}
+
+@media (max-width: 480px) {
+    .play-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
 }

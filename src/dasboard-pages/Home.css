@@ -112,8 +112,31 @@
     }
 }
 
+@media (max-width:768px) {
+    .welcome-heading {
+        display: block;
+    }
+
+    .left-home-container {
+        width: 100%;
+    }
+
+    .home-banner-img {
+        width: 100%;
+        ;
+    }
+}
+
 @media (max-width:425px) {
     .start-child-cont {
         width: 80%;
+    }
+
+    .welcome-tag {
+        font-size: 32px;
+    }
+
+    .udaan-name {
+        font-size: 32px;
     }
 }
