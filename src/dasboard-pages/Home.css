@@ -45,9 +45,7 @@
 .udaan-name {
     color: #705BA4;
     font-size: 50px;
-    /* font-family: 'Lobster', cursive; */
     font-family: 'Merriweather', serif;
-    ;
     font-weight: 900;
 }
 
@@ -88,13 +86,19 @@
     background-position: bottom right;
 }
 
+.background-set-forward {
+    background-image: url(../assets/Formforward4.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    width: 100%;
+    height: 50vh;
+}
+
 .parallax {
     /* The image used */
     background-image: url("../assets/flute.jpg");
-
     /* Set a specific height */
     min-height: 300px;
-
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
