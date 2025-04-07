@@ -46,9 +46,8 @@ console.log(data);
          toast.success(response.data.message);
          
        } catch (error) {
-        const errorMessage =
-      error.response?.data?.message || "An unexpected error occurred";
-    toast.error(errorMessage); // Display error message from backend
+        const errorMessage = error.response?.data?.message || "An unexpected error occurred";
+        toast.error(errorMessage); // Display error message from backend
 
        }
   }
