@@ -1,6 +1,6 @@
 import React, { Fragment , useState } from 'react'
 import "./Contact.css"
-// import axios from 'axios';
+import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 
 const Conatct = () => {
@@ -24,25 +24,34 @@ console.log(data);
   const courses = ["BCA", "MCA","B.TECH","M.TECH","BBA","MBA"];
 
   const handleChange = (event) => {
-    setSelectedCourse(event.target.value)
+    setSelectedCourse(event.target.value); // Ensure this updates the state
+    // console.log("Selected Course:", event.target.value); // Debugging
   };
+  
 
 
-  // const submitdata = async()=>{
-  //      try {
-  //       const response = await axios.post('http://localhost:3090/register',data);
-  //       // console.log(response);
-  //        console.log(response.data.message);
-  //        toast.success(response.data.message);
-  //        if(response.status === 200){
-  //        setTimeout(() => { 
-  //         navigate('/'); }, 3000);
-  //        }
-  //      } catch (error) {
-  //       // console.log(error)
-  //       toast.error(error.response.data.message);
-  //      }
-  // }
+  const submitdata = async()=>{
+
+        if (!data?.name || !data?.email || !data?.mobile || !data?.percentage) {
+         toast.error("Please fill all required fields before submitting!");
+        return; // Stop submission if fields are empty
+       }
+  
+       try {
+        const finalData = { ...data, course: selectedCourse };
+        // console.log("Final Data:", { ...data, course: selectedCourse }); // Debugging
+        const response = await axios.post('http://localhost:4000/contact', finalData);
+        // console.log(response);
+         console.log(response.data.message);
+         toast.success(response.data.message);
+         
+       } catch (error) {
+        const errorMessage =
+      error.response?.data?.message || "An unexpected error occurred";
+    toast.error(errorMessage); // Display error message from backend
+
+       }
+  }
  
   return (
     <Fragment>
@@ -91,10 +100,10 @@ console.log(data);
             <div>
             <label htmlFor="#" className="s-input-label-wrap"> 12th Percentage </label> <br />
             <input
-              type="number"
+              type="text"
               placeholder="Enter your 12th Percentage"
               className="Register-input-wrap"
-              name='password'
+              name='percentage'
               onChange={getdata}
               
             />
@@ -102,13 +111,15 @@ console.log(data);
             <div >
             <label htmlFor="#" className="s-input-label-wrap"> Select Course </label> <br />
             <select id="courses" value={selectedCourse} onChange={handleChange}>
-           <option value="" disabled >Courses</option >
-             {courses.map((course) => (
-            <option key={course} value={course}  >
-            {course}
-           </option>
-            ))}
+           <option value="" disabled>Courses</option>
+           {courses.map((course) => (
+           <option key={course} value={course}>
+           {course}
+          </option>
+           ))}
           </select>
+
+          
        
 
             </div>
@@ -116,7 +127,7 @@ console.log(data);
 
             
 
-            <button className="Register-b-wrap"  >Submit</button>
+            <button className="Register-b-wrap" onClick={submitdata}>Submit</button>
 
              
 
@@ -129,5 +140,5 @@ console.log(data);
   )
 }
 
-export default Conatct
+export default Conatct;
 
