@@ -142,15 +142,16 @@ const Conatct = () => {
         <div className="map-location-container container">
           <MapLocation />
           <div className="written-address-container">
+            <h1 className="mb10">India</h1>
             <p className="map-address">
               <i className="location-icon-page">
                 <FaLocationDot />
               </i>
-              Plot No 926 , Tower 3 Golden I , Greater Noida West
-              UttarPradesh,India
+              Plot No 926 , Tower 3 Golden I , Greater Noida West UttarPradesh
             </p>
+            <h1 className="mb10">Aurtralia</h1>
             <p className="map-address aus-address">
-              36 Johnson Drive , Glen Waverley Melbourne , Victoria , Aurtralia
+              36 Johnson Drive , Glen Waverley Melbourne , Victoria
             </p>
           </div>
         </div>
