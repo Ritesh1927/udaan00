@@ -25,30 +25,31 @@ const Conatct = () => {
     setSelectedCourse(event.target.value); // Ensure this updates the state
     // console.log("Selected Course:", event.target.value); // Debugging
   };
+  
 
-  const submitdata = async () => {
-    if (!data?.name || !data?.email || !data?.mobile || !data?.percentage) {
-      toast.error("Please fill all required fields before submitting!");
-      return; // Stop submission if fields are empty
-    }
 
-    try {
-      const finalData = { ...data, course: selectedCourse };
-      // console.log("Final Data:", { ...data, course: selectedCourse }); // Debugging
-      const response = await axios.post(
-        "http://localhost:4000/contact",
-        finalData
-      );
-      // console.log(response);
-      console.log(response.data.message);
-      toast.success(response.data.message);
-    } catch (error) {
-      const errorMessage =
-        error.response?.data?.message || "An unexpected error occurred";
-      toast.error(errorMessage); // Display error message from backend
-    }
-  };
+  const submitdata = async()=>{
 
+        if (!data?.name || !data?.email || !data?.mobile || !data?.percentage) {
+         toast.error("Please fill all required fields before submitting!");
+        return; // Stop submission if fields are empty
+       }
+  
+       try {
+        const finalData = { ...data, course: selectedCourse };
+        // console.log("Final Data:", { ...data, course: selectedCourse }); // Debugging
+        const response = await axios.post('http://localhost:4000/contact', finalData);
+        // console.log(response);
+         console.log(response.data.message);
+         toast.success(response.data.message);
+         
+       } catch (error) {
+        const errorMessage = error.response?.data?.message || "An unexpected error occurred";
+        toast.error(errorMessage); // Display error message from backend
+
+       }
+  }
+ 
   return (
     <Fragment>
       <div className="Register-p-cont">

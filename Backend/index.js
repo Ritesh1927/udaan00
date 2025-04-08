@@ -25,6 +25,10 @@ app.post("/contact", async (req, res) => {
   const data = req.body;
   // console.log("Received Data in Backend:", req.body);
   try {
+    const existingContact = await Contactschema.findOne({ email: data.email  });
+     if (existingContact) {
+    return res.status(400).json({ message: "Email already exists, please change your email ID" });
+    }
     const regdata = new Contactschema(data);
     await regdata.save();
     res.json({ message: "Done" });
