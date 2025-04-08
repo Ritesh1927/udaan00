@@ -6,6 +6,8 @@ import { IoPersonOutline } from "react-icons/io5";
 import { IoMailOutline } from "react-icons/io5";
 import { LuPhone } from "react-icons/lu";
 import { TbCirclePercentage } from "react-icons/tb";
+import MapLocation from "../component/map/MapLocation";
+import { FaLocationDot } from "react-icons/fa6";
 const Conatct = () => {
   const [data, setdata] = useState();
 
@@ -25,87 +27,33 @@ const Conatct = () => {
     setSelectedCourse(event.target.value); // Ensure this updates the state
     // console.log("Selected Course:", event.target.value); // Debugging
   };
-  
 
+  const submitdata = async () => {
+    if (!data?.name || !data?.email || !data?.mobile || !data?.percentage) {
+      toast.error("Please fill all required fields before submitting!");
+      return; // Stop submission if fields are empty
+    }
 
-  const submitdata = async()=>{
+    try {
+      const finalData = { ...data, course: selectedCourse };
+      // console.log("Final Data:", { ...data, course: selectedCourse }); // Debugging
+      const response = await axios.post(
+        "http://localhost:4000/contact",
+        finalData
+      );
+      // console.log(response);
+      console.log(response.data.message);
+      toast.success(response.data.message);
+    } catch (error) {
+      const errorMessage =
+        error.response?.data?.message || "An unexpected error occurred";
+      toast.error(errorMessage); // Display error message from backend
+    }
+  };
 
-        if (!data?.name || !data?.email || !data?.mobile || !data?.percentage) {
-         toast.error("Please fill all required fields before submitting!");
-        return; // Stop submission if fields are empty
-       }
-  
-       try {
-        const finalData = { ...data, course: selectedCourse };
-        // console.log("Final Data:", { ...data, course: selectedCourse }); // Debugging
-        const response = await axios.post('http://localhost:4000/contact', finalData);
-        // console.log(response);
-         console.log(response.data.message);
-         toast.success(response.data.message);
-         
-       } catch (error) {
-        const errorMessage = error.response?.data?.message || "An unexpected error occurred";
-        toast.error(errorMessage); // Display error message from backend
-
-       }
-  }
- 
   return (
     <Fragment>
       <div className="Register-p-cont">
-        {/* <div className="Register-m-cont">
-          <div className="Register-head-cont">
-            <h5 className="contact-heading">
-              Register for your counselling sessions now
-            </h5>
-          </div>
-          <div className="s-input-cont">
-            <div>
-              <label htmlFor="#" className="s-input-label-wrap">
-                {" "}
-                Name{" "}
-              </label>{" "}
-              <br />
-              <input
-                type="text"
-                placeholder="Enter your Name"
-                className="Register-input-wrap"
-                name="name"
-                onChange={getdata}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="#" className="s-input-label-wrap">
-                {" "}
-                Mobile{" "}
-              </label>{" "}
-              <br />
-              <input
-                type="number"
-                placeholder="+91  |  Mobile Number*"
-                className="Register-input-wrap"
-                name="mobile"
-                onChange={getdata}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="#" className="s-input-label-wrap">
-                {" "}
-                Email{" "}
-              </label>{" "}
-              <br />
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="Register-input-wrap"
-                name="email"
-                onChange={getdata}
-              />
-            </div>
-          </div>
-        </div> */}
         <div className="register-form-container">
           <h4 className="contact-heading">
             Register for your counselling sessions now
@@ -188,6 +136,22 @@ const Conatct = () => {
             <button className="Register-b-wrap" onClick={submitdata}>
               Register Now
             </button>
+          </div>
+        </div>
+        <div class="parallax-location"></div>
+        <div className="map-location-container container">
+          <MapLocation />
+          <div className="written-address-container">
+            <p className="map-address">
+              <i className="location-icon-page">
+                <FaLocationDot />
+              </i>
+              Plot No 926 , Tower 3 Golden I , Greater Noida West
+              UttarPradesh,India
+            </p>
+            <p className="map-address">
+              36 Johnson Drive , Glen Waverley Melbourne , Victoria , Aurtralia
+            </p>
           </div>
         </div>
       </div>
