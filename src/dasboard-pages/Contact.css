@@ -1,21 +1,21 @@
-.Register-p-cont{
+.Register-p-cont {
     width: 100%;
     height: 690px;
-    background-color: rgba(176, 224, 230, 0.132);
+    /* background-color: rgba(176, 224, 230, 0.132); */
     padding-top: 70px;
 }
 
-.Register-m-cont{
-    
+.Register-m-cont {
     width: 50%;
     margin: auto;
     height: 93%;
-    background-color:#ffffff;
+    background-color: #ffffff;
     padding-top: 20px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     border-radius: 2px;
 }
-.Register-head-cont{
+
+.Register-head-cont {
     width: 100%;
     height: 12%;
     text-align: center;
@@ -24,24 +24,39 @@
     align-content: center;
     margin-bottom: 14px;
 }
- 
- 
-.s-input-cont{
-  width: 90%;
-  margin: auto;
-  line-height: 20px;
-  margin-left: 70px;
-   
-  /* margin-top: 30px; */
-  /* background-color: rgb(184, 224, 211); */
-  /* text-align: center; */
-   
+
+
+.s-input-cont {
+    width: 90%;
+    margin: auto;
+    line-height: 20px;
+    margin-left: 70px;
 }
 
 
- 
 
-.Register-input-wrap{
+
+
+.s-input-label-wrap {
+    font-size: 22px;
+    color: #6c4eb8;
+    font-weight: 500;
+
+}
+
+
+
+
+/* //////////////////////// */
+.contact-heading {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* .Register-input-wrap {
     width: 85%;
     height: 35px;
     outline: none;
@@ -50,52 +65,140 @@
     padding-left: 6px;
     padding-top: 8px;
     border: none;
-    align-content:end;
+    align-content: end;
     box-shadow: 0px 4px 0px 0px rgb(179, 177, 177);
     border-radius: 8px;
-    
-} 
-.s-input-label-wrap{
-    font-size: 22px;
-    color: #6c4eb8;
-    font-weight: 500;
-     
-}
 
-.Register-b-wrap{
+} */
+
+.Register-b-wrap {
     margin-top: 16px;
-    width: 85%;
+    width: 35%;
     height: 38px;
     border: none;
     color: #ffffff;
-    background-color:  #F25A60;
+    background-color: #5643C1;
     font-size: 20px;
     font-weight: 700;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 8px;
-}
-.Register-b-wrap:hover{
-    background-color: #e33a2b;
+    font-family: "Hanken Grotesk", sans-serif;
+    transition: 0.2s;
 }
 
- 
-/* Select box ko style karte hain */
-select {
-    width: 85%;
+.Register-b-wrap:hover {
+    background-color: #6c5acf;
+}
+
+.register-form-container {
+    width: 60%;
+    max-width: 100%;
+    margin: auto;
+    padding: 20px;
+    font-family: "Hanken Grotesk", sans-serif;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    /* background-color: red; */
+}
+
+.regiter-elements-content {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.upper-section-form {
+    width: 50%;
+}
+
+.form-fill-section {
+    border: 2px solid #cfd3d5;
+    margin-bottom: 20px;
+    height: 40px;
+    display: flex;
+    align-self: center;
+    justify-content: flex-start;
+    border-radius: 12px;
+}
+
+.register-input-section {
+    background-color: transparent;
+    height: 40px;
+    border: none;
+    width: 100%;
+}
+
+.register-input-section::placeholder {
+    color: #cfd3d5;
+    font-size: 16px;
+}
+
+.register-input-section:focus {
+    outline: none;
+}
+
+.form-fill-section i {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    margin-right: 18px;
+    padding-left: 10px;
+    color: #cfd3d5;
+    /* width: 100%; */
+}
+
+.register-btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.course-dropdown {
+    width: 100%;
     padding: 10px;
-    height: 35px;
+    height: 40px;
     outline: none;
     font-size: 18px;
     margin-bottom: 18px;
     padding-left: 6px;
     padding-top: 8px;
     border: none;
-    align-content:end;
-    box-shadow: 0px 4px 0px 0px rgb(179, 177, 177);
+    align-content: end;
+    border: 2px solid #cfd3d5;
+    color: #cfd3d5;
     border-radius: 8px;
-  }
-  
-  /* Option hover effect */
-  option:hover {
-    background-color: #e0e0e0;
-  }
+}
+
+/* Option hover effect */
+option:hover {
+    background-color: #6c5acf !important;
+    color: black !important;
+}
+
+@media (max-width:768px) {
+    .regiter-elements-content {
+        display: block;
+    }
+
+    .upper-section-form {
+        width: 100%;
+    }
+
+    .Register-b-wrap {
+        width: 80%;
+    }
+}
+
+@media (max-width:520px) {
+
+    .register-form-container {
+        width: 90%;
+    }
+
+    .Register-p-cont {
+        padding-top: 35px;
+    }
+
+    .form-fill-section i {
+        font-size: 21px;
+    }
+}

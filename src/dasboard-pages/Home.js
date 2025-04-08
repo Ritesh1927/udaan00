@@ -9,6 +9,7 @@ import Img4 from "../assets/advisor.png";
 import Img5 from "../assets/confidence.png";
 import Homeimg from "../assets/home.png";
 import Videobg from "../component/videobg/Videobg";
+import WhatsAppButton from "../common-component/whatsup/WhatsAppButton";
 
 const Home = () => {
   return (
@@ -105,9 +106,10 @@ const Home = () => {
         </div>
       </section>
       <div className="parallax mt40"></div>
+      <WhatsAppButton />
       <div className="Form-forward-container">
         {/* /////////// form forward container ///////////// */}
-        <div className="background-set-forward"></div>
+        {/* <div className="background-set-forward"></div> */}
       </div>
     </>
   );
