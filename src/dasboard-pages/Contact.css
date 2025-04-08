@@ -179,20 +179,30 @@ option:hover {
     display: flex;
     /* width: 100%; */
     justify-content: space-between;
-    gap: 40px;
+    gap: 60px;
     align-items: center;
     font-family: "Hanken Grotesk", sans-serif;
+
 }
 
 .map-address {
-    font-size: 30px;
+    font-size: 28px;
+    line-height: 35px;
+    margin-bottom: 25px;
 }
+
+.aus-address {}
 
 .location-icon-page {
     font-size: 25px;
+    margin-right: 30px;
     color: #5643C1;
 }
 
+.written-address-container {
+    width: 50%;
+    padding: 20px;
+}
 
 
 .parallax-location {

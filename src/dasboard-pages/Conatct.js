@@ -149,7 +149,7 @@ const Conatct = () => {
               Plot No 926 , Tower 3 Golden I , Greater Noida West
               UttarPradesh,India
             </p>
-            <p className="map-address">
+            <p className="map-address aus-address">
               36 Johnson Drive , Glen Waverley Melbourne , Victoria , Aurtralia
             </p>
           </div>
