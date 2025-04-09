@@ -1,7 +1,17 @@
 .welcome-tag {
-    font-size: 45px;
-    font-weight: 400;
+    font-size: 36px;
+    font-weight: 600;
     font-family: "Hanken Grotesk", sans-serif;
+    text-align: center;
+    color: #705BA4;
+}
+
+.welcome-tag2 {
+    font-size: 26px;
+    font-weight: 500;
+    font-family: "Hanken Grotesk", sans-serif;
+    text-align: center;
+    margin-top: 25px;
 }
 
 .left-home-container {
@@ -65,15 +75,8 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
+    margin-bottom: 70px;
 }
-
-/* .start-parent-cont2 {
-    display: flex;
-    justify-content: center;
-    margin-top: 45px;
-    gap: 30px;
-
-} */
 
 .home-cards-section-heading {
     font-family: "Hanken Grotesk", sans-serif;
@@ -96,14 +99,19 @@
 
 .parallax {
     /* The image used */
-    background-image: url("../assets/flute.jpg");
+    background-image: url("../assets/Flute1.png");
     /* Set a specific height */
     min-height: 300px;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+    margin-bottom: 30px;
     background-size: cover;
+}
+
+.our-team-container {
+    display: flex;
 }
 
 @media (max-width:1200px) {

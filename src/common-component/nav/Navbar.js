@@ -37,7 +37,7 @@ const Navbar = () => {
               to="/about"
               onClick={() => setMenuOpen(false)}
             >
-              About
+              About us
             </Link>
           </li>
           <li>
@@ -49,7 +49,7 @@ const Navbar = () => {
               to="/contact"
               onClick={() => setMenuOpen(false)}
             >
-              Contact
+              Contact us
             </Link>
           </li>
         </ul>

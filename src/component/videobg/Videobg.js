@@ -7,7 +7,7 @@ const Videobg = () => {
   return (
     <Fragment>
       <section className="video-section">
-        <h1 className="video-description">Lets Talk About Counceling</h1>
+        <h1 className="video-description">Lets Talk About Counseling</h1>
 
         <div className="video-wrapper">
           {/* Background Image */}

@@ -10,34 +10,31 @@ import Img5 from "../assets/confidence.png";
 import Homeimg from "../assets/home.png";
 import Videobg from "../component/videobg/Videobg";
 import WhatsAppButton from "../common-component/whatsup/WhatsAppButton";
+import Carousel from "../component/carousel/Carousel";
 
 const Home = () => {
   return (
     <>
+      <div>
+        {/* <Carousel /> */}
+      </div>
       <section className="container">
         <div className="inner-container">
           <div className="welcome-heading inline mt20">
             <div className="left-home-container">
-              <p className="welcome-tag">
-                Welcome to <span className="udaan-name">UDAAN</span>
-              </p>
-              <div className="shloak-container">
-                <h1 className="upper-shloak">
-                  <span className="">"</span> विद्यां चाविद्यां च यस्तद्वेदोभयं
-                  सह।
-                </h1>
-                <h1 className="lower-shloak">
-                  अविद्यया मृत्युं तीर्त्वा विद्ययामृतमश्नुते॥ <span>"</span>
-                </h1>
-
-                <div>
-                  <h2 className="english-shloak">
-                    "One who understands both knowledge (Vidya) and ignorance
-                    (Avidya) together, transcends ignorance and attains
-                    immortality through knowledge."
-                  </h2>
-                </div>
+              <div>
+                <p className="welcome-tag">
+                  {/* Welcome to <span className="udaan-name">UDAAN</span> */}
+                  "Empowering Your Journey: From Education to Elevation"
+                </p>
+                <p className="welcome-tag2">
+                  Udaan360: A comprehensive Platform for all your educational
+                  needs- Test Preparations, Admissions, Skill Development, and
+                  Career Placement.
+                </p>
               </div>
+
+              {/* ///////////////////////////////// */}
             </div>
 
             <div className="home-banner-img">
@@ -104,7 +101,24 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <div className="shloak-container">
+          <h1 className="upper-shloak">
+            <span className="">"</span> विद्यां चाविद्यां च यस्तद्वेदोभयं सह।
+          </h1>
+          <h1 className="lower-shloak">
+            अविद्यया मृत्युं तीर्त्वा विद्ययामृतमश्नुते॥ <span>"</span>
+          </h1>
+
+          <div>
+            <h2 className="english-shloak">
+              "One who understands both knowledge (Vidya) and ignorance (Avidya)
+              together, transcends ignorance and attains immortality through
+              knowledge."
+            </h2>
+          </div>
+        </div>
       </section>
+
       <div className="parallax mt40"></div>
       <WhatsAppButton />
       <div className="Form-forward-container">
