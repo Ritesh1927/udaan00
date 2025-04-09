@@ -70,6 +70,8 @@
 .our-team-container {
     display: flex;
     gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .card1 {
@@ -133,7 +135,7 @@
 }
 
 .about-sub-main-part2 {
-    width: 100%;
+    width: 350px;
     /* height: fit-content; */
     /* border: 1px solid black; */
     margin-bottom: 30px;
