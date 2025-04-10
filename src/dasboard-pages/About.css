@@ -75,7 +75,7 @@
 }
 
 .card1 {
-    background-color: #ac94e8;
+    background-color: #d6c9f7;
 }
 
 .card2 {
@@ -181,4 +181,28 @@
 .founder-details2 {
     width: 100%;
     /* text-align: right; */
+}
+
+@media (max-width:768px) {
+    .about-sub-main-part1 {
+        display: block;
+    }
+
+    .about-sub-main-content {
+        width: 90%;
+    }
+}
+
+@media (max-width:450px) {
+    .about-sub-main-content {
+        width: 95%;
+    }
+
+    .about-sub-main-image {
+        width: 70%;
+    }
+
+    .founder-header {
+        margin: 20px 0 30px 30px;
+    }
 }
