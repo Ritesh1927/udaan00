@@ -38,7 +38,7 @@ const Conatct = () => {
       const finalData = { ...data, course: selectedCourse };
       // console.log("Final Data:", { ...data, course: selectedCourse }); // Debugging
       const response = await axios.post(
-        "http://localhost:4000/contact",
+        "http://localhost:4000/api/contact",
         finalData
       );
       // console.log(response);
