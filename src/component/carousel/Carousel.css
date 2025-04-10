@@ -1,8 +1,8 @@
 /* carousel.css */
 .slick-slider {
     position: relative;
-    margin: 20px auto;
-    max-width: 500px;
+    /* margin: 20px auto; */
+    /* max-width: 500px; */
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -32,6 +32,16 @@
     opacity: 1;
 }
 
+.image-banner-container {
+    background-image: url(../../assets/Banner.png);
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    width: 100%;
+    border-radius: 12px;
+
+}
+
 /* Arrows */
 .slick-prev,
 .slick-next {
@@ -48,6 +58,7 @@
     font-size: 20px;
     color: #333;
     opacity: 1;
+    padding-top: 2px;
 }
 
 .slick-prev {

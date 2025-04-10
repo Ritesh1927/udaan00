@@ -191,7 +191,6 @@ option:hover {
     margin-bottom: 25px;
 }
 
-.aus-address {}
 
 .location-icon-page {
     font-size: 25px;
@@ -231,6 +230,18 @@ option:hover {
     .Register-b-wrap {
         width: 80%;
     }
+
+    .map-location-container {
+        display: block;
+    }
+
+    .written-address-container {
+        width: 100%;
+    }
+
+    .map-wrapper {
+        width: 80%;
+    }
 }
 
 @media (max-width:520px) {
@@ -245,5 +256,13 @@ option:hover {
 
     .form-fill-section i {
         font-size: 21px;
+    }
+
+    .map-wrapper {
+        width: 100% !important;
+    }
+
+    .map-address {
+        font-size: 24px;
     }
 }

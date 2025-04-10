@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../carousel/Carousel.css";
+import Banner from "../../assets/Banner.png";
 
 const Carousel = () => {
   const settings = {
@@ -20,25 +21,15 @@ const Carousel = () => {
     <div className="w-full max-w-md mx-auto">
       <Slider {...settings}>
         <div>
-          <img
-            src="/images/slide1.jpg"
-            alt="Slide 1"
-            className="w-full rounded-xl"
-          />
+          <div className="image-banner-container"></div>
         </div>
         <div>
-          <img
-            src="/images/slide2.jpg"
-            alt="Slide 2"
-            className="w-full rounded-xl"
-          />
+          <div className="image-banner-container"></div>
+          {/* <img src={Banner} alt="Slide 2" className="w-full rounded-xl" /> */}
         </div>
         <div>
-          <img
-            src="/images/slide3.jpg"
-            alt="Slide 3"
-            className="w-full rounded-xl"
-          />
+          <div className="image-banner-container"></div>
+          {/* <img src={Banner} alt="Slide 3" className="w-full rounded-xl" /> */}
         </div>
       </Slider>
     </div>

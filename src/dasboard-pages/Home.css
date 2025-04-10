@@ -145,10 +145,18 @@
     }
 
     .welcome-tag {
-        font-size: 32px;
+        font-size: 24px;
+    }
+
+    .welcome-tag2 {
+        font-size: 18px;
     }
 
     .udaan-name {
         font-size: 32px;
+    }
+
+    .video-section {
+        padding: 0 20px;
     }
 }
