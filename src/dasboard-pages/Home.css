@@ -98,11 +98,9 @@
 }
 
 .parallax {
-    /* The image used */
+
     background-image: url("../assets/Flute1.png");
-    /* Set a specific height */
     min-height: 300px;
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -127,6 +125,10 @@
 @media (max-width:768px) {
     .welcome-heading {
         display: block;
+    }
+
+    .parallax {
+        background-attachment: scroll;
     }
 
     .left-home-container {

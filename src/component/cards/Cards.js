@@ -24,7 +24,7 @@ const Cards = (props) => {
         <div className="card-1-button-cont">
           <button className={props.buttonclass}>
             <div className="button-rotated-icon">
-              <HiArrowLongRight />
+              {/* <HiArrowLongRight /> */}
             </div>
           </button>
         </div>

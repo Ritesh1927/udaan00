@@ -11,7 +11,7 @@ const UpperNav = () => {
         </p>
         <button className="whatsup-btn">
           <a
-            href="https://wa.me/8700105214?text=Hello How can i help you"
+            href="https://wa.me/917355308287?text=Hello How can i help you"
             target="_blank9"
           >
             <img src={Whatsup} alt="" />

@@ -68,7 +68,7 @@ const About = () => {
 
             <div className="about-sub-main-part2 card2 ">
               <h3 className="founder-name mb3">Pooja Aggarwal</h3>
-              <p className="founder-designation">Director</p>
+              <p className="founder-designation"> Co-founder</p>
               <p className="founder-details-content">
                 With 18 years of experience in education sector, my mission has
                 always been to empower students with the right guidance and
@@ -82,7 +82,7 @@ const About = () => {
             </div>
             <div className="about-sub-main-part2 card3 ">
               <h3 className="founder-name mb3">Kunal</h3>
-              <p className="founder-designation">Director</p>
+              <p className="founder-designation">Co-founder</p>
               <p className="founder-details-content">
                 With 18 years of experience in education sector, my mission has
                 always been to empower students with the right guidance and

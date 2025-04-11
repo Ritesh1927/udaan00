@@ -19,18 +19,30 @@ const Footer = () => {
             <div className="footer-logo-wrapper ">
               <img src={Logo} alt="" />
             </div>
+            <p className="footer-contact-msg mb10">
+              Divison of Udaan Eduserices
+            </p>
             <p className="footer-contact-msg">
               Have inquiries? Don't hesitate to drop us an email at
               info@udaan360.com, and we'll respond promptly
             </p>
             <p className="Find-us-links">Find us on</p>
             <div className="social-media-links">
-              <i className="social-links">
-                <FaLinkedin />
-              </i>
-              <i className="social-links">
-                <FaInstagram />
-              </i>
+              <a className="social-link-wrap" href="">
+                <i className="social-links">
+                  <FaLinkedin />
+                </i>
+              </a>
+
+              <a
+                className="social-link-wrap"
+                href="https://www.instagram.com/udaan.360/?next=%2F&hl=en%5C"
+              >
+                <i className="social-links">
+                  <FaInstagram />
+                </i>
+              </a>
+
               <i className="social-links">
                 <FaSquareXTwitter />
               </i>
