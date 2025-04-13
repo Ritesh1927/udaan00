@@ -265,4 +265,8 @@ option:hover {
     .map-address {
         font-size: 24px;
     }
+
+    .parallax-location {
+        background-attachment: scroll;
+    }
 }

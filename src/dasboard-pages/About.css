@@ -34,17 +34,28 @@
     justify-content: space-evenly;
     align-items: center;
     gap: 30px;
+
 }
 
 .about-sub-main-image {
-    width: 40%;
-    height: 80%;
+    width: 350px;
+    height: 350px;
+    background: #ebebeb;
+    background: linear-gradient(247deg, rgba(235, 235, 235, 1) 0%, rgba(64, 66, 69, 1) 100%);
+    border-radius: 50%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .about-sub-main-image img {
     width: 100%;
     height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    /* border: 1px solid black; */
 }
 
 .about-sub-main-content {
@@ -74,56 +85,16 @@
     flex-wrap: wrap;
 }
 
-.card1 {
-    background-color: #d6c9f7;
-}
-
-.card2 {
-    background-color: #FCBF78;
-}
-
-.card3 {
-    background-color: #F9CED3;
-}
 
 /* /////////////////////////////////// */
 
 
-/* 
-.about-header-image {
-    width: 25%;
-    height: 18svh;
-    position: absolute;
-    left: 39%;
-    top: -1%;
-}
-
-.about-header-image img {
-    width: 100%;
-    height: 100%;
-} */
 
 .about-sub-main {
     width: 100%;
     height: fit-content;
     margin: auto;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; */
-    /* background-color: lightseagreen; */
 }
-
-
-
-
-
-
-/* 
-.horizontal-line hr {
-    width: 100%;
-    height: 100%;
-} */
 
 
 .founder-header {
@@ -136,8 +107,6 @@
 
 .about-sub-main-part2 {
     width: 350px;
-    /* height: fit-content; */
-    /* border: 1px solid black; */
     margin-bottom: 30px;
     border-radius: 12px;
     padding: 20px;
@@ -183,10 +152,149 @@
     /* text-align: right; */
 }
 
-@media (max-width:768px) {
+
+
+
+
+
+
+/* //////////////////////////////////////////// */
+.cards {
+
+
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    /* grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 4rem 3vw;
+    padding: 0;
+    list-style-type: none; */
+}
+
+.card {
+    width: 350px;
+    --surface-color: #fff;
+    --curve: 40;
+    position: relative;
+    display: block;
+    height: 100%;
+    border-radius: calc(var(--curve) * 1px);
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    border-radius: calc(var(--curve) * 1px);
+    background-color: var(--surface-color);
+    transform: translateY(100%);
+    transition: .2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+    transform: translateY(0);
+}
+
+.step-count-wrap {
+    width: 30%;
+}
+
+.step-count {
+    width: 55px;
+    height: 55px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #9CC4D9;
+    border-radius: 50%;
+}
+
+.card__header {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    width: 100%;
+    border-radius: calc(var(--curve) * 1px) 0 0 0;
+    background-color: var(--surface-color);
+    transform: translateY(-100%);
+    transition: .2s ease-in-out;
+}
+
+.card__header-tex {
+    width: 70%;
+}
+
+.card__arc {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    z-index: 1;
+}
+
+.card__arc path {
+    fill: var(--surface-color);
+    d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}
+
+.card:hover .card__header {
+    transform: translateY(0);
+}
+
+.card__thumb {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.card__title {
+    font-size: 1.5em;
+    /* margin: 0 0 .3em; */
+    color: #222222;
+}
+
+.card__tagline {
+    display: block;
+    margin: 1em 0;
+    font-family: "MockFlowFont";
+    font-size: .8em;
+    color: #D7BDCA;
+}
+
+.card-img-wrapper {
+    width: 300px;
+    height: 400px;
+}
+
+
+.card__description {
+    padding: 0 1.2em 2em;
+    margin: 0;
+    color: #3187b4;
+    overflow: hidden;
+}
+
+@media (max-width:850px) {
     .about-sub-main-part1 {
         display: block;
     }
+}
+
+@media (max-width:768px) {
 
     .about-sub-main-content {
         width: 90%;
@@ -199,7 +307,9 @@
     }
 
     .about-sub-main-image {
-        width: 70%;
+        width: 100%;
+        height: 100%;
+
     }
 
     .founder-header {

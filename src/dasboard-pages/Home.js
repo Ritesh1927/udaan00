@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <>
       <div>
-        {/* <Carousel /> */}
+        <Carousel />
       </div>
       <section className="container">
         <div className="inner-container">
@@ -47,9 +47,7 @@ const Home = () => {
           </div>
 
           {/* Cards Section */}
-          <h1 className="home-cards-section-heading ">
-            What is in it for you!
-          </h1>
+          <h1 className="home-cards-section-heading ">What's in it for you!</h1>
           <div className="start-parent-cont">
             <div className="start-child-cont">
               <Cards

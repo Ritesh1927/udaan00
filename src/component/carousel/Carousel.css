@@ -88,7 +88,7 @@
     font-size: 20px;
     background: #8565AA;
     color: #fff;
-    margin-top: 18px;
+    margin-top: 30px;
     border-radius: 8px;
 }
 
@@ -107,7 +107,12 @@
 
 .banner-content {
     font-size: 24px;
-    margin-top: 12px;
+    background-color: #e88c8c;
+    width: 80%;
+    border-radius: 13px;
+    padding: 10px;
+    height: 22vh;
+    margin-top: 30px;
 }
 
 .sir-img-wrap {}
@@ -158,14 +163,23 @@
     }
 
     .Banner-img-wrapper {
-        width: 100%;
+        width: 85%;
     }
 
     .banner-heading {
         font-size: 25px;
     }
 
+    .Explore-btn {
+        margin-top: 8px;
+        padding: 7px 14px;
+        font-size: 16px;
+    }
+
     .banner-content {
         font-size: 18px;
+        margin-top: 8px;
+        width: 95%;
+        height: fit-content;
     }
 }

@@ -1,19 +1,22 @@
 import React from "react";
-import { FaWhatsapp } from "react-icons/fa";
+// import { FaWhatsapp } from "react-icons/fa";
 import "../whatsup/WhatsAppButton.css";
-
+import Whatsup from "../../assets/whatsup.png";
 const WhatsAppButton = () => {
   const phoneNumber = "1234567890"; // Replace with your WhatsApp number
 
   return (
-    <a
-      href={`https://wa.me/${8700105214}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="fixed bottom-4 right-4 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all z-50"
-    >
-      <FaWhatsapp size={24} />
-    </a>
+    <>
+      <div className="whatsapp-button">
+        <a
+          href="https://wa.me/917355308287?text=Hello%20How%20can%20I%20help%20you"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img className="whtsupimg" src={Whatsup} alt="whats up" />
+        </a>
+      </div>
+    </>
   );
 };
 

@@ -61,6 +61,7 @@
 
 .welcome-heading {
     justify-content: space-between;
+    align-items: center
 }
 
 .start-child-cont {
@@ -152,13 +153,19 @@
 
     .welcome-tag2 {
         font-size: 18px;
+        margin-top: 15px;
     }
 
     .udaan-name {
         font-size: 32px;
     }
 
-    .video-section {
-        padding: 0 20px;
+    .home-cards-section-heading {
+        margin-top: 15px;
     }
+
+    .start-parent-cont {
+        gap: 10px;
+    }
+
 }

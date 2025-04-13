@@ -1,16 +1,11 @@
 import React from "react";
 import "./About.css";
-import peacock from "../assets/Adobe Express - file.png";
-import basuri from "../assets/Basuri2.png";
-import founder1 from "../assets/founder1.png";
-import founder12 from "../assets/founder12.png";
-import founder22 from "../assets/founder22.png";
-import founder2 from "../assets/founder2.png";
-import study1 from "../assets/study.png";
-import study2 from "../assets/study2.png";
-import study3 from "../assets/study3.png";
-import study4 from "../assets/study4.png";
-import Abtbanner from "../assets/Aboutbanner.png";
+// import study2 from "../assets/study2.png";
+import study2 from "../assets/handholding.png";
+import Abtbanner from "../assets/Aboutbanner2.jpg";
+import Sir from "../assets/Sirimg01.png";
+import Mam from "../assets/mamimg.png";
+import Kunalsir from "../assets/kunalsir.png";
 
 const About = () => {
   return (
@@ -20,7 +15,6 @@ const About = () => {
       </div>
       <div className="container about-main-container">
         <h1 className="about-header">About us </h1>
-        <div></div>
       </div>
       <div className=" container about-main-container">
         <div className="about-sub-main">
@@ -50,25 +44,84 @@ const About = () => {
 
           <div className="founder-header">Our Team </div>
           <div className="our-team-container ">
-            <div className="about-sub-main-part2 card1">
-              {/* <div className="founder-image">
-              <img src={founder12} alt="" />
-            </div> */}
+            <div className="card">
+              <div className="card-img-wrapper">
+                <img src={Sir} className="card__image" alt="" />
+              </div>
 
-              <h3 className="founder-name mb3">Ankur Tyagi</h3>
-              <p className="founder-designation">CEO & Founder</p>
-              <p className="founder-details-content">
-                With more than 20 years in education in domain in India, I have
-                worked with top academic institutions like FIITJEE, RAO IIT,
-                Co-Founder VISTAAR, and also as a CEO to FTV-SOPA. Be a part of
-                my journey with Udaan360, where ethical education paves the way
-                for success. Together, let's transform dreams into reality.
-              </p>
+              <div className="card__overlay">
+                <div className="card__header">
+                  <div className="step-count-wrap">
+                    <p className="step-count inline-center align-center">1</p>
+                  </div>
+
+                  <div className="card__header-text">
+                    <h3 className="card__title">Ankur Tyagi</h3>
+                    <h5>CEO & Founder</h5>
+                  </div>
+                </div>
+                <p className="card__description">
+                  With more than 20 years in education in domain in India, I
+                  have worked with top academic institutions like FIITJEE, RAO
+                  IIT, Co-Founder VISTAAR, and also as a CEO to FTV-SOPA. Be a
+                  part of my journey with Udaan360, where ethical education
+                  paves the way for success. Together, let's transform dreams
+                  into reality.
+                </p>
+              </div>
+            </div>
+            <div className="card">
+              <div className="card-img-wrapper">
+                <img src={Mam} className="card__image" alt="" />
+              </div>
+              <div className="card__overlay">
+                <div className="card__header">
+                  <div className="step-count-wrap">
+                    <p className="step-count inline-center align-center">2</p>
+                  </div>
+
+                  <div className="card__header-text">
+                    <h3 className="card__title">Pooja Aggarwal</h3>
+                    <h5>COO & Co-founder</h5>
+                  </div>
+                </div>
+                <p className="card__description">
+                  With 18 years of experience in education sector, my mission
+                  has always been to empower students with the right guidance
+                  and opportunities. At Udaan360, I am committed to provide
+                  ethical counselling, quality education, and global career
+                  pathways.
+                </p>
+              </div>
+            </div>
+            <div className="card">
+              <div className="card-img-wrapper">
+                <img src={Kunalsir} className="card__image" alt="" />
+              </div>
+              <div className="card__overlay">
+                <div className="card__header">
+                  <div className="step-count-wrap">
+                    <p className="step-count inline-center align-center">3</p>
+                  </div>
+
+                  <div className="card__header-text">
+                    <h3 className="card__title">Kunal Handu</h3>
+                    <h5>Director</h5>
+                  </div>
+                </div>
+                <p className="card__description">
+                  With 18 years of experience in education sector, my mission
+                  has always been to empower students with the right guidance
+                  and opportunities. At Udaan360, I am committed to provide
+                  ethical counselling, quality education, and global career
+                  pathways.
+                </p>
+              </div>
             </div>
 
-            <div className="about-sub-main-part2 card2 ">
-              <h3 className="founder-name mb3">Pooja Aggarwal</h3>
-              <p className="founder-designation"> Co-founder</p>
+            {/* <div className="about-sub-main-part2 card3 ">
+              <h3 className="founder-name mb3"></h3>
+              <p className="founder-designation"> </p>
               <p className="founder-details-content">
                 With 18 years of experience in education sector, my mission has
                 always been to empower students with the right guidance and
@@ -76,24 +129,7 @@ const About = () => {
                 counselling, quality education, and global career pathways.
               </p>
 
-              {/* <div className="founder-image">
-              <img src={founder22} alt="" />
             </div> */}
-            </div>
-            <div className="about-sub-main-part2 card3 ">
-              <h3 className="founder-name mb3">Kunal</h3>
-              <p className="founder-designation">Co-founder</p>
-              <p className="founder-details-content">
-                With 18 years of experience in education sector, my mission has
-                always been to empower students with the right guidance and
-                opportunities. At Udaan360, I am committed to provide ethical
-                counselling, quality education, and global career pathways.
-              </p>
-
-              {/* <div className="founder-image">
-              <img src={founder22} alt="" />
-            </div> */}
-            </div>
           </div>
         </div>
       </div>

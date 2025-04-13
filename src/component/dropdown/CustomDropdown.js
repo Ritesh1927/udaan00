@@ -9,8 +9,8 @@ const CustomDropdown = () => {
   const dropdownRef = useRef(null);
 
   const options = [
-    { label: "Admisson", path: "/admisson" },
-    { label: "Sip", path: "/sip" },
+    { label: "Admisson In India ", path: "/admisson" },
+    { label: "SIP", path: "/sip" },
     { label: "Abroad Study ", path: "/aboradstudy" },
     { label: "Skills Migration ", path: "/skillmigration" },
   ];

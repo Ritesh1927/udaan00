@@ -19,8 +19,8 @@ const Footer = () => {
             <div className="footer-logo-wrapper ">
               <img src={Logo} alt="" />
             </div>
-            <p className="footer-contact-msg mb10">
-              Divison of Udaan Eduserices
+            <p className="footer-contact-msg-heading mb10">
+              Divison of Udaan Eduservices
             </p>
             <p className="footer-contact-msg">
               Have inquiries? Don't hesitate to drop us an email at
@@ -69,13 +69,13 @@ const Footer = () => {
               <i className="right-icons-set">
                 <FaChevronRight />
               </i>
-              <Link className="study-links"> Study in New Zeland </Link>
+              <Link className="study-links"> Study in New Zealand </Link>
             </li>
             <li>
               <i className="right-icons-set">
                 <FaChevronRight />
               </i>
-              <Link className="study-links"> Study in Austalia </Link>
+              <Link className="study-links"> Study in Australia </Link>
             </li>
             <li>
               <i className="right-icons-set">
@@ -121,21 +121,22 @@ const Footer = () => {
               <p>Golden I , Greater Noida West UttarPradesh,India </p>
             </div>
             <p className="australia-address">
-              36 Johnson Drive , Glen Waverley Melbourne , Victoria , Aurtralia
+              36 Johnson Drive , Glen Waverley Melbourne , Victoria , Australia
             </p>
 
             <div className="location-section">
               <i className="mail-icon">
                 <IoIosMail />
               </i>
-              <Link>info@udaan360.com</Link>
+              <a href="mailto:info@udaan360.com">info@udaan360.com</a>
             </div>
 
             <div className="location-section">
               <i className="phone-icon">
                 <FaPhoneAlt />
               </i>
-              <Link>+91 7355308287</Link>
+
+              <a href=" tel:+917355308287"> +91 7355308287</a>
             </div>
           </div>
         </div>

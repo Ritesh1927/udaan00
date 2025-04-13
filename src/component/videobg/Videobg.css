@@ -114,4 +114,8 @@
         height: 50px;
         font-size: 22px;
     }
+
+    .video-section {
+        padding: 10px 20px;
+    }
 }

@@ -7,7 +7,7 @@
     height: fit-content;
     /* position: fixed;
     bottom: 0; */
-    /* margin-top: 70px; */
+    margin-top: 70px;
 }
 
 .social-link-wrap {
@@ -67,10 +67,17 @@
     width: 100%;
 }
 
+.footer-contact-msg-heading {
+    font-size: 20px;
+    color: #E7718E;
+    font-weight: 700;
+}
+
 .footer-contact-msg {
     line-height: 25px;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 700;
 }
 
 .Find-us-links {
@@ -114,13 +121,17 @@
     align-items: center;
 }
 
-.location-icon,
+.location-icon {
+    font-size: 18px
+}
+
 .phone-icon {
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .mail-icon {
     font-size: 20px;
+    margin-top: 5px;
 }
 
 .location-section a {

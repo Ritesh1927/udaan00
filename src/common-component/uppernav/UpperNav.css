@@ -1,30 +1,60 @@
 .upper-whatsup-strip {
-    background-color: #5E7FBD;
-    height: 55px;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    gap: 30px;
-    padding: 5px 25px;
+  background-color: #5e7fbd;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 5px 25px;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  font-family: "Hanken Grotesk", sans-serif;
 }
 
-.whatsup-btn {
-    border: none;
-    background-color: #e7e3db;
-    border-radius: 5px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Wrap for the scrolling text */
+.marquee-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  /* flex: 1;
+    overflow: hidden;
+    white-space: nowrap; */
+}
+
+
+
+
+.upnav-no {
+  font-size: 35px;
+  color: yellow;
 }
 
 .uppernav-content {
-    font-family: "Hanken Grotesk", sans-serif;
+  font-size: 30px;
 }
 
+.whatsup-btn {
+  border: none;
+  background-color: #e7e3db;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .whatsup-btn img {
-    width: 35px;
-    padding-top: 3px;
+  width: 35px;
+  padding-top: 3px;
+}
+
+@media (max-width:768px) {
+  .upnav-no {
+    font-size: 22px;
+  }
+
+  .uppernav-content {
+    font-size: 18px;
+  }
 }
