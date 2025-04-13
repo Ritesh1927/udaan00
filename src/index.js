@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Error from "./common-component/error/Error";
 import About from "./dasboard-pages/About";
 import Service from "./dasboard-pages/Service";
-import Contact from "./dasboard-pages/Conatct";
+import Contact from "./dasboard-pages/Contact";
 import Admisson from "./dasboard-pages/Admisson";
 import Sip from "./dasboard-pages/Sip";
 import AbroadStudy from "./dasboard-pages/AbroadStudy";

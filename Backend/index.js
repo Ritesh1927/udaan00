@@ -7,9 +7,12 @@ const connectDB = require("./Connection/Database");
 // Middleware
 app.use(bodyParser.json());
 app.use(express.json());
-app.use(cors());
-
-const port = 4000;
+app.use(cors({
+  origin: ["https://udaan360.in", "https://www.udaan360.in"],
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
+}));
 
 const Contactschema = require("./Schema/Contactschema");
 require("./Connection/Database");
@@ -17,35 +20,43 @@ require("./Connection/Database");
 // Connect to database
 connectDB();
 
-// API route with /api prefix
+// API Endpoint
 app.post("/api/contact", async (req, res) => {
-  const data = req.body;
   try {
-    const existingContact = await Contactschema.findOne({ email: data.email });
-    if (existingContact) {
-      return res.status(400).json({ message: "Email already exists, please change your email ID" });
+    const { name, email, mobile, percentage, course } = req.body;
+    
+    // Validation
+    if (!name || !email || !mobile || !percentage) {
+      return res.status(400).json({ message: "All fields are required" });
     }
 
-    const regdata = new Contactschema(data);
-    await regdata.save();
-    res.json({ message: "Done" });
+    const existingContact = await Contactschema.findOne({ email });
+    if (existingContact) {
+      return res.status(400).json({ message: "Email already exists" });
+    }
+
+    const newContact = new Contactschema({ name, email, mobile, percentage, course });
+    await newContact.save();
+    
+    res.status(201).json({ message: "Registration successful!" });
 
   } catch (error) {
-    if (error.name === "ValidationError") {
-      const messages = Object.values(error.errors).map((err) => err.message);
-      res.status(400).json({ message: messages.join(", ") });
-    } else {
-      res.status(500).json({ message: "An unexpected error occurred" });
-    }
+    console.error("Server error:", error);
+    res.status(500).json({ message: "Internal server error" });
   }
 });
 
-// Base test route
-app.get('/', (req, res) => {
-  res.send('Backend is running!');
+// Health check
+app.get("/", (req, res) => {
+  res.send("Backend is running");
 });
 
-// Start server
-app.listen(port, () => {
-  console.log(`Server is running @ http://localhost:${port}`);
+// Error handling
+app.use((req, res) => {
+  res.status(404).json({ message: "Route not found" });
+});
+
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
 });
