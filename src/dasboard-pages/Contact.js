@@ -49,14 +49,9 @@ const Contact = () => {
     try {
       const payload = { ...formData, course: selectedCourse };
       console.log(payload);
-      // const response = await axios.post("/api/contact", payload, {
-      const response = await axios.post(
-        "http://localhost:4000/api/contact",
-        payload,
-        {
-          headers: { "Content-Type": "application/json" },
-        }
-      );
+        const response = await axios.post("/api/contact", payload, {
+        headers: { "Content-Type": "application/json" },
+      });
 
       toast.success(response.data.message);
       // Reset form
