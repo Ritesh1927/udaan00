@@ -6,7 +6,7 @@ import "../carousel/Carousel.css";
 import Banner5 from "../../assets/udanbanner06.png";
 import Banner2 from "../../assets/Sirimg01.png";
 import Banner3 from "../../assets/banner003.png";
-import Banner4 from "../../assets/Banner05.png";
+import Banner4 from "../../assets/universities100.png";
 import Careercycle from "../carrercycle/Stepcircle";
 
 const Carousel = () => {
@@ -109,14 +109,15 @@ const Carousel = () => {
             </div>
             <div className="img-discription-link">
               <h1 className="banner-heading">
-                Dream, Discover & Conquer with{" "}
-                <span className="company-name">Udaan360</span>
+                Embark on a Global Academic Journey with
+                <span className="company-name"> Udaan360</span>
               </h1>
 
-              <h1 className="banner-heading"> Your Study Abroad Partner </h1>
+              {/* <h1 className="banner-heading"> Your Study Abroad Partner </h1> */}
               <p className="banner-content">
-                Ready to start your overseas education journey? Reach out to one
-                of Udaan360 expert country counselors today!
+                At Udaan360, we are dedicated to transforming your aspirations
+                of studying abroad into reality. Tailor counseling to align your
+                academic goals with the right international programs
               </p>
               <button className="Explore-btn">
                 <a
