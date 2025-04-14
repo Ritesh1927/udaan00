@@ -43,7 +43,7 @@ const Carousel = () => {
                 <a
                   className="Explore-btn-a"
                   target="blank"
-                  href="https://wa.me/8700105214?text=Hello How can i help you"
+                  href="https://wa.me/917355308287?text=Hello%20How%20can%20I%20help%20you"
                 >
                   Explore Now
                 </a>
@@ -70,7 +70,7 @@ const Carousel = () => {
                 <a
                   className="Explore-btn-a"
                   target="blank"
-                  href="https://wa.me/8700105214?text=Hello How can i help you"
+                  href="https://wa.me/917355308287?text=Hello%20How%20can%20I%20help%20you"
                 >
                   Explore Now
                 </a>
@@ -94,7 +94,7 @@ const Carousel = () => {
                 <a
                   className="Explore-btn-a"
                   target="blank"
-                  href="https://wa.me/8700105214?text=Hello How can i help you"
+                  href="https://wa.me/917355308287?text=Hello%20How%20can%20I%20help%20you"
                 >
                   Explore Now
                 </a>
@@ -123,7 +123,7 @@ const Carousel = () => {
                 <a
                   className="Explore-btn-a"
                   target="blank"
-                  href="https://wa.me/8700105214?text=Hello How can i help you"
+                  href="https://wa.me/917355308287?text=Hello%20How%20can%20I%20help%20you"
                 >
                   Explore Now
                 </a>
@@ -149,7 +149,7 @@ const Carousel = () => {
                 <a
                   className="Explore-btn-a"
                   target="blank"
-                  href="https://wa.me/8700105214?text=Hello How can i help you"
+                  href="https://wa.me/917355308287?text=Hello%20How%20can%20I%20help%20you"
                 >
                   Explore Now
                 </a>
