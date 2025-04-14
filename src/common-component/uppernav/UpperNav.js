@@ -8,8 +8,8 @@ const UpperNav = () => {
       <div className="upper-whatsup-strip inline">
         <div className="marquee-container">
           <p className="uppernav-content animate-marquee">
-            <span className="upnav-no">25,000+</span> students successfully
-            counselled
+            <span className="upnav-no">25,000+</span> <br /> students
+            successfully counselled
           </p>
         </div>
         {/* <button className="whatsup-btn">

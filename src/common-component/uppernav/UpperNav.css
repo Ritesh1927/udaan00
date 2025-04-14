@@ -1,6 +1,6 @@
 .upper-whatsup-strip {
   background-color: #5e7fbd;
-  height: 55px;
+  height: auto;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -31,6 +31,8 @@
 
 .uppernav-content {
   font-size: 30px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .whatsup-btn {

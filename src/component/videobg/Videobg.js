@@ -15,7 +15,7 @@ const Videobg = () => {
 
           {/* Thumbnail and Play Button wrapped in link */}
           <a
-            href="https://youtu.be/EtV8yIqYLw4?si=TMzlAfUOnzZfn4s8" // Replace with your YouTube link
+            href="https://youtu.be/Le6FsQUx-fQ?si=cFYF6Uy_A-uO-e5k" // Replace with your YouTube link
             target="_blank"
             rel="noopener noreferrer"
             className="video-box"

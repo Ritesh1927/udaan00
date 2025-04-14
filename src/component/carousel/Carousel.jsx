@@ -43,7 +43,8 @@ const Carousel = () => {
                 <a
                   className="Explore-btn-a"
                   target="blank"
-                  href="https://wa.me/917355308287?text=Hello%20How%20can%20I%20help%20you"
+                  href="https://wa.me/917355308287?text=hello%20%2C%20i%20want%20to%20know%20more
+"
                 >
                   Explore Now
                 </a>
@@ -58,19 +59,20 @@ const Carousel = () => {
             </div>
             <div className="img-discription-link">
               <h1 className="banner-heading">
-                25,000+ Students counselled{" "}
+                25,000+ Students counselled <br />
                 <span className="company-name">Ankur Tyagi</span>
               </h1>
 
               <p className="banner-content">
-                Extensive experience in guiding over 25,000 students towards
-                fulfilling their academic and professional goals.​
+                20 years of extensive experience in guiding over 25,000 students
+                towards fulfilling their academic and professional goals.​
               </p>
               <button className="Explore-btn">
                 <a
                   className="Explore-btn-a"
                   target="blank"
-                  href="https://wa.me/917355308287?text=Hello%20How%20can%20I%20help%20you"
+                  href="https://wa.me/917355308287?text=hello%20%2C%20i%20want%20to%20know%20more
+"
                 >
                   Explore Now
                 </a>
@@ -94,7 +96,8 @@ const Carousel = () => {
                 <a
                   className="Explore-btn-a"
                   target="blank"
-                  href="https://wa.me/917355308287?text=Hello%20How%20can%20I%20help%20you"
+                  href="https://wa.me/917355308287?text=hello%20%2C%20i%20want%20to%20know%20more
+"
                 >
                   Explore Now
                 </a>
@@ -123,7 +126,8 @@ const Carousel = () => {
                 <a
                   className="Explore-btn-a"
                   target="blank"
-                  href="https://wa.me/917355308287?text=Hello%20How%20can%20I%20help%20you"
+                  href="https://wa.me/917355308287?text=hello%20%2C%20i%20want%20to%20know%20more
+"
                 >
                   Explore Now
                 </a>
@@ -149,7 +153,7 @@ const Carousel = () => {
                 <a
                   className="Explore-btn-a"
                   target="blank"
-                  href="https://wa.me/917355308287?text=Hello%20How%20can%20I%20help%20you"
+                  href="https://wa.me/917355308287?text=hello%20%2C%20i%20want%20to%20know%20more"
                 >
                   Explore Now
                 </a>

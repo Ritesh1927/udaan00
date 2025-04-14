@@ -102,7 +102,7 @@ const Footer = () => {
               <i className="right-icons-set">
                 <FaChevronRight />
               </i>
-              <Link className="study-links"> Testimoanials </Link>
+              <Link className="study-links"> Testimonials </Link>
             </li>
             <li>
               <i className="right-icons-set">
