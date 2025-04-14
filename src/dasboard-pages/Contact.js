@@ -49,7 +49,7 @@ const Contact = () => {
     try {
       const payload = { ...formData, course: selectedCourse };
       console.log(payload);
-        const response = await axios.post("/api/contact", payload, {
+      const response = await axios.post("/api/contact", payload, {
         headers: { "Content-Type": "application/json" },
       });
 
@@ -140,7 +140,7 @@ const Contact = () => {
               name="percentage"
               value={formData.percentage}
               onChange={handleInputChange}
-              placeholder="Percentage"
+              placeholder="12th Percentage"
               className="register-input-section"
               required
             />
