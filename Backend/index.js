@@ -11,8 +11,16 @@ app.use(express.json());
 
 app.use(
   cors({
-    // origin:["http://udan360.in","https://www.udaan360.in"]
-    origin: "http://localhost:3000",
+    origin: false 
+  ? [
+      "http://localhost:3000"
+    ]
+  : [
+      "https://udaan360.in",
+      "https://www.udaan360.in",
+      "https://udaan360.com",
+      "https://www.udaan360.com"
+    ],
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true, // Allows cookies or credentials
