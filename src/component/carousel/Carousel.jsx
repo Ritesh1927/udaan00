@@ -58,7 +58,7 @@ const Carousel = () => {
             </div>
             <div className="img-discription-link">
               <h1 className="banner-heading">
-                25,000+ Students Counseled{" "}
+                25,000+ Students counselled{" "}
                 <span className="company-name">Ankur Tyagi</span>
               </h1>
 
