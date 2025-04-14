@@ -26,13 +26,17 @@
     color: #222;
 }
 
+.heading-about {
+    text-align: center;
+}
+
 .about-sub-main-part1 {
     width: 100%;
     height: fit-content;
     margin: 40px 0;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    /* align-items: center; */
     gap: 30px;
 
 }
@@ -276,7 +280,7 @@
 }
 
 .card-img-wrapper {
-    width: 300px;
+    width: 350px;
     height: 400px;
 }
 

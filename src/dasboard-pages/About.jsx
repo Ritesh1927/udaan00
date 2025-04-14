@@ -14,7 +14,7 @@ const About = () => {
         <img src={Abtbanner} alt="" />
       </div>
       <div className="container about-main-container">
-        <h1 className="about-header">About us </h1>
+        <h1 className="about-header text-center ">About us </h1>
       </div>
       <div className=" container about-main-container">
         <div className="about-sub-main">
@@ -36,6 +36,28 @@ const About = () => {
                 the timeless teachings of Lord Krishna, we empower students and
                 professionals to navigate their educational and career
                 aspirations with clarity, confidence, and integrity.
+              </p>
+              <p>
+                At Udaan360, we are committed to empowering individuals by
+                providing comprehensive educational and career development
+                services. Our platform offers a seamless journey from academic
+                counseling and admissions guidance to skill enhancement and
+                global career opportunities, particularly in healthcare and IT.​
+              </p>
+              <h2 className="heading-about mb10">Our Mission</h2>
+              <p>
+                To bridge the gap between education and employment by offering
+                integrated solutions that cater to the diverse needs of students
+                and professionals.​ <br />
+                Career Placement: Assistance in finding suitable employment
+                opportunities, with a focus on the healthcare and IT
+                industries.​
+              </p>
+              <h2 className="heading-about mb10">Our Vision</h2>
+              <p>
+                To be a trusted partner in every individual's educational and
+                professional journey, facilitating success through tailored
+                support and resources.​
               </p>
             </div>
           </div>
@@ -106,15 +128,15 @@ const About = () => {
 
                   <div className="card__header-text">
                     <h3 className="card__title">Kunal Handu</h3>
-                    <h5>Director</h5>
+                    <h5>Director & Placements</h5>
                   </div>
                 </div>
                 <p className="card__description">
-                  With 18 years of experience in education sector, my mission
-                  has always been to empower students with the right guidance
-                  and opportunities. At Udaan360, I am committed to provide
-                  ethical counselling, quality education, and global career
-                  pathways.
+                  Prolific recruitment professional with over 19+ years of total
+                  experience completely in core recruitment. Have managed
+                  mid-management and leadership level hiring across different
+                  domains and skill areas at both – an individual contributor
+                  and business manager capacity.
                 </p>
               </div>
             </div>

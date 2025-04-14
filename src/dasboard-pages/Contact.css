@@ -121,7 +121,7 @@
 }
 
 .register-input-section {
-    background-color: transparent;
+    background-color: transparent !important;
     height: 40px;
     border: none;
     width: 100%;

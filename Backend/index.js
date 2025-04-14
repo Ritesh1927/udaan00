@@ -7,12 +7,17 @@ const connectDB = require("./Connection/Database");
 // Middleware
 app.use(bodyParser.json());
 app.use(express.json());
-app.use(cors({
-  origin: ["https://udaan360.in", "https://www.udaan360.in"],
-  methods: ["GET", "POST", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true
-}));
+// const cors = require("cors");
+
+app.use(
+  cors({
+    // origin:["http://udan360.in","https://www.udaan360.in"]
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true, // Allows cookies or credentials
+  })
+);
 
 const Contactschema = require("./Schema/Contactschema");
 require("./Connection/Database");
@@ -24,7 +29,7 @@ connectDB();
 app.post("/api/contact", async (req, res) => {
   try {
     const { name, email, mobile, percentage, course } = req.body;
-    
+
     // Validation
     if (!name || !email || !mobile || !percentage) {
       return res.status(400).json({ message: "All fields are required" });
@@ -35,14 +40,23 @@ app.post("/api/contact", async (req, res) => {
       return res.status(400).json({ message: "Email already exists" });
     }
 
-    const newContact = new Contactschema({ name, email, mobile, percentage, course });
+    const newContact = new Contactschema({
+      name,
+      email,
+      mobile,
+      percentage,
+      course,
+    });
     await newContact.save();
-    
-    res.status(201).json({ message: "Registration successful!" });
 
+    res.status(201).json({ message: "Registration successful!" });
   } catch (error) {
-    console.error("Server error:", error);
-    res.status(500).json({ message: "Internal server error" });
+    // console.error("Server error:", error);
+    // res.status(500).json({ message: "Internal server error" });
+    // res.send(error)
+    const messages = Object.values(error.errors).map((err) => err.message);
+    console.log("Validation Errors:", messages);
+    res.status(400).json({ message: messages.join(", ") });
   }
 });
 
@@ -57,6 +71,6 @@ app.use((req, res) => {
 });
 
 const PORT = process.env.PORT || 4000;
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
 });

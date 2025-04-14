@@ -120,9 +120,15 @@ const Footer = () => {
               </i>
               <p>Golden I , Greater Noida West UttarPradesh,India </p>
             </div>
-            <p className="australia-address">
-              36 Johnson Drive , Glen Waverley Melbourne , Victoria , Australia
-            </p>
+            <div className="location-section">
+              <i className="location-icon">
+                <FaLocationDot />
+              </i>
+              <p className="">
+                36 Johnson Drive , Glen Waverley Melbourne , Victoria ,
+                Australia
+              </p>
+            </div>
 
             <div className="location-section">
               <i className="mail-icon">

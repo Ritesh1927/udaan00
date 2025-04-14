@@ -111,11 +111,16 @@
     width: 80%;
     border-radius: 13px;
     padding: 10px;
-    height: 22vh;
+    height: fit-content;
     margin-top: 30px;
 }
 
-.sir-img-wrap {}
+.last-img-slider img {
+    height: 100%;
+    object-fit: contain;
+}
+
+
 
 @media (max-width:1024px) {
     .image-banner-container {
@@ -180,6 +185,10 @@
         font-size: 18px;
         margin-top: 8px;
         width: 95%;
-        height: fit-content;
+
+    }
+
+    .slick-slider {
+        height: 70vh;
     }
 }

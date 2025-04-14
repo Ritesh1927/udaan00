@@ -36,7 +36,7 @@ const Contact = () => {
   const [selectedCourse, setSelectedCourse] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const courses = ["BCA", "MCA", "B.TECH", "M.TECH", "BBA", "MBA"];
+  const courses = ["BCA", "MCA", "B.TECH", "M.TECH", "BBA", "MBA", "MBBS"];
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -48,8 +48,12 @@ const Contact = () => {
 
     try {
       const payload = { ...formData, course: selectedCourse };
-      
+      console.log(payload);
       const response = await axios.post("/api/contact", payload, {
+        // const response = await axios.post(
+        //   "http://localhost:4000/api/contact",
+        //   payload,
+        //   {
         headers: { "Content-Type": "application/json" },
       });
 
@@ -61,8 +65,8 @@ const Contact = () => {
         mobile: "",
         percentage: "",
       });
-      setSelectedCourse("");
 
+      setSelectedCourse("");
     } catch (error) {
       const errorMsg = error.response?.data?.message || "Submission failed";
       toast.error(errorMsg);
@@ -75,97 +79,127 @@ const Contact = () => {
     <div className="Register-p-cont">
       <div className="register-form-container">
         <h4 className="contact-heading">Register for counselling</h4>
-        
+
         <form onSubmit={handleSubmit}>
           {/* Name Field */}
-          <div className="form-fill-section">
-            <IoPersonOutline />
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              placeholder="Full Name"
-              required
-            />
-          </div>
+          <div className="regiter-elements-content ">
+            <div className="form-fill-section upper-section-form">
+              <i>
+                <IoPersonOutline />
+              </i>
 
-          {/* Mobile Field */}
-          <div className="form-fill-section">
-            <LuPhone />
-            <input
-              type="tel"
-              name="mobile"
-              value={formData.mobile}
-              onChange={handleInputChange}
-              placeholder="Mobile Number"
-              required
-            />
-          </div>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                placeholder="Full Name"
+                className="register-input-section"
+                required
+              />
+            </div>
 
+            {/* Mobile Field */}
+            <div className="form-fill-section upper-section-form">
+              <i>
+                <LuPhone />
+              </i>
+
+              <input
+                type="tel"
+                name="mobile"
+                value={formData.mobile}
+                onChange={handleInputChange}
+                placeholder="Mobile Number"
+                className="register-input-section"
+                required
+              />
+            </div>
+          </div>
           {/* Email Field */}
           <div className="form-fill-section">
-            <IoMailOutline />
+            <i>
+              <IoMailOutline />
+            </i>
+
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleInputChange}
               placeholder="Email"
+              className="register-input-section"
               required
             />
           </div>
 
           {/* Percentage Field */}
           <div className="form-fill-section">
-            <TbCirclePercentage />
+            <i>
+              <TbCirclePercentage />
+            </i>
+
             <input
               type="number"
               name="percentage"
               value={formData.percentage}
               onChange={handleInputChange}
               placeholder="Percentage"
+              className="register-input-section"
               required
             />
           </div>
 
           {/* Course Dropdown */}
           <select
+            className="course-dropdown"
             value={selectedCourse}
             onChange={(e) => setSelectedCourse(e.target.value)}
             required
           >
-            <option value="" disabled>Select Course</option>
-            {courses.map(course => (
-              <option key={course} value={course}>{course}</option>
+            <option className="course-dropdown-option" value="" disabled>
+              Select Course
+            </option>
+            {courses.map((course) => (
+              <option key={course} value={course}>
+                {course}
+              </option>
             ))}
           </select>
-
-          <button type="submit" disabled={isSubmitting}>
-            {isSubmitting ? "Submitting..." : "Register Now"}
-          </button>
+          <div className="register-btn-container">
+            <button
+              className="Register-b-wrap"
+              type="submit"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Submitting..." : "Register Now"}
+            </button>
+          </div>
         </form>
       </div>
 
-	<div class="parallax-location"></div>
-        <div className="map-location-container container">
-          <MapLocation />
-          <div className="written-address-container">
-            <h1 className="mb10">India</h1>
-            <p className="map-address">
-              <i className="location-icon-page">
-                <FaLocationDot />
-              </i>
-              Plot No 926 , Tower 3 Golden I , Greater Noida West UttarPradesh
-            </p>
-            <h1 className="mb10">Aurtralia</h1>
-            <p className="map-address aus-address">
-              36 Johnson Drive , Glen Waverley Melbourne , Victoria
-            </p>
-          </div>
+      <div class="parallax-location"></div>
+      <div className="map-location-container container">
+        <MapLocation />
+        <div className="written-address-container">
+          <h1 className="mb10">India</h1>
+          <p className="map-address">
+            <i className="location-icon-page">
+              <FaLocationDot />
+            </i>
+            Plot No 926 , Tower 3 Golden I , Greater Noida West UttarPradesh
+          </p>
+          <h1 className="mb10">Aurtralia</h1>
+          <p className="map-address aus-address">
+            <i className="location-icon-page">
+              <FaLocationDot />
+            </i>
+            36 Johnson Drive , Glen Waverley Melbourne , Victoria
+          </p>
         </div>
+      </div>
       {/* Keep your existing map and address components */}
-      <ToastContainer position="bottom-right" />
+      <ToastContainer position="top-right" />
     </div>
   );
 };

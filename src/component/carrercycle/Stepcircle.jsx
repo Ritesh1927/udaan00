@@ -42,9 +42,9 @@ const Stepcircle = () => {
 
         {/* Center text */}
         <div className="center-text">
-          Your Portfolio
+          Building Bridges To
           <br />
-          Our Responsibility
+          Your FUTURE
         </div>
 
         {/* Steps */}
