@@ -28,7 +28,10 @@ const Footer = () => {
             </p>
             <p className="Find-us-links">Find us on</p>
             <div className="social-media-links">
-              <a className="social-link-wrap" href="">
+              <a
+                className="social-link-wrap"
+                href="https://www.linkedin.com/company/udaan-eduservices/"
+              >
                 <i className="social-links">
                   <FaLinkedin />
                 </i>
