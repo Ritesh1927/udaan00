@@ -11,6 +11,8 @@ app.use(express.json());
 
 app.use(
   cors({
+    // false : for production
+    // true : for development
     origin: false 
   ? [
       "http://localhost:3000"
