@@ -10,10 +10,25 @@
     border-radius: 50%;
 }
 
+
 .error-wrapper {
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width:768px) {
+    .error-img-container {
+        padding: 20px;
+        width: 70%;
+        height: auto;
+    }
+}
+
+@media (max-width:550px) {
+    .error-img-container {
+        width: 100%;
+    }
 }

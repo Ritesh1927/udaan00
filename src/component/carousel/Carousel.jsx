@@ -17,7 +17,7 @@ const Carousel = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
-    autoplay: false,
+    autoplay: true,
     swipeToSlide: true,
   };
 

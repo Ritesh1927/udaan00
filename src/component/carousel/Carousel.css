@@ -1,14 +1,10 @@
-/* carousel.css */
 .slick-slider {
     position: relative;
-    /* margin: 20px auto; */
-    /* max-width: 500px; */
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Slides */
 .slick-slide img {
     width: 100%;
     height: auto;
@@ -16,7 +12,6 @@
     object-fit: cover;
 }
 
-/* Dots */
 .slick-dots {
     bottom: 10px;
 }
@@ -32,7 +27,6 @@
     opacity: 1;
 }
 
-/* Arrows */
 .slick-prev,
 .slick-next {
     width: 40px;
@@ -48,7 +42,6 @@
     font-size: 25px;
     color: #333;
     opacity: 1;
-    padding-top: 2px;
 }
 
 .slick-prev {
@@ -61,24 +54,21 @@
 
 .image-banner-container {
     display: flex;
-    width: 100%;
-    padding: 30px;
-    /* margin: auto; */
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
+    padding: 30px;
     font-family: "Hanken Grotesk", sans-serif;
 }
 
 .Banner-img-wrapper {
-    width: 40%;
-    /* height: 365px; */
-}
-
-.Banner-img-wrapper img {
-    width: 100%;
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: center;
 }
 
 .img-discription-link {
-    width: 50%;
+    flex: 1 1 50%;
     padding: 20px;
 }
 
@@ -86,7 +76,7 @@
     border: none;
     padding: 10px 26px;
     font-size: 20px;
-    background: #8565AA;
+    background: #8565aa;
     color: #fff;
     margin-top: 30px;
     border-radius: 8px;
@@ -94,11 +84,11 @@
 
 .Explore-btn-a {
     color: #fff;
-    width: 100%;
+    text-decoration: none;
 }
 
 .company-name {
-    color: #8565AA;
+    color: #8565aa;
 }
 
 .banner-heading {
@@ -108,23 +98,16 @@
 .banner-content {
     font-size: 24px;
     background-color: #e88c8c;
-    width: 80%;
-    border-radius: 13px;
     padding: 10px;
-    height: fit-content;
-    margin-top: 30px;
+    border-radius: 12px;
+    margin-top: 20px;
 }
-
-.last-img-slider img {
-    height: 100%;
-    object-fit: contain;
-}
-
-
 
 @media (max-width:1024px) {
     .image-banner-container {
-        width: 95%;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        padding: 20px;
     }
 
     .banner-heading {
@@ -139,56 +122,35 @@
 @media (max-width:768px) {
     .image-banner-container {
         flex-direction: column;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
+        padding: 15px;
     }
 
-    .Banner-img-wrapper {
-        width: 80%;
-        display: flex;
-        justify-content: center;
-        height: fit-content;
-    }
-
+    .Banner-img-wrapper,
     .img-discription-link {
-        width: 80%;
-        margin: auto;
+        width: 100%;
+        /* text-align: center; */
     }
 }
 
 @media (max-width:550px) {
     .img-discription-link {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .image-banner-container {
         padding: 10px;
     }
 
     .Banner-img-wrapper {
-        width: 85%;
+        width: 90%;
     }
 
     .banner-heading {
         font-size: 25px;
     }
 
-    .Explore-btn {
-        margin-top: 8px;
-        padding: 7px 14px;
-        font-size: 16px;
-    }
-
     .banner-content {
         font-size: 18px;
-        margin-top: 8px;
-        width: 95%;
-
     }
 
-    .slick-slider {
-        height: 90vh;
+    .Explore-btn {
+        padding: 8px 16px;
+        font-size: 16px;
     }
 }

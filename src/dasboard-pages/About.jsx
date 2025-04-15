@@ -83,12 +83,12 @@ const About = () => {
                   </div>
                 </div>
                 <p className="card__description">
-                  With more than 20 years in education in domain in India, I
-                  have worked with top academic institutions like FIITJEE, RAO
-                  IIT, Co-Founder VISTAAR, and also as a CEO to FTV-SOPA. Be a
-                  part of my journey with Udaan360, where ethical education
-                  paves the way for success. Together, let's transform dreams
-                  into reality.
+                  With over 20 years of experience in the education domain in
+                  India, I have worked with top academic institutions like
+                  FIITJEE, RAO IIT, co-founded VISTAAR, and served as the CEO of
+                  FTV-SOPA. Join me on my journey with Udaan360, where ethical
+                  education paves the way for success. Together, let's transform
+                  dreams into reality.
                 </p>
               </div>
             </div>

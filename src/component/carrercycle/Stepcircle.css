@@ -58,6 +58,8 @@
 
 
 .cycle-step {
+  display: flex;
+  justify-content: center;
   position: absolute;
   width: 120px;
   max-width: 30vw;
@@ -211,14 +213,14 @@
   .cycle-step {
     font-size: 1rem;
     padding: 8px;
-    width: 100px;
-    max-width: 25vw;
+    /* width: 100px; */
+    max-width: 28vw;
   }
 
   .center-text {
     font-size: 0.9rem;
-    width: 130px;
-    height: 130px;
+    width: 115px;
+    height: 115px;
   }
 
   .monkey-image {
