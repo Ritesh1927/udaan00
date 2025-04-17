@@ -9,23 +9,12 @@ app.use(bodyParser.json());
 app.use(express.json());
 // const cors = require("cors");
 
-app.use(
-  cors({
-    // false : for production
-    // true : for development
-    origin: true
-      ? ["http://localhost:3000"]
-      : [
-          "https://udaan360.in",
-          "https://www.udaan360.in",
-          "https://udaan360.com",
-          "https://www.udaan360.com",
-        ],
-    methods: ["GET", "POST", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true, // Allows cookies or credentials
-  })
-);
+app.use(cors({
+  origin: process.env.NODE_ENV === 'development' 
+    ? process.env.FRONTEND_DEV_URL 
+    : process.env.FRONTEND_PROD_URLS.split(','),
+  credentials: true
+}));
 
 const Contactschema = require("./Schema/Contactschema");
 require("./Connection/Database");
