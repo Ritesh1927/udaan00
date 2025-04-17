@@ -11,7 +11,7 @@ const CustomDropdown = () => {
   const options = [
     { label: "Admisson In India ", path: "/admisson" },
     { label: "SIP", path: "/sip" },
-    { label: "Abroad Study ", path: "/aboradstudy" },
+    { label: "Study Abroad", path: "/aboradstudy" },
     { label: "Skilled Migration ", path: "/skillmigration" },
   ];
 

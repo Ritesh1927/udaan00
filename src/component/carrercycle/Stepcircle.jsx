@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Stepcircle.css";
-import monkeyImage from "../../assets/monkey.png";
 
 const Stepcircle = () => {
   const navigate = useNavigate();

@@ -90,13 +90,14 @@
     background-position: bottom right;
 }
 
+/* 
 .background-set-forward {
     background-image: url(../assets/Formforward4.png);
     background-repeat: no-repeat;
     background-position: bottom;
     width: 100%;
     height: 50vh;
-}
+} */
 
 .parallax {
 

@@ -13,16 +13,14 @@ app.use(
   cors({
     // false : for production
     // true : for development
-    origin: false 
-  ? [
-      "http://localhost:3000"
-    ]
-  : [
-      "https://udaan360.in",
-      "https://www.udaan360.in",
-      "https://udaan360.com",
-      "https://www.udaan360.com"
-    ],
+    origin: true
+      ? ["http://localhost:3000"]
+      : [
+          "https://udaan360.in",
+          "https://www.udaan360.in",
+          "https://udaan360.com",
+          "https://www.udaan360.com",
+        ],
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true, // Allows cookies or credentials

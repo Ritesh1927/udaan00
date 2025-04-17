@@ -1,6 +1,10 @@
 /* General Styles */
 nav {
     font-family: "Hanken Grotesk", sans-serif;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 100;
 }
 
 li {
@@ -124,7 +128,7 @@ li {
         flex-direction: column;
         background: white;
         position: absolute;
-        top: 150px;
+        top: 100px;
         left: 0;
         width: 100%;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
