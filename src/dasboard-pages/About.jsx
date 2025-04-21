@@ -129,7 +129,7 @@ const About = () => {
 
                   <div className="card__header-text">
                     <h3 className="card__title">Kunal Handu</h3>
-                    <h5>Director & Placements</h5>
+                    <h5>Director Placements</h5>
                   </div>
                 </div>
                 <p className="card__description">

@@ -13,6 +13,7 @@ import Sip from "./dasboard-pages/Sip";
 import AbroadStudy from "./dasboard-pages/AbroadStudy";
 import Home from "./dasboard-pages/Home";
 import SkillMigration from "./dasboard-pages/SkillMigration";
+import Testimonials from "./dasboard-pages/Testimonials";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -27,6 +28,7 @@ root.render(
           <Route path="/admisson" element={<Admisson />} />
           <Route path="/sip" element={<Sip />} />
           <Route path="/aboradstudy" element={<AbroadStudy />} />
+          <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/skillmigration" element={<SkillMigration />} />
         </Route>
         <Route path="*" element={<Error />}></Route>

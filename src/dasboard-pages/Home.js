@@ -11,6 +11,7 @@ import Homeimg from "../assets/home.png";
 import Videobg from "../component/videobg/Videobg";
 import WhatsAppButton from "../common-component/whatsup/WhatsAppButton";
 import Carousel from "../component/carousel/Carousel";
+import TestimonialSlider from "./Testimonials";
 
 const Home = () => {
   return (
@@ -120,8 +121,7 @@ const Home = () => {
       <div className="parallax mt40"></div>
       <WhatsAppButton />
       <div className="Form-forward-container">
-        {/* /////////// form forward container ///////////// */}
-        {/* <div className="background-set-forward"></div> */}
+        <TestimonialSlider />
       </div>
     </>
   );

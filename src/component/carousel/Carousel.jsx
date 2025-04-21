@@ -13,7 +13,7 @@ const Carousel = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
@@ -22,7 +22,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto">
+    <div className="udan-carousel">
       <Slider {...settings}>
         <div className="">
           <div className="image-banner-container">

@@ -1,34 +1,42 @@
-.slick-slider {
+/* Main container */
+.udan-carousel {
+    width: 100%;
+    /* max-width: 768px; */
+    margin: 0 auto;
+}
+
+/* Slick core overrides */
+.udan-carousel .slick-slider {
     position: relative;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.slick-slide img {
+.udan-carousel .slick-slide img {
     width: 100%;
     height: auto;
     border-radius: 12px;
     object-fit: cover;
 }
 
-.slick-dots {
+.udan-carousel .slick-dots {
     bottom: 10px;
 }
 
-.slick-dots li button:before {
+.udan-carousel .slick-dots li button:before {
     font-size: 12px;
     color: #ccc;
     opacity: 0.8;
 }
 
-.slick-dots li.slick-active button:before {
+.udan-carousel .slick-dots li.slick-active button:before {
     color: #000;
     opacity: 1;
 }
 
-.slick-prev,
-.slick-next {
+.udan-carousel .slick-prev,
+.udan-carousel .slick-next {
     width: 40px;
     height: 40px;
     z-index: 1;
@@ -37,22 +45,23 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
-.slick-prev:before,
-.slick-next:before {
+.udan-carousel .slick-prev:before,
+.udan-carousel .slick-next:before {
     font-size: 25px;
     color: #333;
     opacity: 1;
 }
 
-.slick-prev {
+.udan-carousel .slick-prev {
     left: 10px;
 }
 
-.slick-next {
+.udan-carousel .slick-next {
     right: 10px;
 }
 
-.image-banner-container {
+/* Banner layout */
+.udan-carousel .image-banner-container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -61,18 +70,18 @@
     font-family: "Hanken Grotesk", sans-serif;
 }
 
-.Banner-img-wrapper {
+.udan-carousel .Banner-img-wrapper {
     flex: 1 1 40%;
     display: flex;
     justify-content: center;
 }
 
-.img-discription-link {
+.udan-carousel .img-discription-link {
     flex: 1 1 50%;
     padding: 20px;
 }
 
-.Explore-btn {
+.udan-carousel .Explore-btn {
     border: none;
     padding: 10px 26px;
     font-size: 20px;
@@ -82,20 +91,20 @@
     border-radius: 8px;
 }
 
-.Explore-btn-a {
+.udan-carousel .Explore-btn-a {
     color: #fff;
     text-decoration: none;
 }
 
-.company-name {
+.udan-carousel .company-name {
     color: #8565aa;
 }
 
-.banner-heading {
+.udan-carousel .banner-heading {
     font-size: 45px;
 }
 
-.banner-content {
+.udan-carousel .banner-content {
     font-size: 24px;
     background-color: #e88c8c;
     padding: 10px;
@@ -103,53 +112,53 @@
     margin-top: 20px;
 }
 
-@media (max-width:1024px) {
-    .image-banner-container {
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .udan-carousel .image-banner-container {
         flex-direction: row;
         flex-wrap: nowrap;
         padding: 20px;
     }
 
-    .banner-heading {
+    .udan-carousel .banner-heading {
         font-size: 38px;
     }
 
-    .banner-content {
+    .udan-carousel .banner-content {
         font-size: 20px;
     }
 }
 
-@media (max-width:768px) {
-    .image-banner-container {
+@media (max-width: 768px) {
+    .udan-carousel .image-banner-container {
         flex-direction: column;
         padding: 15px;
     }
 
-    .Banner-img-wrapper,
-    .img-discription-link {
+    .udan-carousel .Banner-img-wrapper,
+    .udan-carousel .img-discription-link {
         width: 100%;
-        /* text-align: center; */
     }
 }
 
-@media (max-width:550px) {
-    .img-discription-link {
+@media (max-width: 550px) {
+    .udan-carousel .img-discription-link {
         padding: 10px;
     }
 
-    .Banner-img-wrapper {
+    .udan-carousel .Banner-img-wrapper {
         width: 90%;
     }
 
-    .banner-heading {
+    .udan-carousel .banner-heading {
         font-size: 25px;
     }
 
-    .banner-content {
+    .udan-carousel .banner-content {
         font-size: 18px;
     }
 
-    .Explore-btn {
+    .udan-carousel .Explore-btn {
         padding: 8px 16px;
         font-size: 16px;
     }

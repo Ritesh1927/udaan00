@@ -13,4 +13,155 @@
 
 .skill-migration-container-wrapper {
     font-family: "Hanken Grotesk", sans-serif;
+    margin-top: 30px;
+}
+
+/* Hide default slick arrow buttons */
+.slick-prev,
+.slick-next {
+    display: none !important;
+}
+
+.skill-migration {
+    font-size: 25px;
+    color: #222;
+    font-size: 700;
+}
+
+.skill-migrate-img-banner-container {
+    display: flex;
+    width: 100%;
+    gap: 30px;
+}
+
+.left-migrate-container {
+    width: 50%;
+}
+
+.left-migrate-container p {
+    margin-top: 10px;
+    line-height: 28px;
+}
+
+.skilled-migrate-first-img-container {
+    width: 50%;
+    height: 270px;
+}
+
+.skilled-migrate-first-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+}
+
+.hospital-img-content {
+    width: 50%;
+    height: 300px;
+}
+
+.migrate-benifits-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 30px;
+}
+
+.hospital-img-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+}
+
+.skilled-benefits-container {
+    width: 50%;
+}
+
+.skilled-benefits-container ul {
+    padding-left: 20px;
+}
+
+.skilled-benefits-container ul li {
+    list-style: disc;
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 300;
+}
+
+.destinations-or-job-opportunity {
+    margin-top: 30px;
+}
+
+.flaglogo {
+    width: 40px;
+}
+
+.img-and-job-content {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 25px;
+    margin-top: 12px;
+    /* white-space: nowrap; */
+}
+
+.img-and-job-content p {
+    font-size: 20px
+}
+
+.parallax-migration {
+    /* The image used */
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../assets/skilledbanner.jpg);
+    /* Set a specific height */
+    min-height: 300px;
+    margin-top: 30px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.our-service-migration {
+    width: 100%;
+    line-height: 30px;
+}
+
+@media (max-width:768px) {
+    .skill-migrate-img-banner-container {
+        display: block;
+    }
+
+    .left-migrate-container {
+        width: 100%;
+    }
+
+    .skilled-migrate-first-img-container {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .skilled-benefits-container {
+        order: 1 !important;
+        width: 100%;
+    }
+
+    .hospital-img-content {
+        order: 2 !important;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .migrate-benifits-container {
+        display: block;
+    }
+}
+
+@media (max-width:550px) {
+    .parallax-migration {
+        background-attachment: scroll;
+    }
 }
