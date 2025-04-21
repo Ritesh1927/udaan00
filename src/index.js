@@ -14,6 +14,7 @@ import AbroadStudy from "./dasboard-pages/AbroadStudy";
 import Home from "./dasboard-pages/Home";
 import SkillMigration from "./dasboard-pages/SkillMigration";
 import Testimonials from "./dasboard-pages/Testimonials";
+import Franchise from "./dasboard-pages/Franchise";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -30,6 +31,7 @@ root.render(
           <Route path="/aboradstudy" element={<AbroadStudy />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/skillmigration" element={<SkillMigration />} />
+          <Route path="/franchise" element={<Franchise />} />
         </Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>

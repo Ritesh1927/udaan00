@@ -52,6 +52,15 @@ const Navbar = () => {
               Contact us
             </Link>
           </li>
+          <li>
+            <Link
+              className="nav-elements"
+              to="/franchise"
+              onClick={() => setMenuOpen(false)}
+            >
+              Franchise
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
