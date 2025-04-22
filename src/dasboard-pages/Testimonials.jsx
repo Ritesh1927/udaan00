@@ -87,7 +87,7 @@ const TestimonialSlider = () => {
     speed: 300,
     arrows: true,
     slidesToShow: 3,
-    autoplay: false,
+    autoplay: true,
     slidesToScroll: 1,
     responsive: [
       {
