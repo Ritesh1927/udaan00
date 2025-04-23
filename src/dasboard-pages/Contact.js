@@ -1,18 +1,3 @@
-// Corrected import section (add this at the top of your file)
-/*import { 
-  IoPersonOutline,
-  IoMailOutline 
-} from "react-icons/io5";
-import { 
-  LuPhone 
-} from "react-icons/lu";
-import { 
-  TbCirclePercentage 
-} from "react-icons/tb";
-import { 
-  FaLocationDot 
-} from "react-icons/fa6";*/
-
 import { IoPersonOutline } from "react-icons/io5";
 import { IoMailOutline } from "react-icons/io5";
 import { LuPhone } from "react-icons/lu";
@@ -24,7 +9,8 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "./Contact.css";
 import MapLocation from "../component/map/MapLocation";
-// ... (keep your existing icon imports)
+
+// ... (imports section finished)
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -32,6 +18,9 @@ const Contact = () => {
     email: "",
     mobile: "",
     percentage: "",
+    appearedInExam: "no", // new field
+    examName: "", // new field
+    examPercentage: "" // new field
   });
   const [selectedCourse, setSelectedCourse] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -48,6 +37,11 @@ const Contact = () => {
 
     try {
       const payload = { ...formData, course: selectedCourse };
+      // If user didn't appear in exam, remove exam related fields from payload
+      if (formData.appearedInExam === "no") {
+        delete payload.examName;
+        delete payload.examPercentage;
+      }
       console.log(payload);
       const response = await axios.post('/api/contact', payload, {
         headers: { 'Content-Type': 'application/json' }
@@ -60,8 +54,10 @@ const Contact = () => {
         email: "",
         mobile: "",
         percentage: "",
+        appearedInExam: "no",
+        examName: "",
+        examPercentage: ""
       });
-
       setSelectedCourse("");
     } catch (error) {
       const errorMsg = error.response?.data?.message || "Submission failed";
@@ -162,6 +158,64 @@ const Contact = () => {
               </option>
             ))}
           </select>
+
+          {/* New Competitive Exam Field */}
+          <div className="exam-section">
+        <label className="exam-question">
+          Did you appear in any competitive exam?
+        </label>
+        <div className="exam-options">
+          <label>
+            <input
+              type="radio"
+              name="appearedInExam"
+              value="yes"
+              checked={formData.appearedInExam === "yes"}
+              onChange={handleInputChange}
+            />
+            Yes
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="appearedInExam"
+              value="no"
+              checked={formData.appearedInExam === "no"}
+              onChange={handleInputChange}
+            />
+            No
+          </label>
+        </div>
+
+        {/* Conditional fields for exam details */}
+        {formData.appearedInExam === "yes" && (
+          <>
+            <div className="form-fill-section">
+              <input
+                type="text"
+                name="examName"
+                value={formData.examName}
+                onChange={handleInputChange}
+                placeholder="Name of Exam"
+                className="register-input-section"
+                required={formData.appearedInExam === "yes"}
+              />
+            </div>
+            <div className="form-fill-section">
+              <input
+                type="number"
+                name="examPercentage"
+                value={formData.examPercentage}
+                onChange={handleInputChange}
+                placeholder="Percentage in Exam"
+                className="register-input-section"
+                required={formData.appearedInExam === "yes"}
+              />
+            </div>
+          </>
+        )}
+      </div>
+
           <div className="register-btn-container">
             <button
               className="Register-b-wrap"
@@ -173,6 +227,9 @@ const Contact = () => {
           </div>
         </form>
       </div>
+
+          {/* Form section Ends here ----------------------------------------------------- */}
+
 
       <div class="parallax-location"></div>
       <div className="map-location-container container">
@@ -194,7 +251,7 @@ const Contact = () => {
           </p>
         </div>
       </div>
-      {/* Keep your existing map and address components */}
+      
       <ToastContainer position="top-right" />
     </div>
   );

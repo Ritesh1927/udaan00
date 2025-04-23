@@ -218,6 +218,30 @@ option:hover {
     background-size: cover;
 }
 
+/* competitive exam field css ------------------------------------------------- */
+.exam-section {
+    margin: 15px 0;
+  }
+  
+  .exam-question {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .exam-options {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .exam-options label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+  }
+
 @media (max-width:768px) {
     .regiter-elements-content {
         display: block;
