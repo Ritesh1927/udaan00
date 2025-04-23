@@ -161,60 +161,60 @@ const Contact = () => {
 
           {/* New Competitive Exam Field */}
           <div className="exam-section">
-            <label className="exam-question">
-              Did you appear in any competitive exam?
-            </label>
-            <div className="exam-options">
-              <label>
-                <input
-                  type="radio"
-                  name="appearedInExam"
-                  value="yes"
-                  checked={formData.appearedInExam === "yes"}
-                  onChange={handleInputChange}
-                />
-                Yes
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="appearedInExam"
-                  value="no"
-                  checked={formData.appearedInExam === "no"}
-                  onChange={handleInputChange}
-                />
-                No
-              </label>
-            </div>
+        <label className="exam-question">
+          Did you appear in any competitive exam?
+        </label>
+        <div className="exam-options">
+          <label>
+            <input
+              type="radio"
+              name="appearedInExam"
+              value="yes"
+              checked={formData.appearedInExam === "yes"}
+              onChange={handleInputChange}
+            />
+            Yes
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="appearedInExam"
+              value="no"
+              checked={formData.appearedInExam === "no"}
+              onChange={handleInputChange}
+            />
+            No
+          </label>
+        </div>
 
-            {/* Conditional fields for exam details */}
-            {formData.appearedInExam === "yes" && (
-              <>
-                <div className="form-fill-section">
-                  <input
-                    type="text"
-                    name="examName"
-                    value={formData.examName}
-                    onChange={handleInputChange}
-                    placeholder="Name of Exam"
-                    className="register-input-section"
-                    required={formData.appearedInExam === "yes"}
-                  />
-                </div>
-                <div className="form-fill-section">
-                  <input
-                    type="number"
-                    name="examPercentage"
-                    value={formData.examPercentage}
-                    onChange={handleInputChange}
-                    placeholder="Percentage in Exam"
-                    className="register-input-section"
-                    required={formData.appearedInExam === "yes"}
-                  />
-                </div>
-              </>
-            )}
-          </div>
+        {/* Conditional fields for exam details */}
+        {formData.appearedInExam === "yes" && (
+          <>
+            <div className="form-fill-section">
+              <input
+                type="text"
+                name="examName"
+                value={formData.examName}
+                onChange={handleInputChange}
+                placeholder="Name of Exam"
+                className="register-input-section"
+                required={formData.appearedInExam === "yes"}
+              />
+            </div>
+            <div className="form-fill-section">
+              <input
+                type="number"
+                name="examPercentage"
+                value={formData.examPercentage}
+                onChange={handleInputChange}
+                placeholder="Percentage in Exam"
+                className="register-input-section"
+                required={formData.appearedInExam === "yes"}
+              />
+            </div>
+          </>
+        )}
+      </div>
 
           <div className="register-btn-container">
             <button
