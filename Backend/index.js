@@ -25,7 +25,7 @@ connectDB();
 // API Endpoint
 app.post("/api/contact", async (req, res) => {
   try {
-    const { name, email, mobile, percentage, course } = req.body;
+    const { name, email, mobile, percentage, course, appearedInExam, examName, examPercentage } = req.body;
 
     // Validation
     if (!name || !email || !mobile || !percentage) {
@@ -43,6 +43,8 @@ app.post("/api/contact", async (req, res) => {
       mobile,
       percentage,
       course,
+      appearedInExam,
+      ...(appearedInExam === 'yes' && { examName, examPercentage }) // Only include if appearedInExam is 'yes'
     });
     await newContact.save();
 
