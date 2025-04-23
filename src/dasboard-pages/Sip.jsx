@@ -1,7 +1,7 @@
 import React from "react";
 import "../../src/common-component/error/Error.css";
 import "../dasboard-pages/Sip.css";
-import Pwimg from "../assets/pwimg.png";
+import Pwimg from "../assets/classroom.png";
 import Sipbanner from "../assets/bookscomp.jpg";
 const Sip = () => {
   return (

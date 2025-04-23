@@ -133,26 +133,16 @@ const About = () => {
                   </div>
                 </div>
                 <p className="card__description">
-                  Prolific recruitment professional with over 19+ years of total
-                  experience completely in core recruitment. Have managed
-                  mid-management and leadership level hiring across different
-                  domains and skill areas at both – an individual contributor
-                  and business manager capacity.
+                  Serial entrepreneur, with interest in Technology, Talent
+                  Acquisition, Education and Sports, having exceptional sense
+                  for money and accountability to go along with hunger for
+                  numbers. Prolific recruitment pro with over 19+ years of total
+                  experience completely in core recruitment having managed mid
+                  management and leadership hiring across different domains,
+                  skill and geographies.
                 </p>
               </div>
             </div>
-
-            {/* <div className="about-sub-main-part2 card3 ">
-              <h3 className="founder-name mb3"></h3>
-              <p className="founder-designation"> </p>
-              <p className="founder-details-content">
-                With 18 years of experience in education sector, my mission has
-                always been to empower students with the right guidance and
-                opportunities. At Udaan360, I am committed to provide ethical
-                counselling, quality education, and global career pathways.
-              </p>
-
-            </div> */}
           </div>
         </div>
       </div>
