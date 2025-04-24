@@ -20,7 +20,7 @@ const Contact = () => {
     percentage: "",
     appearedInExam: "no", // new field
     examName: "", // new field
-    examPercentage: "" // new field
+    examPercentage: "", // new field
   });
   const [selectedCourse, setSelectedCourse] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -43,8 +43,8 @@ const Contact = () => {
         delete payload.examPercentage;
       }
       console.log(payload);
-      const response = await axios.post('/api/contact', payload, {
-        headers: { 'Content-Type': 'application/json' }
+      const response = await axios.post("/api/contact", payload, {
+        headers: { "Content-Type": "application/json" },
       });
 
       toast.success(response.data.message);
@@ -56,7 +56,7 @@ const Contact = () => {
         percentage: "",
         appearedInExam: "no",
         examName: "",
-        examPercentage: ""
+        examPercentage: "",
       });
       setSelectedCourse("");
     } catch (error) {
@@ -161,60 +161,64 @@ const Contact = () => {
 
           {/* New Competitive Exam Field */}
           <div className="exam-section">
-        <label className="exam-question">
-          Did you appear in any competitive exam?
-        </label>
-        <div className="exam-options">
-          <label>
-            <input
-              type="radio"
-              name="appearedInExam"
-              value="yes"
-              checked={formData.appearedInExam === "yes"}
-              onChange={handleInputChange}
-            />
-            Yes
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="appearedInExam"
-              value="no"
-              checked={formData.appearedInExam === "no"}
-              onChange={handleInputChange}
-            />
-            No
-          </label>
-        </div>
+            <label className="exam-question">
+              Did you appear in any competitive exam?
+            </label>
+            <div className="exam-options">
+              <label className="yes">
+                <input
+                  type="radio"
+                  name="appearedInExam"
+                  value="yes"
+                  className="yes"
+                  checked={formData.appearedInExam === "yes"}
+                  onChange={handleInputChange}
+                />
+                Yes
+              </label>
+              <label className="yes">
+                <input
+                  type="radio"
+                  name="appearedInExam"
+                  value="no"
+                  className="yes"
+                  checked={formData.appearedInExam === "no"}
+                  onChange={handleInputChange}
+                />
+                No
+              </label>
+            </div>
 
-        {/* Conditional fields for exam details */}
-        {formData.appearedInExam === "yes" && (
-          <>
-            <div className="form-fill-section">
-              <input
-                type="text"
-                name="examName"
-                value={formData.examName}
-                onChange={handleInputChange}
-                placeholder="Name of Exam"
-                className="register-input-section"
-                required={formData.appearedInExam === "yes"}
-              />
-            </div>
-            <div className="form-fill-section">
-              <input
-                type="number"
-                name="examPercentage"
-                value={formData.examPercentage}
-                onChange={handleInputChange}
-                placeholder="Percentage in Exam"
-                className="register-input-section"
-                required={formData.appearedInExam === "yes"}
-              />
-            </div>
-          </>
-        )}
-      </div>
+            {/* Conditional fields for exam details */}
+            {formData.appearedInExam === "yes" && (
+              <>
+                <div className="regiter-elements-content ">
+                  <div className="form-fill-section upper-section-form">
+                    <input
+                      type="text"
+                      name="examName"
+                      value={formData.examName}
+                      onChange={handleInputChange}
+                      placeholder="Name of Exam"
+                      className="register-input-section yes-no-section"
+                      required={formData.appearedInExam === "yes"}
+                    />
+                  </div>
+                  <div className="form-fill-section upper-section-form">
+                    <input
+                      type="number"
+                      name="examPercentage"
+                      value={formData.examPercentage}
+                      onChange={handleInputChange}
+                      placeholder="Percentage in Exam"
+                      className="register-input-section yes-no-section"
+                      required={formData.appearedInExam === "yes"}
+                    />
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
 
           <div className="register-btn-container">
             <button
@@ -228,8 +232,7 @@ const Contact = () => {
         </form>
       </div>
 
-          {/* Form section Ends here ----------------------------------------------------- */}
-
+      {/* Form section Ends here ----------------------------------------------------- */}
 
       <div class="parallax-location"></div>
       <div className="map-location-container container">
@@ -251,7 +254,7 @@ const Contact = () => {
           </p>
         </div>
       </div>
-      
+
       <ToastContainer position="top-right" />
     </div>
   );

@@ -1,0 +1,112 @@
+.study-abroad-banner {
+    width: 100%;
+    /* height: 470px; */
+}
+
+.study-aborad-main-wrapper {
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+.study-abroad-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.udaan-choose-why-child-wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.udaan-choose-why-child {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.first-container-container {
+    margin-top: 25px;
+}
+
+.why-heading {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.second-container-container {
+    margin-top: 25px;
+
+}
+
+.why-heading-color {
+    color: #705BA4;
+}
+
+.why-chs-img-wrapper {
+    width: 80px;
+    height: 80px;
+    /* margin-bottom: 10px; */
+}
+
+.new-heading {
+    margin-bottom: 25px;
+}
+
+.why-chs-img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.study-no {
+    font-weight: 800;
+}
+
+.advantage-img-wrapper {
+    width: 70px;
+}
+
+.advantage-img-wrapper img {
+    width: 100%;
+}
+
+.study-abroad-advantage-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.study-aborad-advantage-child {
+    display: flex;
+    align-items: start;
+    gap: 25px;
+    width: 300px;
+}
+
+.study-aborad-advantage-child p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+@media (max-width:768px) {
+    .study-abroad-advantage-container {
+        justify-content: center;
+    }
+
+    .udaan-choose-why-child-wrap {
+        justify-content: center;
+    }
+}
+
+@media (max-width:550px) {
+    .why-heading {
+        font-size: 24px;
+    }
+
+}

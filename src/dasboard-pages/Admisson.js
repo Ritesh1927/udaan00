@@ -1,4 +1,12 @@
 import React, { Fragment, useState } from "react";
+// ////////////// medical clg
+import Aims from "../assets/aimsdelhi.avif";
+import KMC from "../assets/kmc.jpg";
+import Shardha from "../assets/shardha.png";
+// /////////////////// management clg
+import IIM from "../assets/iim.png";
+import XLRI from "../assets/xlri.jpg";
+// /////////////////// engneering clg
 import Amity from "../assets/Amity.avif";
 import Iitmadras from "../assets/iitmadras.avif";
 import Iitdelhi from "../assets/iitdelhi.avif";
@@ -248,14 +256,78 @@ const colleges = {
     },
   ],
   medical: [
-    { name: "AIIMS Delhi", location: "Delhi" },
-    { name: "KMC Manipal", location: "Manipal" },
-    { name: "CMC Vellore", location: "Vellore" },
+    {
+      img: Aims,
+      name: " AIIMS  ",
+      rank: "#1",
+      location: "Delhi",
+      rating: "4.4",
+      fees: "5,856",
+      accerdition: "UGC",
+      package: "16 LPA",
+      exams: "NEET",
+      description:
+        " The All India Institute of Medical Sciences (AIIMS) Delhi is a premier medical institution in India, established in 1956 as a government-run, autonomous entity. It's known for its high-quality medical education and research, offering undergraduate, postgraduate, and doctoral programs in various medical and allied sciences. AIIMS Delhi is a leading center for both training medical professionals and providing patient care, with a focus on developing a comprehensive model for healthcare.",
+    },
+    {
+      img: KMC,
+      name: " KMC Manipal  ",
+      rank: "#12  ",
+      location: "Manipal, Karnataka",
+      rating: "4.4",
+      fees: "70.89 Lakhs",
+      accerdition: "NAAC, ISO, and NABL",
+      package: "15.80 LPA",
+      exams: "NEET ,MET",
+      description:
+        " Kasturba Medical College (KMC), Manipal is private medical college in India established in 1953. It is under the  aegis of the Manipal Academy of Higher Education (MAHE) and is recognized by the Medical Council of India (MCI). The college offers admission in various undergraduate, postgraduate, and super-speciality courses in the field of Medicine. KMC Manipal accepts merit in NEET UG (MBBS), NEET PG (MD / MS) and NEET SS (DM / MCh). Admission to M.Sc (Medical)  courses is through the Manipal",
+    },
+    {
+      img: Shardha,
+      name: " Sharda University  ",
+      rank: "#348  ",
+      location: "Greater Noida, Uttar Pradesh",
+      rating: "4.0",
+      fees: "57.12 Lakhs",
+      accerdition: "NAAC A+ , NBA ",
+      package: "15.80 LPA",
+      exams: "NEET ,MET",
+      description:
+        "Sharda University, established in 2009, is a renowned private university located in Greater Noida, Uttar Pradesh. The university is accredited with a Grade A+ by NAAC and recognized by the UGC. Sharda University is ranked among the top 4% of universities in Asia for the year 2024 as per QS Rankings. According to NIRF 2024, Sharda University has been ranked 86th (Overall) and 69th (Pharmacy). It has academic tie-ups with 250+ Universities worldwide from countries such as the USA, UK, Russia, Slovenia, Italy, Canada, and many more.",
+    },
+
+    // { name: "CMC Vellore", location: "Vellore" },
   ],
   management: [
-    { name: "IIM Ahmedabad", location: "Ahmedabad" },
-    { name: "XLRI Jamshedpur", location: "Jamshedpur" },
-    { name: "FMS Delhi", location: "Delhi" },
+    {
+      img: IIM,
+      name: " IIM Ahmedabad ",
+      rank: "#31  ",
+      location: "Ahmedabad, Uttar Pradesh",
+      rating: "4.5",
+      fees: "12,00,000 - 25,00,000",
+      accerdition: "EQUIS , EFMD ",
+      package: "57.12 LPA",
+      exams: "NEET ,MET",
+      description:
+        "IIM Ahmedabad has successfully placed 100% of its students from the PGP batch of 2025. Students were placed across 30 cohorts in three clusters. The placements were conducted through Laterals Placements Processes. Firms from multiple sectors, such as technology, banking, finance, consulting, analytics, etc, participated in the IIM Ahmedabad Placement. Students were offered roles in middle and senior management positions from Boston Consulting Group, Accenture Strategy, Goldman Sachs, Avendus Capital, Tata Administrative Services, GMR Group, FinIQ Consulting, Navi, etc.",
+    },
+    {
+      img: XLRI,
+      name: " XLRI Jamshedpur ",
+      rank: "#9  ",
+      location: "Jamshedpur",
+      rating: "4.5",
+      fees: "4,00,000 - 58,84,000",
+      accerdition: "AACSB , EFMD ",
+      package: "30.5 LPA",
+      exams: "NEET ,MET",
+      description:
+        "XLRI (Xavier School of Management) in Jamshedpur, Jharkhand, is a renowned business school known for its strong focus on ethical and socially responsible leadership. Founded in 1949 by Jesuit Fathers, it's the oldest business school in India. XLRI emphasizes academic excellence, holistic student development, and a commitment to improving society through ethical management practices. It offers a range of management programs, including PGDM (HRM), PGDM (GM), and others. ",
+    },
+
+    // { name: "XLRI Jamshedpur", location: "Jamshedpur" },
+    // { name: "FMS Delhi", location: "Delhi" },
   ],
 };
 const Admisson = () => {

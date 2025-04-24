@@ -1,15 +1,16 @@
 /* Main container */
 .udan-carousel {
     width: 100%;
-    /* max-width: 768px; */
     margin: 0 auto;
+    position: relative;
 }
 
 /* Slick core overrides */
 .udan-carousel .slick-slider {
     position: relative;
     border-radius: 12px;
-    overflow: hidden;
+    overflow: visible;
+    /* allow arrows to be visible */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -20,6 +21,7 @@
     object-fit: cover;
 }
 
+/* Dots */
 .udan-carousel .slick-dots {
     bottom: 10px;
 }
@@ -35,21 +37,22 @@
     opacity: 1;
 }
 
+/* Arrows – fully fixed and visible */
 .udan-carousel .slick-prev,
 .udan-carousel .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
     width: 40px;
     height: 40px;
-    z-index: 1;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-}
-
-.udan-carousel .slick-prev:before,
-.udan-carousel .slick-next:before {
-    font-size: 25px;
-    color: #333;
-    opacity: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .udan-carousel .slick-prev {
@@ -58,6 +61,24 @@
 
 .udan-carousel .slick-next {
     right: 10px;
+}
+
+.udan-carousel .slick-prev::before,
+.udan-carousel .slick-next::before {
+    font-size: 24px;
+    color: #333;
+    opacity: 1;
+    line-height: 1;
+}
+
+.udan-carousel .slick-prev:hover,
+.udan-carousel .slick-next:hover {
+    background-color: #8565aa;
+}
+
+.udan-carousel .slick-prev:hover::before,
+.udan-carousel .slick-next:hover::before {
+    color: #fff;
 }
 
 /* Banner layout */
@@ -103,6 +124,11 @@
 .udan-carousel .banner-heading {
     font-size: 45px;
 }
+
+.slick-arrow {
+    display: block !important;
+}
+
 
 .udan-carousel .banner-content {
     font-size: 24px;
