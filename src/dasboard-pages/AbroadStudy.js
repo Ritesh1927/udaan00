@@ -69,7 +69,7 @@ const AbroadStudy = () => {
                 <div className="advantage-img-wrapper">
                   <img src={DreamCourse} alt="" />
                 </div>
-                <p>Finding the Program That’s Right for You</p>
+                <p>Finding the Program That is Right for You</p>
               </div>
               <div className="study-aborad-advantage-child">
                 <div className="advantage-img-wrapper">
@@ -87,13 +87,13 @@ const AbroadStudy = () => {
                 <div className="advantage-img-wrapper">
                   <img src={Visa} alt="" />
                 </div>
-                <p>Hacking thy Interviews & the All-important VISA</p>
+                <p>Cracking the Interviews & the All-important VISA</p>
               </div>
               <div className="study-aborad-advantage-child">
                 <div className="advantage-img-wrapper">
                   <img src={Financial} alt="" />
                 </div>
-                <p>Solving for Money Money Money!</p>
+                <p>Financial Assistance </p>
               </div>
               <div className="study-aborad-advantage-child">
                 <div className="advantage-img-wrapper">

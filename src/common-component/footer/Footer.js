@@ -23,7 +23,7 @@ const Footer = () => {
               Divison of Udaan Eduservices
             </p>
             <p className="footer-contact-msg">
-              Have inquiries? Don't hesitate to drop us an email at
+              Have enquires? Don't hesitate to drop us an email at
               info@udaan360.com, and we'll respond promptly
             </p>
             <p className="Find-us-links">Find us on</p>
@@ -157,4 +157,3 @@ const Footer = () => {
 };
 
 export default Footer;
- 
