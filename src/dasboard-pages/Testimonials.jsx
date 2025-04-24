@@ -5,7 +5,7 @@ import Kartikey from "../assets/kartikey.jpg";
 import Kartikey02 from "../assets/Kartikey2.jpg";
 import Mehak2 from "../assets/mehak2.jpg";
 import Anjali2 from "../assets/anjali2.jpg";
-import Suhani from "../assets/suhani.jpg";
+// import Suhani from "../assets/suhani.jpg";
 import Vinay from "../assets/vinay.jpg";
 import Ashi from "../assets/ashi2.jpg";
 import Ritik from "../assets/ritik.jpg";
@@ -36,14 +36,14 @@ const testimonials = [
     name: "Anjali ,",
     role: "BDS Student",
   },
-  {
-    image: Suhani,
-    title: "JEE Counselling & Top B.Tech College Admission",
-    description:
-      "Udaan 360 guided me through every step of my BDS admission. Their transparent approach and strong college connections helped us get into Rajiv Gandhi Dental college in Bangalore.",
-    name: "Megha,",
-    role: "B.Tech (CSE) Student",
-  },
+  // {
+  //   image: Suhani,
+  //   title: "JEE Counselling & Top B.Tech College Admission",
+  //   description:
+  //     "Udaan 360 guided me through every step of my BDS admission. Their transparent approach and strong college connections helped us get into Rajiv Gandhi Dental college in Bangalore.",
+  //   name: "Megha,",
+  //   role: "B.Tech (CSE) Student",
+  // },
   {
     image: Vinay,
     title: "The Best Study Abroad Counselling & Admission Assistance",
