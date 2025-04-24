@@ -30,7 +30,7 @@ const AbroadStudy = () => {
                   <img className="why-chs-img" src={Handshake} alt="" />
                 </div>
                 <p>
-                  <span className="study-no">850+</span> University Partners
+                  <span className="study-no">150+</span> University Partners
                 </p>
               </div>
               <div className="udaan-choose-why-child">
@@ -38,7 +38,7 @@ const AbroadStudy = () => {
                   <img className="why-chs-img" src={Trophy} alt="" />
                 </div>
                 <p>
-                  <span className="study-no"> 45,000+</span> Success Stories
+                  <span className="study-no"> 500+</span> Success Stories
                 </p>
               </div>
               <div className="udaan-choose-why-child">
@@ -55,7 +55,7 @@ const AbroadStudy = () => {
                 </div>
                 <p>
                   Courses starting at
-                  <span className="study-no"> ₹8 Lakhs*</span>{" "}
+                  <span className="study-no"> ₹12 Lakhs</span>{" "}
                 </p>
               </div>
             </div>
