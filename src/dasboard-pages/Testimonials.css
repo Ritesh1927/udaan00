@@ -133,6 +133,7 @@
 
     .testimonial-slider__card {
         margin: 0 5px;
+        height: fit-content;
     }
 
     .testimonial-slider__desc {

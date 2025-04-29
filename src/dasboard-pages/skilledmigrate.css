@@ -41,6 +41,8 @@
 .left-migrate-container p {
     margin-top: 10px;
     line-height: 28px;
+    font-size: 20px;
+    font-weight: 300;
 }
 
 .skilled-migrate-first-img-container {

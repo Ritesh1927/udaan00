@@ -6,14 +6,20 @@ import Shardha from "../assets/shardha.png";
 // /////////////////// management clg
 import IIM from "../assets/iim.png";
 import XLRI from "../assets/xlri.jpg";
+import Jipmer from "../assets/Jipmer.jpg";
+import CMC from "../assets/cmc.jpg";
 // /////////////////// engneering clg
 import Amity from "../assets/Amity.avif";
 import Iitmadras from "../assets/iitmadras.avif";
 import Iitdelhi from "../assets/iitdelhi.avif";
 import Iitbombay from "../assets/iitbombay.avif";
+import IITkharagpur from "../assets/IITKharagpur.avif";
+import IITGuwahati from "../assets/IITGuwahati.avif";
 import Iitkanpur from "../assets/iitkanpur.png";
+import IITHYDERABAD from "../assets/IITHYDERABAD.avif";
 import Nittrichy from "../assets/nittrichy.avif";
 import Nitwrangal from "../assets/Nitwrangal.avif";
+import VITVellore from "../assets/VITVellore.avif";
 import Srm from "../assets/srm1.avif";
 import Cmr from "../assets/cmr.png";
 import CMRIT from "../assets/cmrit.jpg";
@@ -24,6 +30,7 @@ import Ramaiah from "../assets/ramaiah.jpg";
 import Galgotias from "../assets/Galgotia.png";
 import JSS from "../assets/jss.jpg";
 import Upes from "../assets/Upes.jpg";
+import BITMesra from "../assets/BITMesra.avif";
 import { CiStar } from "react-icons/ci";
 import { FaLocationDot } from "react-icons/fa6";
 import { RiMoneyRupeeCircleLine } from "react-icons/ri";
@@ -31,6 +38,8 @@ import { LiaCertificateSolid } from "react-icons/lia";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import { PiCertificate } from "react-icons/pi";
 import "./Admisson.css";
+// Change this constant to adjust the description cutoff
+const DESCRIPTION_LIMIT = 220;
 const colleges = {
   btech: [
     {
@@ -86,6 +95,46 @@ const colleges = {
         "    IIT Kanpur is among the top five engineering colleges in India. The institute is a centre of excellence that offers quality education. The popular course at IIT Kanpur is B.Tech and M.Tech. There are several specialisations available in the IIT Kanpur B.Tech course namely, aerospace engineering, biological sciences and bio-engineering, chemical engineering, civil engineering, computer science and engineering, electrical engineering, materials science and engineering. The specialisations available in the IIT Kanpur M.Tech course is aerospace engineering, biological sciences and bio-engineering, chemical engineering, civil engineering, computer science and engineering, earth sciences, electrical engineering, industrial and management engineering, materials science and engineering, materials science program, mechanical engineering, nuclear engineering and technology, photonics science and engineering, sustainable energy engineering.",
     },
     {
+      img: IITkharagpur,
+      name: "IIT Kharagpur ",
+      rank: "#5",
+      location: "Kanpur , Uttar Pradesh",
+      rating: "4.7",
+      fees: "  27,650 - 25,00,000",
+      accerdition: "AICTE , UGC",
+      package: "24 LPA, ",
+      exams: "     JEE Advanced",
+      description:
+        "    IIT Kharagpur was established in 1950 and was declared an Institute of National Importance in 1956. As per the NIRF Rankings 2022, the institute ranked 5th in the engineering category. The IIT Kharagpur courses list includes B.Tech, M.Tech, B.Tech+M.Tech Dual Degree, and PhD programmes in fields such as chemical engineering, aerospace engineering, CSE, civil engineering, EEE, electrical engineering, and many more. The institute accepts JEE Advanced and GATE for B.Tech and M.Tech admissions, respectively. IIT Kharagpur B.Tech fees is Rs 2,00,000 per year. ",
+    },
+    {
+      img: IITGuwahati,
+      name: " IIT Guwahati ",
+      rank: "#7",
+      location: "Guwahati, Assam",
+      rating: "4.9",
+      fees: "     6,000 - 8,00,000",
+      accerdition: "AICTE ,NAAC",
+      package: "24 LPA, ",
+      exams: "    UCEED , JEE Advanced",
+      description:
+        "IIT Guwahati is one of the top 10 engineering colleges in India which is popular for its innovative research and engineering education. IIT Guwahati takes admissions to its engineering through the JEE Advance and GATE entrance examination. The IIT Guwahati B.Tech and M.Tech courses are offered in Biosciences and Bioengineering, Chemical Engineering, Chemical Science and Technology, Civil Engineering, Computer Science and Engineering, Data Science and Artificial Intelligence, Electronics and Communication Engineering, Electronics and Electrical Engineering, Energy Engineering, Engineering Physics, Mathematics and Computing, Mechanical Engineering. ",
+    },
+    {
+      img: IITHYDERABAD,
+      name: "   IIT Hyderabad",
+      rank: "#8",
+      location: "Hyderabad, Telangana",
+      rating: "5",
+      fees: "10,000 - 11,00,000",
+      accerdition: "AICTE ,NAAC",
+      package: "24 LPA, ",
+      exams: "    UCEED , JEE Advanced",
+      description:
+        "IIT Hyderabad has started the admission process for all its courses. UCEED 2025 results will be released on March 7, 2025. Candidates with valid UCEED 2025 scores are eligible for BDes admission 2025. CEED results 2025 willl be announced at the same time. From April 1 to 8, 2025, JEE Main April Session is to be held. Registration for JEE Advanced 2025 is to begin on April 23, 2025. JEE Main 2025 qualified candidates have to take the JEE Advanced 2025, followed by JoSAA counselling for final admission in IIT Hyderabad ",
+    },
+
+    {
       img: Nittrichy,
       name: " NIT Trichy  ",
       rank: "#9",
@@ -97,6 +146,32 @@ const colleges = {
       exams: "DASA UG , JEE Main",
       description:
         "    IIT Kanpur is among the top five engineering colleges in India. The institute is a centre of excellence that offers quality education. The popular course at IIT Kanpur is B.Tech and M.Tech. There are several specialisations available in the IIT Kanpur B.Tech course namely, aerospace engineering, biological sciences and bio-engineering, chemical engineering, civil engineering, computer science and engineering, electrical engineering, materials science and engineering. The specialisations available in the IIT Kanpur M.Tech course is aerospace engineering, biological sciences and bio-engineering, chemical engineering, civil engineering, computer science and engineering, earth sciences, electrical engineering, industrial and management engineering, materials science and engineering, materials science program, mechanical engineering, nuclear engineering and technology, photonics science and engineering, sustainable energy engineering.",
+    },
+    {
+      img: VITVellore,
+      name: "      VIT Vellore ",
+      rank: "#9",
+      location: "Vellore, Tamil Nadu",
+      rating: "4.3",
+      fees: " 3,200 - 14,25,000",
+      accerdition: " MHRD",
+      package: "9.23 Lacs",
+      exams: "AIEED , JEE Main",
+      description:
+        " VIT Vellore admissions 2025 are open for PhD (January session). The pre-registration for 2025 MBA admission has also started. CAT XAT, MAT, and CMATscores are taken into consideration for MBA admission. The college conducts VITEEE for BTech admission where as it accepts NATA for B.Arch. The institution provides 105 courses in various specialisations. VIT Vellore fees range from Rs 3,200 to Rs 14,25,000 annually for different courses.",
+    },
+    {
+      img: BITMesra,
+      name: "        BIT Mesra ",
+      rank: "#48",
+      location: "Ranchi,Jharkhand",
+      rating: "4.0",
+      fees: "  32,000 - 5,85,000",
+      accerdition: "   UGC",
+      package: "11.6 Lacs",
+      exams: "JEE Main",
+      description:
+        "Birla Institute of Technology was founded in 1955 by the visionary industrialist Mr. BM Birla with the specific goal of providing a platform for its young minds to let their imaginations fly and their ideas come to life. For nearly six decades, the institute has been developing brains with a strong tradition of academic excellence, establishing learning frameworks that are far ahead of their time. BIT Mesra is one of Jharkhand's best technical universities. The university is well-known for its diversity, with nearly 58% of its enrollment coming from different Indian states. It was awarded the status of deemed university. The university is ranked 20th in Architecture and Planning, 28th in Pharmacy, 53rd in Engineering, 71st in University, and 77th in Management in the NIRF Ranking 2023.",
     },
     {
       img: Srm,
@@ -270,6 +345,19 @@ const colleges = {
         " The All India Institute of Medical Sciences (AIIMS) Delhi is a premier medical institution in India, established in 1956 as a government-run, autonomous entity. It's known for its high-quality medical education and research, offering undergraduate, postgraduate, and doctoral programs in various medical and allied sciences. AIIMS Delhi is a leading center for both training medical professionals and providing patient care, with a focus on developing a comprehensive model for healthcare.",
     },
     {
+      img: Jipmer,
+      name: "     JIPMER Puducherry ",
+      rank: "#5",
+      location: "Puducherry, Puducherry",
+      rating: "4.0",
+      fees: "13 - 46,580",
+      accerdition: "Medical Co ",
+      package: "18.0 LPA",
+      exams: "INI CET",
+      description:
+        "CMC Vellore admission offers intensive, full-time Master of Science (M.Sc.) programme for students who want to continue their studies in science. The M.Sc. specializations offered by CMC Vellore are Otorhinolaryngology, General Surgery, Obstetrics & Gynaecology, Ophthalmology, Orthopedics, ENT, Bioengineering. The total duration of M.Sc. programmes at CMC Vellore is 2-3 years. ",
+    },
+    {
       img: KMC,
       name: " KMC Manipal  ",
       rank: "#12  ",
@@ -282,6 +370,20 @@ const colleges = {
       description:
         " Kasturba Medical College (KMC), Manipal is private medical college in India established in 1953. It is under the  aegis of the Manipal Academy of Higher Education (MAHE) and is recognized by the Medical Council of India (MCI). The college offers admission in various undergraduate, postgraduate, and super-speciality courses in the field of Medicine. KMC Manipal accepts merit in NEET UG (MBBS), NEET PG (MD / MS) and NEET SS (DM / MCh). Admission to M.Sc (Medical)  courses is through the Manipal",
     },
+    {
+      img: CMC,
+      name: "   CMC Vellore ",
+      rank: "#49  ",
+      location: "Vellore, Tamil Nadu",
+      rating: "4.0",
+      fees: " 1,200 - 14,82,568",
+      accerdition: "UGC ",
+      package: "18.0 LPA",
+      exams: "NEET ,CBSE12th",
+      description:
+        "CMC Vellore admission offers intensive, full-time Master of Science (M.Sc.) programme for students who want to continue their studies in science. The M.Sc. specializations offered by CMC Vellore are Otorhinolaryngology, General Surgery, Obstetrics & Gynaecology, Ophthalmology, Orthopedics, ENT, Bioengineering. The total duration of M.Sc. programmes at CMC Vellore is 2-3 years. ",
+    },
+
     {
       img: Shardha,
       name: " Sharda University  ",
@@ -332,8 +434,13 @@ const colleges = {
 };
 const Admisson = () => {
   const [activeTab, setActiveTab] = useState("btech");
+  const [expanded, setExpanded] = useState({});
 
   const handleTabClick = (type) => setActiveTab(type);
+  const toggleRead = (idx) => {
+    setExpanded((prev) => ({ ...prev, [idx]: !prev[idx] }));
+  };
+
   return (
     <Fragment>
       <section className="college-section container">
@@ -364,83 +471,113 @@ const Admisson = () => {
         </div>
 
         <div className="college-cards">
-          {colleges[activeTab].map((college, index) => (
-            <div key={index} className="college-card">
-              <div className="clg-img-wrap">
-                <img src={college.img} alt="" />
-              </div>
-              {/* //////////////////// */}
-              <div className="admisn-clg-details">
-                <div className=" inline clgname-location">
-                  <h3>{college.name}</h3>
-                </div>
+          {colleges[activeTab].map((college, index) => {
+            const fullText = college.description.trim();
+            const isLong = fullText.length > DESCRIPTION_LIMIT;
+            const isOpen = expanded[index];
+            const displayText =
+              isLong && !isOpen
+                ? fullText.slice(0, DESCRIPTION_LIMIT) + "..."
+                : fullText;
 
-                <p className="nirf-ranking">
-                  {" "}
-                  <span className="rank-no">{college.rank}</span> NIRF
-                </p>
-                <div className="inline addres-admisn-wrapper ">
-                  <p className="clg-sepecific">
+            return (
+              <div key={index} className="college-card">
+                <div className="inner-college-card">
+                  <div className="clg-img-wrap">
+                    <img src={college.img} alt={college.name} />
+                  </div>
+                  <div className="admisn-clg-details">
+                    <div className="inline clgname-location">
+                      <h3>{college.name}</h3>
+                    </div>
+
+                    <p className="nirf-ranking">
+                      <span className="rank-no">{college.rank}</span> NIRF
+                    </p>
+                    <div className="inline addres-admisn-wrapper">
+                      <p className="clg-sepecific">
+                        <i className="admisn-location">
+                          <FaLocationDot />
+                        </i>
+                        {college.location}
+                      </p>
+                      <button className="ranking-btn">
+                        {college.rating}
+                        <i className="clg-sepecific-icon">
+                          <CiStar />
+                        </i>
+                      </button>
+                    </div>
+                    <div className="inline address-certificate-container">
+                      <div>
+                        <p className="clg-sepecific">
+                          <i className="clg-sepecific-icon">
+                            <RiMoneyRupeeCircleLine />
+                          </i>
+                          {college.fees}
+                        </p>
+                        <span className="under-heading"> Fees</span>
+                      </div>
+                      <div>
+                        <p className="clg-sepecific">
+                          <i className="clg-sepecific-icon">
+                            <LiaCertificateSolid />
+                          </i>
+                          {college.accerdition}
+                        </p>
+                        <span className="under-heading"> Accerdition</span>
+                      </div>
+                      <div>
+                        <p className="clg-sepecific">
+                          <i className="clg-sepecific-icon">
+                            <FaHandHoldingUsd />
+                          </i>
+                          {college.package}
+                        </p>
+                        <span className="under-heading">Avg Package</span>
+                      </div>
+                      <div>
+                        <p className="clg-sepecific">
+                          <i className="clg-sepecific-icon">
+                            <PiCertificate />
+                          </i>
+                          {college.exams}
+                        </p>
+                        <span className="under-heading">Exams</span>
+                      </div>
+                    </div>
+
+                    <div>
+                      <p className="clg-admisn-discription">
+                        {displayText}
+                        {isLong && (
+                          <button
+                            className="read-more-btn"
+                            onClick={() => toggleRead(index)}
+                          >
+                            {isOpen ? "Read Less" : "Read More"}
+                          </button>
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="get-free-counselling-container">
+                  <hr />
+                  <button>
                     {" "}
-                    <i className="admisn-location">
-                      <FaLocationDot />
-                    </i>
-                    {college.location}
-                  </p>
-                  <button className="ranking-btn">
-                    {college.rating}
-                    <i className="clg-sepecific-icon">
-                      <CiStar />
-                    </i>
+                    <a
+                      href="https://wa.me/917355308287?text=hello%20%2C%20i%20want%20to%20know%20more"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Get Free Counselling
+                    </a>{" "}
                   </button>
                 </div>
-                <div className="inline address-certificate-container">
-                  <div>
-                    <p className="clg-sepecific">
-                      <i className="clg-sepecific-icon">
-                        <RiMoneyRupeeCircleLine />
-                      </i>
-                      {college.fees}
-                    </p>
-                    <span className="under-heading"> Fees</span>
-                  </div>
-                  <div>
-                    <p className="clg-sepecific">
-                      <i className="clg-sepecific-icon">
-                        <LiaCertificateSolid />
-                      </i>
-                      {college.accerdition}
-                    </p>
-                    <span className="under-heading"> Accerdition</span>
-                  </div>
-                  <div>
-                    <p className="clg-sepecific">
-                      <i className="clg-sepecific-icon">
-                        <FaHandHoldingUsd />
-                      </i>
-                      {college.package}
-                    </p>
-                    <span className="under-heading">Avg Package</span>
-                  </div>
-                  <div>
-                    <p className="clg-sepecific">
-                      <i className="clg-sepecific-icon">
-                        <PiCertificate />
-                      </i>
-                      {college.exams}
-                    </p>
-                    <span className="under-heading">Exams</span>
-                  </div>
-                </div>
-
-                <div>
-                  <p className="clg-admisn-discription">
-                    {college.description}
-                  </p>
-                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
     </Fragment>

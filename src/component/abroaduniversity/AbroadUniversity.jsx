@@ -111,8 +111,8 @@ const universityData = {
   //   Dubai: [],
   Australia: [
     {
-      name: "Parkland College",
-      location: "Sprystai Way ,Yorkton,Canada​",
+      name: "Parklands Christian College",
+      location: "Park Ridge QLD , Australia​",
       courses: "366+ Courses",
       logo: Parkland,
     },

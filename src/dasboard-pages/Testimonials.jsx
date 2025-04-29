@@ -36,14 +36,6 @@ const testimonials = [
     name: "Anjali ,",
     role: "BDS Student",
   },
-  // {
-  //   image: Suhani,
-  //   title: "JEE Counselling & Top B.Tech College Admission",
-  //   description:
-  //     "Udaan 360 guided me through every step of my BDS admission. Their transparent approach and strong college connections helped us get into Rajiv Gandhi Dental college in Bangalore.",
-  //   name: "Megha,",
-  //   role: "B.Tech (CSE) Student",
-  // },
   {
     image: Vinay,
     title: "The Best Study Abroad Counselling & Admission Assistance",
