@@ -17,6 +17,8 @@ app.use(cors({
 }));
 
 const Contactschema = require("./Schema/Contactschema");
+// const Franchiseschema = require("./Schema/Franchiseschema");
+const franchisemodel = require("./Schema/Franchiseschema");
 require("./Connection/Database");
 
 // Connect to database
@@ -56,6 +58,45 @@ app.post("/api/contact", async (req, res) => {
     const messages = Object.values(error.errors).map((err) => err.message);
     console.log("Validation Errors:", messages);
     res.status(400).json({ message: messages.join(", ") });
+  }
+});
+
+
+app.post("/api/franchise", async (req, res) => {
+  try {
+    const { orgizationname, mobile,  contactperson, email, description, websiteurl } = req.body;
+    //  console.log(req.body)
+    if (!orgizationname || !mobile || !contactperson || !email || !description || !websiteurl) {
+      return res.status(400).json({ message: "All fields are required" });
+    }
+    const existingFranchise = await franchisemodel.findOne({ 
+      $or: [{ websiteurl }, { email }] 
+    });
+    
+    if (existingFranchise) {
+      let duplicateField = existingFranchise.websiteurl === websiteurl ? "Website URL" : "Email";
+      return res.status(400).json({ message: `${duplicateField} already exists. Please enter a different one.` });
+    }
+
+
+    const newfranchise = new franchisemodel({
+      orgizationname,
+      mobile,
+      contactperson,
+      email,
+      description,
+      websiteurl,
+       
+    });
+    await  newfranchise.save();
+
+    res.status(201).json({ message: "successful!" });
+  } catch (error) {
+    console.error("Server error:", error);
+    const messages = Object.values(error.errors).map((err) => err.message);
+    console.log("Validation Errors:", messages);
+    res.status(400).json({ message: messages.join(", ") });
+    // res.send(error)
   }
 });
 

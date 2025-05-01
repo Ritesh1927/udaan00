@@ -52,7 +52,7 @@ const Navbar = () => {
               Contact us
             </Link>
           </li>
-          {/* <li>
+          <li>
             <Link
               className="nav-elements"
               to="/franchise"
@@ -60,7 +60,7 @@ const Navbar = () => {
             >
               Franchise
             </Link>
-          </li> */}
+          </li>
         </ul>
       </div>
     </nav>
