@@ -8,4 +8,6 @@
 
 .whtsupimg {
     width: 45px;
+    border-radius: 12px;
+    background-color: #FFFF;
 }

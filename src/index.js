@@ -15,6 +15,7 @@ import Home from "./dasboard-pages/Home";
 import SkillMigration from "./dasboard-pages/SkillMigration";
 import Testimonials from "./dasboard-pages/Testimonials";
 import Franchise from "./dasboard-pages/Franchise";
+import Login from "./common-component/login/Login";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -32,6 +33,7 @@ root.render(
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/skillmigration" element={<SkillMigration />} />
           <Route path="/franchise" element={<Franchise />} />
+          <Route path="/login" element={<Login />} />
         </Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>

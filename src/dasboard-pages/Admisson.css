@@ -57,6 +57,14 @@
     transform: translateY(-5px);
 }
 
+.star-img-container {
+    width: 22px;
+}
+
+.star-img-container img {
+    width: 100%;
+}
+
 .get-free-counselling-container {
     display: flex;
     justify-content: end;

@@ -45,7 +45,7 @@ const Contact = () => {
       console.log(payload);
       const response = await axios.post("/api/contact", payload, {
         headers: { "Content-Type": "application/json" },
-      });
+      }); 
 
       toast.success(response.data.message);
       // Reset form

@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import Star from "../assets/star.png";
 // ////////////// medical clg
 import Aims from "../assets/aimsdelhi.avif";
 import KMC from "../assets/kmc.jpg";
@@ -15,22 +16,34 @@ import Iitdelhi from "../assets/iitdelhi.avif";
 import Iitbombay from "../assets/iitbombay.avif";
 import IITkharagpur from "../assets/IITKharagpur.avif";
 import IITGuwahati from "../assets/IITGuwahati.avif";
-import Iitkanpur from "../assets/iitkanpur.png";
 import IITHYDERABAD from "../assets/IITHYDERABAD.avif";
 import Nittrichy from "../assets/nittrichy.avif";
 import Nitwrangal from "../assets/Nitwrangal.avif";
 import VITVellore from "../assets/VITVellore.avif";
+import BITMesra from "../assets/BITMesra.avif";
 import Srm from "../assets/srm1.avif";
-import Cmr from "../assets/cmr.png";
+import Ramaiah from "../assets/ramaiah.jpg";
+import IitDhanbad from "../assets/iitdhanbad.jpeg";
+import NITcalicut from "../assets/NITcalicut.jpeg";
+import IITGandhinagar from "../assets/iitgandhinagar.jpeg";
+import IitBhu from "../assets/IITbhu.jpg";
 import CMRIT from "../assets/cmrit.jpg";
 import Abes from "../assets/abes.jpg";
+import NITSurathkal from "../assets/NITSurathkal.jpg";
+import IITROPAR from "../assets/iitropar.jpg";
+import NITRourkela from "../assets/NitRourkela.jpg";
+import Thapar from "../assets/thaparuniversity.jpg";
 import Akgec from "../assets/akgec.avif";
-import Glbajaj from "../assets/glbajaj.jpeg";
-import Ramaiah from "../assets/ramaiah.jpg";
-import Galgotias from "../assets/Galgotia.png";
+import IITindore from "../assets/IITindore.avif";
 import JSS from "../assets/jss.jpg";
 import Upes from "../assets/Upes.jpg";
-import BITMesra from "../assets/BITMesra.avif";
+import Glbajaj from "../assets/glbajaj.jpeg";
+import ANNA from "../assets/anna.jpeg";
+import Galgotias from "../assets/Galgotia.png";
+import Jadhavpur from "../assets/jadhavpur.png";
+import Iitkanpur from "../assets/iitkanpur.png";
+import Cmr from "../assets/cmr.png";
+
 import { CiStar } from "react-icons/ci";
 import { FaLocationDot } from "react-icons/fa6";
 import { RiMoneyRupeeCircleLine } from "react-icons/ri";
@@ -148,17 +161,162 @@ const colleges = {
         "    IIT Kanpur is among the top five engineering colleges in India. The institute is a centre of excellence that offers quality education. The popular course at IIT Kanpur is B.Tech and M.Tech. There are several specialisations available in the IIT Kanpur B.Tech course namely, aerospace engineering, biological sciences and bio-engineering, chemical engineering, civil engineering, computer science and engineering, electrical engineering, materials science and engineering. The specialisations available in the IIT Kanpur M.Tech course is aerospace engineering, biological sciences and bio-engineering, chemical engineering, civil engineering, computer science and engineering, earth sciences, electrical engineering, industrial and management engineering, materials science and engineering, materials science program, mechanical engineering, nuclear engineering and technology, photonics science and engineering, sustainable energy engineering.",
     },
     {
+      img: IitBhu,
+      name: " IIT BHU",
+      rank: "#10",
+      location: "Varanasi, Uttar Pradesh",
+      rating: "4.7",
+      fees: "   20,000 - 10,63,000",
+      accerdition: " UGC",
+      package: " 20 LPA",
+      exams: "GATE, JEE Main",
+      description:
+        " IIT BHU is ranked 13 in the NIRF engineering ranking 2022 and is one of the most prestigious institutes in India. It is also the best engineering college in Uttar Pradesh. The IIT BHU B.Tech admissions are done through JEE advance entrance exam and the M.Tech admissions are done through the GATE entrance exam. The institute is desired by engineering aspirants in India because of the world-class education and the amazing placement opportunities available for its student.",
+    },
+    {
       img: VITVellore,
       name: "      VIT Vellore ",
-      rank: "#9",
+      rank: "#11",
       location: "Vellore, Tamil Nadu",
       rating: "4.3",
       fees: " 3,200 - 14,25,000",
       accerdition: " MHRD",
-      package: "9.23 Lacs",
+      package: "9.23 LPA",
       exams: "AIEED , JEE Main",
       description:
         " VIT Vellore admissions 2025 are open for PhD (January session). The pre-registration for 2025 MBA admission has also started. CAT XAT, MAT, and CMATscores are taken into consideration for MBA admission. The college conducts VITEEE for BTech admission where as it accepts NATA for B.Arch. The institution provides 105 courses in various specialisations. VIT Vellore fees range from Rs 3,200 to Rs 14,25,000 annually for different courses.",
+    },
+    {
+      img: Jadhavpur,
+      name: "Jadavpur University",
+      rank: "#12",
+      location: "Kolkata, West Bengal",
+      rating: "4.3",
+      fees: " 9,600 - 1,70,000",
+      accerdition: "UGC",
+      package: "9.23 LPA",
+      exams: "GATE, JEE Main",
+      description:
+        " Jadavpur University is an Indian public autonomous university located in Kolkata. The University provides a variety of undergraduate, graduate, and doctoral degree programmes. Jadavpur University courses are available in arts, science, and education, as well as in professional fields such as architecture, engineering, and pharmacy. A total of 140+ courses are available at the university. Jadavpur University is recognised by the University Grants Commission (UGC) and the All India Council for Technical Education (AICTE). The university is also accredited by the National Assessment and Accreditation Council (NAAC) with an ‘A’ grade. The 96-acre Jadavpur University campus is home to a total of 35 departments under its three academic faculties along with a number of interdisciplinary schools and centres of excellence. Its campus facilities include hostels, guest houses, a central library, a daycare centre, a health centre, and JU Employees' Coop Credit Society Limited, among many others. The Jadavpur University application process is entirely online. Both admission and merit play a role in the selection process. Jadavpur University ranking 2024 has been released by NIRF. Jadavpur University ranked 9th in the overall category of NIRF Ranking 2024.",
+    },
+    {
+      img: IitDhanbad,
+      name: " Iit Dhanbad",
+      rank: "#15",
+      location: "Dhanbad, Jharkhand",
+      rating: "4.2",
+      fees: " 18,000 - 4,65,000",
+      accerdition: "MHRD",
+      package: "16.98 LPA",
+      exams: "GMAT, JEE Main",
+      description:
+        "  IIT ISM Dhanbad was established in 1926 as the Indian School of Mines. Later, in 1967, it was granted the status of a Deemed to be University. As per the NIRF Rankings 2022, the institute was ranked 14th in the engineering category and 38th in the overall category. It offers a range of UG, PG, and PhD courses in engineering and technology under its 17 academic departments. As per the IIT ISM Dhanbad placement report 2022, the highest package was Rs 50 lakh per annum. IIT ISM Dhanbad average package was Rs 17 lakh per annum.",
+    },
+
+    {
+      img: IITindore,
+      name: " IIT Indore",
+      rank: "#16",
+      location: "Indore, Madhya Pradesh",
+      rating: "4.5",
+      fees: "  74,000 - 8,00,000 ",
+      accerdition: "MHRD",
+      package: "25.4 LPA",
+      exams: "GATE, JEE Main",
+      description:
+        "  IIT Indore is one among the top 15 engineering colleges located in Madhya Pradesh, and this best engineering college always features in top 10-15 engineering colleges in NIRF Rankings. The popular engineering courses offered by IIT Indore are in B.Tech and M.Tech. For B.Tech admission at IIT Indore, JEE Advanced rank is mandatory. M.Tech admission at IIT Indore is based on GATE score. The highest domestic CTC offered at IIT Indore placements goes up to Rs 60 Lakh per annum while the average CTC ranges between 20-25 Lakh per annum.",
+    },
+
+    {
+      img: NITSurathkal,
+      name: " NIT Surathkal",
+      rank: "#17",
+      location: "Mangalore, Karnataka",
+      rating: "4.0",
+      fees: " 15,000 - 1,31,000",
+      accerdition: "UGC",
+      package: "13.1 LPA",
+      exams: "GATE, JEE Main",
+      description:
+        " NITK Surathkal is among the top 10 engineering colleges in India. Located in Mangalore the institute is the best engineering college in Karnataka. NITK Surathkal is a government-funded institute which is a part of the NIT fraternity in India. The institute also holds a good position in the world rankings. The most popular courses of NITK Surathkal are the B.Tech and M.Tech courses. The admission process for B.Tech offered by NIT Surathkal is based on the JEE Main exam, and the M.Tech admissions are based on GATE. The NITK Surathkal placements are also remarkable one, the highest CTC offered was Rs 51 Lakh per annum.",
+    },
+    {
+      img: IITGandhinagar,
+      name: "    IIT Gandhinagar",
+      rank: "#18",
+      location: "Gandhinagar, Gujarat",
+      rating: "4.8",
+      fees: "  4,000 - 8,00,000",
+      accerdition: "AICTE",
+      package: "19.6 LPA",
+      exams: "Gate , JEE Main",
+      description:
+        " IIT Gandhinagar is one of the top 25 engineering colleges in India as per NIRF rankings, and the institute is quite popular for its campus placements and research. The engineering courses offered by IIT Gandhinagar are in B.Tech and M.Tech. For B.Tech admission at IIT Gandhinagar, JEE Advanced rank is mandatory and the M.Tech admission process is based on a GATE score. Being a part of the IIT fraternity in India the institute holds an important role in educating students. The highest salary offered at IIT Gandhinagar is Rs 62 Lakh per annum.",
+    },
+    {
+      img: ANNA,
+      name: " Anna University",
+      rank: "#20",
+      location: "Chennai , Tamil Nadu",
+      rating: "4.5",
+      fees: "   30,000 - 87,500",
+      accerdition: "UGC",
+      package: "6.93 LPA",
+      exams: "GATE, JEE Main",
+      description:
+        "Anna University is a major public university in Chennai, India, known for its engineering and technology programs. It was named after Dr. C.N. Annadurai, a former Chief Minister of Tamil Nadu. The university comprises the College of Engineering, Guindy (CEG), Alagappa College of Technology (ACT), Madras Institute of Technology (MIT), and the School of Architecture and Planning (SAP). Anna University is a large state-run university with over 571 affiliated colleges. It is also ranked highly in both QS World University Rankings and THE Asia Rankings. ",
+    },
+    {
+      img: IITROPAR,
+      name: " IIT Ropar ",
+      rank: "#22",
+      location: "Ropar, Punjab",
+      rating: "4.5",
+      fees: "   6,000 - 2,00,000",
+      accerdition: "AICTE ",
+      package: "21 LPA",
+      exams: "GATE, JEE Main",
+      description:
+        "IIT Ropar has started engineering admissions for the academic year 2025. The JEE Main 2025 session 1 has been conducted and the results are out. JEE Main 2025 Session 2 application form is open 25th February, 2025 (up to 9:00 P.M.) and the exam will be held from April1 to 8, 2025. Candidates have to first clear JEE Main to be eligible for JEE Advanced for B.Tech admissions at IIT Ropar. The JEE Advanced exam will be conducted on 18th May, 2025. For MTech admissions, GATE exam will be held on Feb 1, 2, 15, and 16, 2025.  ",
+    },
+    {
+      img: NITcalicut,
+      name: "   NIT Calicut ",
+      rank: "#25",
+      location: "Calicut, Kerala",
+      rating: "4.3",
+      fees: "   30,000 - 5,00,000",
+      accerdition: "AICTE ",
+      package: "13.8` LPA",
+      exams: "GATE, JEE Main",
+      description:
+        "The National Institute of Technology Calicut (NITC) is a public technical university and institute of national importance, located in Kozhikode, Kerala, India. Established in 1961 as a Regional Engineering College, it gained Deemed University status in 2002 and subsequently became a NIT under the National Institute of Technology Act 2007. NITC is known for its strong focus on engineering, science, technology, and management education and research.  ",
+    },
+    {
+      img: Thapar,
+      name: " Thapar University",
+      rank: "#29  ",
+      location: "Patiala, Punjab",
+      rating: "4.5",
+      fees: "     42,200 - 18,20,000",
+      accerdition: "UGC",
+      package: "7 LPA",
+      exams: "GATE, CAT",
+      description:
+        "Thapar University, founded in 1956, is a pioneering institution for engineering education, research, and innovation. Located in Patiala, it boasts a sprawling 250-acre campus. Recognized for its innovation-driven approach, Thapar is a top-ranked private university in India and holds an 'A+' grade from NAAC. It emphasizes quality education, encourages student diversity, and fosters an environment for scholarly inquiry and research. Thapar's alumni have made significant contributions across various fields, including business, industry, and research.",
+    },
+    {
+      img: Thapar,
+      name: " ICT Mumbai",
+      rank: "#41",
+      location: "Mumbai, Maharashtra",
+      rating: "4.8",
+      fees: "41,250 - 3,48,000",
+      accerdition: "AICTE",
+      package: "6 LPA",
+      exams: "GATE, JEE Main",
+      description:
+        " ICT Mumbai is one of the best colleges for Chemical Engineering in India, which offers a wide range of sub-specializations in the field of Chemistry and Chemical Engineering. The ICT Mumbai admission process for B.Tech Chemical Engineering, Food Engineering, Fibre Technology, Pharmaceutical Chemistry and Surface Coating Technology is based on a centralized counselling process conducted by State Common Entrance Test Cell Maharashtra. Therefore, clearing MHT CET is mandatory for B.Tech admission at ICT Mumbai.",
     },
     {
       img: BITMesra,
@@ -168,7 +326,7 @@ const colleges = {
       rating: "4.0",
       fees: "  32,000 - 5,85,000",
       accerdition: "   UGC",
-      package: "11.6 Lacs",
+      package: "11.6 LPA",
       exams: "JEE Main",
       description:
         "Birla Institute of Technology was founded in 1955 by the visionary industrialist Mr. BM Birla with the specific goal of providing a platform for its young minds to let their imaginations fly and their ideas come to life. For nearly six decades, the institute has been developing brains with a strong tradition of academic excellence, establishing learning frameworks that are far ahead of their time. BIT Mesra is one of Jharkhand's best technical universities. The university is well-known for its diversity, with nearly 58% of its enrollment coming from different Indian states. It was awarded the status of deemed university. The university is ranked 20th in Architecture and Planning, 28th in Pharmacy, 53rd in Engineering, 71st in University, and 77th in Management in the NIRF Ranking 2023.",
@@ -198,6 +356,19 @@ const colleges = {
       exams: "JEE Main ",
       description:
         "CMR University Seamedu, Bangalore is a private university in Karnataka, established in 2013 under Act 45 by the CMR Jnanadhara Trust. The university's vision is “To nurture creative thinkers who will drive positive global change.”CMR University Seamedu, Bangalore Courses include B.Sc in Filmmaking, Game art and Design, Photography, Sound engineering, Visual Effects and Animation, and BCA in Game Development.CMR University Seamedu, Bangalore Campus developed as per LEED Green Building certification standards. All the facilities required for interactive learning like the library, laboratory, classrooms with audio-visual aids, and auditorium are there. It also has international standard sports facilities. Separate hostels are available for boys and girls. ",
+    },
+    {
+      img: NITRourkela,
+      name: "NIT Rourkela",
+      rank: "#19  ",
+      location: "Rourkela, Odisha",
+      rating: "4.4",
+      fees: "  11,000 - 6,25,000",
+      accerdition: "UGC,AICTE,NBA",
+      package: "12.9 LPA",
+      exams: "Gate , JEE Main",
+      description:
+        "National Institute of Technology Rourkela is a publicly funded institute of higher learning in engineering, science, and technology. The institute aims to be internationally recognised and to produce competent engineers and scientists. NIT Rourkela courses include M.Tech, B.Arch, M.Arch, and M.Plan. Students are required to qualify for the GATE exam for admission to the M.Tech/M.Arch/M/Plan courses.   NIT Rourkela has been ranked 1001–1200 in the Times Higher Education (THE) ranking 2024. National Institute of Technology Rourkela has been ranked 10th, 16th, 37th, and 29th  in the NIRF 2024 rankings for Architecture and Planning, Engineering, Overall, and Research Institutions, respectively. National Institute of Technology Rourkela or NIT Rourkela was formerly known as the Regional Engineering College (REC) Rourkela. It was established on August 15, 1961, and is an institute of national importance and operates independently under the Department of Human Resource Development, thus becoming one of the National Institutes of Technologies in India. ",
     },
     {
       img: Nitwrangal,
@@ -370,6 +541,7 @@ const colleges = {
       description:
         " Kasturba Medical College (KMC), Manipal is private medical college in India established in 1953. It is under the  aegis of the Manipal Academy of Higher Education (MAHE) and is recognized by the Medical Council of India (MCI). The college offers admission in various undergraduate, postgraduate, and super-speciality courses in the field of Medicine. KMC Manipal accepts merit in NEET UG (MBBS), NEET PG (MD / MS) and NEET SS (DM / MCh). Admission to M.Sc (Medical)  courses is through the Manipal",
     },
+
     {
       img: CMC,
       name: "   CMC Vellore ",
@@ -503,9 +675,12 @@ const Admisson = () => {
                       </p>
                       <button className="ranking-btn">
                         {college.rating}
-                        <i className="clg-sepecific-icon">
+                        <div className="star-img-container ">
+                          <img src={Star} alt="" />
+                        </div>
+                        {/* <i className="clg-sepecific-icon">
                           <CiStar />
-                        </i>
+                        </i> */}
                       </button>
                     </div>
                     <div className="inline address-certificate-container">

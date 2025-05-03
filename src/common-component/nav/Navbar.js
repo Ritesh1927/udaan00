@@ -15,11 +15,6 @@ const Navbar = () => {
           <img className="logo-img" src={Logoimg} alt="Logo" />
         </div>
 
-        {/* Hamburger Menu Button (Visible only on mobile) */}
-        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-        </button>
-
         {/* Navigation Links */}
         <ul className={`nav-elements-container ${menuOpen ? "active" : ""}`}>
           <li>
@@ -52,16 +47,17 @@ const Navbar = () => {
               Contact us
             </Link>
           </li>
-          {/* <li>
-            <Link
-              className="nav-elements"
-              to="/franchise"
-              onClick={() => setMenuOpen(false)}
-            >
-              Franchise
-            </Link>
-          </li> */}
         </ul>
+
+        {/* ✅ Login Button */}
+        <Link to="/login" className="nav-login-btn">
+          Login
+        </Link>
+
+        {/* Hamburger Menu Button (Visible only on mobile) */}
+        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+        </button>
       </div>
     </nav>
   );

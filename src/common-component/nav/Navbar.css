@@ -24,12 +24,10 @@ li {
 .nav-header {
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
-    /* This will ensure the hamburger is at the right */
     width: 90%;
-    max-width: 1230px;
+    max-width: 1400px;
     margin: auto;
-    /* padding: 10px 0; */
+    position: relative;
 }
 
 /* Logo */
@@ -47,15 +45,6 @@ li {
     align-items: center;
     gap: 50px;
     padding-left: 70px;
-}
-
-/* Hide Hamburger Menu on Large Screens */
-.menu-toggle {
-    display: none;
-    position: absolute;
-    /* Ensure it's positioned to the right */
-    right: 20px;
-    /* Place it to the right */
 }
 
 /* Nav Links */
@@ -84,7 +73,6 @@ li {
 
 .dropdown-options-container {
     position: absolute;
-    /* top: 85px; */
     background-color: white;
     border-radius: 8px;
     box-shadow: 0px 2px 8px rgba(99, 99, 99, 0.2);
@@ -109,18 +97,49 @@ li {
     color: white;
 }
 
-/* Mobile Responsive Styles */
+/* Hamburger Button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+}
+
+/* ✅ Login Button */
+.nav-login-btn {
+    padding: 8px 20px;
+    font-size: 18px;
+    background: #8565aa;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    margin-left: auto;
+}
+
+/* Hover Effect for Login */
+.nav-login-btn:hover {
+    background-color: #9f8ab7;
+    scale: 1.1;
+}
+
+/* Responsive Styles */
+@media (max-width: 850px) {
+    .nav-elements-container {
+        gap: 30px;
+    }
+}
+
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
-        background: none;
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
-        position: absolute;
-        /* Ensure it's positioned to the right on mobile */
-        right: 20px;
-        /* Position it to the right */
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 12;
     }
 
     .nav-elements-container {
@@ -145,5 +164,17 @@ li {
         padding: 10px 0;
         text-align: center;
         width: 100%;
+    }
+
+    /* ✅ Mobile: Login button to the left of hamburger */
+    .nav-login-btn {
+        position: absolute;
+        right: 70px;
+        top: 47%;
+        transform: translateY(-50%);
+        padding: 6px 14px;
+        font-size: 18px;
+        margin-left: 0;
+
     }
 }

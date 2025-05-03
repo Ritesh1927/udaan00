@@ -9,12 +9,15 @@ app.use(bodyParser.json());
 app.use(express.json());
 // const cors = require("cors");
 
-app.use(cors({
-  origin: process.env.NODE_ENV === 'development' 
-    ? process.env.FRONTEND_DEV_URL 
-    : process.env.FRONTEND_PROD_URLS.split(','),
-  credentials: true
-}));
+app.use(
+  cors({
+    origin:
+      process.env.NODE_ENV === "development"
+        ? process.env.FRONTEND_DEV_URL
+        : process.env.FRONTEND_PROD_URLS.split(","),
+    credentials: true,
+  })
+);
 
 const Contactschema = require("./Schema/Contactschema");
 require("./Connection/Database");
@@ -25,7 +28,16 @@ connectDB();
 // API Endpoint
 app.post("/api/contact", async (req, res) => {
   try {
-    const { name, email, mobile, percentage, course, appearedInExam, examName, examPercentage } = req.body;
+    const {
+      name,
+      email,
+      mobile,
+      percentage,
+      course,
+      appearedInExam,
+      examName,
+      examPercentage,
+    } = req.body;
 
     // Validation
     if (!name || !email || !mobile || !percentage) {
@@ -44,7 +56,7 @@ app.post("/api/contact", async (req, res) => {
       percentage,
       course,
       appearedInExam,
-      ...(appearedInExam === 'yes' && { examName, examPercentage }) // Only include if appearedInExam is 'yes'
+      ...(appearedInExam === "yes" && { examName, examPercentage }), // Only include if appearedInExam is 'yes'
     });
     await newContact.save();
 
