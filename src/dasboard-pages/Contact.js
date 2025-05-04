@@ -36,6 +36,9 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    console.log("Submitting to:", `${window.location.origin}/api/franchise`);
+    console.log("Payload:", payload);
+
     try {
       const payload = { ...formData, course: selectedCourse };
       // If user didn't appear in exam, remove exam related fields from payload
@@ -43,7 +46,7 @@ const Contact = () => {
         delete payload.examName;
         delete payload.examPercentage;
       }
-      console.log(payload);
+      // console.log(payload);
       const response = await axios.post("/api/contact", payload, {
         headers: { "Content-Type": "application/json" },
       });

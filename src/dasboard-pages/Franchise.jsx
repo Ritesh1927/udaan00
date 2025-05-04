@@ -22,31 +22,34 @@ const Franchise = () => {
   const handleSub = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // console.log("Current form data:", franchiesData); // Debugging
-    // console.log("Submitting request ....");
-
+    
+    // Debug: Log current state
+    console.log("Current form data:", franchiesData);
+    console.log("Submitting to:", `${window.location.origin}/api/franchise`);
+  
     try {
       const payload = { ...franchiesData };
-
-      // console.log("Payload before sending:", payload);
-
+      console.log("Payload before sending:", payload);
+  
       const response = await axios.post("/api/franchise", payload, {
         headers: { "Content-Type": "application/json" },
       });
-      // console.log(response);
-
+  
       toast.success(response.data.message);
-      // Reset form
-      // setFranchiesData({
-      //   orgizationname: "",
-      //   mobile: "",
-      //   contactperson: "",
-      //   email: "",
-      //   description: "",
-      //   websiteurl: ""
-      // });
+      
+      // Reset form after successful submission
+      setFranchiesData({
+        orgizationname: "",
+        mobile: "",
+        contactperson: "",
+        email: "",
+        description: "",
+        websiteurl: ""
+      });
+      
     } catch (error) {
       const errorMsg = error.response?.data?.message || "Submission failed";
+      console.error("Submission error:", error);
       toast.error(errorMsg);
     } finally {
       setIsSubmitting(false);
