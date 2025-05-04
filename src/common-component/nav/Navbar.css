@@ -33,6 +33,7 @@ li {
 /* Logo */
 .logo-container {
     width: 150px;
+    padding-left: 8px;
 }
 
 .logo-img {
@@ -142,6 +143,10 @@ li {
         z-index: 12;
     }
 
+    .nav-header {
+        width: 100%;
+    }
+
     .nav-elements-container {
         display: none;
         flex-direction: column;
@@ -169,7 +174,7 @@ li {
     /* ✅ Mobile: Login button to the left of hamburger */
     .nav-login-btn {
         position: absolute;
-        right: 70px;
+        right: 60px;
         top: 47%;
         transform: translateY(-50%);
         padding: 6px 14px;

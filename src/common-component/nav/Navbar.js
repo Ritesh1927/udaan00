@@ -59,9 +59,9 @@ const Navbar = () => {
         </ul>
 
         {/* ✅ Login Button */}
-        <Link to="/login" className="nav-login-btn">
+        {/* <Link to="/login" className="nav-login-btn">
           Login
-        </Link>
+        </Link> */}
 
         {/* Hamburger Menu Button (Visible only on mobile) */}
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>

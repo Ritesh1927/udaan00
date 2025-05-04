@@ -24,6 +24,7 @@ const Contact = () => {
   });
   const [selectedCourse, setSelectedCourse] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [focusedField, setFocusedField] = useState("");
 
   const courses = ["BCA", "MCA", "B.TECH", "M.TECH", "BBA", "MBA", "MBBS"];
 
@@ -45,7 +46,7 @@ const Contact = () => {
       console.log(payload);
       const response = await axios.post("/api/contact", payload, {
         headers: { "Content-Type": "application/json" },
-      }); 
+      });
 
       toast.success(response.data.message);
       // Reset form
@@ -73,69 +74,90 @@ const Contact = () => {
         <h4 className="contact-heading">Register for counselling</h4>
 
         <form onSubmit={handleSubmit}>
-          {/* Name Field */}
-          <div className="regiter-elements-content ">
-            <div className="form-fill-section upper-section-form">
+          <div className="regiter-elements-content">
+            {/* Name */}
+            <div
+              className={`form-fill-section upper-section-form ${
+                focusedField === "name" ? "focused" : ""
+              }`}
+            >
               <i>
                 <IoPersonOutline />
               </i>
-
               <input
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
+                onFocus={() => setFocusedField("name")}
+                onBlur={() => setFocusedField("")}
                 placeholder="Full Name"
                 className="register-input-section"
                 required
               />
             </div>
 
-            {/* Mobile Field */}
-            <div className="form-fill-section upper-section-form">
+            {/* Mobile */}
+            <div
+              className={`form-fill-section upper-section-form ${
+                focusedField === "mobile" ? "focused" : ""
+              }`}
+            >
               <i>
                 <LuPhone />
               </i>
-
               <input
                 type="tel"
                 name="mobile"
                 value={formData.mobile}
                 onChange={handleInputChange}
+                onFocus={() => setFocusedField("mobile")}
+                onBlur={() => setFocusedField("")}
                 placeholder="Mobile Number"
                 className="register-input-section"
                 required
               />
             </div>
           </div>
-          {/* Email Field */}
-          <div className="form-fill-section">
+
+          {/* Email */}
+          <div
+            className={`form-fill-section ${
+              focusedField === "email" ? "focused" : ""
+            }`}
+          >
             <i>
               <IoMailOutline />
             </i>
-
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleInputChange}
+              onFocus={() => setFocusedField("email")}
+              onBlur={() => setFocusedField("")}
               placeholder="Email"
               className="register-input-section"
               required
             />
           </div>
 
-          {/* Percentage Field */}
-          <div className="form-fill-section">
+          {/* Percentage */}
+          <div
+            className={`form-fill-section ${
+              focusedField === "percentage" ? "focused" : ""
+            }`}
+          >
             <i>
               <TbCirclePercentage />
             </i>
-
             <input
               type="number"
               name="percentage"
               value={formData.percentage}
               onChange={handleInputChange}
+              onFocus={() => setFocusedField("percentage")}
+              onBlur={() => setFocusedField("")}
               placeholder="12th Percentage"
               className="register-input-section"
               required
@@ -144,12 +166,18 @@ const Contact = () => {
 
           {/* Course Dropdown */}
           <select
-            className="course-dropdown"
+            className={`course-dropdown ${
+              focusedField === "dropdown" ? "focused" : ""
+            }`}
             value={selectedCourse}
             onChange={(e) => setSelectedCourse(e.target.value)}
+            onFocus={() => setFocusedField("dropdown")}
+            onBlur={() => setFocusedField("")}
             required
+            name="dropdown"
+            type="dropdown"
           >
-            <option className="course-dropdown-option" value="" disabled>
+            <option value="" disabled>
               Select Course
             </option>
             {courses.map((course) => (
@@ -159,7 +187,7 @@ const Contact = () => {
             ))}
           </select>
 
-          {/* New Competitive Exam Field */}
+          {/* Exam Section */}
           <div className="exam-section">
             <label className="exam-question">
               Did you appear in any competitive exam?
@@ -170,7 +198,6 @@ const Contact = () => {
                   type="radio"
                   name="appearedInExam"
                   value="yes"
-                  className="yes"
                   checked={formData.appearedInExam === "yes"}
                   onChange={handleInputChange}
                 />
@@ -181,7 +208,6 @@ const Contact = () => {
                   type="radio"
                   name="appearedInExam"
                   value="no"
-                  className="yes"
                   checked={formData.appearedInExam === "no"}
                   onChange={handleInputChange}
                 />
@@ -189,34 +215,43 @@ const Contact = () => {
               </label>
             </div>
 
-            {/* Conditional fields for exam details */}
             {formData.appearedInExam === "yes" && (
-              <>
-                <div className="regiter-elements-content ">
-                  <div className="form-fill-section upper-section-form">
-                    <input
-                      type="text"
-                      name="examName"
-                      value={formData.examName}
-                      onChange={handleInputChange}
-                      placeholder="Name of Exam"
-                      className="register-input-section yes-no-section"
-                      required={formData.appearedInExam === "yes"}
-                    />
-                  </div>
-                  <div className="form-fill-section upper-section-form">
-                    <input
-                      type="number"
-                      name="examPercentage"
-                      value={formData.examPercentage}
-                      onChange={handleInputChange}
-                      placeholder="Percentage in Exam"
-                      className="register-input-section yes-no-section"
-                      required={formData.appearedInExam === "yes"}
-                    />
-                  </div>
+              <div className="regiter-elements-content">
+                <div
+                  className={`form-fill-section upper-section-form ${
+                    focusedField === "examName" ? "focused" : ""
+                  }`}
+                >
+                  <input
+                    type="text"
+                    name="examName"
+                    value={formData.examName}
+                    onChange={handleInputChange}
+                    onFocus={() => setFocusedField("examName")}
+                    onBlur={() => setFocusedField("")}
+                    placeholder="Name of Exam"
+                    className="register-input-section yes-no-section"
+                    required
+                  />
                 </div>
-              </>
+                <div
+                  className={`form-fill-section upper-section-form ${
+                    focusedField === "examPercentage" ? "focused" : ""
+                  }`}
+                >
+                  <input
+                    type="number"
+                    name="examPercentage"
+                    value={formData.examPercentage}
+                    onChange={handleInputChange}
+                    onFocus={() => setFocusedField("examPercentage")}
+                    onBlur={() => setFocusedField("")}
+                    placeholder="Percentage in Exam"
+                    className="register-input-section yes-no-section"
+                    required
+                  />
+                </div>
+              </div>
             )}
           </div>
 
@@ -232,9 +267,7 @@ const Contact = () => {
         </form>
       </div>
 
-      {/* Form section Ends here ----------------------------------------------------- */}
-
-      <div class="parallax-location"></div>
+      <div className="parallax-location"></div>
       <div className="map-location-container container">
         <MapLocation />
         <div className="written-address-container">
@@ -245,7 +278,13 @@ const Contact = () => {
             </i>
             Plot No 926 , Tower 3 Golden I , Greater Noida West UttarPradesh
           </p>
-          <h1 className="mb10">Aurtralia</h1>
+          <p className="map-address">
+            <i className="location-icon-page">
+              <FaLocationDot />
+            </i>
+            73, Tagore Colony,Chakrata Road Dehradun.248001
+          </p>
+          <h1 className="mb10">Australia</h1>
           <p className="map-address aus-address">
             <i className="location-icon-page">
               <FaLocationDot />

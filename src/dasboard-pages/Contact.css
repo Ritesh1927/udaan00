@@ -303,3 +303,15 @@ option:hover {
         background-attachment: scroll;
     }
 }
+
+.form-fill-section.focused {
+    border-color: #4facfe;
+    box-shadow: 0 0 0 2px rgba(79, 172, 254, 0.2);
+    transition: all 0.3s ease;
+}
+
+.course-dropdown.focused {
+    border-color: #4facfe;
+    box-shadow: 0 0 0 2px rgba(79, 172, 254, 0.2);
+    transition: all 0.3s ease;
+}

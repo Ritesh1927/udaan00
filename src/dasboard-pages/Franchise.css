@@ -1,0 +1,160 @@
+.form-franchise-container-wrapper {
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+.form-franchise-container {
+    width: 100%;
+}
+
+.form-franchise-wrap {
+    width: 100%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 20px;
+    margin-top: 25px;
+    border-radius: 15px;
+}
+
+.form-control {
+    width: 100%;
+}
+
+.form-control-franchise {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.form-control-franchise:focus {
+    outline: none;
+    border-color: #4facfe;
+    box-shadow: 0 0 0 2px rgba(79, 172, 254, 0.2);
+}
+
+.franchise-text-area {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.form-control-text-area {
+    width: 100%;
+    border-radius: 8px;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+.franchise-grid-wrp {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.btn-primary {
+    border: none;
+    background-color: #8565aa;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #a98fc6;
+}
+
+.franchise-heading {
+    color: #333;
+    font-size: 25px;
+    margin-bottom: 5px;
+    max-width: 800px;
+    margin-top: 35px;
+    text-align: start;
+}
+
+.why-udaan-1 {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.franchise-why-join-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.franchise-content-right,
+.franchise-content-left {
+    width: 50%;
+}
+
+
+.franchise-content-left ul {
+    padding-left: 20px;
+}
+
+.franchise-content-right ul {
+    padding-left: 20px;
+}
+
+.franchise-content-left ul li {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 32px;
+    list-style: disc;
+    margin-top: 8px;
+
+}
+
+.franchise-content-right ul li {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 32px;
+    list-style: disc;
+    margin-top: 8px;
+}
+
+.why-udaan {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.franchise-under-content {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 28px;
+    margin-top: 10px;
+    width: 75%;
+}
+
+@media (max-width:768px) {
+    .franchise-under-content {
+        width: 100%;
+    }
+
+    .franchise-why-join-wrapper {
+        display: block;
+    }
+
+    .franchise-content-left {
+        width: 100%;
+    }
+
+    .franchise-content-right {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width:480px) {
+    .franchise-grid-wrp {
+        grid-template-columns: 1fr;
+    }
+}
