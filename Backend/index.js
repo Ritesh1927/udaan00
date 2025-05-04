@@ -22,12 +22,8 @@ app.use(
     credentials: true,
   })
 );
-// app.use(cors({
-//   origin: '*',
-//   methods: ['POST'],
-//   allowedHeaders: ['Content-Type']
-// }));
 
+// --------------------------- consoling data body from frontend -----------------------
 app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.path}`);
   if (req.method !== 'GET') {
@@ -35,6 +31,7 @@ app.use((req, res, next) => {
   }
   next();
 });
+// -----------------------------------------------------------------------------------------
 
 const Contactschema = require("./Schema/Contactschema");
 // const Franchiseschema = require("./Schema/Franchiseschema");
@@ -44,6 +41,7 @@ require("./Connection/Database");
 // Connect to database
 connectDB();
 
+// ------------------------------- log for database connection status ----------------------------
 mongoose.connection.on('connected', () => {
   console.log('Mongoose connected to DB:', mongoose.connection.db.databaseName);
   mongoose.connection.db.listCollections().toArray((err, names) => {
@@ -54,6 +52,7 @@ mongoose.connection.on('connected', () => {
     console.log('Available collections:', names.map(n => n.name));
   });
 });
+// --------------------------------------------------------------------------------------------------
 
 
 
@@ -150,7 +149,7 @@ app.post("/api/franchise", async (req, res) => {
   }
 });
 
-// Health check
+// Health check--------------------------------------------------------------------------
 // app.get("/", (req, res) => {
 //   res.send("Backend is running");
 // });
@@ -162,6 +161,7 @@ app.get('/api/healthcheck', (req, res) => {
     env: process.env.NODE_ENV
   });
 });
+// -------------------------------------------------------------------------------------------
 
 // Error handling
 app.use((req, res) => {
