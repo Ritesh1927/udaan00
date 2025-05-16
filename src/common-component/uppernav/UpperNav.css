@@ -23,7 +23,6 @@
 
 
 
-
 .upnav-no {
   font-size: 35px;
   color: yellow;
@@ -35,21 +34,7 @@
   text-align: center;
 }
 
-.whatsup-btn {
-  border: none;
-  background-color: #e7e3db;
-  border-radius: 5px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.whatsup-btn img {
-  width: 35px;
-  padding-top: 3px;
-}
 
 @media (max-width:768px) {
   .upnav-no {

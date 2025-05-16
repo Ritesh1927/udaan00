@@ -16,6 +16,11 @@ import SkillMigration from "./dasboard-pages/SkillMigration";
 import Testimonials from "./dasboard-pages/Testimonials";
 import Franchise from "./dasboard-pages/Franchise";
 import Login from "./common-component/login/Login";
+import Profile from "./component/insert-profile/Profile";
+import HomePannel from "./admin-dashboard/HomePannel";
+// import BoardList from "./component/abroaduniversity/BoardList";
+import TenthBoardList from "./component/resultcards/TenthBoardList";
+import TwelfthBoardList from "./component/resultcards/TwelfthBoardList";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -34,6 +39,10 @@ root.render(
           <Route path="/skillmigration" element={<SkillMigration />} />
           <Route path="/franchise" element={<Franchise />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/insert-profile" element={<Profile />} />
+          <Route path="/homepannel" element={<HomePannel />} />
+          <Route path="/boards/10th" element={<TenthBoardList />} />
+          <Route path="/boards/12th" element={<TwelfthBoardList />} />
         </Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>

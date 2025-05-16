@@ -1,0 +1,54 @@
+/* Modern Result Cards */
+
+.modern-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    background: #f0f4fa;
+    border-radius: 16px;
+    max-width: 1100px;
+    margin: 2rem auto;
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+.modern-result-card {
+    background: linear-gradient(135deg, #ffffff, #f7fafd);
+    border: 1px solid #dbe4f0;
+    padding: 2rem 1rem;
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modern-result-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #e4efff, #f9fcff);
+}
+
+.card-icon {
+    color: #4a90e2;
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Responsive Fix */
+@media (max-width: 500px) {
+    .modern-card-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .modern-result-card {
+        padding: 12px;
+    }
+}
