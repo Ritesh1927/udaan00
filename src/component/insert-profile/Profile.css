@@ -1,0 +1,116 @@
+.profile-dashboard-container {
+    border: 1px solid #E9EEF2;
+    display: flex;
+    padding: 12px;
+    align-items: center;
+    font-family: "Hanken Grotesk", sans-serif;
+    gap: 12px;
+    border-radius: 5px;
+    margin-top: 25px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.profile-pic-image-container {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #222;
+    border-radius: 50%;
+}
+
+.ppfpic {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.proile-inner-content p {
+    padding-right: 5px;
+}
+
+
+.proile-inner-content {
+    display: flex;
+    line-height: 28px;
+}
+
+.profile-tile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    /* border-bottom: 1px solid #E9EEF2; */
+}
+
+.profile-img-contain {
+    width: 50px;
+    height: 50px;
+}
+
+.profile-img-contain img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.edit-profile-btn {
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    background: none;
+    color: #08bd80;
+    border: 1px solid #E9EEF2;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 6px;
+}
+
+.edit-profile-container {
+    font-family: "Hanken Grotesk", sans-serif;
+    margin-top: 25px;
+}
+
+.edit-profile-tiles-wrapper {
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 8px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.profile-label {
+    font-size: 19px;
+    padding-bottom: 5px;
+}
+
+.save-profile-btn {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-top: 25px;
+    border-radius: 8px;
+
+}
+
+.save-btn-profile {
+    width: 100px;
+    height: 35px;
+    background-color: #8565aa;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 8px;
+}
+
+.profile-content {
+    border: none;
+    height: 1px;
+    margin: 0;
+    flex-shrink: 0;
+    background-color: #E9EEF2;
+    /* background-color: rgba(0, 0, 0, 0.12); */
+}

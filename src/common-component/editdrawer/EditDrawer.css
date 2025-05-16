@@ -1,0 +1,102 @@
+/* Drawer container */
+.drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 450px;
+    height: 100%;
+    background-color: #ffff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    animation: slideIn 0.3s ease-in-out forwards;
+    padding: 20px;
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+/* Slide in animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+/* Drawer header */
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.drawer-header h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.drawer-header button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    padding-right: 50px;
+}
+
+.drawer-header button:hover {
+    color: #ff5c5c;
+}
+
+/* Drawer body */
+.drawer-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.drawer-body input[type="text"],
+.drawer-body input[type="file"] {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.drawer-body input[type="text"]:focus {
+    border-color: #007bff;
+}
+
+/* Save button */
+.drawer-save-btn {
+    padding: 10px 14px;
+    background-color: #007bff;
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.2s ease;
+}
+
+.drawer-save-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    .drawer {
+        width: 100%;
+    }
+}

@@ -12,6 +12,7 @@ import Videobg from "../component/videobg/Videobg";
 import WhatsAppButton from "../common-component/whatsup/WhatsAppButton";
 import Carousel from "../component/carousel/Carousel";
 import TestimonialSlider from "./Testimonials";
+import ResultCards from "../component/resultcards/ResultCards";
 
 const Home = () => {
   return (
@@ -20,6 +21,10 @@ const Home = () => {
         <Carousel />
       </div>
       <section className="container">
+        <div>
+          <h1 className="home-cards-section-heading">Check Your Result Now </h1>
+          <ResultCards />
+        </div>
         <div className="inner-container">
           <div className="welcome-heading inline mt20">
             <div className="left-home-container">
