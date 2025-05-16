@@ -3,10 +3,14 @@ const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const connectDB = require("./Connection/Database");
+const mongoose = require("mongoose");
+// const mongoSanitize = require("express-mongo-sanitize");
 
 // Middleware
 app.use(bodyParser.json());
 app.use(express.json());
+// app.use(mongoSanitize());
+
 // const cors = require("cors");
 
 app.use(
@@ -19,6 +23,16 @@ app.use(
   })
 );
 
+// --------------------------- consoling data body from frontend -----------------------
+app.use((req, res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.path}`);
+  if (req.method !== 'GET') {
+    console.log('Request body:', req.body);
+  }
+  next();
+});
+// -----------------------------------------------------------------------------------------
+
 const Contactschema = require("./Schema/Contactschema");
 // const Franchiseschema = require("./Schema/Franchiseschema");
 const franchisemodel = require("./Schema/Franchiseschema");
@@ -26,6 +40,21 @@ require("./Connection/Database");
 
 // Connect to database
 connectDB();
+
+// ------------------------------- log for database connection status ----------------------------
+mongoose.connection.on('connected', () => {
+  console.log('Mongoose connected to DB:', mongoose.connection.db.databaseName);
+  mongoose.connection.db.listCollections().toArray((err, names) => {
+    if (err) {
+      console.error('Error listing collections:', err);
+      return;
+    }
+    console.log('Available collections:', names.map(n => n.name));
+  });
+});
+// --------------------------------------------------------------------------------------------------
+
+
 
 // API Endpoint
 app.post("/api/contact", async (req, res) => {
@@ -75,6 +104,14 @@ app.post("/api/contact", async (req, res) => {
 
 
 app.post("/api/franchise", async (req, res) => {
+
+
+  console.log("---------- FRANCHISE REQUEST START ----------");
+  console.log("Headers:", req.headers);
+  console.log("Body:", req.body); 
+  console.log("Request IP:", req.ip);
+  console.log("Request Host:", req.get('host'));
+
   try {
     const { orgizationname, mobile,  contactperson, email, description, websiteurl } = req.body;
     //  console.log(req.body)
@@ -112,10 +149,19 @@ app.post("/api/franchise", async (req, res) => {
   }
 });
 
-// Health check
-app.get("/", (req, res) => {
-  res.send("Backend is running");
+// Health check--------------------------------------------------------------------------
+// app.get("/", (req, res) => {
+//   res.send("Backend is running");
+// });
+app.get('/api/healthcheck', (req, res) => {
+  res.json({
+    status: 'ok',
+    database: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected',
+    franchiseModel: !!mongoose.models.franchise || !!mongoose.models.Franchise,
+    env: process.env.NODE_ENV
+  });
 });
+// -------------------------------------------------------------------------------------------
 
 // Error handling
 app.use((req, res) => {

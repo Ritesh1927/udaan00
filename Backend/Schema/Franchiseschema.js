@@ -44,7 +44,7 @@ const franchisedata = new mongoose.Schema({
     },
 });
 
-const franchisemodel = new mongoose.model("Franchise", franchisedata);  
+const franchisemodel = new mongoose.model("franchise", franchisedata);  
 
 module.exports = franchisemodel;
     
