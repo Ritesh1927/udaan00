@@ -18,6 +18,17 @@ import Kerala from "../../assets/boards/Kerala.png";
 import MpBoard from "../../assets/boards/mpboard.jpg";
 import Manipur from "../../assets/boards/manipur.png";
 import Meghalaya from "../../assets/boards/Meghalaya.png";
+import Nagaland from "../../assets/boards/Nagaland.jpg";
+import Odisha from "../../assets/boards/odisha.jpg";
+import Punjab from "../../assets/boards/punjab.jpg";
+import Rajasthan from "../../assets/boards/rajasthan.jpg";
+import Sikkim from "../../assets/boards/sikkim.png";
+import TamilNadu from "../../assets/boards/TamilNadu.png";
+import Telangana from "../../assets/boards/telangana.jpg";
+import Tripura from "../../assets/boards/Tripura.jpg";
+import Uttarakhand from "../../assets/boards/Uttarakhand.jpg";
+import WestBengal from "../../assets/boards/WestBengal.png";
+import Jammu from "../../assets/boards/jammu.jpg";
 
 const tenthBoards = [
   {
@@ -120,6 +131,73 @@ const tenthBoards = [
     name: "Meghalaya Board ",
     url: "https://megresults.nic.in/",
     image: Meghalaya,
+    declared: true,
+  },
+  {
+    name: "Nagaland Board ",
+    url: "https://nbsenl.edu.in/board-results/hslc",
+    image: Nagaland,
+    declared: true,
+  },
+  {
+    name: "Odisha  Board ",
+    url: "https://orissaresults.nic.in/",
+    image: Odisha,
+    declared: true,
+  },
+  {
+    name: "Punjab Board ",
+    url: "https://punjab-12th-result.indiaresults.com/pb/pseb/result-of-12-class-march-2025/query.htm",
+    image: Punjab,
+    declared: false,
+  },
+  {
+    name: "Rajasthan Board ",
+    url: "https://punjab-12th-result.indiaresults.com/pb/pseb/result-of-12-class-march-2025/query.htm",
+    image: Rajasthan,
+    declared: false,
+  },
+  {
+    name: "Sikkim Board ",
+    url: "https://punjab-12th-result.indiaresults.com/pb/pseb/result-of-12-class-march-2025/query.htm",
+    image: Sikkim,
+    declared: false,
+  },
+  {
+    name: "Tamil Nadu Board ",
+    url: "https://tnresults.nic.in/rdclex.htm",
+    image: TamilNadu,
+    declared: true,
+  },
+
+  {
+    name: "Telangana Board ",
+    url: "https://www.results.shiksha/telangana/ssc.htm",
+    image: Telangana,
+    declared: true,
+  },
+  {
+    name: "Tripura Board ",
+    url: "https://education.indianexpress.com/boards-exam/tripura-tbse-10th-result",
+    image: Tripura,
+    declared: true,
+  },
+  {
+    name: "Uttarakhand Board ",
+    url: "https://uaresults.nic.in/",
+    image: Uttarakhand,
+    declared: true,
+  },
+  {
+    name: "West Bengal Board ",
+    url: "https://www.results.shiksha/west-bengal/wbbse/",
+    image: WestBengal,
+    declared: true,
+  },
+  {
+    name: "Jammu & Kashmir Board ",
+    url: "https://jkresults.nic.in/",
+    image: Jammu,
     declared: true,
   },
 ];
