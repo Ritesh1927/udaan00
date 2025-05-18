@@ -46,7 +46,7 @@ import Cmr from "../assets/cmr.png";
 import Soa from "../assets/soa.png";
 import DTU from "../assets/DTU.png";
 import Mandi from "../assets/mandi.png";
-import IIEST from "../assets/iiest.png";
+import IIEST from "../assets/iiest.jpg";
 
 import { CiStar } from "react-icons/ci";
 import { FaLocationDot } from "react-icons/fa6";
