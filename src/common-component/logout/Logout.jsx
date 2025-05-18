@@ -1,7 +1,16 @@
-import React from "react";
-import "../logout/Logout.css";
-const Logout = ({ isOpen, onClose, onLogout }) => {
+import React, { useContext } from 'react';
+import '../logout/Logout.css';
+import AuthContext from '../../context/AuthContext';
+
+const Logout = ({ isOpen, onClose }) => {
+  const { logout } = useContext(AuthContext);
+
   if (!isOpen) return null;
+
+  const handleLogout = () => {
+    logout();
+    onClose();
+  };
 
   return (
     <div className="modal-overlay">
@@ -12,7 +21,7 @@ const Logout = ({ isOpen, onClose, onLogout }) => {
           <button onClick={onClose} className="btn cancel-btn">
             Cancel
           </button>
-          <button onClick={onLogout} className="btn logout-btn">
+          <button onClick={handleLogout} className="btn logout-btn">
             Logout
           </button>
         </div>

@@ -4,14 +4,10 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const connectDB = require("./Connection/Database");
 const mongoose = require("mongoose");
-// const mongoSanitize = require("express-mongo-sanitize");
 
 // Middleware
 app.use(bodyParser.json());
 app.use(express.json());
-// app.use(mongoSanitize());
-
-// const cors = require("cors");
 
 app.use(
   cors({
@@ -23,7 +19,7 @@ app.use(
   })
 );
 
-// --------------------------- consoling data body from frontend -----------------------
+// Request logging middleware
 app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.path}`);
   if (req.method !== 'GET') {
@@ -31,46 +27,33 @@ app.use((req, res, next) => {
   }
   next();
 });
-// -----------------------------------------------------------------------------------------
 
-const Contactschema = require("./Schema/Contactschema");
-// const Franchiseschema = require("./Schema/Franchiseschema");
-const franchisemodel = require("./Schema/Franchiseschema");
+// Database connection
 require("./Connection/Database");
-
-// Connect to database
 connectDB();
 
-// ------------------------------- log for database connection status ----------------------------
 mongoose.connection.on('connected', () => {
   console.log('Mongoose connected to DB:', mongoose.connection.db.databaseName);
   mongoose.connection.db.listCollections().toArray((err, names) => {
-    if (err) {
-      console.error('Error listing collections:', err);
-      return;
-    }
-    console.log('Available collections:', names.map(n => n.name));
+    if (err) console.error('Error listing collections:', err);
+    else console.log('Available collections:', names.map(n => n.name));
   });
 });
-// --------------------------------------------------------------------------------------------------
 
+// Import routes and middleware
+const Contactschema = require("./Schema/Contactschema");
+const franchisemodel = require("./Schema/Franchiseschema");
+const authRouter = require('./routes/auth');
+const { protect } = require('./middlewares/auth');
 
+// Mount authentication routes
+app.use('/api/auth', authRouter);
 
-// API Endpoint
+// Existing API endpoints (unchanged)
 app.post("/api/contact", async (req, res) => {
   try {
-    const {
-      name,
-      email,
-      mobile,
-      percentage,
-      course,
-      appearedInExam,
-      examName,
-      examPercentage,
-    } = req.body;
-
-    // Validation
+    const { name, email, mobile, percentage, course, appearedInExam, examName, examPercentage } = req.body;
+    
     if (!name || !email || !mobile || !percentage) {
       return res.status(400).json({ message: "All fields are required" });
     }
@@ -87,37 +70,26 @@ app.post("/api/contact", async (req, res) => {
       percentage,
       course,
       appearedInExam,
-      ...(appearedInExam === "yes" && { examName, examPercentage }), // Only include if appearedInExam is 'yes'
+      ...(appearedInExam === "yes" && { examName, examPercentage }),
     });
     await newContact.save();
 
     res.status(201).json({ message: "Registration successful!" });
   } catch (error) {
-    // console.error("Server error:", error);
-    // res.status(500).json({ message: "Internal server error" });
-    // res.send(error)
     const messages = Object.values(error.errors).map((err) => err.message);
     console.log("Validation Errors:", messages);
     res.status(400).json({ message: messages.join(", ") });
   }
 });
 
-
 app.post("/api/franchise", async (req, res) => {
-
-
-  console.log("---------- FRANCHISE REQUEST START ----------");
-  console.log("Headers:", req.headers);
-  console.log("Body:", req.body); 
-  console.log("Request IP:", req.ip);
-  console.log("Request Host:", req.get('host'));
-
   try {
-    const { orgizationname, mobile,  contactperson, email, description, websiteurl } = req.body;
-    //  console.log(req.body)
+    const { orgizationname, mobile, contactperson, email, description, websiteurl } = req.body;
+    
     if (!orgizationname || !mobile || !contactperson || !email || !description || !websiteurl) {
       return res.status(400).json({ message: "All fields are required" });
     }
+
     const existingFranchise = await franchisemodel.findOne({ 
       $or: [{ websiteurl }, { email }] 
     });
@@ -127,7 +99,6 @@ app.post("/api/franchise", async (req, res) => {
       return res.status(400).json({ message: `${duplicateField} already exists. Please enter a different one.` });
     }
 
-
     const newfranchise = new franchisemodel({
       orgizationname,
       mobile,
@@ -135,9 +106,8 @@ app.post("/api/franchise", async (req, res) => {
       email,
       description,
       websiteurl,
-       
     });
-    await  newfranchise.save();
+    await newfranchise.save();
 
     res.status(201).json({ message: "successful!" });
   } catch (error) {
@@ -145,14 +115,15 @@ app.post("/api/franchise", async (req, res) => {
     const messages = Object.values(error.errors).map((err) => err.message);
     console.log("Validation Errors:", messages);
     res.status(400).json({ message: messages.join(", ") });
-    // res.send(error)
   }
 });
 
-// Health check--------------------------------------------------------------------------
-// app.get("/", (req, res) => {
-//   res.send("Backend is running");
-// });
+// Protected route example
+app.get('/api/me', protect, (req, res) => {
+  res.status(200).json(req.user);
+});
+
+// Health check
 app.get('/api/healthcheck', (req, res) => {
   res.json({
     status: 'ok',
@@ -161,7 +132,6 @@ app.get('/api/healthcheck', (req, res) => {
     env: process.env.NODE_ENV
   });
 });
-// -------------------------------------------------------------------------------------------
 
 // Error handling
 app.use((req, res) => {

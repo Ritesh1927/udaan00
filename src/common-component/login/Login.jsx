@@ -1,137 +1,97 @@
-import React, { useState } from "react";
+// src/common-component/login/Login.js
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import AuthContext from "../../context/AuthContext";
 import "../login/Login.css";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const [isSignup, setIsSignup] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    contact: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
+  const { login, register, loading } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-  const toggleMode = () => {
-    setIsSignup((prev) => !prev);
-    setFormData({
-      name: "",
-      contact: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    });
-  };
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
 
-    if (isSignup) {
-      const { name, contact, email, password, confirmPassword } = formData;
-      if (!name || !contact || !email || !password || !confirmPassword) {
-        return alert("Please fill all fields");
+    try {
+      if (isSignup) {
+        // Registration logic
+        const result = await register(email, password);
+        if (result.success) {
+          alert("Registration successful! Please check your email to verify your account.");
+          setIsSignup(false); // Switch back to login form
+        } else {
+          setError(result.error || "Registration failed");
+        }
+      } else {
+        // Login logic
+        const result = await login(email, password);
+        if (!result.success) {
+          setError(result.error || "Login failed");
+        }
       }
-      if (!/^\d{10}$/.test(contact)) {
-        return alert("Enter a valid 10-digit contact number");
-      }
-      if (password !== confirmPassword) {
-        return alert("Passwords do not match");
-      }
-      alert("Signup successful! You can now login.");
-      toggleMode();
-    } else {
-      if (!formData.email || !formData.password) {
-        return alert("Please enter email and password");
-      }
-      setIsLoggedIn(true);
+    } catch (err) {
+      setError("An unexpected error occurred");
+      console.error("Auth error:", err);
     }
-  };
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    setFormData({
-      name: "",
-      contact: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    });
   };
 
   return (
     <div className="auth-wrapper">
       <div className="auth-card">
-        {isLoggedIn ? (
-          <>
-            <h2>Welcome!</h2>
-            <button onClick={handleLogout}>Logout</button>
-          </>
-        ) : (
-          <>
-            <h2>{isSignup ? "Sign Up" : "Login"}</h2>
-            <form onSubmit={handleSubmit}>
-              {isSignup && (
-                <>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                  />
-                  <input
-                    type="tel"
-                    name="contact"
-                    placeholder="Contact Number"
-                    value={formData.contact}
-                    onChange={handleChange}
-                    pattern="[0-9]{10}"
-                    title="Enter a valid 10-digit phone number"
-                    required
-                  />
-                </>
-              )}
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
+        <h2>{isSignup ? "Create Account" : "Login"}</h2>
+        
+        {error && <div className="error-message">{error}</div>}
+
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              placeholder="Enter your email"
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Password</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              placeholder="Enter your password"
+              minLength="6"
+            />
+          </div>
+
+          {isSignup && (
+            <div className="form-group">
+              <label>Confirm Password</label>
               <input
                 type="password"
-                name="password"
-                placeholder="Password"
-                value={formData.password}
-                onChange={handleChange}
                 required
+                placeholder="Confirm your password"
               />
-              {isSignup && (
-                <input
-                  type="password"
-                  name="confirmPassword"
-                  placeholder="Confirm Password"
-                  value={formData.confirmPassword}
-                  onChange={handleChange}
-                  required
-                />
-              )}
-              <button type="submit">{isSignup ? "Sign Up" : "Login"}</button>
-            </form>
-            <p className="toggle-link">
-              {isSignup ? "Already have an account?" : "Don't have an account?"}
-              <span onClick={toggleMode}>
-                {isSignup ? " Login" : " Sign Up"}
-              </span>
-            </p>
-          </>
-        )}
+            </div>
+          )}
+
+          <button type="submit" disabled={loading}>
+            {loading ? "Processing..." : isSignup ? "Sign Up" : "Login"}
+          </button>
+        </form>
+
+        <p className="toggle-auth">
+          {isSignup ? "Already have an account?" : "Need an account?"}
+          <span onClick={() => setIsSignup(!isSignup)}>
+            {isSignup ? " Login" : " Sign Up"}
+          </span>
+        </p>
       </div>
     </div>
   );
