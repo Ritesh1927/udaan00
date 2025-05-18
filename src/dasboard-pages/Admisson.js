@@ -43,6 +43,10 @@ import Galgotias from "../assets/Galgotia.png";
 import Jadhavpur from "../assets/jadhavpur.png";
 import Iitkanpur from "../assets/iitkanpur.png";
 import Cmr from "../assets/cmr.png";
+import Soa from "../assets/soa.png";
+import DTU from "../assets/DTU.png";
+import Mandi from "../assets/mandi.png";
+import IIEST from "../assets/iiest.png";
 
 import { CiStar } from "react-icons/ci";
 import { FaLocationDot } from "react-icons/fa6";
@@ -384,6 +388,32 @@ const colleges = {
         "NIT Warangal is known for its engineering and is one of the top colleges in Telangana as well as the country. This famous B.Tech college in India witnesses huge competition for B.Tech admission, specifically CSE course. NIT Warangal admissions are done through JEE Main for B.Tech course and through GATE for M.Tech course. NIT Warangal offers amazing placement opportunities to its, students. The highest CTC offered at NIT Warangal is Rs 62.5 Lakh per annum. ",
     },
     {
+      img: Soa,
+      name: "  SOA Bhubaneswar ",
+      rank: "#26",
+      location: "Bhubaneswar, Odisha",
+      rating: "4.3",
+      fees: "35,000 - 25,00,000",
+      accerdition: "UGC",
+      package: "5,10,000 to 12,00,000",
+      exams: "XAT",
+      description:
+        "Siksha 'O' Anusandhan has been ranked 1001-1200 in QS World Rankings 2023. Siksha 'O' Anusandhan (SOA), formerly Siksha 'O' Anusandhan University, is a private deemed-to-be university located at Bhubaneswar, Odisha, India. The university is composed of nine degree-granting schools and colleges and has a student body of around 10,000. Many of SOA's programs are nationally accredited, including engineering, medicine, pharmacy, business, nursing, biotechnology, science, humanities, environment, nanotechnology, materials science, agriculture and law. SOA is a NAAC accredited Deemed to be University situated in Bhubaneswar, Odisha. NAAC as accredited it with an A++ grade (3rd cycle). SOA was granted greater autonomy (graded autonomy) by the UGC in 2018, one of the few to be granted so in India. Siksha O Anusandhan has ranked 9th, 8th, 16th, 49th, 26th, 27th, 15th, and 57th in the NIRF Ranking 2023 for Dental, Law, Medical, Research Institutions, Overall, Engineering, University, and Management, respectively. PHRD NIRF India rankings 2022 has ranked SOA 16th in the university category, 27th in the engineering category,18th in the medical category, 10th in the dental category, 9th in law category and 45th in the research category. The NIRF rankings also ranked SOA the as the 32nd Best National Institution in the engineering category (2019), the 24th best in the University Category and the 19th best in the Medical Category. SOA is the Only Higher Educational Institution in Odisha to be listed within the first 40 overall and first 25 in the University Category under NIRF Ranking 2018. ",
+    },
+    {
+      img: DTU,
+      name: " DTU ",
+      rank: "#27",
+      location: "Delhi",
+      rating: "4.6",
+      fees: "25,000 - 2,36,700",
+      accerdition: "Autonomous",
+      package: "5,10,000 to 12,00,000",
+      exams: "XAT",
+      description:
+        "The DTU full form is Delhi Technological University and it is one of the oldest engineering colleges in Delhi and was established in 1941. The university is also renowned for its management courses and for this purpose, it has recently established its University School of Management and Entrepreneurship (USME) which is also known as the East Delhi campus of DTU. Delhi Technological University World University Ranking falls between the range of 601-800. The university achieved an overall score of 34.0-39.2. Delhi Technological University NIRF ranking is 61 for the overall category, 40 for the university category and 29 for the engineering category. All the courses are approved by the University Grants Commission (UGC) and accredited by the NAAC with an ‘A’ grade. DTU courses include M.Tech, B.Des, M.Des, MBA, etc. The placement offers at DTU are made in reputed firms with packages as high as Rs 1.2 crore per annum.  ",
+    },
+    {
       img: Amity,
       name: "Amity University   ",
       rank: "#30",
@@ -395,6 +425,19 @@ const colleges = {
       exams: "JEE Main , CBSE 12th",
       description:
         "Amity University Noida admissions are offered on entrance and merit basis. For MCA admission, NIMCET registration will start in March and exam will be held in June 2025; for MBA admission, XAT scorecard is required; for M.Arch admission, CEED 2025 application form is expected to be released by October 2025. The university offers 44 courses in total. Amity University fees range between Rs 7,150 - Rs 13,90,000 annually.",
+    },
+    {
+      img: Mandi,
+      name: "IIT Mandi ",
+      rank: "#31",
+      location: "Mandi ,Himachal Pradesh",
+      rating: "5.0",
+      fees: "10,000- 10,39,000",
+      accerdition: "MHRD",
+      package: "26.5 LPA",
+      exams: "JEE Advanced",
+      description:
+        " IIT Mandi is one of the top 50 engineering colleges in India and it is the best engineering college located in Himachal Pradesh. Established in 2009, IIT Mandi has emerged as one of the top engineering colleges in India due to the quality of education it provides. The popular courses offered by IIT Mandi include B.Tech and M.Tech. The B.Tech admissions are made through JEE Advance exam and M.Tech admissions are made through GATE exam. The amazing placement opportunities at IIT Mandi are another example of the institute's good performance. At IIT Mandi placements every year, the highest salary offered rises by 9-10% and top companies hire the graduates of IIT Mandi.",
     },
     {
       img: CMRIT,
@@ -421,6 +464,19 @@ const colleges = {
       exams: "JEE Main , UPESEAT",
       description:
         "UPES University was established in 2003 under the UPES Act passed by the State Assembly of Uttarakhand. It is a multidisciplinary university renowned for its industry-aligned curriculum and leading-edge specializations. It is recognised by University Grants Commission and is NIRF-ranked by the Ministry of Education, Government of India. It is Graded 'A' by NAAC and awarded QS 5-Star rating for Employability, Academic Development and Facilities.Students interested in Management, Engineering, and Science can take courses at the undergraduate, graduate, and doctoral levels through UPES University's nine schools of study. With its seven schools, the UPES Dehradun courses are provided in more than 20 industry-aligned and specialized UG and PG programmes. UPESMET, UPESPAT, ULSAT, and UPESEAT are some of the entrance exams accepted by UPES Dehradun. The main curriculum, with 20 specialities, is the UPES B.Tech. JEE Main or UPESEAT tests administered by the university are used to select students for the B.Tech programme. ",
+    },
+    {
+      img: IIEST,
+      name: "IIEST Shibpur  ",
+      rank: "#49",
+      location: "Howrah, West Bengal ",
+      rating: "4.7",
+      fees: "30,000 - 5,00,000",
+      accerdition: "UGC ",
+      package: " 7.5 LPA",
+      exams: "JEE Advanced",
+      description:
+        "IIEST Shibpur BTech admission process will start with JoSAA registration on June 10, 2024. The results and NTA scores for JEE Main 2024 session two for paper one were announced by NTA on April 24, 2024. Students need their JEE Main session 2 application number, date of birth and security pin on the NTA website to download their scorecards. IIEST Shibpur cutoff 2024 for BTech might be released by the second week of June 2024. A total of 54 male, two female, one third gender students were toppers in JEE Main session two paper one in their respective gender-wise categories.  ",
     },
     {
       img: Ramaiah,
