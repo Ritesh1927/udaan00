@@ -1,0 +1,73 @@
+/* Container */
+.privacy-policy {
+    max-width: 950px;
+    margin: 60px auto;
+    padding: 50px;
+    background-color: #f9f9f9;
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c2c2c;
+    line-height: 1.75;
+}
+
+/* Title */
+.privacy-policy__title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    color: #1e88e5;
+    margin-bottom: 10px;
+}
+
+/* Effective Date */
+.privacy-policy__date {
+    font-size: 0.95rem;
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Introduction */
+.privacy-policy__intro {
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+/* Section Wrapper */
+.privacy-policy__section {
+    margin-bottom: 40px;
+}
+
+/* Section Heading */
+.privacy-policy__heading {
+    font-size: 1.5rem;
+    color: #0d47a1;
+    margin-bottom: 12px;
+}
+
+/* Subheading (for subsections) */
+.privacy-policy__subheading {
+    font-size: 1.2rem;
+    color: #3949ab;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+/* List */
+.privacy-policy__list {
+    padding-left: 25px;
+    margin-bottom: 15px;
+}
+
+.privacy-policy__list li {
+    margin-bottom: 8px;
+    list-style-type: disc;
+}
+
+/* Text Paragraphs */
+.privacy-policy__text {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #444;
+}

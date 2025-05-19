@@ -100,3 +100,13 @@
 .modal-close:hover {
     background-color: #1e293b;
 }
+
+@media (max-width:450px) {
+    .board-grid-container {
+        width: 100%;
+    }
+
+    .board-grid {
+        grid-template-columns: 1fr;
+    }
+}

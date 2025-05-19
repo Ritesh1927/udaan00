@@ -21,6 +21,7 @@ import HomePannel from "./admin-dashboard/HomePannel";
 // import BoardList from "./component/abroaduniversity/BoardList";
 import TenthBoardList from "./component/resultcards/TenthBoardList";
 import TwelfthBoardList from "./component/resultcards/TwelfthBoardList";
+import PrivacyPolicy from "./common-component/privacy/PrivacyPolicy";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -43,6 +44,7 @@ root.render(
           <Route path="/homepannel" element={<HomePannel />} />
           <Route path="/boards/10th" element={<TenthBoardList />} />
           <Route path="/boards/12th" element={<TwelfthBoardList />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>
