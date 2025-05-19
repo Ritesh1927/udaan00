@@ -44,7 +44,7 @@ root.render(
           <Route path="/homepannel" element={<HomePannel />} />
           <Route path="/boards/10th" element={<TenthBoardList />} />
           <Route path="/boards/12th" element={<TwelfthBoardList />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
         </Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>
