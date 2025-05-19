@@ -4,15 +4,9 @@ const dotenv = require("dotenv");
 // Load environment variables
 dotenv.config();
 
-// Connect to MongoDB
-const MONGO_URI = process.env.MONGO_URI;
-
 const connectDB = async () => {
     try {
-        await mongoose.connect(MONGO_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        await mongoose.connect(process.env.MONGO_URI);
         console.log("✅ MongoDB Connected");
     } catch (err) {
         console.error("❌ Database Connection Error:", err);

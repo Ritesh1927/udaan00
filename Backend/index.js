@@ -40,6 +40,11 @@ mongoose.connection.on('connected', () => {
   });
 });
 
+// error event listener
+mongoose.connection.on('error', (err) => {
+  console.error('MongoDB connection error:', err);
+});
+
 // Import routes and middleware
 const Contactschema = require("./Schema/Contactschema");
 const franchisemodel = require("./Schema/Franchiseschema");

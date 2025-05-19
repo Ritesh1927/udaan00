@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
   email: {
     type: String,
     required: [true, 'Email is required'],
-    unique: true,
+    unique: true, // This automatically creates an index
     lowercase: true,
     trim: true,
     match: [/\S+@\S+\.\S+/, 'Please enter a valid email address']
@@ -65,8 +65,7 @@ userSchema.methods.isAccountLocked = function() {
   return this.lockUntil && this.lockUntil > Date.now();
 };
 
-// Indexes
-userSchema.index({ email: 1 });
+// Keep only these indexes (remove email index)
 userSchema.index({ verificationToken: 1 });
 userSchema.index({ resetPasswordToken: 1 });
 

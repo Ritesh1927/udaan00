@@ -107,11 +107,13 @@ const Navbar = () => {
           </li>
         </ul>
 
-        {/* <Link to="/login" className="nav-login-btn">
-          Login
-        </Link> */}
+        {/* login code -------------------------------------------------------------------- */}
 
-        {/* <div className="profile-container" ref={dropdownRef}>
+        <Link to="/login" className="nav-login-btn">
+          Login
+        </Link>
+
+        <div className="profile-container" ref={dropdownRef}>
           <img
             src={userProfile}
             alt="Profile"
@@ -155,7 +157,10 @@ const Navbar = () => {
               </div>
             </div>
           )}
-        </div> */}
+        </div>
+
+
+        
         <Logout
           isOpen={showLogoutModal}
           onClose={() => setShowLogoutModal(false)}
