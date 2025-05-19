@@ -1,11 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.963af4c5.css",
-    "main.js": "/static/js/main.77e045ca.js",
+    "main.css": "/static/css/main.8ff36d37.css",
+    "main.js": "/static/js/main.8493b293.js",
     "static/js/453.ac42ff46.chunk.js": "/static/js/453.ac42ff46.chunk.js",
     "static/media/About0002.png": "/static/media/About0002.c49bc4b800322fd393ff.png",
     "static/media/councel2.png": "/static/media/councel2.efdaf72c308618cc8bc4.png",
     "static/media/Flute1.png": "/static/media/Flute1.f0ae4bf52cd7bceb7533.png",
+    "static/media/Aiimsj.png": "/static/media/Aiimsj.4d777d0873e123c1f8b0.png",
     "static/media/iim.png": "/static/media/iim.28c0bc544a65673f4394.png",
     "static/media/classroom.png": "/static/media/classroom.78f2d96787fe428df1da.png",
     "static/media/banner003.png": "/static/media/banner003.4cb15d8781f2a2b7a8f4.png",
@@ -26,6 +27,7 @@
     "static/media/shardha.png": "/static/media/shardha.87c82cc16c27ca2da5c1.png",
     "static/media/locationbanner.jpg": "/static/media/locationbanner.6546fa1643d3dd652bb5.jpg",
     "static/media/mandi.png": "/static/media/mandi.6684278b549f6de61b74.png",
+    "static/media/Stjohn.jpg": "/static/media/Stjohn.f0faec5391e5d3394dab.jpg",
     "static/media/iitkanpur.png": "/static/media/iitkanpur.8833e7638b98ff08ea82.png",
     "static/media/greatplains.png": "/static/media/greatplains.9d11b2a715e7466daf9d.png",
     "static/media/iitropar.jpg": "/static/media/iitropar.bfaf958e7ececdfb2cd4.jpg",
@@ -61,12 +63,17 @@
     "static/media/cmrit.jpg": "/static/media/cmrit.31f98235660aca45d472.jpg",
     "static/media/kartikey.jpg": "/static/media/kartikey.a72afb96d408ce6e8f9c.jpg",
     "static/media/whatsup.png": "/static/media/whatsup.513b7ce143dd5e2397ee.png",
+    "static/media/AiimsBh.jpg": "/static/media/AiimsBh.8a8eba0d4aae113dfd68.jpg",
     "static/media/NitRourkela.jpg": "/static/media/NitRourkela.46cae601e2d63642fb1a.jpg",
     "static/media/universitymalbourne.jpeg": "/static/media/universitymalbourne.01afad9cc5861fdc1c76.jpeg",
+    "static/media/kmcmanglore.jpeg": "/static/media/kmcmanglore.d65489fb6dd59e52e94c.jpeg",
     "static/media/cmc.jpg": "/static/media/cmc.71b3af9d25b1d8fcf03a.jpg",
+    "static/media/Saveetha.jpg": "/static/media/Saveetha.bd486fb8f120af07d87f.jpg",
     "static/media/iitmadras.avif": "/static/media/iitmadras.0434058d444085c79660.avif",
+    "static/media/vmcc.jpg": "/static/media/vmcc.da9282640c609127e79b.jpg",
     "static/media/glbajaj.jpeg": "/static/media/glbajaj.074e0c09e63f3b68af3e.jpeg",
     "static/media/WestBengal.png": "/static/media/WestBengal.d08a1b84aa1023b597cf.png",
+    "static/media/Srmcri.jpg": "/static/media/Srmcri.c019a8a642a773523da5.jpg",
     "static/media/Upes.jpg": "/static/media/Upes.1bdc27c38f65af653d0b.jpg",
     "static/media/DTU.png": "/static/media/DTU.689811d4f19c454dfca9.png",
     "static/media/GoaBoard.jpg": "/static/media/GoaBoard.f1eb762139bb33620715.jpg",
@@ -138,12 +145,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.963af4c5.css.map": "/static/css/main.963af4c5.css.map",
-    "main.77e045ca.js.map": "/static/js/main.77e045ca.js.map",
+    "main.8ff36d37.css.map": "/static/css/main.8ff36d37.css.map",
+    "main.8493b293.js.map": "/static/js/main.8493b293.js.map",
     "453.ac42ff46.chunk.js.map": "/static/js/453.ac42ff46.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.963af4c5.css",
-    "static/js/main.77e045ca.js"
+    "static/css/main.8ff36d37.css",
+    "static/js/main.8493b293.js"
   ]
 }
