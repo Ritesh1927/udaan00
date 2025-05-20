@@ -7,6 +7,8 @@ import Abtbanner from "../assets/About0002.png";
 import Sir from "../assets/Sirimg01.png";
 import Mam from "../assets/poojamaam.png";
 import Kunalsir from "../assets/kunalsir.png";
+import Vison from "../assets/visson.png";
+import Misson from "../assets/misson.png";
 
 const About = () => {
   return (
@@ -15,7 +17,32 @@ const About = () => {
         <img src={Abtbanner} alt="" />
       </div>
       <div className="container about-main-container">
-        <h1 className="about-header text-center ">About us </h1>
+        <h1 className="about-header text-center ">About Udaan Eduservices</h1>
+        <div className="core-value-container">
+          <h1 className="">Core Value</h1>
+          <div className="inner-core-values">
+            <p>
+              <span className="inner-count-core">1</span>
+              शिक्षा
+            </p>
+            <p>
+              <span className="inner-count-core">2</span>
+              संस्कार
+            </p>
+            <p>
+              <span className="inner-count-core">3</span>
+              सेवा
+            </p>
+            <p>
+              <span className="inner-count-core">4</span>
+              मानवता
+            </p>
+            <p>
+              <span className="inner-count-core">5</span>
+              राष्ट्रीयता
+            </p>
+          </div>
+        </div>
       </div>
       <div className=" container about-main-container">
         <div className="about-sub-main">
@@ -45,21 +72,39 @@ const About = () => {
                 counseling and admissions guidance to skill enhancement and
                 global career opportunities, particularly in healthcare and IT.​
               </p>
-              <h2 className="heading-about mb10">Our Mission</h2>
-              <p>
-                To bridge the gap between education and employment by offering
-                integrated solutions that cater to the diverse needs of students
-                and professionals.​ <br />
-                Career Placement: Assistance in finding suitable employment
-                opportunities, with a focus on the healthcare and IT
-                industries.​
-              </p>
-              <h2 className="heading-about mb10">Our Vision</h2>
-              <p>
-                To be a trusted partner in every individual's educational and
-                professional journey, facilitating success through tailored
-                support and resources.​
-              </p>
+            </div>
+          </div>
+          <div className="inline vision-mission-container">
+            <div className="vision-box">
+              <div className="vison-img-content">
+                <img src={Vison} className="vison-img" alt="vison" />
+                <h2 className="heading-about vision-title">"Vision"</h2>
+              </div>
+              <div className="vison-line"></div>
+              <div>
+                <p className="vision-text">
+                  To be a trusted partner in every individual's educational and
+                  professional journey, facilitating success through tailored
+                  support and resources.​
+                </p>
+              </div>
+            </div>
+            <div className="mission-box">
+              <div className="vison-img-content">
+                <img src={Misson} className="vison-img" alt="misson" />
+                <h2 className="heading-about mission-title">Mission</h2>
+              </div>
+              <div className="vison-line"></div>
+              <div>
+                <p className="mission-text">
+                  To bridge the gap between education and employment by offering
+                  integrated solutions that cater to the diverse needs of
+                  students and professionals.​ <br />
+                  <span className="highlight">Career Placement:</span>{" "}
+                  Assistance in finding suitable employment opportunities, with
+                  a focus on the healthcare and IT industries.​
+                </p>
+              </div>
             </div>
           </div>
 
