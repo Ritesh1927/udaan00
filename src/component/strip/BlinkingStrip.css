@@ -1,0 +1,72 @@
+.strip-container {
+    position: relative;
+    width: 100%;
+    background-color: #163f85;
+    /* padding: 10px 0; */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+.blinker {
+    width: 160px;
+    text-align: center;
+    color: green;
+    font-weight: bold;
+    animation: blink-animation 1s infinite;
+    z-index: 10;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E3B074;
+    height: 100%;
+}
+
+@keyframes blink-animation {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.scroll-message {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.scroll-track {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-left-to-right 20s linear infinite;
+}
+
+.scroll-text {
+    display: inline-block;
+    font-size: 16px;
+    color: #fff;
+    margin-right: 100px;
+    /* spacing between repeats */
+}
+
+@keyframes scroll-left-to-right {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}

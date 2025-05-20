@@ -13,10 +13,14 @@ import WhatsAppButton from "../common-component/whatsup/WhatsAppButton";
 import Carousel from "../component/carousel/Carousel";
 import TestimonialSlider from "./Testimonials";
 import ResultCards from "../component/resultcards/ResultCards";
+import BlinkingStrip from "../component/strip/BlinkingStrip";
 
 const Home = () => {
   return (
     <>
+      <div>
+        <BlinkingStrip />
+      </div>
       <div>
         <Carousel />
       </div>
