@@ -12,9 +12,9 @@ const Terms = () => {
       <section className="terms-section">
         <h2>1. Acceptance of Terms</h2>
         <p>
-          By accessing or using udaan360.com, you agree to comply with and be bound
-          by these Terms & Conditions. If you do not agree, please do not use
-          our website.
+          By accessing or using udaan360.com, you agree to comply with and be
+          bound by these Terms & Conditions. If you do not agree, please do not
+          use our website.
         </p>
       </section>
 
@@ -47,9 +47,9 @@ const Terms = () => {
       <section className="terms-section">
         <h2>5. Limitation of Liability</h2>
         <p>
-          We are not liable for any direct, indirect, incidental or consequential
-          damages that may result from the use of or inability to use our
-          website.
+          We are not liable for any direct, indirect, incidental or
+          consequential damages that may result from the use of or inability to
+          use our website.
         </p>
       </section>
 
@@ -65,7 +65,7 @@ const Terms = () => {
         <h2>7. Contact Us</h2>
         <p>
           If you have any questions about these Terms, please contact us at
-          support@udaan360.com.
+          info@udaan360.com.
         </p>
       </section>
     </div>
