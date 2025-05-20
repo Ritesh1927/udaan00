@@ -1,0 +1,68 @@
+/* Terms.css */
+.terms-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #ffffff;
+    color: #333;
+}
+
+.terms-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.terms-header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.terms-header p {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.terms-section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-left: 5px solid #3498db;
+    border-radius: 8px;
+    transition: box-shadow 0.3s;
+}
+
+.terms-section:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.terms-section h2 {
+    font-size: 1.4rem;
+    color: #34495e;
+    margin-bottom: 0.5rem;
+}
+
+.terms-section p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .terms-container {
+        padding: 1rem;
+    }
+
+    .terms-header h1 {
+        font-size: 2rem;
+    }
+
+    .terms-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .terms-section p {
+        font-size: 0.95rem;
+    }
+}
