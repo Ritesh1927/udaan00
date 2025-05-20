@@ -1,16 +1,15 @@
-/* Main container */
 .udan-carousel {
     width: 100%;
     margin: 0 auto;
     position: relative;
 }
 
-/* Slick core overrides */
+
 .udan-carousel .slick-slider {
     position: relative;
     border-radius: 12px;
     overflow: visible;
-    /* allow arrows to be visible */
+
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -21,7 +20,7 @@
     object-fit: cover;
 }
 
-/* Dots */
+
 .udan-carousel .slick-dots {
     bottom: 10px;
 }
@@ -37,7 +36,7 @@
     opacity: 1;
 }
 
-/* Arrows – fully fixed and visible */
+
 .udan-carousel .slick-prev,
 .udan-carousel .slick-next {
     position: absolute;
@@ -81,7 +80,7 @@
     color: #fff;
 }
 
-/* Banner layout */
+
 .udan-carousel .image-banner-container {
     display: flex;
     flex-wrap: wrap;
@@ -138,7 +137,6 @@
     margin-top: 20px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 1024px) {
     .udan-carousel .image-banner-container {
         flex-direction: row;

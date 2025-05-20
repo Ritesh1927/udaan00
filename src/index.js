@@ -22,11 +22,14 @@ import HomePannel from "./admin-dashboard/HomePannel";
 import TenthBoardList from "./component/resultcards/TenthBoardList";
 import TwelfthBoardList from "./component/resultcards/TwelfthBoardList";
 import PrivacyPolicy from "./common-component/privacy/PrivacyPolicy";
+import ScrollToTop from "./common-component/scroltotop/ScrollToTop";
+import Terms from "./common-component/terms/Terms";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="" element={<App />}>
           <Route path="/" element={<Home />}></Route>
@@ -45,6 +48,7 @@ root.render(
           <Route path="/boards/10th" element={<TenthBoardList />} />
           <Route path="/boards/12th" element={<TwelfthBoardList />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<Terms />} />
         </Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>

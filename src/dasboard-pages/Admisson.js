@@ -12,6 +12,8 @@ import Saveetha from "../assets/Saveetha.jpg";
 import Stjohn from "../assets/Stjohn.jpg";
 import SRMCRI from "../assets/Srmcri.jpg";
 import AIIMSRI from "../assets/Aiimsri.jpg";
+import IPGME from "../assets/Ipgme.jpg";
+import Dattamegh from "../assets/Dattamegh.png";
 // /////////////////// management clg
 import IIM from "../assets/iim.png";
 import XLRI from "../assets/xlri.jpg";
@@ -55,6 +57,7 @@ import Soa from "../assets/soa.png";
 import DTU from "../assets/DTU.png";
 import Mandi from "../assets/mandi.png";
 import IIEST from "../assets/iiest.jpg";
+import Dypatil from "../assets/Dypatil.jpg";
 
 import { CiStar } from "react-icons/ci";
 import { FaLocationDot } from "react-icons/fa6";
@@ -552,6 +555,19 @@ const colleges = {
         "GL Bajaj Institute of Management and Research was established in 2007 as part of the GL Bajaj Group of Institutions. The institute is an autonomous body and was ranked as the best institute for Innovation and Entrepreneurship in 2021 by IIRF. GL Bajaj Institute of Management and Research offers Post Graduate Diploma in Management (PGDM) as their flagship course that is approved by AICTE, Ministry of HRD, Government of India. This is a two-year full-time course with dual specialization in Marketing, Finance, Human Resource Management and Information Technology.",
     },
     {
+      img: Dypatil,
+      name: "Ajeenkya DY Patil University (ADYPU)",
+      rank: "#159 ",
+      location: " Pune, Maharashtra",
+      rating: "4.2",
+      fees: "2,50,000 - 3,00,000",
+      accerdition: "AICTE ",
+      package: " 6.5 LPA",
+      exams: "JEE Main , CUET",
+      description:
+        "Ajeenkya DY Patil University (ADYPU) is a private university in Pune, Maharashtra, known for its focus on innovation, industry collaboration, and holistic education. They emphasize preparing students for global challenges and offer a range of undergraduate and postgraduate programs across various disciplines. The university is part of the DY Patil Group, a network of educational institutions in India. ADYPU also emphasizes experiential learning and cutting-edge programs.",
+    },
+    {
       img: JSS,
       name: "JSS University  ",
       rank: "#251",
@@ -710,7 +726,7 @@ const colleges = {
         "SRMCRI Chennai was established in 1985. The college is located in Chennai, Tamil Nadu and is known for its world-class education and research practices. SRMCRI Chennai is a private medical institute that offers an MBBS degree along with other Higher Specialty Courses, Postgraduate Degree Courses in Basic Medical Sciences, Postgraduate Degree Clinical Courses and Masters in Basic Medical Science Courses. The SRMCRI application process is held through online and offline modes. SRMCRI Chennai admissions to UG courses are based on NEET UG scores.",
     },
     {
-      img: SRMCRI,
+      img: IPGME,
       name: "IPGME&R Kolkata",
       rank: "#22",
       location: "Kolkata, West Bengal",
@@ -721,6 +737,32 @@ const colleges = {
       exams: "WBCHSE , NEET",
       description:
         "Institute of Post Graduate Medical Education & Research, also known as IPGME&R Kolkata, is a Kolkata-based medical college and hospital. The institute has been granted the status of a Center of Excellence in medical research and education. The medical college offers medical courses at UG and PG levels, including MBBS, MD/MS, and DM/M.Ch. The institute also has a nursing college that offers UG and PG nursing courses. IPGME&R Kolkata admission to UG courses depends on the NEET UG scores obtained by the candidates. PG admissions are based on the competent test conducted by the WBUHS.",
+    },
+    {
+      img: Dattamegh,
+      name: "Datta Meghe Institute of Higher Education and Research",
+      rank: "#23",
+      location: "Kolkata, West Bengal",
+      rating: "4.2  ",
+      fees: "15,000 - 16,00,000",
+      accerdition: "UGC",
+      package: "₹4.20 LPA to ₹10.80 LPA",
+      exams: " Maharashtra HSC",
+      description:
+        "Datta Meghe Institute of Medical Sciences is one of the popular medical institutes in Wardha having A+ NAAC Accreditation. It is an excellent place for pursuing academic excellence in Medicine, Dentistry, Nursing, Physiotherapy, Ayurveda, Pharmacy, Allied Sciences, Allied Health Sciences, Epidemiology, Online Distance Learning and Virtual Learning. The institute offers numerous programmes at the Certificate, Diploma, UG, PG and Doctoral levels. Admissions at Datta Meghe are done through merit and entrance basis.",
+    },
+    {
+      img: Dattamegh,
+      name: " IGIMS",
+      rank: "#27",
+      location: "Patna, Bihar",
+      rating: "4.2  ",
+      fees: "30,000 - 6,00,000",
+      accerdition: "NBA",
+      package: "7.5 LPA",
+      exams: " NEET PG",
+      description:
+        "IGIMS Patna Admissions 2023: Bihar NEET UG counselling 2023 seat allotment round 2 will be declared on September 11, 2023.  MCC NEET PG 2023 counselling seat allotment round 3 will be released on September 16, 2023. IGIMS Patna was founded on November 19, 1983, as an autonomous institution modelled after the All India Institute of Medical Sciences in New Delhi. The goal was to provide super-speciality medical services within Bihar. IGMS Patna courses include BSc,  MBBS, BDS, MD, M.Ch, and Diploma. IGMS Patna is a government college located in Patna, Bihar.",
     },
     {
       img: KMCM,
