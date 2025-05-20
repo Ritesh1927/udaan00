@@ -4,6 +4,14 @@ import Star from "../assets/star.png";
 import Aims from "../assets/aimsdelhi.avif";
 import KMC from "../assets/kmc.jpg";
 import Shardha from "../assets/shardha.png";
+import KMCM from "../assets/kmcmanglore.jpeg";
+import AIIMSJ from "../assets/Aiimsj.png";
+import VMCC from "../assets/vmcc.jpg";
+import AIIMSBH from "../assets/AiimsBh.jpg";
+import Saveetha from "../assets/Saveetha.jpg";
+import Stjohn from "../assets/Stjohn.jpg";
+import SRMCRI from "../assets/Srmcri.jpg";
+import AIIMSRI from "../assets/Aiimsri.jpg";
 // /////////////////// management clg
 import IIM from "../assets/iim.png";
 import XLRI from "../assets/xlri.jpg";
@@ -596,6 +604,136 @@ const colleges = {
       exams: "NEET ,MET",
       description:
         " Kasturba Medical College (KMC), Manipal is private medical college in India established in 1953. It is under the  aegis of the Manipal Academy of Higher Education (MAHE) and is recognized by the Medical Council of India (MCI). The college offers admission in various undergraduate, postgraduate, and super-speciality courses in the field of Medicine. KMC Manipal accepts merit in NEET UG (MBBS), NEET PG (MD / MS) and NEET SS (DM / MCh). Admission to M.Sc (Medical)  courses is through the Manipal",
+    },
+    {
+      img: AIIMSRI,
+      name: " AIIMS Rishikesh ",
+      rank: "#14  ",
+      location: "Rishikesh, Uttarakhand",
+      rating: "5.0",
+      fees: "2,110-2,00,000",
+      accerdition: "Government",
+      package: "12.4 LPA",
+      exams: "INI CET ",
+      description:
+        " AIIMS Rishikesh courses are offered such as for undergraduate, postgraduate, diploma, and doctoral-level courses. Medical courses include MBBS, MD/MS, Ph. D, MDS, DM, M. Ch, PDCC, and M.Phil. Paramedical courses include B.Sc, M.Sc, technician, and B.Sc./diploma programmes. Each course at AIIMS Rishikesh has a separate specialisation. The AIIMS Rishikesh course admissions have different admission criteria according to the course such as for MBBS, selection criteria are based on the NEET examination.  For other B.Sc. courses, students must appear in the AIIMS Rishikesh entrance examination. Candidates will be shortlisted based on merit scores and must attend an AIIMS Rishikesh counselling session. The AIIMS Rishikesh Placements is credible to 125+ students of MBBS, 130+ students of Nursing, and 700+ postgraduate students. The institute had roped in a leading e-governance system to speed up its internship services. AIIMS Rishikesh NIRF ranking 2023 is 86th rank in the overall category and 22nd rank in NIRF Medical Ranking 2023.",
+    },
+    {
+      img: AIIMSBH,
+      name: "  AIIMS Bhubaneswar  ",
+      rank: "#15",
+      location: "Bhubaneswar, Odisha",
+      rating: "4.5",
+      fees: "1,05,000 Lakhs",
+      accerdition: "NAAC, ISO, and NABL",
+      package: "14 LPA",
+      exams: "NEET ",
+      description:
+        " AIIMS Bhubaneswar is the best medical college in Odisha. This popular AIIMS college in India witnesses huge competition for MBBS admission. For MBBS admission at AIIMS Bhubaneswar, qualifying NEET UG with a good rank is mandatory followed by a counselling process conducted by Medical Counselling Committee. For admission to PG medical courses offered by AIIMS Bhubaneswar, qualifying for CET is mandatory. AIIMS Bhubaneswar Nursing admissions are based on the AIIMS B.Sc Nursing entrance exam. Students both during and after the course completion get great exposure to thousands of patients.",
+    },
+    {
+      img: AIIMSJ,
+      name: " AIIMS Jodhpur ",
+      rank: "#16",
+      location: "Jodhpur, Rajasthan",
+      rating: "5.0",
+      fees: "1,40,000",
+      accerdition: "Government ",
+      package: "13.56 LPA",
+      exams: "NEET ",
+      description:
+        "AIIMS Jodhpur is a medical institution and research university in Jodhpur, India, serving as a center of clinical excellence and a hub for medical education. Established in 2014 under the Pradhan Mantri Swasthya Suraksha Yojana (PMSSY), it aims to address healthcare disparities and provide high-quality, affordable healthcare. It is one of twenty AIIMS and is mandated in medical education, research, and patient care, with a focus on innovation and affordable healthcare models.",
+    },
+    {
+      img: VMCC,
+      name: "   VMMC ",
+      rank: "#17",
+      location: "Delhi",
+      rating: "4.0",
+      fees: "16000-51000",
+      accerdition: "NBA  ",
+      package: "10.56 LPA",
+      exams: "NEET ",
+      description:
+        "Vardhman Mahavir Medical College (VMMC) is a government-run medical college in New Delhi, affiliated with Safdarjung Hospital. Established in 2001, it offers various undergraduate and postgraduate medical courses. VMMC is known for its strong clinical training at Safdarjung Hospital. It is also affiliated with Guru Gobind Singh Indraprastha University. ",
+    },
+    {
+      img: Saveetha,
+      name: "Saveetha University",
+      rank: "#18",
+      location: "Chennai, Tamil Nadu",
+      rating: "4.6",
+      fees: "25,000-25,00,000",
+      accerdition: "UGC  ",
+      package: "4 LPA",
+      exams: "CSIR,NEET ",
+      description:
+        "Saveetha University, commonly known as Saveetha Institute of Medical and Technical Sciences (SIMATS), was established in 2005. It is one of the best-deemed universities in terms of teaching and research. Saveetha University is located in Saveetha Nagar, Thandalam, Kanchipuram, Chennai. As per NIRF Ranking 2024, Saveetha University has been placed at the 13th position under the University category, 2nd in the Dental category, and 11th position under the Law category. The university is recognised by UGC and has been accredited by NAAC with an “A++” grade. The university campus is spread over 180+ acres of land with a 70 lakh sq. ft. built area, and comprises 13 institutions, 5000 staff, and 10,000 students. The university campus is spread over 180+ acres of land with a 70 lakh sq. ft. built area, and comprises 13 institutions, 5000 staff, and 10,000 students.",
+    },
+    {
+      img: Stjohn,
+      name: " St. John's Medical College",
+      rank: "#19",
+      location: "Bengaluru, Karnataka",
+      rating: "4.8",
+      fees: "70,400 - 28,01,000",
+      accerdition: " UGC NET  ",
+      package: "4.2 LPA",
+      exams: "CSIR,NEET ",
+      description:
+        "St. John's Medical College is situated in Bengaluru, Karnataka, India. Established in 1963, it is a private college affiliated with Rajiv Gandhi University. St. John's Medical College offers 86 courses across 6 streams, namely Nursing, Medical, Paramedical, Science, and Pharmacy. Popular degrees offered at St. John's Medical College include BSc, GNM, MBBS, MD, and MSc. Besides a robust teaching pedagogy, St. John's Medical College is also a leader in research and innovation. Focus is given to activities beyond academics at St. John's Medical College, which is evident from its infrastructure, extracurricular activities, and national & international collaborations. The placement at St. John's Medical College is varied, with recruitment options both in corporates and the public sector as well as entrepreneurship.",
+    },
+    {
+      img: Soa,
+      name: "  SOA Bhubaneswar ",
+      rank: "#20",
+      location: "Bhubaneswar, Odisha",
+      rating: "4.3",
+      fees: "35,000 - 25,00,000",
+      accerdition: "UGC",
+      package: "5,10,000 to 12,00,000",
+      exams: "XAT",
+      description:
+        "Siksha 'O' Anusandhan has been ranked 1001-1200 in QS World Rankings 2023. Siksha 'O' Anusandhan (SOA), formerly Siksha 'O' Anusandhan University, is a private deemed-to-be university located at Bhubaneswar, Odisha, India. The university is composed of nine degree-granting schools and colleges and has a student body of around 10,000. Many of SOA's programs are nationally accredited, including engineering, medicine, pharmacy, business, nursing, biotechnology, science, humanities, environment, nanotechnology, materials science, agriculture and law. SOA is a NAAC accredited Deemed to be University situated in Bhubaneswar, Odisha. NAAC as accredited it with an A++ grade (3rd cycle). SOA was granted greater autonomy (graded autonomy) by the UGC in 2018, one of the few to be granted so in India. Siksha O Anusandhan has ranked 9th, 8th, 16th, 49th, 26th, 27th, 15th, and 57th in the NIRF Ranking 2023 for Dental, Law, Medical, Research Institutions, Overall, Engineering, University, and Management, respectively. PHRD NIRF India rankings 2022 has ranked SOA 16th in the university category, 27th in the engineering category,18th in the medical category, 10th in the dental category, 9th in law category and 45th in the research category. The NIRF rankings also ranked SOA the as the 32nd Best National Institution in the engineering category (2019), the 24th best in the University Category and the 19th best in the Medical Category. SOA is the Only Higher Educational Institution in Odisha to be listed within the first 40 overall and first 25 in the University Category under NIRF Ranking 2018. ",
+    },
+    {
+      img: SRMCRI,
+      name: "  SRMCRI Chennai",
+      rank: "#21",
+      location: "Chennai, Tamil Nadu",
+      rating: "4.7",
+      fees: "12,500 - 22,00,000",
+      accerdition: "MCI",
+      package: "6.5 LPA",
+      exams: "NEET",
+      description:
+        "SRMCRI Chennai was established in 1985. The college is located in Chennai, Tamil Nadu and is known for its world-class education and research practices. SRMCRI Chennai is a private medical institute that offers an MBBS degree along with other Higher Specialty Courses, Postgraduate Degree Courses in Basic Medical Sciences, Postgraduate Degree Clinical Courses and Masters in Basic Medical Science Courses. The SRMCRI application process is held through online and offline modes. SRMCRI Chennai admissions to UG courses are based on NEET UG scores.",
+    },
+    {
+      img: SRMCRI,
+      name: "IPGME&R Kolkata",
+      rank: "#22",
+      location: "Kolkata, West Bengal",
+      rating: "5.0",
+      fees: "12,500 - 22,00,000",
+      accerdition: "other ",
+      package: "5.4 LPA",
+      exams: "WBCHSE , NEET",
+      description:
+        "Institute of Post Graduate Medical Education & Research, also known as IPGME&R Kolkata, is a Kolkata-based medical college and hospital. The institute has been granted the status of a Center of Excellence in medical research and education. The medical college offers medical courses at UG and PG levels, including MBBS, MD/MS, and DM/M.Ch. The institute also has a nursing college that offers UG and PG nursing courses. IPGME&R Kolkata admission to UG courses depends on the NEET UG scores obtained by the candidates. PG admissions are based on the competent test conducted by the WBUHS.",
+    },
+    {
+      img: KMCM,
+      name: " KMC Manglore ",
+      rank: "#33",
+      location: "Mangalore, Karnataka",
+      rating: "4.5",
+      fees: "1,00,000 - 26,43,333",
+      accerdition: "MCI ",
+      package: "18.7 LPA",
+      exams: "NEET ,MET",
+      description:
+        "KMC Mangalore was established in 1955 and is a constituent part of the Manipal Academy of Higher Education. KMC Mangalore courses includes a variety of UG and PG courses in various specialisations such as reconstructions, colon and rectal surgery, general urology, general surgery, obstetrics & gynaecology, anaesthesiology, anatomy, biochemistry etc. KMC Mangalore admissions for its MBBS course are done on the basis of NEET UG scores. The NEET UG results are released by NTA.",
     },
 
     {
