@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
   email: {
     type: String,
     required: [true, 'Email is required'],
-    unique: true, // This automatically creates an index
+    unique: true,
     lowercase: true,
     trim: true,
     match: [/\S+@\S+\.\S+/, 'Please enter a valid email address']
@@ -17,12 +17,12 @@ const userSchema = new mongoose.Schema({
     minlength: [8, 'Password must be at least 8 characters'],
     select: false
   },
-  isVerified: {
+  isEmailVerified: {
     type: Boolean,
     default: false
   },
-  verificationToken: String,
-  verificationExpires: Date,
+  emailVerificationToken: String,
+  emailVerificationExpires: Date,
   resetPasswordToken: String,
   resetPasswordExpires: Date,
   lastLogin: Date,
@@ -47,11 +47,11 @@ userSchema.pre('save', async function(next) {
   }
 });
 
-// Generate verification token
-userSchema.methods.createVerificationToken = function() {
+// Generate email verification token
+userSchema.methods.createEmailVerificationToken = function() {
   const token = crypto.randomBytes(32).toString('hex');
-  this.verificationToken = crypto.createHash('sha256').update(token).digest('hex');
-  this.verificationExpires = Date.now() + 24 * 60 * 60 * 1000; // 24 hours
+  this.emailVerificationToken = crypto.createHash('sha256').update(token).digest('hex');
+  this.emailVerificationExpires = Date.now() + 24 * 60 * 60 * 1000; // 24 hours
   return token;
 };
 
@@ -65,8 +65,8 @@ userSchema.methods.isAccountLocked = function() {
   return this.lockUntil && this.lockUntil > Date.now();
 };
 
-// Keep only these indexes (remove email index)
-userSchema.index({ verificationToken: 1 });
+// Indexes
+userSchema.index({ emailVerificationToken: 1 });
 userSchema.index({ resetPasswordToken: 1 });
 
-module.exports = mongoose.model('user', userSchema);
+module.exports = mongoose.model('User', userSchema);

@@ -1,97 +1,187 @@
-// src/common-component/login/Login.js
-import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import AuthContext from "../../context/AuthContext";
-import "../login/Login.css";
+import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import AuthContext from '../../context/AuthContext';
+import './Login.css';
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    confirmPassword: ''
+  });
+  const [error, setError] = useState('');
   const [isSignup, setIsSignup] = useState(false);
   const { login, register, loading } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
-
-    try {
-      if (isSignup) {
-        // Registration logic
-        const result = await register(email, password);
-        if (result.success) {
-          alert("Registration successful! Please check your email to verify your account.");
-          setIsSignup(false); // Switch back to login form
-        } else {
-          setError(result.error || "Registration failed");
-        }
-      } else {
-        // Login logic
-        const result = await login(email, password);
-        if (!result.success) {
-          setError(result.error || "Login failed");
-        }
-      }
-    } catch (err) {
-      setError("An unexpected error occurred");
-      console.error("Auth error:", err);
-    }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setError('');
+
+  // Frontend validation
+  if (!formData.email || !formData.password) {
+    return setError('Email and password are required');
+  }
+
+  if (isSignup && formData.password !== formData.confirmPassword) {
+    return setError('Passwords do not match');
+  }
+
+  try {
+    const result = isSignup
+      ? await register(formData.email, formData.password)
+      : await login(formData.email, formData.password);
+
+    console.log('Full auth response:', result); // Debug log
+
+    if (!result?.success) {
+      // Enhanced error handling
+      const errorMessage = result?.error || 
+                         result?.message || 
+                         (result?.code ? 
+                           `Operation failed (code: ${result.code})` : 
+                           'Authentication failed');
+      
+      setError(errorMessage);
+      return;
+    }
+
+    // Handle success
+    if (isSignup) {
+      alert(result.message || 'Registration successful! Please check your email.');
+      setIsSignup(false);
+      setFormData(prev => ({ ...prev, password: '', confirmPassword: '' }));
+    } else {
+      navigate('/dashboard');
+    }
+
+  } catch (err) {
+    console.error('Full auth error:', err);
+    let errorMessage = 'An unexpected error occurred';
+    
+    if (err.response) {
+      // Handle axios response errors
+      errorMessage = err.response.data?.error || 
+                   err.response.data?.message || 
+                   `Request failed (status: ${err.response.status})`;
+    } else if (err.request) {
+      // Handle no response errors
+      errorMessage = 'No response from server. Check your connection.';
+    }
+    
+    setError(errorMessage);
+  }
+};
+
+  // Generate unique IDs for each form
+  const emailId = `email-${isSignup ? 'signup' : 'login'}`;
+  const passwordId = `password-${isSignup ? 'signup' : 'login'}`;
+  const confirmPasswordId = 'confirm-password-signup';
+
   return (
-    <div className="auth-wrapper">
+    <div className="auth-container">
       <div className="auth-card">
-        <h2>{isSignup ? "Create Account" : "Login"}</h2>
+        <h2>{isSignup ? 'Create Account' : 'Login'}</h2>
         
-        {error && <div className="error-message">{error}</div>}
+        {error && (
+          <div className="error-message">
+            {error}
+            {error.includes('verify') && (
+              <button 
+                onClick={() => navigate('/resend-verification')}
+                className="resend-link"
+              >
+                Resend verification email
+              </button>
+            )}
+          </div>
+        )}
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label>Email</label>
+            <label htmlFor={emailId}>Email</label>
             <input
+              id={emailId}
               type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               required
-              placeholder="Enter your email"
+              disabled={loading}
+              autoComplete="username"
+              placeholder="your@email.com"
             />
           </div>
 
           <div className="form-group">
-            <label>Password</label>
+            <label htmlFor={passwordId}>Password</label>
             <input
+              id={passwordId}
               type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
               required
-              placeholder="Enter your password"
-              minLength="6"
+              minLength="8"
+              disabled={loading}
+              autoComplete={isSignup ? 'new-password' : 'current-password'}
+              placeholder="••••••••"
             />
           </div>
 
           {isSignup && (
             <div className="form-group">
-              <label>Confirm Password</label>
+              <label htmlFor={confirmPasswordId}>Confirm Password</label>
               <input
+                id={confirmPasswordId}
                 type="password"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
                 required
-                placeholder="Confirm your password"
+                minLength="8"
+                disabled={loading}
+                autoComplete="new-password"
+                placeholder="••••••••"
               />
             </div>
           )}
 
-          <button type="submit" disabled={loading}>
-            {loading ? "Processing..." : isSignup ? "Sign Up" : "Login"}
+          <button
+            type="submit"
+            disabled={loading}
+            className={`auth-button ${loading ? 'loading' : ''}`}
+          >
+            {loading ? (
+              <>
+                <span className="spinner"></span>
+                {isSignup ? 'Signing Up...' : 'Logging In...'}
+              </>
+            ) : (
+              isSignup ? 'Sign Up' : 'Login'
+            )}
           </button>
         </form>
 
-        <p className="toggle-auth">
-          {isSignup ? "Already have an account?" : "Need an account?"}
-          <span onClick={() => setIsSignup(!isSignup)}>
-            {isSignup ? " Login" : " Sign Up"}
-          </span>
-        </p>
+        <div className="auth-toggle">
+          {isSignup ? 'Already have an account?' : 'Need an account?'}
+          <button
+            type="button"
+            onClick={() => setIsSignup(!isSignup)}
+            disabled={loading}
+            className="toggle-link"
+          >
+            {isSignup ? 'Login' : 'Sign Up'}
+          </button>
+        </div>
       </div>
     </div>
   );

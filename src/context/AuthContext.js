@@ -1,12 +1,10 @@
-// src/context/AuthContext.js
 import { createContext, useState, useEffect, useCallback, useMemo } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-// 1. Define TypeScript-like shape for better autocompletion
 const AuthContext = createContext({
   user: null,
-  loading: true,
+  loading: false,
   isAuthenticated: false,
   login: async () => ({ success: false, error: null }),
   logout: () => {},
@@ -17,18 +15,33 @@ const AuthContext = createContext({
 export const AuthProvider = ({ children }) => {
   const [state, setState] = useState({
     user: null,
-    loading: true,
+    loading: false,
     isAuthenticated: false,
   });
   const navigate = useNavigate();
 
-  // 2. Authentication check
+  // Configure axios instance with timeout
+  const api = axios.create({
+    baseURL: process.env.REACT_APP_API_URL || '/api',
+    timeout: 10000,
+  });
+
+  // Authentication check
   const refreshAuth = useCallback(async () => {
     try {
+      setState(prev => ({ ...prev, loading: true }));
       const token = localStorage.getItem('token');
-      if (!token) throw new Error('No token found');
+      
+      if (!token) {
+        setState({
+          user: null,
+          isAuthenticated: false,
+          loading: false,
+        });
+        return;
+      }
 
-      const { data } = await axios.get('/api/me', {
+      const { data } = await api.get('/auth/me', {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -47,19 +60,24 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  // 3. Initialize auth state
+  // Initialize auth state
   useEffect(() => {
     refreshAuth();
   }, [refreshAuth]);
 
-  // 4. Login handler
+  // Login handler
   const login = useCallback(async (email, password) => {
     try {
       setState(prev => ({ ...prev, loading: true }));
       
-      const { data } = await axios.post('/api/auth/login', { email, password });
-      localStorage.setItem('token', data.token);
+      const { data } = await api.post('/auth/login', { email, password });
+      
+      if (!data.success) {
+        throw new Error(data.error || 'Login failed');
+      }
 
+      localStorage.setItem('token', data.token);
+      
       setState({
         user: data.user,
         isAuthenticated: true,
@@ -70,14 +88,19 @@ export const AuthProvider = ({ children }) => {
       return { success: true };
     } catch (error) {
       setState(prev => ({ ...prev, loading: false }));
+      
+      const errorMessage = error.response?.data?.error || 
+                         error.message || 
+                         'Login failed';
+      
       return {
         success: false,
-        error: error.response?.data?.error || 'Login failed'
+        error: errorMessage
       };
     }
   }, [navigate]);
 
-  // 5. Logout handler
+  // Logout handler
   const logout = useCallback(() => {
     localStorage.removeItem('token');
     setState({
@@ -88,25 +111,38 @@ export const AuthProvider = ({ children }) => {
     navigate('/login');
   }, [navigate]);
 
-  // 6. Registration handler
+  // Registration handler (updated as per your request)
   const register = useCallback(async (email, password) => {
     try {
       setState(prev => ({ ...prev, loading: true }));
       
-      await axios.post('/api/auth/register', { email, password });
+      const response = await api.post('/auth/register', { email, password });
       
+      if (!response.data.success) {
+        throw new Error(response.data.error || 'Registration failed');
+      }
+
       setState(prev => ({ ...prev, loading: false }));
-      return { success: true };
+      return { 
+        success: true,
+        message: response.data.message 
+      };
     } catch (error) {
       setState(prev => ({ ...prev, loading: false }));
+      
+      // Extract error message from response if available
+      const errorMessage = error.response?.data?.error || 
+                         error.message || 
+                         'Registration failed';
+      
       return {
         success: false,
-        error: error.response?.data?.error || 'Registration failed'
+        error: errorMessage
       };
     }
   }, []);
 
-  // 7. Memoized context value
+  // Memoized context value
   const value = useMemo(() => ({
     ...state,
     login,
@@ -115,7 +151,6 @@ export const AuthProvider = ({ children }) => {
     refreshAuth,
   }), [state, login, logout, register, refreshAuth]);
 
-  // 8. Proper provider with value
   return (
     <AuthContext.Provider value={value}>
       {children}

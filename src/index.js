@@ -25,41 +25,18 @@ import { AuthProvider } from "./context/AuthContext"; // Fixed import
 import ErrorBoundary from "./component/ErrorBoundary/ErrorBoundary"; // Recommended addition
 import ScrollToTop from "./common-component/scroltotop/ScrollToTop";
 import Terms from "./common-component/terms/Terms";
+import VerificationSuccess from "./common-component/VerificationSuccess/VerificationSuccess";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <ScrollToTop />
-      <Routes>
-        <Route path="" element={<App />}>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/about" element={<About />}></Route>
-          <Route path="/service" element={<Service />}></Route>
-          <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/admisson" element={<Admisson />} />
-          <Route path="/sip" element={<Sip />} />
-          <Route path="/aboradstudy" element={<AbroadStudy />} />
-          <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/skillmigration" element={<SkillMigration />} />
-          <Route path="/franchise" element={<Franchise />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/insert-profile" element={<Profile />} />
-          <Route path="/homepannel" element={<HomePannel />} />
-          <Route path="/boards/10th" element={<TenthBoardList />} />
-          <Route path="/boards/12th" element={<TwelfthBoardList />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="/terms" element={<Terms />} />
-        </Route>
-        <Route path="*" element={<Error />}></Route>
-      </Routes>
-    </BrowserRouter>
-    <ErrorBoundary> {/* Added error boundary */}
+    <ErrorBoundary>
       <BrowserRouter>
-        <AuthProvider> {/* Moved inside BrowserRouter */}
+        <AuthProvider>
+          <ScrollToTop />
           <Routes>
             <Route path="" element={<App />}>
-              <Route index element={<Home />} /> {/* Better practice than path="/" */}
+              <Route index element={<Home />} />
               <Route path="about" element={<About />} />
               <Route path="service" element={<Service />} />
               <Route path="contact" element={<Contact />} />
@@ -74,6 +51,9 @@ root.render(
               <Route path="homepannel" element={<HomePannel />} />
               <Route path="boards/10th" element={<TenthBoardList />} />
               <Route path="boards/12th" element={<TwelfthBoardList />} />
+              <Route path="privacy" element={<PrivacyPolicy />} />
+              <Route path="terms" element={<Terms />} />
+              <Route path="verification-success" element={<VerificationSuccess />} />
             </Route>
             <Route path="*" element={<Error />} />
           </Routes>
