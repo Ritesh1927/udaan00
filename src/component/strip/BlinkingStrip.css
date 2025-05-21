@@ -2,7 +2,6 @@
     position: relative;
     width: 100%;
     background-color: #163f85;
-    /* padding: 10px 0; */
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -10,19 +9,25 @@
     font-family: "Hanken Grotesk", sans-serif;
 }
 
+/* Only anchor blinks, blinker div remains solid */
 .blinker {
     width: 160px;
     text-align: center;
-    color: green;
-    font-weight: bold;
-    animation: blink-animation 1s infinite;
-    z-index: 10;
-    font-size: 16px;
+    background-color: red;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #E3B074;
-    height: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.blinker a {
+    color: #fff;
+    animation: blink-animation 1s infinite;
+    text-decoration: none;
 }
 
 @keyframes blink-animation {
@@ -58,7 +63,6 @@
     font-size: 16px;
     color: #fff;
     margin-right: 100px;
-    /* spacing between repeats */
 }
 
 @keyframes scroll-left-to-right {
@@ -68,5 +72,16 @@
 
     100% {
         transform: translateX(100%);
+    }
+}
+
+
+@media (max-width:680px) {
+    .blinker {
+        width: 120px;
+    }
+
+    .right-blink {
+        display: none;
     }
 }
