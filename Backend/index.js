@@ -31,6 +31,12 @@ app.use((req, res, next) => {
   }
   next();
 });
+
+
+const authRoutes = require("./Routes/authRoutes");
+
+app.use("/api/auth", authRoutes);
+
 // -----------------------------------------------------------------------------------------
 
 const Contactschema = require("./Schema/Contactschema");
