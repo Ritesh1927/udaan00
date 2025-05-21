@@ -1,0 +1,87 @@
+.strip-container {
+    position: relative;
+    width: 100%;
+    background-color: #163f85;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+/* Only anchor blinks, blinker div remains solid */
+.blinker {
+    width: 160px;
+    text-align: center;
+    background-color: red;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.blinker a {
+    color: #fff;
+    animation: blink-animation 1s infinite;
+    text-decoration: none;
+}
+
+@keyframes blink-animation {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.scroll-message {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.scroll-track {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-left-to-right 20s linear infinite;
+}
+
+.scroll-text {
+    display: inline-block;
+    font-size: 16px;
+    color: #fff;
+    margin-right: 100px;
+}
+
+@keyframes scroll-left-to-right {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+
+@media (max-width:680px) {
+    .blinker {
+        width: 120px;
+    }
+
+    .right-blink {
+        display: none;
+    }
+}
