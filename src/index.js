@@ -25,6 +25,7 @@ import TwelfthBoardList from "./component/resultcards/TwelfthBoardList";
 import PrivacyPolicy from "./common-component/privacy/PrivacyPolicy";
 import ScrollToTop from "./common-component/scroltotop/ScrollToTop";
 import Terms from "./common-component/terms/Terms";
+import Otp from "./component/VerifyOtp";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -51,6 +52,7 @@ root.render(
           <Route path="/boards/12th" element={<TwelfthBoardList />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/verify-otp" element={<Otp />} />
         </Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>

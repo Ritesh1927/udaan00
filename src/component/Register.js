@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import api from '../utils/api';
+import { Link } from "react-router-dom";
 
 export default function Register() {
   const [form, setForm] = useState({ name: '', email: '', password: '' });
@@ -22,6 +23,7 @@ export default function Register() {
       <input name="email" type="email" placeholder="Email" onChange={handleChange} required /><br/>
       <input name="password" type="password" placeholder="Password" onChange={handleChange} required /><br/>
       <button type="submit">Register</button>
+      <Link to="/Login">Login</Link>
       <p>{message}</p>
     </form>
   );

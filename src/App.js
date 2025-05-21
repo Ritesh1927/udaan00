@@ -4,7 +4,7 @@ import Footer from "./common-component/footer/Footer";
 import Navbar from "./common-component/nav/Navbar";
 import UpperNav from "./common-component/uppernav/UpperNav";
 import WhatsAppButton from "./common-component/whatsup/WhatsAppButton";
-import { AuthProvider } from "./authContext";
+import { AuthProvider } from "./auth/authContext";
 
 function App() {
   return (
