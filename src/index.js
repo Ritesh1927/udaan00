@@ -15,7 +15,8 @@ import Home from "./dasboard-pages/Home";
 import SkillMigration from "./dasboard-pages/SkillMigration";
 import Testimonials from "./dasboard-pages/Testimonials";
 import Franchise from "./dasboard-pages/Franchise";
-import Login from "./common-component/login/Login";
+import Login from "./component/Login";
+import Register from "./component/Register";
 import Profile from "./component/insert-profile/Profile";
 import HomePannel from "./admin-dashboard/HomePannel";
 // import BoardList from "./component/abroaduniversity/BoardList";
@@ -43,6 +44,7 @@ root.render(
           <Route path="/skillmigration" element={<SkillMigration />} />
           <Route path="/franchise" element={<Franchise />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/Register" element={<Register />} />
           <Route path="/insert-profile" element={<Profile />} />
           <Route path="/homepannel" element={<HomePannel />} />
           <Route path="/boards/10th" element={<TenthBoardList />} />

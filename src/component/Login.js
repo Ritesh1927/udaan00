@@ -24,6 +24,7 @@ export default function Login() {
       <input name="email" type="email" placeholder="Email" onChange={handleChange} required /><br/>
       <input name="password" type="password" placeholder="Password" onChange={handleChange} required /><br/>
       <button type="submit">Login</button>
+      Register
       <p>{message}</p>
     </form>
   );

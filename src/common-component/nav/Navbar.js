@@ -8,7 +8,7 @@ import userProfile from "../../assets/profile.png";
 import { CgProfile } from "react-icons/cg";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoArrowUndoCircleOutline } from "react-icons/io5";
-import Logout from "../logout/Logout";
+import Login from "../../component/Login";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
@@ -107,9 +107,9 @@ const Navbar = () => {
           </li>
         </ul>
 
-        {/* <Link to="/login" className="nav-login-btn">
+        <Link to="/login" className="nav-login-btn">
           Login
-        </Link> */}
+        </Link>
 
         {/* <div className="profile-container" ref={dropdownRef}>
           <img
@@ -156,11 +156,11 @@ const Navbar = () => {
             </div>
           )}
         </div> */}
-        <Logout
+        {/* <Logout
           isOpen={showLogoutModal}
           onClose={() => setShowLogoutModal(false)}
           onLogout={handleLogout}
-        />
+        /> */}
 
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
