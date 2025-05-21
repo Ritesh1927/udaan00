@@ -17,15 +17,6 @@ const Navbar = () => {
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    // Clear user data and redirect to login
-    localStorage.clear();
-    window.location.href = "/login"; // or use navigate('/login') if using React Router
-  };
-  const toggleProfile = () => {
-    setProfileOpen(!profileOpen);
-  };
-
   useEffect(() => {
     if (showLogoutModal) {
       document.body.style.overflow = "hidden";
@@ -50,9 +41,6 @@ const Navbar = () => {
       case "Settings":
         navigate("/settings");
         break;
-      // case "Logout":
-      //   navigate("/logout");
-      //   break;
       default:
         break;
     }
@@ -110,57 +98,6 @@ const Navbar = () => {
         <Link to="/login" className="nav-login-btn">
           Login
         </Link>
-
-        {/* <div className="profile-container" ref={dropdownRef}>
-          <img
-            src={userProfile}
-            alt="Profile"
-            className="profile-img"
-            onClick={toggleProfile}
-          />
-          {profileOpen && (
-            <div className="profile-dropdown">
-              <div
-                className="dropdown-item"
-                onClick={() => handleOptionClick("Insert Profile")}
-              >
-                <p className="profile-icons">
-                  <i>
-                    <CgProfile />
-                  </i>
-                </p>
-                <p>Profile</p>
-              </div>
-              <div
-                className="dropdown-item"
-                onClick={() => handleOptionClick("Settings")}
-              >
-                <p className="profile-icons">
-                  <i>
-                    <IoSettingsOutline />
-                  </i>
-                </p>
-                <p>Settings</p>
-              </div>
-              <div
-                className="dropdown-item"
-                onClick={() => setShowLogoutModal(true)}
-              >
-                <p className="profile-icons">
-                  <i>
-                    <IoArrowUndoCircleOutline />
-                  </i>
-                </p>
-                <p>Sign Out </p>
-              </div>
-            </div>
-          )}
-        </div> */}
-        {/* <Logout
-          isOpen={showLogoutModal}
-          onClose={() => setShowLogoutModal(false)}
-          onLogout={handleLogout}
-        /> */}
 
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
