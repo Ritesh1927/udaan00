@@ -9,9 +9,9 @@ const Stepcircle = () => {
   const steps = [
     { label: "Career Counselling", path: "/career-counselling" },
     { label: "Stream Selection", path: "/stream-selection" },
-    { label: "College Selection", path: "/college-selection" },
+    { label: "College Selection", path: "/admisson" },
     { label: "Exam Preparation", path: "/exam-preparation" },
-    { label: "Admission", path: "/admission" },
+    { label: "Admission", path: "/admisson" },
     { label: "Placement", path: "/placement" },
   ];
 
