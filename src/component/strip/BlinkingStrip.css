@@ -55,7 +55,7 @@
 .scroll-track {
     display: inline-block;
     white-space: nowrap;
-    animation: scroll-left-to-right 20s linear infinite;
+    animation: scroll-left-to-right 50s linear infinite;
 }
 
 .scroll-text {

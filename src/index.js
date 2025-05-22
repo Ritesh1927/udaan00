@@ -24,6 +24,10 @@ import TwelfthBoardList from "./component/resultcards/TwelfthBoardList";
 import PrivacyPolicy from "./common-component/privacy/PrivacyPolicy";
 import ScrollToTop from "./common-component/scroltotop/ScrollToTop";
 import Terms from "./common-component/terms/Terms";
+import StreamSelection from "./component/carrercycle/StreamSelection";
+import ExamPreparation from "./component/carrercycle/ExamPreparation";
+import Placement from "./component/carrercycle/Placement";
+import CareerCounselling from "./component/carrercycle/CareerCounselling";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -49,6 +53,10 @@ root.render(
           <Route path="/boards/12th" element={<TwelfthBoardList />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/stream-selection" element={<StreamSelection />} />
+          <Route path="/exam-preparation" element={<ExamPreparation />} />
+          <Route path="/placement" element={<Placement />} />
+          <Route path="/career-counselling" element={<CareerCounselling />} />
         </Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>

@@ -166,6 +166,7 @@ const Navbar = () => {
           {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
       </div>
+      <div className="nav-flag-ribbon"></div>
     </nav>
   );
 };
