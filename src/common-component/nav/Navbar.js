@@ -8,7 +8,7 @@ import userProfile from "../../assets/profile.png";
 import { CgProfile } from "react-icons/cg";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoArrowUndoCircleOutline } from "react-icons/io5";
-import Login from "../../component/Login";
+import Login from "../../auth/Login";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
