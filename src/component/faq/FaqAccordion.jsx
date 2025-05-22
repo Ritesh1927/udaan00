@@ -5,32 +5,32 @@ const faqData = [
   {
     question: "How is get admission in abroad university?",
     answer:
-      "To get admission abroad, you'll need to research universities, prepare documents like SOP, LOR, and academic transcripts, take necessary exams (like IELTS, TOEFL, or GRE), and apply through their online portal.",
+      "TGetting admission abroad involves choosing the right course and university, meeting academic and language requirements (like IELTS/TOEFL), preparing documents such as your SOP, LORs, and resume, and applying to the university. Once accepted, the next step is securing your student visa.We support you through the entire process—from shortlisting universities to visa approval.",
   },
   {
     question: "Do you offer complete solution for students?",
     answer:
-      "Yes, we offer end-to-end services including counseling, application assistance, visa support, scholarship guidance, and accommodation support.",
+      "Absolutely! We provide end-to-end support—career counseling, university and course selection, application submission, visa assistance, and even post-arrival services like accommodation guidance.You focus on your dreams, and we’ll take care of the process.",
   },
   {
     question: "Which country is safe and better for higher study?",
     answer:
-      "Countries like Canada, Germany, and the UK are considered safe and offer top-quality education, with excellent student support and post-study opportunities.",
+      "Countries like Japan, Australia, Germany, the UK, and the USA are safe, student-friendly, and offer globally recognized education.We help you pick the country that best fits your goals, budget, and lifestyle.",
   },
   {
     question: "Which country offer PR after study getting job?",
     answer:
-      "Canada and Australia are known for offering PR pathways to international students after they secure a job and meet specific residency criteria.",
+      "Countries like Japan, Australia, Germany, the UK, and the USA are safe, student-friendly, and offer globally recognized education.We help you pick the country that best fits your goals, budget, and lifestyle.",
   },
   {
     question: "Can I get scholarship with my low CGPA?",
     answer:
-      "Yes, scholarships are available based on extracurriculars, special talents, and financial need, even if your CGPA is not high.",
+      "Yes! Many scholarships consider more than just grades—such as your extracurriculars, leadership, community involvement, or financial need.We’ll help you explore scholarships that match your full profile—not just your marks.",
   },
   {
     question: "Do you allow accommodation for students in abroad?",
     answer:
-      "Yes, we assist in finding on-campus or off-campus accommodation options tailored to your preferences and budget.",
+      "Yes, we do. From university hostels to private apartments and homestays, we help you find safe, comfortable, and budget-friendly accommodation abroad.We make sure you feel at home even when you're miles away",
   },
 ];
 
