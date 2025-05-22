@@ -1,0 +1,161 @@
+.exam-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    background-color: #f9fafc;
+}
+
+/* Hero Section */
+.exam-hero {
+    background-color: #e3f2fd;
+    padding: 60px 30px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+
+.exam-title {
+    font-size: 2.5rem;
+    color: #1a237e;
+}
+
+.exam-subtitle {
+    font-size: 1.1rem;
+    margin-top: 12px;
+}
+
+/* Intro Section */
+.exam-intro {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.section-heading {
+    font-size: 1.8rem;
+    color: #0d47a1;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.section-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Services Grid */
+.exam-services {
+    margin-bottom: 40px;
+}
+
+.service-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-top: 20px;
+}
+
+.service-box {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    transition: 0.3s ease;
+}
+
+.service-box:hover {
+    background-color: #f1faff;
+}
+
+.service-box h3 {
+    color: #1976d2;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.service-box p {
+    font-size: 1rem;
+}
+
+/* Benefits Section */
+.exam-benefits {
+    background-color: #fff8e1;
+    padding: 40px 20px;
+    border-radius: 12px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.benefits-list li {
+    margin: 10px 0;
+}
+
+/* CTA Section */
+.exam-cta {
+    background-color: #e8f5e9;
+    text-align: center;
+    padding: 50px 30px;
+    border-radius: 14px;
+}
+
+.exam-cta h2 {
+    font-size: 1.8rem;
+    color: #2e7d32;
+}
+
+.exam-cta p {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.exam-button {
+    margin-top: 20px;
+    padding: 12px 28px;
+    background-color: #388e3c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.exam-button a {
+    color: #fff;
+}
+
+.exam-button:hover {
+    background-color: #2e7d32;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .exam-title {
+        font-size: 2rem;
+    }
+
+    .section-heading {
+        font-size: 1.5rem;
+    }
+
+    .exam-cta h2 {
+        font-size: 1.5rem;
+    }
+
+    .exam-button {
+        width: 100%;
+    }
+}

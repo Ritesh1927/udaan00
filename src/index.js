@@ -31,6 +31,10 @@ import ProtectedRoute from "./auth/ProtectedRoute";
 import { AuthProvider } from './auth/authContext';
 import ResetRequest from "./auth/ResetRequest";
 import ResetPassword from "./auth/ResetPassword";
+import StreamSelection from "./component/carrercycle/StreamSelection";
+import ExamPreparation from "./component/carrercycle/ExamPreparation";
+import Placement from "./component/carrercycle/Placement";
+import CareerCounselling from "./component/carrercycle/CareerCounselling";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -61,6 +65,19 @@ root.render(
             <Route path="/verify-otp" element={<Otp />} />
             <Route path="/reset-request" element={<ResetRequest />} />
             <Route path="/reset-password/:token" element={<ResetPassword />} />
+            <Route path="/stream-selection" element={<StreamSelection />} />
+            <Route path="/exam-preparation" element={<ExamPreparation />} />
+            <Route path="/placement" element={<Placement />} />
+            <Route path="/career-counselling" element={<CareerCounselling />} />
+
+            {/* add all new routes here => */}
+
+
+
+            {/* <= add all new routes here  */}
+
+
+            
             <Route
     path="/profile"
     element={
