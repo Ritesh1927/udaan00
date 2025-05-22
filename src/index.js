@@ -27,6 +27,7 @@ import Terms from "./common-component/terms/Terms";
 import StreamSelection from "./component/carrercycle/StreamSelection";
 import ExamPreparation from "./component/carrercycle/ExamPreparation";
 import Placement from "./component/carrercycle/Placement";
+import CareerCounselling from "./component/carrercycle/CareerCounselling";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -55,6 +56,7 @@ root.render(
           <Route path="/stream-selection" element={<StreamSelection />} />
           <Route path="/exam-preparation" element={<ExamPreparation />} />
           <Route path="/placement" element={<Placement />} />
+          <Route path="/career-counselling" element={<CareerCounselling />} />
         </Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>

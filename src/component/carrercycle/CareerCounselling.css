@@ -1,0 +1,166 @@
+.career-page {
+    font-family: "Segoe UI", sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background-color: #f9f9f9;
+    padding-bottom: 4rem;
+}
+
+.career-hero {
+    text-align: center;
+    background-color: #855CA3;
+    padding: 4rem 1rem;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.career-hero h1 {
+    font-size: 2.5rem;
+}
+
+.career-hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.career-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    background-color: white;
+    gap: 2rem;
+}
+
+.with-icon,
+.alt-layout {
+    background-color: #eaf6ff;
+}
+
+.alt-layout {
+    flex-direction: row-reverse;
+}
+
+.career-text {
+    flex: 1;
+    min-width: 280px;
+    max-width: 600px;
+}
+
+.career-section h2 {
+    color: #2980b9;
+    font-size: 1.8rem;
+}
+
+.career-section ul {
+    padding-left: 1.2rem;
+}
+
+.career-section li {
+    margin-bottom: 0.5rem;
+}
+
+.career-icon {
+    font-size: 4rem;
+    color: #0984e3;
+    flex-shrink: 0;
+}
+
+.full-width {
+    background-color: #fff;
+    padding: 4rem 2rem;
+}
+
+.career-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.career-box {
+    background-color: #dff9fb;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.career-box:hover {
+    transform: translateY(-5px);
+}
+
+.career-box .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #00a8ff;
+}
+
+.career-callout {
+    background-color: #ffeaa7;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.career-callout h2 {
+    color: #d35400;
+    font-size: 1.8rem;
+}
+
+.career-callout p {
+    max-width: 700px;
+    margin: 1rem auto;
+    font-size: 1.1rem;
+}
+
+.career-button {
+    margin-top: 1rem;
+    background-color: #d35400;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.career-button a {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.career-button:hover {
+    background-color: #e17055;
+}
+
+@media (max-width: 768px) {
+    .career-hero h1 {
+        font-size: 2rem;
+    }
+
+    .career-section {
+        padding: 2rem 1rem;
+    }
+
+    .career-text {
+        text-align: center;
+    }
+
+    .career-icon {
+        font-size: 3rem;
+    }
+
+    .career-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .career-callout h2 {
+        font-size: 1.5rem;
+    }
+}
