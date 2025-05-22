@@ -24,7 +24,7 @@ export default function Register() {
       <input name="mobile" type="text" placeholder="Mobile Number" onChange={handleChange} required />
       <input name="password" type="password" placeholder="Password" onChange={handleChange} required /><br/>
       <button type="submit">Register</button>
-      <Link to="/Login">Login</Link>
+      <Link to="/login">Login</Link>
       <p>{message}</p>
     </form>
   );

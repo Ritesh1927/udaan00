@@ -14,9 +14,9 @@ export default function VerifyOtp() {
     e.preventDefault();
     try {
       const res = await api.post('/auth/verify-otp', { email: state.email, otp });
-      login(res.data.token);
+      login(res.data.user, res.data.token);
       setMessage('Login successful');
-      navigate('/');
+      navigate('/profile');
     } catch (err) {
       setMessage(err.response?.data?.message || 'OTP verification failed');
     }

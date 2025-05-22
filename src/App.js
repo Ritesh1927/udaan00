@@ -8,7 +8,6 @@ import { AuthProvider } from "./auth/authContext";
 
 function App() {
   return (
-    <AuthProvider>
       <div className="App">
         <UpperNav />
         <Navbar />
@@ -18,7 +17,6 @@ function App() {
         <WhatsAppButton />
         <Footer />
       </div>
-    </AuthProvider>
   );
 }
 
