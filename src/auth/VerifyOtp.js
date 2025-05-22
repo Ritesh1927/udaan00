@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import api from '../utils/api';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useAuth } from '../auth/authContext';
+import { useAuth } from './authContext';
 
 export default function VerifyOtp() {
   const [otp, setOtp] = useState('');

@@ -15,8 +15,6 @@ import Home from "./dasboard-pages/Home";
 import SkillMigration from "./dasboard-pages/SkillMigration";
 import Testimonials from "./dasboard-pages/Testimonials";
 import Franchise from "./dasboard-pages/Franchise";
-import Login from "./component/Login";
-import Register from "./component/Register";
 import Profile from "./component/insert-profile/Profile";
 import HomePannel from "./admin-dashboard/HomePannel";
 // import BoardList from "./component/abroaduniversity/BoardList";
@@ -25,7 +23,9 @@ import TwelfthBoardList from "./component/resultcards/TwelfthBoardList";
 import PrivacyPolicy from "./common-component/privacy/PrivacyPolicy";
 import ScrollToTop from "./common-component/scroltotop/ScrollToTop";
 import Terms from "./common-component/terms/Terms";
-import Otp from "./component/VerifyOtp";
+import Register from "./auth/Register";
+import Login from "./auth/Login";
+import Otp from "./auth/VerifyOtp";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
