@@ -10,6 +10,7 @@ import { FaChevronRight } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
+import DownloadPdf from "../download/DownloadPdf";
 const Footer = () => {
   return (
     <>
@@ -133,6 +134,7 @@ const Footer = () => {
                 36 Johnson Drive , Glen Waverley Melbourne , Victoria ,
                 Australia
               </p>
+              <DownloadPdf />
             </div>
 
             <div className="location-section">
