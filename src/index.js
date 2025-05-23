@@ -16,7 +16,6 @@ import SkillMigration from "./dasboard-pages/SkillMigration";
 import Testimonials from "./dasboard-pages/Testimonials";
 import Franchise from "./dasboard-pages/Franchise";
 // import Profile from "./component/insert-profile/Profile";
-import HomePannel from "./admin-dashboard/HomePannel";
 // import BoardList from "./component/abroaduniversity/BoardList";
 import TenthBoardList from "./component/resultcards/TenthBoardList";
 import TwelfthBoardList from "./component/resultcards/TwelfthBoardList";
@@ -35,6 +34,7 @@ import StreamSelection from "./component/carrercycle/StreamSelection";
 import ExamPreparation from "./component/carrercycle/ExamPreparation";
 import Placement from "./component/carrercycle/Placement";
 import CareerCounselling from "./component/carrercycle/CareerCounselling";
+import Admin from "./admin/Admin";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -57,7 +57,6 @@ root.render(
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             {/* <Route path="/insert-profile" element={<Profile />} /> */}
-            <Route path="/homepannel" element={<HomePannel />} />
             <Route path="/boards/10th" element={<TenthBoardList />} />
             <Route path="/boards/12th" element={<TwelfthBoardList />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
@@ -73,6 +72,7 @@ root.render(
             {/* add all new routes here => */}
 
 
+            <Route path="/admin" element={<Admin />} />
 
             {/* <= add all new routes here  */}
 
