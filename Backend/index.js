@@ -55,11 +55,8 @@ mongoose.connection.on('error', (err) => {
 // Import routes and middleware
 const Contactschema = require("./Schema/Contactschema");
 const franchisemodel = require("./Schema/Franchiseschema");
-const authRouter = require('./routes/auth');
-const { protect } = require('./middlewares/auth');
 
 // Mount authentication routes
-app.use('/api/auth', authRouter);
 
 // Existing API endpoints (unchanged)
 app.post("/api/contact", async (req, res) => {
@@ -130,10 +127,6 @@ app.post("/api/franchise", async (req, res) => {
   }
 });
 
-// Protected route example
-app.get('/api/me', protect, (req, res) => {
-  res.status(200).json(req.user);
-});
 
 // Health check
 app.get('/api/healthcheck', (req, res) => {

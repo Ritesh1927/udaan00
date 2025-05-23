@@ -20,7 +20,6 @@ import HomePannel from "./admin-dashboard/HomePannel";
 import TenthBoardList from "./component/resultcards/TenthBoardList";
 import TwelfthBoardList from "./component/resultcards/TwelfthBoardList";
 import PrivacyPolicy from "./common-component/privacy/PrivacyPolicy";
-import { AuthProvider } from "./context/AuthContext"; // Fixed import
 import ErrorBoundary from "./component/ErrorBoundary/ErrorBoundary"; // Recommended addition
 import ScrollToTop from "./common-component/scroltotop/ScrollToTop";
 import Terms from "./common-component/terms/Terms";
