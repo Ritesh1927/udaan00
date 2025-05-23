@@ -28,6 +28,13 @@ app.use((req, res, next) => {
   next();
 });
 
+
+const authRoutes = require("./Routes/authRoutes");
+
+app.use("/api/auth", authRoutes);
+
+// -----------------------------------------------------------------------------------------
+
 // Database connection
 require("./Connection/Database");
 connectDB();

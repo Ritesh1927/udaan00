@@ -144,4 +144,8 @@
         gap: 30px;
         margin-bottom: 15px;
     }
+
+    .testimonial-slider__container {
+        padding: 0 5px;
+    }
 }

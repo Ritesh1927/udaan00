@@ -15,8 +15,7 @@ import Home from "./dasboard-pages/Home";
 import SkillMigration from "./dasboard-pages/SkillMigration";
 import Testimonials from "./dasboard-pages/Testimonials";
 import Franchise from "./dasboard-pages/Franchise";
-import Login from "./common-component/login/Login";
-import Profile from "./component/insert-profile/Profile";
+// import Profile from "./component/insert-profile/Profile";
 import HomePannel from "./admin-dashboard/HomePannel";
 import TenthBoardList from "./component/resultcards/TenthBoardList";
 import TwelfthBoardList from "./component/resultcards/TwelfthBoardList";
@@ -25,41 +24,74 @@ import { AuthProvider } from "./context/AuthContext"; // Fixed import
 import ErrorBoundary from "./component/ErrorBoundary/ErrorBoundary"; // Recommended addition
 import ScrollToTop from "./common-component/scroltotop/ScrollToTop";
 import Terms from "./common-component/terms/Terms";
-import VerificationSuccess from "./common-component/VerificationSuccess/VerificationSuccess";
+import Register from "./auth/Register";
+import Login from "./auth/Login";
+import Otp from "./auth/VerifyOtp";
+import Profile from "./auth/Profile";
+import ProtectedRoute from "./auth/ProtectedRoute";
+import { AuthProvider } from './auth/authContext';
+import ResetRequest from "./auth/ResetRequest";
+import ResetPassword from "./auth/ResetPassword";
+import StreamSelection from "./component/carrercycle/StreamSelection";
+import ExamPreparation from "./component/carrercycle/ExamPreparation";
+import Placement from "./component/carrercycle/Placement";
+import CareerCounselling from "./component/carrercycle/CareerCounselling";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ErrorBoundary>
+    <AuthProvider>
       <BrowserRouter>
-        <AuthProvider>
-          <ScrollToTop />
-          <Routes>
-            <Route path="" element={<App />}>
-              <Route index element={<Home />} />
-              <Route path="about" element={<About />} />
-              <Route path="service" element={<Service />} />
-              <Route path="contact" element={<Contact />} />
-              <Route path="admisson" element={<Admisson />} />
-              <Route path="sip" element={<Sip />} />
-              <Route path="aboradstudy" element={<AbroadStudy />} />
-              <Route path="testimonials" element={<Testimonials />} />
-              <Route path="skillmigration" element={<SkillMigration />} />
-              <Route path="franchise" element={<Franchise />} />
-              <Route path="login" element={<Login />} />
-              <Route path="insert-profile" element={<Profile />} />
-              <Route path="homepannel" element={<HomePannel />} />
-              <Route path="boards/10th" element={<TenthBoardList />} />
-              <Route path="boards/12th" element={<TwelfthBoardList />} />
-              <Route path="privacy" element={<PrivacyPolicy />} />
-              <Route path="terms" element={<Terms />} />
-              <Route path="verification-success" element={<VerificationSuccess />} />
-            </Route>
-            <Route path="*" element={<Error />} />
-          </Routes>
-        </AuthProvider>
+        <ScrollToTop />
+        <Routes>
+          <Route path="" element={<App />}>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/about" element={<About />}></Route>
+            <Route path="/service" element={<Service />}></Route>
+            <Route path="/contact" element={<Contact />}></Route>
+            <Route path="/admisson" element={<Admisson />} />
+            <Route path="/sip" element={<Sip />} />
+            <Route path="/aboradstudy" element={<AbroadStudy />} />
+            <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/skillmigration" element={<SkillMigration />} />
+            <Route path="/franchise" element={<Franchise />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            {/* <Route path="/insert-profile" element={<Profile />} /> */}
+            <Route path="/homepannel" element={<HomePannel />} />
+            <Route path="/boards/10th" element={<TenthBoardList />} />
+            <Route path="/boards/12th" element={<TwelfthBoardList />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/verify-otp" element={<Otp />} />
+            <Route path="/reset-request" element={<ResetRequest />} />
+            <Route path="/reset-password/:token" element={<ResetPassword />} />
+            <Route path="/stream-selection" element={<StreamSelection />} />
+            <Route path="/exam-preparation" element={<ExamPreparation />} />
+            <Route path="/placement" element={<Placement />} />
+            <Route path="/career-counselling" element={<CareerCounselling />} />
+
+            {/* add all new routes here => */}
+
+
+
+            {/* <= add all new routes here  */}
+
+
+            
+            <Route
+    path="/profile"
+    element={
+      <ProtectedRoute>
+        <Profile />
+      </ProtectedRoute>
+    }
+  />
+          </Route>
+          <Route path="*" element={<Error />}></Route>
+        </Routes>
       </BrowserRouter>
-    </ErrorBoundary>
+    </AuthProvider>  
   </React.StrictMode>
 );
 

@@ -13,10 +13,15 @@ import WhatsAppButton from "../common-component/whatsup/WhatsAppButton";
 import Carousel from "../component/carousel/Carousel";
 import TestimonialSlider from "./Testimonials";
 import ResultCards from "../component/resultcards/ResultCards";
+import BlinkingStrip from "../component/strip/BlinkingStrip";
+import Faq from "../component/faq/Faq";
 
 const Home = () => {
   return (
     <>
+      <div>
+        <BlinkingStrip />
+      </div>
       <div>
         <Carousel />
       </div>
@@ -124,6 +129,9 @@ const Home = () => {
       </section>
 
       <div className="parallax mt40"></div>
+      <div>
+        <Faq />
+      </div>
       <WhatsAppButton />
       <div className="Form-forward-container">
         <TestimonialSlider />

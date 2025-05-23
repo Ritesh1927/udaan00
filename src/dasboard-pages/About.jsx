@@ -17,28 +17,34 @@ const About = () => {
         <img src={Abtbanner} alt="" />
       </div>
       <div className="container about-main-container">
-        <h1 className="about-header text-center ">About Udaan Eduservices</h1>
+        <h1 className="about-header text-center ">
+          About Our Company{" "}
+          <span className="About-header-company-name ">
+            {" "}
+            "Udaan Eduservices"
+          </span>
+        </h1>
         <div className="core-value-container">
-          <h1 className="">Core Value</h1>
+          <h1 className=""> Core Values</h1>
           <div className="inner-core-values">
             <p>
-              <span className="inner-count-core">1</span>
+              {/* <span className="inner-count-core">1</span> */}
               शिक्षा
             </p>
             <p>
-              <span className="inner-count-core">2</span>
+              {/* <span className="inner-count-core">2</span> */}
               संस्कार
             </p>
             <p>
-              <span className="inner-count-core">3</span>
+              {/* <span className="inner-count-core">3</span> */}
               सेवा
             </p>
             <p>
-              <span className="inner-count-core">4</span>
+              {/* <span className="inner-count-core">4</span> */}
               मानवता
             </p>
             <p>
-              <span className="inner-count-core">5</span>
+              {/* <span className="inner-count-core">5</span> */}
               राष्ट्रीयता
             </p>
           </div>
@@ -83,7 +89,7 @@ const About = () => {
               <div className="vison-line"></div>
               <div>
                 <p className="vision-text">
-                  To be a trusted partner in every individual's educational and
+                  To be a trusted partner in every individual's & institutional educational and
                   professional journey, facilitating success through tailored
                   support and resources.​
                 </p>
