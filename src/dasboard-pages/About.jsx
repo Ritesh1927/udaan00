@@ -89,9 +89,10 @@ const About = () => {
               <div className="vison-line"></div>
               <div>
                 <p className="vision-text">
-                  To be a trusted partner in every individual's & institutional educational and
-                  professional journey, facilitating success through tailored
-                  support and resources.​
+                  " To be a trusted partner in every individual's &
+                  institutional educational and professional journey,
+                  facilitating success through tailored support and resources.​
+                  "
                 </p>
               </div>
             </div>
@@ -156,7 +157,7 @@ const About = () => {
 
                   <div className="card__header-text">
                     <h3 className="card__title">Pooja Aggarwal</h3>
-                    <h5>COO & Co-founder</h5>
+                    <h5>COO & Co-Founder</h5>
                   </div>
                 </div>
                 <p className="card__description">

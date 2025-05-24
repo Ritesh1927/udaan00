@@ -1,55 +1,99 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import api from '../utils/api';
-import { useAuth } from './authContext';
-import react from 'react';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import api from "../utils/api";
+import { useAuth } from "./authContext";
+import react from "react";
+import "../../src/auth/authcss/Auth.css";
 
 export default function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
   const navigate = useNavigate();
   const { login } = useAuth();
 
-   const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage('');
+    setMessage("");
     try {
-      const res = await api.post('/auth/login', { email, password });
+      const res = await api.post("/auth/login", { email, password });
 
-      if (res.data.message === 'OTP sent to email') {
-        setMessage('OTP sent to email');
+      if (res.data.message === "OTP sent to email") {
+        setMessage("OTP sent to email");
         // Navigate to verify-otp and pass email via state
-        navigate('/verify-otp', { state: { email } });
+        navigate("/verify-otp", { state: { email } });
       } else {
-        setMessage('Unexpected response from server');
+        setMessage("Unexpected response from server");
       }
     } catch (err) {
-      setMessage(err.response?.data?.message || 'Login failed');
+      setMessage(err.response?.data?.message || "Login failed");
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-        required
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={e => setPassword(e.target.value)}
-        required
-      />
-      <button type="submit">Login</button>
-      <Link to="/register">Register</Link>
-      <p>{message}</p>
-      <Link to="/reset-request">Forgot Password</Link>
-    </form>
+    <div className="login-from-main-container">
+      <div className="login-form-wrapper">
+        <div className="login-left">
+          <h2>Log In</h2>
+          <p>Welcome back! Please enter your details</p>
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <Link to="/reset-request">Forgot password?</Link>
+            <button type="submit">Log in</button>
+            <p>{message}</p>
+            {/* <div className="social-buttons">
+              <button>
+                <img src="/assets/google-icon.png" alt="" /> Google
+              </button>
+              <button>
+                <img src="/assets/facebook-icon.png" alt="" /> Facebook
+              </button>
+            </div> */}
+            <p>
+              Don't have an account? <Link to="/register">Sign up</Link>
+            </p>
+          </form>
+        </div>
+        <div className="login-right"></div>
+      </div>
+    </div>
+    // <div className="login-from-main-container container">
+    //   <form onSubmit={handleSubmit}>
+    //     <input
+    //       type="email"
+    //       placeholder="Email"
+    //       value={email}
+    //       onChange={(e) => setEmail(e.target.value)}
+    //       required
+    //     />
+    //     <input
+    //       type="password"
+    //       placeholder="Password"
+    //       value={password}
+    //       onChange={(e) => setPassword(e.target.value)}
+    //       required
+    //     />
+    //     <button type="submit">Login</button>
+    //     <Link to="/register">Register</Link>
+    //     <p>{message}</p>
+    //     <Link to="/reset-request">Forgot Password</Link>
+    //   </form>
+    // </div>
   );
 }

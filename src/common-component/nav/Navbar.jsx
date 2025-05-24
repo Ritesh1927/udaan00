@@ -10,8 +10,7 @@ import { CgProfile } from "react-icons/cg";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoArrowUndoCircleOutline } from "react-icons/io5";
 import Login from "../../auth/Login";
-import { useAuth } from '../../auth/authContext';
-
+import { useAuth } from "../../auth/authContext";
 
 const Navbar = () => {
   const { user } = useAuth();
@@ -107,21 +106,20 @@ const Navbar = () => {
         </ul>
 
         {user ? (
-  <Link to="/profile">
-    <img className="profile-img" src={userProfile1} alt="Profile" />
-  </Link>
-) : (
-  <Link to="/login" className="nav-elements login-link">
-    Login
-  </Link>
-)}
-
+          <Link to="/profile">
+            <img className="profile-img" src={userProfile1} alt="Profile" />
+          </Link>
+        ) : (
+          <Link to="/login" className="nav-elements login-link">
+            Login
+          </Link>
+        )}
 
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
       </div>
-      <div className="nav-flag-ribbon"></div>
+      {/* <div className="nav-flag-ribbon"></div> */}
     </nav>
   );
 };

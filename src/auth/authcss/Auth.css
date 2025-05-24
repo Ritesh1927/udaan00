@@ -1,0 +1,159 @@
+.login-from-main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; */
+    height: 80vh;
+    padding: 20px;
+    /* background: linear-gradient(135deg, #f5e9ff 50%, #d6b4fc 50%); */
+    background-image: url("../../assets/loginback.png");
+    background-position: center;
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    font-family: 'Poppins', sans-serif;
+}
+
+.login-form-wrapper {
+    display: flex;
+    width: 900px;
+    max-width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    flex-direction: row;
+}
+
+.login-left {
+    flex: 1;
+    padding: 30px 40px;
+    background-color: #fff;
+}
+
+.login-left h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+}
+
+.login-left label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.login-left p {
+    margin-bottom: 10px;
+    color: #888;
+    text-align: center;
+}
+
+.login-left form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-left input {
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.login-left button {
+    padding: 12px;
+    background: #a855f7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+.login-left button:hover {
+    background: #9333ea;
+}
+
+.login-left a {
+    font-size: 14px;
+    color: #a855f7;
+    text-align: start;
+    /* margin-top: 10px; */
+    text-decoration: none;
+}
+
+.login-left a:hover {
+    text-decoration: underline;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.social-buttons button {
+    width: 48%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 8px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.login-right {
+    flex: 1;
+    background: url('../../assets/llogin-right.jpg') no-repeat center center/cover;
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 768px) {
+    .login-form-wrapper {
+        flex-direction: column;
+        border-radius: 12px;
+    }
+
+    .login-left {
+        padding: 30px 20px;
+    }
+
+    .login-right {
+        height: 300px;
+        width: 100%;
+    }
+
+    .social-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .social-buttons button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-left h2 {
+        font-size: 22px;
+    }
+
+    .login-left p {
+        font-size: 14px;
+    }
+
+    .login-left input,
+    .login-left button {
+        font-size: 14px;
+    }
+}

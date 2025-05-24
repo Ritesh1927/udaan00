@@ -1,31 +1,31 @@
-import React, { useEffect, useState } from 'react';
-import api from '../utils/api';
-import { useAuth } from './authContext';
-import { useNavigate } from 'react-router-dom';
-
+import React, { useEffect, useState } from "react";
+import api from "../utils/api";
+import { useAuth } from "./authContext";
+import { useNavigate } from "react-router-dom";
+import "../../src/auth/authcss/Profile.css";
 export default function Profile() {
   const { token } = useAuth();
-  const [name, setName] = useState('');
-  const [mobile, setMobile] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     // Fetch user details from backend
     const fetchUserProfile = async () => {
       try {
-        const res = await api.get('/auth/me', {
+        const res = await api.get("/auth/me", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
         const userData = res.data.user;
-        setName(userData.name || '');
-        setMobile(userData.mobile || '');
-        setEmail(userData.email || '');
+        setName(userData.name || "");
+        setMobile(userData.mobile || "");
+        setEmail(userData.email || "");
       } catch (err) {
-        console.error('Failed to load profile', err);
-        setMessage('Failed to load profile');
+        console.error("Failed to load profile", err);
+        setMessage("Failed to load profile");
       }
     };
 
@@ -36,7 +36,7 @@ export default function Profile() {
     e.preventDefault();
     try {
       const res = await api.put(
-        '/auth/update-profile',
+        "/auth/update-profile",
         { name, mobile },
         {
           headers: {
@@ -44,9 +44,9 @@ export default function Profile() {
           },
         }
       );
-      setMessage('Profile updated successfully!');
+      setMessage("Profile updated successfully!");
     } catch (err) {
-      setMessage(err.response?.data?.message || 'Update failed');
+      setMessage(err.response?.data?.message || "Update failed");
     }
   };
 
@@ -55,48 +55,51 @@ export default function Profile() {
 
   const handleLogout = () => {
     logout();
-    navigate('/login');  // Optional: Redirect to login after logout
+    navigate("/login"); // Optional: Redirect to login after logout
   };
 
   return (
-    <div>
-      <h2>Profile</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Name:
-          <input
-            type="text"
-            value={name}
-            placeholder="Enter name"
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          Email:
-          <input type="email" value={email} readOnly />
-        </label>
-        <br />
-        <label>
-          Mobile:
-          <input
-            type="text"
-            value={mobile}
-            placeholder="Enter mobile number"
-            onChange={(e) => setMobile(e.target.value)}
-            required
-          />
-        </label>
-        <br />
-        <button type="submit">Update Details</button>
-        <p>{message}</p>
-      </form>
-
-      <button onClick={handleLogout} style={{ marginTop: '20px' }}>
-        Logout
-      </button>
-
+    <div className="profile-main-container">
+      <div className="profile-card">
+        <h2>My Profile</h2>
+        <p className="profile-subtext">Update your personal information</p>
+        <form onSubmit={handleSubmit}>
+          <div className="input-group">
+            {" "}
+            <label>Name:</label>
+            <input
+              type="text"
+              value={name}
+              placeholder="Enter name"
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+          <div className="input-group">
+            <label>Email:</label>
+            <input type="email" value={email} readOnly />
+          </div>
+          <div className="input-group">
+            <label>Mobile: </label>
+            <input
+              type="text"
+              value={mobile}
+              placeholder="Enter mobile number"
+              onChange={(e) => setMobile(e.target.value)}
+              required
+            />
+          </div>
+          <div className="btn-btn-logout-group">
+            <button type="submit" className="update-btn">
+              Update Details
+            </button>
+            <button className="logout-btn" onClick={handleLogout}>
+              Logout
+            </button>
+          </div>
+        </form>
+        {message && <p className="profile-message">{message}</p>}
+      </div>
     </div>
   );
 }

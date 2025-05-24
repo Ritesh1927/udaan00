@@ -38,7 +38,8 @@ const Carousel = () => {
               </h1>
               <p className="banner-content">
                 Recognized as one of the nation's leading education consultancy
-                firms, dedicated to student success.
+                firms, dedicated to students comfort & success and institutes
+                growth & development .
               </p>
               <button className="Explore-btn">
                 <a
