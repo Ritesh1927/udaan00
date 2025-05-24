@@ -41,6 +41,13 @@ app.use("/api/auth", authRoutes);
 const adminRoutes = require('./Routes/adminRoutes');
 app.use("/api/admin", adminRoutes);
 
+
+// Colleges Routes ----------------
+const collegeRoutes = require("./Routes/collegeRoutes");
+app.use("/api/college", collegeRoutes);
+
+
+
 // -----------------------------------------------------------------------------------------
 
 const Contactschema = require("./Schema/Contactschema");

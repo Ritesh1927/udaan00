@@ -1,0 +1,15 @@
+.admin-panel {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+input, select, button {
+    margin: 10px 0;
+    padding: 8px;
+}
