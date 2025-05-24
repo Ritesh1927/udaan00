@@ -33,9 +33,13 @@ app.use((req, res, next) => {
 });
 
 
+// Authentication Routes ----------------
 const authRoutes = require("./Routes/authRoutes");
-
 app.use("/api/auth", authRoutes);
+
+// Admin Routes --------------------
+const adminRoutes = require('./Routes/adminRoutes');
+app.use("/api/admin", adminRoutes);
 
 // -----------------------------------------------------------------------------------------
 
