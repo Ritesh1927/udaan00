@@ -108,7 +108,7 @@ const Admin = () => {
         <div className="admin-panel-form">
           <h1>College Management</h1>
 
-          <form onSubmit={handleSub}>
+          <form onSubmit={handleSub} className="college-form">
             <input type="number" name="nirf" placeholder="NIRF Rank" required />
             <input
               type="text"

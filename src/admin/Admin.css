@@ -3,13 +3,13 @@
     padding: 20px;
 }
 
-form {
+.college-form {
     display: flex;
     flex-direction: column;
     width: 300px;
 }
 
-input, select, button {
+.college-form input, select, button {
     margin: 10px 0;
     padding: 8px;
 }
