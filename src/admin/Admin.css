@@ -9,7 +9,7 @@
     width: 300px;
 }
 
-.college-form input, select, button {
+.college-form input, .college-form select, .college-form button {
     margin: 10px 0;
     padding: 8px;
 }
