@@ -3,12 +3,14 @@ import { useState } from "react";
 import api from "../utils/api";
 import "../../src/auth/authcss/Reset.css";
 import { Link, Links } from "react-router-dom";
+import axios from "axios";
+
 export default function ResetRequest() {
   const [email, setEmail] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await api.post("/auth/request-reset", { email });
+    await axios.post("/api/auth/request-reset", { email });
     alert("Reset link sent to your email");
   };
 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import api from "../utils/api";
 import { Link } from "react-router-dom";
 import "../auth/authcss/Register.css";
+import axios from "axios";
 
 export default function Register() {
   const [form, setForm] = useState({
@@ -18,7 +19,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await api.post("/auth/register", form);
+      const res = await axios.post("/api/auth/register", form);
       setMessage(res.data.message);
     } catch (err) {
       setMessage(err.response?.data?.message || "Error");

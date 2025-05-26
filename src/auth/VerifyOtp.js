@@ -3,6 +3,7 @@ import api from "../utils/api";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "./authContext";
 import "../../src/auth/authcss/Reset.css";
+import axios from "axios";
 
 export default function VerifyOtp() {
   const [otp, setOtp] = useState("");
@@ -14,7 +15,7 @@ export default function VerifyOtp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await api.post("/auth/verify-otp", {
+      const res = await axios.post("/api/auth/verify-otp", {
         email: state.email,
         otp,
       });

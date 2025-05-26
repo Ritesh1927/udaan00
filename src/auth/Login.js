@@ -5,6 +5,7 @@ import api from "../utils/api";
 import { useAuth } from "./authContext";
 import react from "react";
 import "../../src/auth/authcss/Auth.css";
+import axios from "axios";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -17,7 +18,7 @@ export default function Login() {
     e.preventDefault();
     setMessage("");
     try {
-      const res = await api.post("/auth/login", { email, password });
+      const res = await axios.post("/api/auth/login", { email, password });
 
       if (res.data.message === "OTP sent to email") {
         setMessage("OTP sent to email");
