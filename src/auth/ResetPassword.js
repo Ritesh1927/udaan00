@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import api from "../utils/api";
 import { useNavigate } from "react-router-dom";
 import "../../src/auth/authcss/Reset.css";
+import axios from "axios";
 
 export default function ResetPassword() {
   const [password, setPassword] = useState("");
@@ -12,7 +13,7 @@ export default function ResetPassword() {
 
   const handleReset = async (e) => {
     e.preventDefault();
-    await api.post(`/auth/reset-password/${token}`, { password });
+    await axios.post(`/api/auth/reset-password/${token}`, { password });
     alert("Password updated successfully");
     navigate("/login");
   };

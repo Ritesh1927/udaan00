@@ -3,6 +3,8 @@ import api from "../utils/api";
 import { useAuth } from "./authContext";
 import { useNavigate } from "react-router-dom";
 import "../../src/auth/authcss/Profile.css";
+import axios from "axios";
+
 export default function Profile() {
   const { token } = useAuth();
   const [name, setName] = useState("");
@@ -14,7 +16,7 @@ export default function Profile() {
     // Fetch user details from backend
     const fetchUserProfile = async () => {
       try {
-        const res = await api.get("/auth/me", {
+        const res = await axios.get("/api/auth/me", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -35,8 +37,8 @@ export default function Profile() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await api.put(
-        "/auth/update-profile",
+      const res = await axios.put(
+        "/api/auth/update-profile",
         { name, mobile },
         {
           headers: {
