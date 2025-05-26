@@ -21,6 +21,25 @@
     white-space: nowrap; */
 }
 
+.medico-link {
+  color: #fff;
+  /* border: 1px solid #fff; */
+  background-color: red;
+  height: 45px;
+  width: 190px !important;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  justify-content: center;
+  border-radius: 12px !important;
+}
+
+.medico-link-div {
+  background-color: red;
+  display: flex;
+  justify-content: center
+}
 
 
 .upnav-no {

@@ -5,8 +5,8 @@
     /* min-height: 100vh; */
     height: 80vh;
     padding: 20px;
-    /* background: linear-gradient(135deg, #f5e9ff 50%, #d6b4fc 50%); */
-    background-image: url("../../assets/loginback.png");
+    background: linear-gradient(135deg, #f5e9ff 50%, #d6b4fc 50%);
+    /* background-image: url("../../assets/loginback.png"); */
     background-position: center;
     background-size: 100vw;
     background-repeat: no-repeat;

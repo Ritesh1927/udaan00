@@ -33,12 +33,12 @@ const Carousel = () => {
             </div>
             <div className="img-discription-link">
               <h1 className="banner-heading">
-                India's Premier Education Consultants:{" "}
+                India's Premier Education Consultant:{" "}
                 <span className="company-name">Udaan360</span>
               </h1>
               <p className="banner-content">
-                Recognized as one of the nation's leading education consultancy
-                firms, dedicated to students comfort & success and institutes
+                Recognized as one of the India's leading education consultancy
+                firm, dedicated to students comfort & success and institutes
                 growth & development .
               </p>
               <button className="Explore-btn">
