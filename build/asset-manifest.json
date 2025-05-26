@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f6c34063.css",
-    "main.js": "/static/js/main.c19b8560.js",
+    "main.css": "/static/css/main.79f903fd.css",
+    "main.js": "/static/js/main.d78c690a.js",
     "static/js/453.ac42ff46.chunk.js": "/static/js/453.ac42ff46.chunk.js",
     "static/media/About0002.png": "/static/media/About0002.c49bc4b800322fd393ff.png",
     "static/media/councel2.png": "/static/media/councel2.efdaf72c308618cc8bc4.png",
@@ -10,6 +10,7 @@
     "static/media/iim.png": "/static/media/iim.28c0bc544a65673f4394.png",
     "static/media/classroom.png": "/static/media/classroom.78f2d96787fe428df1da.png",
     "static/media/banner003.png": "/static/media/banner003.4cb15d8781f2a2b7a8f4.png",
+    "static/media/profile1.png": "/static/media/profile1.05467aeec95fe6aba985.png",
     "static/media/thaparuniversity.jpg": "/static/media/thaparuniversity.f99003d68522fd9d4e3f.jpg",
     "static/media/skilldoc.png": "/static/media/skilldoc.51bc61f809ad531c9065.png",
     "static/media/home.png": "/static/media/home.56a647a0b9ed1ac9391e.png",
@@ -38,6 +39,7 @@
     "static/media/TamilNadu.png": "/static/media/TamilNadu.b435dfb913e5f9ffd368.png",
     "static/media/ritik.jpg": "/static/media/ritik.647ad03d4c680d4cb144.jpg",
     "static/media/icse.png": "/static/media/icse.a555723cb661a3168a1c.png",
+    "static/media/llogin-right.jpg": "/static/media/llogin-right.dea7a4cdfd280661e79e.jpg",
     "static/media/bookscomp.jpg": "/static/media/bookscomp.edd300697d646ea7a992.jpg",
     "static/media/anjali2.jpg": "/static/media/anjali2.11e87aa635639cb7d31f.jpg",
     "static/media/handholding.png": "/static/media/handholding.65c0ec7b27b95b40e427.png",
@@ -150,12 +152,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.f6c34063.css.map": "/static/css/main.f6c34063.css.map",
-    "main.c19b8560.js.map": "/static/js/main.c19b8560.js.map",
+    "main.79f903fd.css.map": "/static/css/main.79f903fd.css.map",
+    "main.d78c690a.js.map": "/static/js/main.d78c690a.js.map",
     "453.ac42ff46.chunk.js.map": "/static/js/453.ac42ff46.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f6c34063.css",
-    "static/js/main.c19b8560.js"
+    "static/css/main.79f903fd.css",
+    "static/js/main.d78c690a.js"
   ]
 }
