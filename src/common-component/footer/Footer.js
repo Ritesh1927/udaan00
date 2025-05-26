@@ -134,7 +134,6 @@ const Footer = () => {
                 36 Johnson Drive , Glen Waverley Melbourne , Victoria ,
                 Australia
               </p>
-              <DownloadPdf />
             </div>
 
             <div className="location-section">
@@ -150,6 +149,10 @@ const Footer = () => {
               </i>
 
               <a href=" tel:+917355308287"> +91 7355308287</a>
+            </div>
+
+            <div className="download-wrapper">
+              <DownloadPdf />
             </div>
           </div>
         </div>

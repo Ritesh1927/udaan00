@@ -1,5 +1,5 @@
-import React, { Fragment, useState , useEffect } from "react";
-import "./Admin.css";
+import React, { Fragment, useState, useEffect } from "react";
+import "../admin/Admin.css";
 
 const Admin = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -107,7 +107,6 @@ const Admin = () => {
         ------------------------------------------------------------------------------
         <div className="admin-panel-form">
           <h1>College Management</h1>
-
           <form onSubmit={handleSub} className="college-form">
             <input type="number" name="nirf" placeholder="NIRF Rank" required />
             <input
@@ -142,11 +141,12 @@ const Admin = () => {
               placeholder="Description"
               required
             />
-             <input type="text" 
-             name="imageUrl" 
-             placeholder="Cloudinary Image URL" 
-             required 
-             />
+            <input
+              type="text"
+              name="imageUrl"
+              placeholder="Cloudinary Image URL"
+              required
+            />
 
             {/* Category Dropdown */}
             <select name="category" required>
@@ -157,7 +157,7 @@ const Admin = () => {
 
             <button type="submit">Add College</button>
           </form>
-{/* 
+          {/* 
           <h2>College List</h2>
           <ul>
             {colleges.map((college) => (
@@ -167,26 +167,26 @@ const Admin = () => {
               </li>
             ))}
           </ul> */}
-
           <h2> college data</h2>
           <ul>
             {colleges.map((college) => (
               <li key={college._id}>
-                <img src={college.imageUrl} alt={college.collegeName} width="100" />
+                <img
+                  src={college.imageUrl}
+                  alt={college.collegeName}
+                  width="100"
+                />
                 {college.collegeName} - {college.category} - {college.nirf} -
-                {college.avgPackage} - {college.description}
-                {" "}
+                {college.avgPackage} - {college.description}{" "}
                 <button onClick={() => handleUpdate(college._id)}>
                   Update
-                </button>
-                {" "}
+                </button>{" "}
                 <button onClick={() => handleDelete(college._id)}>
                   Delete
                 </button>
               </li>
             ))}
           </ul>
-
           {/* <h2>Delete college</h2>
           <ul>
             {colleges.map((college) => (
@@ -200,8 +200,6 @@ const Admin = () => {
           </ul> */}
           -----------------------------------------------------------------------------------
         </div>
-        
-
         <button onClick={() => setIsAuthenticated(false)}>Logout</button>
       </div>
     </Fragment>

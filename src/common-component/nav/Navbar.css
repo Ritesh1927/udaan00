@@ -228,8 +228,13 @@ li {
     background-color: #0056b3;
 }
 
+.download-wrapper {
+    display: flex;
+    width: 100%;
+}
+
 /* Login Button (Desktop) */
-.nav-login-btn {
+/* .nav-login-btn {
     padding: 8px 18px;
     font-size: 16px;
     background: #007bff;
@@ -239,12 +244,12 @@ li {
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.2s ease;
     margin-left: auto;
-}
-
+} */
+/* 
 .nav-login-btn:hover {
     background-color: #0056b3;
     transform: scale(1.05);
-}
+} */
 
 /* Profile Image */
 .profile-img {
