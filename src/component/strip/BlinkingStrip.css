@@ -84,4 +84,8 @@
     .right-blink {
         display: none;
     }
+
+    .blinker a {
+        font-size: 14px;
+    }
 }
