@@ -38,10 +38,41 @@
     text-align: center;
 }
 
-.login-left label {
+/* .login-left label {
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 10px;
+} */
+
+.login-pass-wrapper {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+}
+
+.pass-label {
+    /* margin-bottom: 12px !important; */
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.login-pasword {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.login-pasword-2 {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.toggle-password-icon-login {
+    position: absolute;
+    right: 14px;
+    top: 40px;
+
+    cursor: pointer;
 }
 
 .login-left p {

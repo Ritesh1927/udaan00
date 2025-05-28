@@ -33,6 +33,21 @@
     text-align: center;
 }
 
+.login-pass-wrapper-2 {
+    position: relative;
+}
+
+.register-pass {
+    width: 100%;
+}
+
+.toggle-password-icon-login-2 {
+    position: absolute;
+    top: 42%;
+    transform: translateY(-50%);
+    right: 12px;
+}
+
 .register-left p {
     margin-bottom: 30px;
     color: #888;

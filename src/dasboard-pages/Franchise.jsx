@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "../dasboard-pages/Franchise.css";
+import Seo from "../common-component/seo/Seo";
 
 const Franchise = () => {
   const [franchiesData, setFranchiesData] = useState({
@@ -22,21 +23,21 @@ const Franchise = () => {
   const handleSub = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Debug: Log current state
     console.log("Current form data:", franchiesData);
     console.log("Submitting to:", `${window.location.origin}/api/franchise`);
-  
+
     try {
       const payload = { ...franchiesData };
       console.log("Payload before sending:", payload);
-  
+
       const response = await axios.post("/api/franchise", payload, {
         headers: { "Content-Type": "application/json" },
       });
-  
+
       toast.success(response.data.message);
-      
+
       // Reset form after successful submission
       setFranchiesData({
         orgizationname: "",
@@ -44,9 +45,8 @@ const Franchise = () => {
         contactperson: "",
         email: "",
         description: "",
-        websiteurl: ""
+        websiteurl: "",
       });
-      
     } catch (error) {
       const errorMsg = error.response?.data?.message || "Submission failed";
       console.error("Submission error:", error);
@@ -58,6 +58,10 @@ const Franchise = () => {
 
   return (
     <Fragment>
+      <Seo
+        title="description , Btech , Jee,  Neet , Medical , Cuet , Advance , Mains"
+        description="Partner with Udaan360 and transform education in your city. Join our franchise network to guide students, grow with a trusted brand, and shape future careers. Ideal for education professionals, counselors, and edtech investors."
+      />
       <div className="form-franchise-container-wrapper container">
         <div>
           <h1 className="franchise-heading">

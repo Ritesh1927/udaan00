@@ -3,6 +3,7 @@ import api from "../utils/api";
 import { Link } from "react-router-dom";
 import "../auth/authcss/Register.css";
 import axios from "axios";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function Register() {
   const [form, setForm] = useState({
@@ -12,7 +13,12 @@ export default function Register() {
     password: "",
   });
   const [message, setMessage] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
+  // ..........................show  passwrod
+  const togglePassword = () => {
+    setShowPassword((prev) => !prev);
+  };
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -53,13 +59,22 @@ export default function Register() {
               onChange={handleChange}
               required
             />
-            <input
-              name="password"
-              type="password"
-              placeholder="Password"
-              onChange={handleChange}
-              required
-            />
+            <div className="login-pass-wrapper-2">
+              <input
+                name="password"
+                type={showPassword ? "text" : "password"}
+                placeholder="Password"
+                onChange={handleChange}
+                required
+                className="register-pass"
+              />
+              <span
+                onClick={togglePassword}
+                className="toggle-password-icon-login-2"
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </span>
+            </div>
             <button type="submit">Register</button>
             <Link to="/login">
               Already have an account? <span>Log In</span>

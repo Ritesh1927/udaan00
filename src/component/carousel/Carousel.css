@@ -128,6 +128,74 @@
     display: block !important;
 }
 
+.admission-links-blinking-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 0;
+    background-color: #fdfdfd;
+    flex-wrap: wrap;
+}
+
+.admission-links-blinking-card {
+    background-color: #2855a3;
+    border-radius: 15px;
+    padding: 30px 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.admission-links-blinking-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.admission-links-blinking-icon {
+    font-size: 38px;
+    /* color: #ff5722; */
+    color: #fff;
+    /* now the default color */
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+.admission-links-blinking-card:hover .admission-links-blinking-icon {
+
+
+    color: #ff5722;
+}
+
+.admission-links-blinking-text {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    line-height: 32px;
+    color: #ffff;
+    /* now the default color */
+    margin: 0;
+    animation: blinkText 1.5s infinite;
+}
+
+/* Blinking animation keyframes */
+@keyframes blinkText {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
 
 .udan-carousel .banner-content {
     font-size: 24px;

@@ -9,6 +9,7 @@ import Anjali2 from "../assets/anjali2.jpg";
 import Vinay from "../assets/vinay.jpg";
 import Ashi from "../assets/ashi2.jpg";
 import Ritik from "../assets/ritik.jpg";
+import Seo from "../common-component/seo/Seo";
 // import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const testimonials = [
@@ -94,58 +95,64 @@ const TestimonialSlider = () => {
   };
 
   return (
-    <section className="testimonial-slider">
-      <div className="testimonial-slider__header">
-        <h2 className="testimonial-slider__heading">
-          What Students & Parents Say About Us!
-        </h2>
-        <div className="testimonial-slider__arrows">
-          <button
-            className="testimonial-slider__arrow-btn"
-            onClick={() => sliderRef.current.slickPrev()}
-          >
-            ←
-          </button>
-          <button
-            className="testimonial-slider__arrow-btn"
-            onClick={() => sliderRef.current.slickNext()}
-          >
-            →
+    <>
+      <Seo
+        title="Study Abroad with Udaan360 | Global Education Guidance & University Admissions , admisson , Btech , Jee,  Neet , Medical , Cuet , Advance , Mains"
+        desciption="Unlock global education opportunities with Udaan360. Get expert help with university admissions, scholarships, test prep, visa assistance, and more. Start your journey to study in the USA, UK, Canada, Australia, and beyond!"
+      />
+      <section className="testimonial-slider">
+        <div className="testimonial-slider__header">
+          <h2 className="testimonial-slider__heading">
+            What Students & Parents Say About Us!
+          </h2>
+          <div className="testimonial-slider__arrows">
+            <button
+              className="testimonial-slider__arrow-btn"
+              onClick={() => sliderRef.current.slickPrev()}
+            >
+              ←
+            </button>
+            <button
+              className="testimonial-slider__arrow-btn"
+              onClick={() => sliderRef.current.slickNext()}
+            >
+              →
+            </button>
+          </div>
+        </div>
+        <div className="testimonial-slider__container">
+          <Slider ref={sliderRef} {...settings}>
+            {testimonials.map((item, index) => (
+              <div key={index}>
+                <div className="testimonial-slider__card">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="testimonial-slider__user-img"
+                  />
+                  <h3 className="testimonial-slider__title">"{item.title}"</h3>
+                  <p className="testimonial-slider__desc">{item.description}</p>
+                  <div className="testimonial-slider__author">{item.name}</div>
+                  <div className="testimonial-slider__role">{item.role}</div>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+        <div className="testimonial-slider__button-container">
+          <button className="testimonial-slider__button">
+            <a
+              className="testimonial-slider__button-a"
+              target="blank"
+              href="https://wa.me/917355308287?text=hello%20%2C%20i%20want%20to%20know%20more
+"
+            >
+              Book Your Career Counselling Session
+            </a>
           </button>
         </div>
-      </div>
-      <div className="testimonial-slider__container">
-        <Slider ref={sliderRef} {...settings}>
-          {testimonials.map((item, index) => (
-            <div key={index}>
-              <div className="testimonial-slider__card">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="testimonial-slider__user-img"
-                />
-                <h3 className="testimonial-slider__title">"{item.title}"</h3>
-                <p className="testimonial-slider__desc">{item.description}</p>
-                <div className="testimonial-slider__author">{item.name}</div>
-                <div className="testimonial-slider__role">{item.role}</div>
-              </div>
-            </div>
-          ))}
-        </Slider>
-      </div>
-      <div className="testimonial-slider__button-container">
-        <button className="testimonial-slider__button">
-          <a
-            className="testimonial-slider__button-a"
-            target="blank"
-            href="https://wa.me/917355308287?text=hello%20%2C%20i%20want%20to%20know%20more
-"
-          >
-            Book Your Career Counselling Session
-          </a>
-        </button>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

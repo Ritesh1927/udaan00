@@ -66,6 +66,7 @@ import { LiaCertificateSolid } from "react-icons/lia";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import { PiCertificate } from "react-icons/pi";
 import "./Admisson.css";
+import Seo from "../common-component/seo/Seo";
 // Change this constant to adjust the description cutoff
 const DESCRIPTION_LIMIT = 220;
 const colleges = {
@@ -851,6 +852,11 @@ const Admisson = () => {
 
   return (
     <Fragment>
+      <Seo
+        title="admisson , Btech , Jee,  Neet , Medical , Cuet , Advance , Mains  "
+        description="Explore top B.Tech, Medical, and Management colleges in India including IITs, AIIMS, IIMs, and more. Get rankings, fees, placements, exams, and expert counselling guidance at Udaan360."
+      />
+      {/* //////////////////////////////////////////////////// */}
       <section className="college-section container">
         <h2 className="section-title">Explore Colleges by Category</h2>
         <div className="category-tabs">
@@ -915,8 +921,8 @@ const Admisson = () => {
                           <img src={Star} alt="" />
                         </div>
                         {/* <i className="clg-sepecific-icon">
-                          <CiStar />
-                        </i> */}
+                            <CiStar />
+                          </i> */}
                       </button>
                     </div>
                     <div className="inline address-certificate-container">

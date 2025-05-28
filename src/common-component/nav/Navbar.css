@@ -252,6 +252,7 @@ li {
     align-items: center;
     gap: 12px;
     width: 20%;
+    padding-left: 12px;
     /* margin-left: auto; */
 }
 

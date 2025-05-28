@@ -9,9 +9,15 @@ import Malta from "../assets/maltaflag.png";
 import Portugal from "../assets/portugal.png";
 import Dubai from "../assets/dubaiflag.png";
 import Sipbanner from "../assets/skilledbanner.jpg";
+import Seo from "../common-component/seo/Seo";
 const SkillMigration = () => {
   return (
     <>
+      <Seo
+        title="Skilled Migration Services | Udaan360 – Work Abroad with Legal Support & Training , admisson , Btech , Jee,  Neet , Medical , Cuet , Advance , Mains "
+        desciption="Explore global career opportunities with Udaan360's Skilled Migration services. We provide legal work permits, training, and job placements in Germany, USA, Australia, Malta, Portugal, Dubai, and more for professionals in nursing, tech, and blue-collar sectors."
+      />
+
       <div className="hero-banner">{/* <h1>Skilled Migration </h1> */}</div>
       <div className="container skill-migration-container-wrapper ">
         <div className="skill-migrate-img-banner-container">

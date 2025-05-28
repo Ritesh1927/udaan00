@@ -8,6 +8,7 @@ import Banner2 from "../../assets/Sirimg01.png";
 import Banner3 from "../../assets/banner003.png";
 import Banner4 from "../../assets/universities100.png";
 import Careercycle from "../carrercycle/Stepcircle";
+import { FaStethoscope, FaLaptopCode, FaBriefcase } from "react-icons/fa";
 
 const Carousel = () => {
   const settings = {
@@ -18,13 +19,43 @@ const Carousel = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
-    autoplay: true,
+    autoplay: false,
     swipeToSlide: true,
   };
 
   return (
     <div className="udan-carousel">
       <Slider {...settings}>
+        <div>
+          <div className="image-banner-container">
+            <div className="Banner-img-wrapper">
+              <img src="" alt="" />
+            </div>
+            <div className="img-discription-link ">
+              <h1>Get Admisson Now </h1>
+              <div className="admission-links-blinking-section">
+                <button className="admission-links-blinking-card">
+                  <FaStethoscope className="admission-links-blinking-icon" />
+                  <p className="admission-links-blinking-text">
+                    Medical Admission
+                  </p>
+                </button>
+                <button className="admission-links-blinking-card">
+                  <FaLaptopCode className="admission-links-blinking-icon" />
+                  <p className="admission-links-blinking-text">
+                    Engineering Admission
+                  </p>
+                </button>
+                <button className="admission-links-blinking-card">
+                  <FaBriefcase className="admission-links-blinking-icon" />
+                  <p className="admission-links-blinking-text">
+                    Management Admission
+                  </p>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="">
           <div className="image-banner-container">
             <div className="Banner-img-wrapper">
