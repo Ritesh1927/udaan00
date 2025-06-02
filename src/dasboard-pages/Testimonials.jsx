@@ -9,7 +9,6 @@ import Anjali2 from "../assets/anjali2.jpg";
 import Vinay from "../assets/vinay.jpg";
 import Ashi from "../assets/ashi2.jpg";
 import Ritik from "../assets/ritik.jpg";
-import Seo from "../common-component/seo/Seo";
 // import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const testimonials = [
@@ -96,10 +95,6 @@ const TestimonialSlider = () => {
 
   return (
     <>
-      <Seo
-        title="Study Abroad with Udaan360 | Global Education Guidance & University Admissions , admisson , Btech , Jee,  Neet , Medical , Cuet , Advance , Mains"
-        desciption="Unlock global education opportunities with Udaan360. Get expert help with university admissions, scholarships, test prep, visa assistance, and more. Start your journey to study in the USA, UK, Canada, Australia, and beyond!"
-      />
       <section className="testimonial-slider">
         <div className="testimonial-slider__header">
           <h2 className="testimonial-slider__heading">

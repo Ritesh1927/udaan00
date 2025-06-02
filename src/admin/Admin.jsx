@@ -107,11 +107,13 @@ const Admin = () => {
 
   return isAuthenticated ? (
     <Fragment>
-      <div className="admin-panel">
-        <h1>Welcome to Admin Panel</h1>
-        ------------------------------------------------------------------------------
+      <div className="admin-panel container">
+        <h1 className="text-center">Welcome to Admin Panel</h1>
+        <br />
+        {/* ------------------------------------------------------------------------------ */}
         <div className="admin-panel-form">
           <h1>College Management</h1>
+          <br />
           <form onSubmit={handleSub} className="college-form">
             <input type="number" name="nirf" placeholder="NIRF Rank" required />
             <input
@@ -120,7 +122,12 @@ const Admin = () => {
               placeholder="College Name"
               required
             />
-            <input type="text" name="address" placeholder="Address" required />
+            <input
+              type="text"
+              name="address"
+              placeholder="Address"
+              rbrequired
+            />
             <input
               type="text"
               name="accreditation"
@@ -173,7 +180,9 @@ const Admin = () => {
               </li>
             ))}
           </ul> */}
+          <br />
           <h2> college data</h2>
+          <br />
           <ul>
             {colleges.map((college) => (
               <li key={college._id}>
@@ -182,10 +191,11 @@ const Admin = () => {
                   alt={college.collegeName}
                   width="100"
                 />
-                {college.nirf}- {college.collegeName} - {college.category} -{" "}
-                {college.address}-{college.avgPackage} - {college.fees}-
-                {college.accreditation}-{college.rating}
-                {college.description}-{" "}
+                <div>{college.nirf}</div> - <div>{college.collegeName}</div> -{" "}
+                <div>{college.category}</div>- <div>{college.address}</div> -{" "}
+                <div> {college.avgPackage}</div>- <div>{college.fees}</div>-
+                <div>{college.accreditation}</div>- <div>{college.rating}</div>-{" "}
+                <div> {college.description}</div> -{" "}
                 <button onClick={() => handleUpdate(college._id)}>
                   Update
                 </button>{" "}

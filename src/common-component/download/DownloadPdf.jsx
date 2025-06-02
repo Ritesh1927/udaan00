@@ -11,7 +11,7 @@ const DownloadPdf = () => {
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
+    <div style={{ textAlign: "center", marginTop: "12px" }}>
       <button
         onClick={handleDownload}
         style={{

@@ -8,11 +8,11 @@
     justify-content: center;
     color: #222;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    font-family: "Hanken Grotesk", sans-serif;
+    /* font-family: "Hanken Grotesk", sans-serif; */
 }
 
 .skill-migration-container-wrapper {
-    font-family: "Hanken Grotesk", sans-serif;
+    /* font-family: "Hanken Grotesk", sans-serif; */
     margin-top: 30px;
 }
 

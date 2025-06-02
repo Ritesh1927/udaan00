@@ -8,7 +8,7 @@
   justify-content: space-between;
   overflow: hidden;
   position: relative;
-  font-family: "Hanken Grotesk", sans-serif;
+  /* font-family: "Hanken Grotesk", sans-serif; */
 }
 
 /* Wrap for the scrolling text */
@@ -43,12 +43,12 @@
 
 
 .upnav-no {
-  font-size: 35px;
+  font-size: 30px;
   color: yellow;
 }
 
 .uppernav-content {
-  font-size: 30px;
+  font-size: 24px;
   text-transform: uppercase;
   text-align: center;
 }

@@ -3,14 +3,11 @@ import "../../src/common-component/error/Error.css";
 import "../dasboard-pages/Sip.css";
 import Pwimg from "../assets/classroom.png";
 import Sipbanner from "../assets/bookscomp.jpg";
-import Seo from "../common-component/seo/Seo";
+
 const Sip = () => {
   return (
     <>
-      <Seo
-        title="description, Mit , Jee , NEET , Advance , Cuet , College , IIT , Medical , Engneering , Medical , Exam , College "
-        desciption="Join Udaan360's School Integrated Program (SIP) in collaboration with Physics Wallah. Empower students with in-school JEE & NEET coaching, expert faculty, affordable education, and career readiness support."
-      />
+
       <div className="sip-image-banner-wrapper">
         <img src={Sipbanner} alt="" />
       </div>

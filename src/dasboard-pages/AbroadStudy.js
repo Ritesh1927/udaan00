@@ -12,14 +12,11 @@ import Visa from "../assets/visa.png";
 import Financial from "../assets/financial.png";
 import Acco from "../assets/acco.png";
 import AbroadUniversity from "../component/abroaduniversity/AbroadUniversity";
-import Seo from "../common-component/seo/Seo";
+
 const AbroadStudy = () => {
   return (
     <>
-      <Seo
-        title="Study Abroad with Udaan360 | Global Education Guidance & University Admissions , admisson , Btech , Jee,  Neet , Medical , Cuet , Advance , Mains "
-        desciption="Unlock global education opportunities with Udaan360. Get expert help with university admissions, scholarships, test prep, visa assistance, and more. Start your journey to study in the USA, UK, Canada, Australia, and beyond!"
-      />
+   
       <section className="study-aborad-main-wrapper">
         <div className="study-abroad-banner">
           <img src={Sbanner} alt="Banner" />

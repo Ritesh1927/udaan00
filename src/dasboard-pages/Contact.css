@@ -44,12 +44,9 @@
 
 }
 
-
-
-
 /* //////////////////////// */
 .contact-heading {
-    font-family: "Hanken Grotesk", sans-serif;
+    /* font-family: "Hanken Grotesk", sans-serif; */
     font-size: 24px;
     font-weight: 600;
     text-align: center;
@@ -82,7 +79,7 @@
     font-weight: 700;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 8px;
-    font-family: "Hanken Grotesk", sans-serif;
+    /* font-family: "Hanken Grotesk", sans-serif; */
     transition: 0.2s;
 }
 
@@ -95,7 +92,7 @@
     max-width: 100%;
     margin: auto;
     padding: 20px;
-    font-family: "Hanken Grotesk", sans-serif;
+    /* font-family: "Hanken Grotesk", sans-serif; */
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     /* background-color: red; */
 }
@@ -142,6 +139,8 @@
 
 .register-input-section:focus {
     outline: none;
+    background-color: white;
+    /* Or your preferred color */
 }
 
 .form-fill-section i {

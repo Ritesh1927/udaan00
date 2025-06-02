@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "../dasboard-pages/Franchise.css";
-import Seo from "../common-component/seo/Seo";
+
 
 const Franchise = () => {
   const [franchiesData, setFranchiesData] = useState({
@@ -58,10 +58,7 @@ const Franchise = () => {
 
   return (
     <Fragment>
-      <Seo
-        title="description , Btech , Jee,  Neet , Medical , Cuet , Advance , Mains"
-        description="Partner with Udaan360 and transform education in your city. Join our franchise network to guide students, grow with a trusted brand, and shape future careers. Ideal for education professionals, counselors, and edtech investors."
-      />
+
       <div className="form-franchise-container-wrapper container">
         <div>
           <h1 className="franchise-heading">

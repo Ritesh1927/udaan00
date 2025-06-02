@@ -4,9 +4,11 @@
 }
 
 .college-form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 25px;
+    width: 100%;
+
 }
 
 .college-form input,

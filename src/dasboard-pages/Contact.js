@@ -9,7 +9,7 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "./Contact.css";
 import MapLocation from "../component/map/MapLocation";
-import Seo from "../common-component/seo/Seo";
+
 
 // ... (imports section finished)
 
@@ -74,10 +74,7 @@ const Contact = () => {
 
   return (
     <>
-      <Seo
-        title="description , Btech , Jee,  Neet , Medical , Cuet , Advance , Mains  "
-        description="Need help choosing the right college? Fill out our counselling form to get expert admission support for B.Tech, MBA, MBBS, and other top courses in India and abroad."
-      />
+ 
       <div className="Register-p-cont">
         <div className="register-form-container">
           <h4 className="contact-heading">Register for counselling</h4>

@@ -7,6 +7,7 @@ import Banner5 from "../../assets/udanbanner06.png";
 import Banner2 from "../../assets/Sirimg01.png";
 import Banner3 from "../../assets/banner003.png";
 import Banner4 from "../../assets/universities100.png";
+import Cbanner1 from "../../assets/c-banner1.png";
 import Careercycle from "../carrercycle/Stepcircle";
 import { FaStethoscope, FaLaptopCode, FaBriefcase } from "react-icons/fa";
 
@@ -26,10 +27,10 @@ const Carousel = () => {
   return (
     <div className="udan-carousel">
       <Slider {...settings}>
-        <div>
+        {/* <div>
           <div className="image-banner-container">
             <div className="Banner-img-wrapper">
-              <img src="" alt="" />
+              <img src={Cbanner1} alt="" />
             </div>
             <div className="img-discription-link ">
               <h1>Get Admisson Now </h1>
@@ -55,7 +56,7 @@ const Carousel = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="">
           <div className="image-banner-container">
             <div className="Banner-img-wrapper">

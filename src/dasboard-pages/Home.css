@@ -1,7 +1,7 @@
 .welcome-tag {
     font-size: 36px;
     font-weight: 600;
-    font-family: "Hanken Grotesk", sans-serif;
+    /* font-family: "Hanken Grotesk", sans-serif; */
     text-align: center;
     color: #705BA4;
 }
@@ -9,7 +9,7 @@
 .welcome-tag2 {
     font-size: 26px;
     font-weight: 500;
-    font-family: "Hanken Grotesk", sans-serif;
+    /* font-family: "Hanken Grotesk", sans-serif; */
     text-align: center;
     margin-top: 25px;
 }
@@ -27,7 +27,7 @@
     font-size: 16px;
     margin-top: 30px;
     line-height: 33px;
-    font-family: "Hanken Grotesk", sans-serif;
+    /* font-family: "Hanken Grotesk", sans-serif; */
 }
 
 .home-banner-img img {
@@ -80,7 +80,7 @@
 }
 
 .home-cards-section-heading {
-    font-family: "Hanken Grotesk", sans-serif;
+    /* font-family: "Hanken Grotesk", sans-serif; */
     margin-top: 25px;
 }
 

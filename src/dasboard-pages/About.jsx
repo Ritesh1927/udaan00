@@ -9,15 +9,12 @@ import Mam from "../assets/poojamaam.png";
 import Kunalsir from "../assets/kunalsir.png";
 import Vison from "../assets/visson.png";
 import Misson from "../assets/misson.png";
-import Seo from "../common-component/seo/Seo";
+
 
 const About = () => {
   return (
     <>
-      <Seo
-        title="description"
-        description="Discover Udaan360 - A visionary educational platform committed to empowering students and professionals through academic guidance, career counselling, skill development, and global placement opportunities. Learn about our values, mission, and experienced leadership team driving change in education."
-      />
+    
       <div className="about-banner-container">
         <img src={Abtbanner} alt="" />
       </div>

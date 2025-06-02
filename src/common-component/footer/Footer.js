@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <>
       <section className="footer-main-continer">
-        <div className="container footer-inner-wrapper">
+        <div className="footer-inner-wrapper">
           <div className="footer-inner-first-section">
             <div className="footer-logo-wrapper ">
               <img src={Logo} alt="" />
@@ -27,33 +27,6 @@ const Footer = () => {
               Have enquires? Don't hesitate to drop us an email at
               info@udaan360.com, and we'll respond promptly
             </p>
-            <p className="Find-us-links">Find us on</p>
-            <div className="social-media-links">
-              <a
-                className="social-link-wrap"
-                href="https://www.linkedin.com/company/udaan-eduservices/"
-              >
-                <i className="social-links">
-                  <FaLinkedin />
-                </i>
-              </a>
-
-              <a
-                className="social-link-wrap"
-                href="https://www.instagram.com/udaan.360/?next=%2F&hl=en%5C"
-              >
-                <i className="social-links">
-                  <FaInstagram />
-                </i>
-              </a>
-
-              <i className="social-links">
-                <FaSquareXTwitter />
-              </i>
-              <i className="social-links">
-                <FaFacebook />
-              </i>
-            </div>
           </div>
           <div className="footer-inner-second-section">
             <h2 className="Study-abroad-heading">Study Abroad</h2>
@@ -116,6 +89,33 @@ const Footer = () => {
               </i>
               <Link className="study-links"> Blogs </Link>
             </li>
+            <p className="Find-us-links">Find us on</p>
+            <div className="social-media-links">
+              <a
+                className="social-link-wrap"
+                href="https://www.linkedin.com/company/udaan-eduservices/"
+              >
+                <i className="social-links">
+                  <FaLinkedin />
+                </i>
+              </a>
+
+              <a
+                className="social-link-wrap"
+                href="https://www.instagram.com/udaan.360/?next=%2F&hl=en%5C"
+              >
+                <i className="social-links">
+                  <FaInstagram />
+                </i>
+              </a>
+
+              <i className="social-links">
+                <FaSquareXTwitter />
+              </i>
+              <i className="social-links">
+                <FaFacebook />
+              </i>
+            </div>
           </div>
           <div className="footer-inner-second-section">
             <h2 className="Study-abroad-heading">Contact Us</h2>
@@ -125,6 +125,12 @@ const Footer = () => {
                 <FaLocationDot />
               </i>
               <p>Golden I , Greater Noida West UttarPradesh,India </p>
+            </div>
+            <div className="location-section">
+              <i className="location-icon">
+                <FaLocationDot />
+              </i>
+              <p>73, Tagore Colony,Chakrata Road Dehradun.248001 </p>
             </div>
             <div className="location-section">
               <i className="location-icon">

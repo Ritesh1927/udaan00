@@ -34,66 +34,57 @@ import ExamPreparation from "./component/carrercycle/ExamPreparation";
 import Placement from "./component/carrercycle/Placement";
 import CareerCounselling from "./component/carrercycle/CareerCounselling";
 import Admin from "./admin/Admin";
-import { HelmetProvider } from "react-helmet-async";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <AuthProvider>
-      <HelmetProvider>
-        <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
-            <Route path="" element={<App />}>
-              <Route path="/" element={<Home />}></Route>
-              <Route path="/about" element={<About />}></Route>
-              <Route path="/contact" element={<Contact />}></Route>
-              <Route path="/admisson" element={<Admisson />} />
-              <Route path="/sip" element={<Sip />} />
-              <Route path="/aboradstudy" element={<AbroadStudy />} />
-              <Route path="/testimonials" element={<Testimonials />} />
-              <Route path="/skillmigration" element={<SkillMigration />} />
-              <Route path="/franchise" element={<Franchise />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              {/* <Route path="/insert-profile" element={<Profile />} /> */}
-              <Route path="/boards/10th" element={<TenthBoardList />} />
-              <Route path="/boards/12th" element={<TwelfthBoardList />} />
-              <Route path="/privacy" element={<PrivacyPolicy />} />
-              <Route path="/terms" element={<Terms />} />
-              <Route path="/verify-otp" element={<Otp />} />
-              <Route path="/reset-request" element={<ResetRequest />} />
-              <Route
-                path="/reset-password/:token"
-                element={<ResetPassword />}
-              />
-              <Route path="/stream-selection" element={<StreamSelection />} />
-              <Route path="/exam-preparation" element={<ExamPreparation />} />
-              <Route path="/placement" element={<Placement />} />
-              <Route
-                path="/career-counselling"
-                element={<CareerCounselling />}
-              />
+      <BrowserRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route path="" element={<App />}>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/about" element={<About />}></Route>
+            <Route path="/contact" element={<Contact />}></Route>
+            <Route path="/admisson" element={<Admisson />} />
+            <Route path="/sip" element={<Sip />} />
+            <Route path="/aboradstudy" element={<AbroadStudy />} />
+            <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/skillmigration" element={<SkillMigration />} />
+            <Route path="/franchise" element={<Franchise />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            {/* <Route path="/insert-profile" element={<Profile />} /> */}
+            <Route path="/boards/10th" element={<TenthBoardList />} />
+            <Route path="/boards/12th" element={<TwelfthBoardList />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/verify-otp" element={<Otp />} />
+            <Route path="/reset-request" element={<ResetRequest />} />
+            <Route path="/reset-password/:token" element={<ResetPassword />} />
+            <Route path="/stream-selection" element={<StreamSelection />} />
+            <Route path="/exam-preparation" element={<ExamPreparation />} />
+            <Route path="/placement" element={<Placement />} />
+            <Route path="/career-counselling" element={<CareerCounselling />} />
 
-              {/* add all new routes here => */}
+            {/* add all new routes here => */}
 
-              <Route path="/admin" element={<Admin />} />
+            <Route path="/admin" element={<Admin />} />
 
-              {/* <= add all new routes here  */}
+            {/* <= add all new routes here  */}
 
-              <Route
-                path="/profile"
-                element={
-                  <ProtectedRoute>
-                    <Profile />
-                  </ProtectedRoute>
-                }
-              />
-            </Route>
-            <Route path="*" element={<Error />}></Route>
-          </Routes>
-        </BrowserRouter>
-      </HelmetProvider>
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute>
+                  <Profile />
+                </ProtectedRoute>
+              }
+            />
+          </Route>
+          <Route path="*" element={<Error />}></Route>
+        </Routes>
+      </BrowserRouter>
     </AuthProvider>
   </React.StrictMode>
 );

@@ -15,15 +15,11 @@ import TestimonialSlider from "./Testimonials";
 import ResultCards from "../component/resultcards/ResultCards";
 import BlinkingStrip from "../component/strip/BlinkingStrip";
 import Faq from "../component/faq/Faq";
-import Seo from "../common-component/seo/Seo";
+import HomeForm from "../common-component/homeform/HomeForm";
 
 const Home = () => {
   return (
     <>
-      <Seo
-        title="Udaan360 | Career Guidance, Test Prep, Admissions & More , admisson , Btech , Jee,  Neet , Medical , Cuet , Advance , Mains "
-        description="Empower your journey with Udaan360 — your one-stop solution for career guidance, test preparation, admissions, skill development, and placement support. Explore careers, set goals, and get expert counselling tailored for students."
-      />
       <div>
         <BlinkingStrip />
       </div>
@@ -56,6 +52,10 @@ const Home = () => {
             <div className="home-banner-img">
               <img src={Homeimg} alt="" />
             </div>
+          </div>
+          {/* //////  Home Form   //////////// */}
+          <div>
+            <HomeForm />
           </div>
           {/* ////////////////video tag /////////////////// */}
           <div className="video-container-wrapper">
