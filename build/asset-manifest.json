@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.79f903fd.css",
-    "main.js": "/static/js/main.f12baa2e.js",
+    "main.css": "/static/css/main.8b7ed723.css",
+    "main.js": "/static/js/main.4e8b8e16.js",
     "static/js/453.ac42ff46.chunk.js": "/static/js/453.ac42ff46.chunk.js",
     "static/media/About0002.png": "/static/media/About0002.c49bc4b800322fd393ff.png",
     "static/media/councel2.png": "/static/media/councel2.efdaf72c308618cc8bc4.png",
@@ -23,6 +23,7 @@
     "static/media/jadhavpur.png": "/static/media/jadhavpur.e36503a192a717594a58.png",
     "static/media/hospital1.jpg": "/static/media/hospital1.f71279dd65c1025ae608.jpg",
     "static/media/service1.jpg": "/static/media/service1.834cdfff7ff721ade511.jpg",
+    "static/media/c-banner1.png": "/static/media/c-banner1.d75336b73fb5a4e359e4.png",
     "static/media/cmr.png": "/static/media/cmr.3de4a252e4462db7136f.png",
     "static/media/universities100.png": "/static/media/universities100.35badddfe0c128882890.png",
     "static/media/iitdelhi.avif": "/static/media/iitdelhi.20b63f2f5cad53838cd8.avif",
@@ -115,9 +116,9 @@
     "static/media/rajasthan.jpg": "/static/media/rajasthan.3b050e1e1efe71d1d646.jpg",
     "static/media/DreamCourse.png": "/static/media/DreamCourse.22ffb2ed12d165a2cba4.png",
     "static/media/telangana.jpg": "/static/media/telangana.f6d6e51917e7ef260a83.jpg",
-    "static/media/Udaan_logo2.png": "/static/media/Udaan_logo2.c982acff7843f8b20aed.png",
     "static/media/Logo3.png": "/static/media/Logo3.6f4110492cb3e7fb5654.png",
     "static/media/confidence.png": "/static/media/confidence.65385b63e04825376f48.png",
+    "static/media/Udaan_logo2.png": "/static/media/Udaan_logo2.713f01c6fe99523eb6fb.png",
     "static/media/biharboard.jpg": "/static/media/biharboard.ca4877192294969ccbc8.jpg",
     "static/media/jammu.jpg": "/static/media/jammu.5c3b9a538c72c8411c8f.jpg",
     "static/media/advisor.png": "/static/media/advisor.cde1ec5d4fbe04c1375d.png",
@@ -152,12 +153,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.79f903fd.css.map": "/static/css/main.79f903fd.css.map",
-    "main.f12baa2e.js.map": "/static/js/main.f12baa2e.js.map",
+    "main.8b7ed723.css.map": "/static/css/main.8b7ed723.css.map",
+    "main.4e8b8e16.js.map": "/static/js/main.4e8b8e16.js.map",
     "453.ac42ff46.chunk.js.map": "/static/js/453.ac42ff46.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.79f903fd.css",
-    "static/js/main.f12baa2e.js"
+    "static/css/main.8b7ed723.css",
+    "static/js/main.4e8b8e16.js"
   ]
 }
