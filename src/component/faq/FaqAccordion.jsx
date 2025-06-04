@@ -5,7 +5,7 @@ const faqData = [
   {
     question: "How is get admission in abroad university?",
     answer:
-      "TGetting admission abroad involves choosing the right course and university, meeting academic and language requirements (like IELTS/TOEFL), preparing documents such as your SOP, LORs, and resume, and applying to the university. Once accepted, the next step is securing your student visa.We support you through the entire process—from shortlisting universities to visa approval.",
+      "Getting admission abroad involves choosing the right course and university, meeting academic and language requirements (like IELTS/TOEFL), preparing documents such as your SOP, LORs, and resume, and applying to the university. Once accepted, the next step is securing your student visa.We support you through the entire process—from shortlisting universities to visa approval.",
   },
   {
     question: "Do you offer complete solution for students?",

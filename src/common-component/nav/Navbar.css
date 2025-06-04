@@ -110,7 +110,7 @@ li {
     border-radius: 8px;
     box-shadow: 0px 2px 8px rgba(99, 99, 99, 0.2);
     width: 170px;
-    height: 185px;
+    /* height: 185px; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
