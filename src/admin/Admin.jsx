@@ -9,6 +9,13 @@ const Admin = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [editCollege, setEditCollege] = useState(null);
 
+  const [colleges, setColleges] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filter, setFilter] = useState([]);
+  const [blogs, setBlogs] = useState([]);
+
+
+
   const togglePassword = () => {
     setShowPassword((prev) => !prev);
   };
@@ -39,7 +46,8 @@ const Admin = () => {
     }
   };
 
-  const [colleges, setColleges] = useState([]);
+
+
 
   const handleSub = async (e) => {
     e.preventDefault();
@@ -57,11 +65,43 @@ const Admin = () => {
     fetchColleges();
   };
 
+
+  ////// ------- Search College ------- //////
+
+
   const fetchColleges = async () => {
     const response = await fetch("/api/college/list");
     const data = await response.json();
     setColleges(data);
+    setFilter(data);
   };
+
+
+  const handleSearch = (event) => {
+    const term = event.target.value.toLowerCase();
+    setSearchTerm(term);
+    setFilter(colleges);
+  }
+
+  const click = () =>{
+
+    if (searchTerm === "") {
+      setFilter([]);
+
+    } else {
+      const filtered = colleges.filter(
+        (item) =>
+          item.collegeName.toLowerCase().includes(searchTerm) ||
+          item.category.toLowerCase().includes(searchTerm)
+      );
+      setFilter(filtered);
+    }
+  };
+  
+
+  useEffect(() => {
+    fetchColleges()
+  }, []);
 
   const handleUpdate = (college) => {
     setEditCollege(college);
@@ -95,6 +135,35 @@ const Admin = () => {
     fetchColleges();
   };
 
+
+
+///////------------ Blog Management ------------////////
+
+
+const handleBlogSubmit = async (e) => {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  const blogData = Object.fromEntries(formData.entries());
+
+  await fetch("/api/blog/add", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(blogData),
+  });
+
+   
+  e.target.reset();
+  fetchBlogs();
+}
+
+
+const fetchBlogs = async () => {
+  const response = await fetch("/api/blog/list");
+  const data = await response.json();
+  setBlogs(data);
+}
+
+ 
   useEffect(() => {
     fetchColleges();
   }, []);
@@ -110,6 +179,8 @@ const Admin = () => {
         >
           Logout
         </button>
+
+        
 
         <div className="admin-panel-form">
           <h1>College Management</h1>
@@ -151,7 +222,7 @@ const Admin = () => {
             <input
               type="text"
               name="imageUrl"
-              placeholder="Cloudinary Image URL"
+              placeholder="Image URL"
               required
             />
             <input type="text" name="rating" placeholder="Rating" required />
@@ -163,11 +234,45 @@ const Admin = () => {
             <button type="submit">Add College</button>
           </form>
 
+
+           {/* colleges search input  */}
+
+           <div>
+
+          <h1 >Product Search</h1>
+          <input
+            type="text"
+            placeholder="Search products..."
+            value={searchTerm}
+            onChange={handleSearch}
+          />
+          <button onClick={click}>Search</button>
+          </div>
+
+           
+          
+          {/* <div>
+            {filter.length > 0
+              ? filter.map((product) => (
+                  <div key={product.id}>
+                    <p>{product.nirf}</p>
+                    <p>{product.collegeName}</p>
+                    <p>{product.address}</p>
+                    <p>{product.fees}</p>
+                    <p>{product.category}</p>
+                    <p>{product.description}</p>
+                  </div>
+                ))
+              : searchTerm && <p>No products found</p>}
+          </div>
+          */}
+
           <br />
           <h2> college data</h2>
           <br />
           <div>
-            {colleges.map((college) => (
+            {filter.length > 0
+            ? filter.map((college) => (
               <div key={college._id}>
                 <div className="admin-clg-info-wrapper">
                   <div className="admin-clg-img">
@@ -243,9 +348,68 @@ const Admin = () => {
                   </div>
                 </div>
               </div>
-            ))}
+            ))
+            : searchTerm && <p>No products found</p>
+            }
+          
           </div>
         </div>
+
+
+          {/* blogs add container */}
+
+          <div className="blogs-add-container">
+            <h2>Add Blog</h2>
+            <form onSubmit={handleBlogSubmit}>
+              <input
+                type="text"
+                name="title"
+                placeholder="Title"
+                required
+              />
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                required
+              />
+              <input
+                type="text"
+                name="coursename"
+                placeholder="Course Name"
+                required
+              />
+              <textarea
+                name="description"
+                placeholder="Description"
+                required
+              ></textarea>
+              <input
+                type="text"
+                name="image"
+                placeholder="Image URL"
+                required
+              />
+              <button type="submit">Add Blog</button>
+            </form>
+          </div>
+
+          {/* blogs display container */}
+
+          <div className="blogs-display-container">
+            <h2>Blogs</h2>
+            {blogs.map((blog) => (
+              <div key={blog._id}>
+                <h3>{blog.title}</h3>
+                <p>{blog.name}</p>
+                <p>{blog.coursename}</p>
+                <p>{blog.description}</p>
+                <img src={blog.image} alt={blog.title} />
+              </div>
+            ))}
+          </div>
+
+
       </div>
 
       {modalOpen && (
