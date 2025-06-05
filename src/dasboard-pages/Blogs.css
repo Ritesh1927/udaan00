@@ -1,0 +1,28 @@
+.blogs-heading {
+    font-size: 25px;
+    color: #333;
+    max-width: 700px;
+    margin-bottom: 20px;
+    text-align: start;
+    margin-top: 25px;
+}
+
+.blogs-section-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 80%;
+}
+
+.blogs-img-content {
+    width: 150px;
+}
+
+.blogs-img-content img {
+    width: 100%;
+    /* height: 100%; */
+}
