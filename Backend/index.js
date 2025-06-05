@@ -46,6 +46,10 @@ app.use("/api/admin", adminRoutes);
 const collegeRoutes = require("./Routes/collegeRoutes");
 app.use("/api/college", collegeRoutes);
 
+// Blogs Routes ----------------
+const blogRoutes = require("./Routes/blogRoutes");
+app.use("/api/blog", blogRoutes); 
+
 
 
 // -----------------------------------------------------------------------------------------
