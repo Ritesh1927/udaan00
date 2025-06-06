@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "../dasboard-pages/Franchise.css";
-
+import FranchiseBan from "../assets/Franchise.png";
 
 const Franchise = () => {
   const [franchiesData, setFranchiesData] = useState({
@@ -58,6 +58,9 @@ const Franchise = () => {
 
   return (
     <Fragment>
+      <div className="Franchise-banner">
+        <img src={FranchiseBan} alt="" />
+      </div>
 
       <div className="form-franchise-container-wrapper container">
         <div>

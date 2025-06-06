@@ -36,6 +36,8 @@ import CareerCounselling from "./component/carrercycle/CareerCounselling";
 import Admin from "./admin/Admin";
 import OnlineMba from "./dasboard-pages/OnlineMba";
 import Blogs from "./dasboard-pages/Blogs";
+import CollegeList from "./admin/CollegeList";
+import Career from "./common-component/career/Career";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -74,6 +76,8 @@ root.render(
             <Route path="/admin" element={<Admin />} />
             <Route path="/onlineMba" element={<OnlineMba />} />
             <Route path="/blogs" element={<Blogs />} />
+            <Route path="/collegelist" element={<CollegeList />} />
+            <Route path="/career" element={<Career />} />
 
             {/* <= add all new routes here  */}
 

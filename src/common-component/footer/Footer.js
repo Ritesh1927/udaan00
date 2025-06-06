@@ -92,6 +92,14 @@ const Footer = () => {
                 Blogs{" "}
               </Link>
             </li>
+            <li>
+              <i className="right-icons-set">
+                <FaChevronRight />
+              </i>
+              <Link to="/career" className="study-links">
+                Carrer
+              </Link>
+            </li>
             <p className="Find-us-links">Find us on</p>
             <div className="social-media-links">
               <a

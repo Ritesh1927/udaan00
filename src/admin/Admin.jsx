@@ -13,11 +13,17 @@ const Admin = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filter, setFilter] = useState([]);
   const [blogs, setBlogs] = useState([]);
-
-
+  const [expandedDescriptions, setExpandedDescriptions] = useState({});
 
   const togglePassword = () => {
     setShowPassword((prev) => !prev);
+  };
+
+  const toggleReadMore = (id) => {
+    setExpandedDescriptions((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -46,9 +52,6 @@ const Admin = () => {
     }
   };
 
-
-
-
   const handleSub = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -65,10 +68,6 @@ const Admin = () => {
     fetchColleges();
   };
 
-
-  ////// ------- Search College ------- //////
-
-
   const fetchColleges = async () => {
     const response = await fetch("/api/college/list");
     const data = await response.json();
@@ -76,18 +75,15 @@ const Admin = () => {
     setFilter(data);
   };
 
-
   const handleSearch = (event) => {
     const term = event.target.value.toLowerCase();
     setSearchTerm(term);
     setFilter(colleges);
-  }
+  };
 
-  const click = () =>{
-
+  const click = () => {
     if (searchTerm === "") {
       setFilter([]);
-
     } else {
       const filtered = colleges.filter(
         (item) =>
@@ -97,10 +93,9 @@ const Admin = () => {
       setFilter(filtered);
     }
   };
-  
 
   useEffect(() => {
-    fetchColleges()
+    fetchColleges();
   }, []);
 
   const handleUpdate = (college) => {
@@ -135,35 +130,27 @@ const Admin = () => {
     fetchColleges();
   };
 
+  const handleBlogSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const blogData = Object.fromEntries(formData.entries());
 
+    await fetch("/api/blog/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(blogData),
+    });
 
-///////------------ Blog Management ------------////////
+    e.target.reset();
+    fetchBlogs();
+  };
 
+  const fetchBlogs = async () => {
+    const response = await fetch("/api/blog/list");
+    const data = await response.json();
+    setBlogs(data);
+  };
 
-const handleBlogSubmit = async (e) => {
-  e.preventDefault();
-  const formData = new FormData(e.target);
-  const blogData = Object.fromEntries(formData.entries());
-
-  await fetch("/api/blog/add", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(blogData),
-  });
-
-   
-  e.target.reset();
-  fetchBlogs();
-}
-
-
-const fetchBlogs = async () => {
-  const response = await fetch("/api/blog/list");
-  const data = await response.json();
-  setBlogs(data);
-}
-
- 
   useEffect(() => {
     fetchColleges();
   }, []);
@@ -179,8 +166,6 @@ const fetchBlogs = async () => {
         >
           Logout
         </button>
-
-        
 
         <div className="admin-panel-form">
           <h1>College Management</h1>
@@ -234,182 +219,151 @@ const fetchBlogs = async () => {
             <button type="submit">Add College</button>
           </form>
 
-
-           {/* colleges search input  */}
-
-           <div>
-
-          <h1 >Product Search</h1>
-          <input
-            type="text"
-            placeholder="Search products..."
-            value={searchTerm}
-            onChange={handleSearch}
-          />
-          <button onClick={click}>Search</button>
+          <h1>Product Search</h1>
+          <div className="search-product">
+            <input
+              type="text"
+              className="product-search"
+              placeholder="Search products..."
+              value={searchTerm}
+              onChange={handleSearch}
+            />
+            <button className="search-button" onClick={click}>
+              Search
+            </button>
           </div>
 
-           
-          
-          {/* <div>
+          <br />
+          <h2>College Data</h2>
+          <br />
+          <div className="college-admin-list-wrapper">
             {filter.length > 0
-              ? filter.map((product) => (
-                  <div key={product.id}>
-                    <p>{product.nirf}</p>
-                    <p>{product.collegeName}</p>
-                    <p>{product.address}</p>
-                    <p>{product.fees}</p>
-                    <p>{product.category}</p>
-                    <p>{product.description}</p>
+              ? filter.map((college) => (
+                  <div className="Admin-clg-wrapper" key={college._id}>
+                    <div className="admin-clg-info-wrapper">
+                      <div className="admin-clg-img">
+                        <img
+                          src={college.imageUrl}
+                          alt={college.collegeName}
+                          // width="100"
+                        />
+                      </div>
+                      <div className="admin-clg-info">
+                        <h1 className="text-center admin-clg-name">
+                          {college.collegeName}
+                        </h1>
+                        <div className=" name-clg-category-section">
+                          <div>
+                            <span className="admin-num-heading">nirf -</span>{" "}
+                            {college.nirf}
+                          </div>
+                          <div>{college.category} college</div>
+                        </div>
+                        <div className="name-clg-category-section">
+                          <div>
+                            <span className="admin-num-heading">Address -</span>{" "}
+                            {college.address}
+                          </div>
+
+                          <div>
+                            <span className="admin-num-heading">
+                              Avg Package -
+                            </span>{" "}
+                            {college.avgPackage}
+                          </div>
+                        </div>
+                        <div>
+                          <span className="admin-num-heading">Fees -</span>{" "}
+                          {college.fees}
+                        </div>
+                        <div>
+                          <span className="admin-num-heading">
+                            Accreditation -
+                          </span>{" "}
+                          {college.accreditation}
+                        </div>
+                        <div>
+                          <span className="admin-num-heading">Ratings -</span>{" "}
+                          {college.rating}
+                        </div>
+                        <div>
+                          <span className="admin-num-heading">
+                            Description -
+                          </span>{" "}
+                          {college.description.length > 100 ? (
+                            <>
+                              {expandedDescriptions[college._id]
+                                ? college.description
+                                : `${college.description.slice(0, 100)}...`}
+                              <button
+                                className="read-more-btn"
+                                onClick={() => toggleReadMore(college._id)}
+                              >
+                                {expandedDescriptions[college._id]
+                                  ? "Read Less"
+                                  : "Read More"}
+                              </button>
+                            </>
+                          ) : (
+                            college.description
+                          )}
+                        </div>
+                        <div className="update-btn-wraper">
+                          <button
+                            className="button-admin-1"
+                            onClick={() => handleUpdate(college)}
+                          >
+                            Update
+                          </button>
+                          <button
+                            className="button-admin-1"
+                            onClick={() => handleDelete(college._id)}
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 ))
               : searchTerm && <p>No products found</p>}
           </div>
-          */}
-
-          <br />
-          <h2> college data</h2>
-          <br />
-          <div>
-            {filter.length > 0
-            ? filter.map((college) => (
-              <div key={college._id}>
-                <div className="admin-clg-info-wrapper">
-                  <div className="admin-clg-img">
-                    <img
-                      src={college.imageUrl}
-                      alt={college.collegeName}
-                      width="100"
-                    />
-                  </div>
-                  <div className="admin-clg-info">
-                    <div>
-                      <h1 className="text-center">{college.collegeName}</h1>
-                      <div className="inline-start name-clg-category-section">
-                        <div>
-                          {" "}
-                          <span className="admin-num-heading">nirf -</span>{" "}
-                          {college.nirf}
-                        </div>
-                        <div>{college.category} college </div>
-                      </div>
-                      <div className="inline-start name-clg-category-section">
-                        <div>
-                          {" "}
-                          <span className="admin-num-heading">
-                            Address -
-                          </span>{" "}
-                          {college.address}
-                        </div>
-                        <div>
-                          {" "}
-                          <span className="admin-num-heading">
-                            {" "}
-                            Avg Package -
-                          </span>
-                          {college.avgPackage}
-                        </div>
-                      </div>
-                      <div>
-                        {" "}
-                        <span className="admin-num-heading">Fees -</span>{" "}
-                        {college.fees}
-                      </div>
-                      <div>
-                        {" "}
-                        <span className="admin-num-heading">
-                          Accredation -
-                        </span>{" "}
-                        {college.accreditation}
-                      </div>
-                      <div>
-                        {" "}
-                        <span className="admin-num-heading">
-                          Ratings -
-                        </span>{" "}
-                        {college.rating}
-                      </div>
-                      <div> {college.description}</div>
-                      <div className="update-btn-wraper">
-                        <button
-                          className="button-admin-1"
-                          onClick={() => handleUpdate(college)}
-                        >
-                          Update
-                        </button>
-                        <button
-                          className="button-admin-1"
-                          onClick={() => handleDelete(college._id)}
-                        >
-                          Delete
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))
-            : searchTerm && <p>No products found</p>
-            }
-          
-          </div>
         </div>
 
+        <div className="blogs-add-container">
+          <h2>Add Blog</h2>
+          <form onSubmit={handleBlogSubmit} className="college-form">
+            <input type="text" name="title" placeholder="Title" required />
+            <input type="text" name="name" placeholder="Name" required />
+            <input
+              type="text"
+              name="coursename"
+              placeholder="Course Name"
+              required
+            />
+            <input type="text" name="image" placeholder="Image URL" required />
+            <textarea
+              name="description"
+              placeholder="Description"
+              row={2}
+              required
+            ></textarea>
+            <button type="submit">Add Blog</button>
+          </form>
+        </div>
 
-          {/* blogs add container */}
-
-          <div className="blogs-add-container">
-            <h2>Add Blog</h2>
-            <form onSubmit={handleBlogSubmit}>
-              <input
-                type="text"
-                name="title"
-                placeholder="Title"
-                required
-              />
-              <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                required
-              />
-              <input
-                type="text"
-                name="coursename"
-                placeholder="Course Name"
-                required
-              />
-              <textarea
-                name="description"
-                placeholder="Description"
-                required
-              ></textarea>
-              <input
-                type="text"
-                name="image"
-                placeholder="Image URL"
-                required
-              />
-              <button type="submit">Add Blog</button>
-            </form>
-          </div>
-
-          {/* blogs display container */}
-
-          <div className="blogs-display-container">
-            <h2>Blogs</h2>
-            {blogs.map((blog) => (
-              <div key={blog._id}>
-                <h3>{blog.title}</h3>
-                <p>{blog.name}</p>
-                <p>{blog.coursename}</p>
-                <p>{blog.description}</p>
-                <img src={blog.image} alt={blog.title} />
-              </div>
-            ))}
-          </div>
-
-
+        <div className="blogs-display-container">
+          <h2>Blogs</h2>
+          {blogs.map((blog) => (
+            <div key={blog._id}>
+              <h3>{blog.title}</h3>
+              <p>{blog.name}</p>
+              <p>{blog.coursename}</p>
+              <p>{blog.description}</p>
+              <img src={blog.image} alt={blog.title} />
+            </div>
+          ))}
+        </div>
       </div>
 
       {modalOpen && (
@@ -419,64 +373,38 @@ const fetchBlogs = async () => {
             <form onSubmit={handleModalSubmit} className="college-form">
               <input
                 name="collegeName"
-                placeholder="college name"
                 defaultValue={editCollege.collegeName}
                 required
               />
               <input
                 name="address"
-                placeholder="address"
                 defaultValue={editCollege.address}
                 required
               />
               <input
                 name="accreditation"
-                placeholder="accreditation"
                 defaultValue={editCollege.accreditation}
                 required
               />
-              <input
-                name="nirf"
-                placeholder="nirf ranking"
-                defaultValue={editCollege.nirf}
-                required
-              />
-              <input
-                name="fees"
-                placeholder="college fees"
-                defaultValue={editCollege.fees}
-                required
-              />
-              <input
-                name="exams"
-                placeholder="Entrance Exam"
-                defaultValue={editCollege.exams}
-                required
-              />
+              <input name="nirf" defaultValue={editCollege.nirf} required />
+              <input name="fees" defaultValue={editCollege.fees} required />
+              <input name="exams" defaultValue={editCollege.exams} required />
               <input
                 name="avgPackage"
-                placeholder="Average Package "
                 defaultValue={editCollege.avgPackage}
                 required
               />
               <input
                 name="description"
-                placeholder="Description"
                 defaultValue={editCollege.description}
                 required
               />
               <input
                 name="imageUrl"
-                placeholder="Image-url"
                 defaultValue={editCollege.imageUrl}
                 required
               />
-              <input
-                placeholder="ratings"
-                name="rating"
-                defaultValue={editCollege.rating}
-                required
-              />
+              <input name="rating" defaultValue={editCollege.rating} required />
               <select
                 name="category"
                 defaultValue={editCollege.category}
@@ -503,8 +431,8 @@ const fetchBlogs = async () => {
     <div className="admin-login-container">
       <div className="admin-login-card">
         <div className="login-left">
-          <h2>Welcome To Admin Pannel </h2>
-          <p className="welcome">Login For Check Web Details </p>
+          <h2>Welcome To Admin Pannel</h2>
+          <p className="welcome">Login For Check Web Details</p>
           {error && <p className="error">{error}</p>}
 
           <form onSubmit={handleSubmit}>
