@@ -19,4 +19,17 @@ router.get("/list", async (req, res) => {
     res.json(blogs);
 });
 
+
+// update Blog
+router.put("/update/:id", async (req, res) => {
+    await Blog.findByIdAndUpdate(req.params.id, req.body);
+    res.json({ message: "Blog updated successfully!" });
+});
+
+// Delete Blog
+router.delete("/delete/:id", async (req, res) => {
+    await Blog.findByIdAndDelete(req.params.id);
+    res.json({ message: "Blog deleted successfully!" });
+});
+
 module.exports = router;

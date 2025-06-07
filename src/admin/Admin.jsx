@@ -52,6 +52,8 @@ const Admin = () => {
     }
   };
 
+  /// college functanality ------------------
+
   const handleSub = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -74,29 +76,6 @@ const Admin = () => {
     setColleges(data);
     setFilter(data);
   };
-
-  const handleSearch = (event) => {
-    const term = event.target.value.toLowerCase();
-    setSearchTerm(term);
-    setFilter(colleges);
-  };
-
-  const click = () => {
-    if (searchTerm === "") {
-      setFilter([]);
-    } else {
-      const filtered = colleges.filter(
-        (item) =>
-          item.collegeName.toLowerCase().includes(searchTerm) ||
-          item.category.toLowerCase().includes(searchTerm)
-      );
-      setFilter(filtered);
-    }
-  };
-
-  useEffect(() => {
-    fetchColleges();
-  }, []);
 
   const handleUpdate = (college) => {
     setEditCollege(college);
@@ -130,6 +109,33 @@ const Admin = () => {
     fetchColleges();
   };
 
+  // ------ search functionality ------
+
+  const handleSearch = (event) => {
+    const term = event.target.value.toLowerCase();
+    setSearchTerm(term);
+    setFilter(colleges);
+  };
+
+  const click = () => {
+    if (searchTerm === "") {
+      setFilter([]);
+    } else {
+      const filtered = colleges.filter(
+        (item) =>
+          item.collegeName.toLowerCase().includes(searchTerm) ||
+          item.category.toLowerCase().includes(searchTerm)
+      );
+      setFilter(filtered);
+    }
+  };
+
+  useEffect(() => {
+    fetchColleges();
+  }, []);
+
+  // -------- blog functionality ------
+
   const handleBlogSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -151,8 +157,40 @@ const Admin = () => {
     setBlogs(data);
   };
 
+  const handleUpdateBlog = (blog) => {
+    setEditCollege(blog);
+    setModalOpen(true);
+  };
+
+  const handleModalBlogSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const updatedData = Object.fromEntries(formData.entries());
+
+    await fetch(`/api/blog/update/${editCollege._id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updatedData),
+    });
+
+    setModalOpen(false);
+    setEditCollege(null);
+    fetchBlogs();
+    alert("Blog Updated Successfully!");
+  };
+
+  const handleDeleteBlog = async (id) => {
+    if (!window.confirm("Are you sure you want to delete this blog?")) return;
+
+    await fetch(`/api/blog/delete/${id}`, { method: "DELETE" });
+
+     
+    fetchBlogs();
+  };
+
   useEffect(() => {
     fetchColleges();
+    fetchBlogs();
   }, []);
 
   return isAuthenticated ? (
@@ -330,43 +368,7 @@ const Admin = () => {
           </div>
         </div>
 
-        <div className="blogs-add-container">
-          <h2>Add Blog</h2>
-          <form onSubmit={handleBlogSubmit} className="college-form">
-            <input type="text" name="title" placeholder="Title" required />
-            <input type="text" name="name" placeholder="Name" required />
-            <input
-              type="text"
-              name="coursename"
-              placeholder="Course Name"
-              required
-            />
-            <input type="text" name="image" placeholder="Image URL" required />
-            <textarea
-              name="description"
-              placeholder="Description"
-              row={2}
-              required
-            ></textarea>
-            <button type="submit">Add Blog</button>
-          </form>
-        </div>
-
-        <div className="blogs-display-container">
-          <h2>Blogs</h2>
-          {blogs.map((blog) => (
-            <div key={blog._id}>
-              <h3>{blog.title}</h3>
-              <p>{blog.name}</p>
-              <p>{blog.coursename}</p>
-              <p>{blog.description}</p>
-              <img src={blog.image} alt={blog.title} />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {modalOpen && (
+        {modalOpen && (
         <div className="modal-overlay">
           <div className="modal">
             <h2>Edit College</h2>
@@ -426,6 +428,76 @@ const Admin = () => {
           </div>
         </div>
       )}
+
+        <div className="blogs-add-container">
+          <h2>Add Blog</h2>
+          <form onSubmit={handleBlogSubmit} className="college-form">
+            <input type="text" name="title" placeholder="Title" required />
+            <input type="text" name="name" placeholder="Name" required />
+            <input
+              type="text"
+              name="coursename"
+              placeholder="Course Name"
+              required
+            />
+            <input type="text" name="image" placeholder="Image URL" required />
+            <textarea
+              name="description"
+              placeholder="Description"
+              row={2}
+              required
+            ></textarea>
+            <button type="submit">Add Blog</button>
+          </form>
+        </div>
+
+        <div className="blogs-display-container">
+          <h2>Blogs</h2>
+          {blogs.map((blog) => (
+            <div key={blog._id} className="blog-card">
+              <h3>{blog.title}</h3>
+              <p>By: {blog.name}</p>
+              <p>Course: {blog.coursename}</p>
+              <img src={blog.image} alt={blog.title} className="blog-image" />
+
+              <div className="update-btn-wraper">
+                <button
+                  className="button-admin-1"
+                  onClick={() => handleUpdateBlog(blog)}
+                >
+                  Update
+                </button>
+                <button
+                  className="button-admin-1"
+                  onClick={() => handleDeleteBlog(blog._id)}
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {modalOpen && editCollege && (
+  <div className="modal-overlay">
+    <div className="modal">
+      <h2>Edit Blog</h2>
+      <form onSubmit={handleModalBlogSubmit} className="blog-form">
+        <input name="title" defaultValue={editCollege.title} required />
+        <input name="name" defaultValue={editCollege.name} required />
+        <input name="coursename" defaultValue={editCollege.coursename} required />
+        <input name="image" defaultValue={editCollege.image} required />
+        <textarea name="description" defaultValue={editCollege.description} required></textarea>
+
+        <button type="submit">Save</button>
+        <button type="button" onClick={() => setModalOpen(false)}>Cancel</button>
+      </form>
+    </div>
+  </div>
+)}
+
+      
     </Fragment>
   ) : (
     <div className="admin-login-container">
@@ -436,7 +508,7 @@ const Admin = () => {
           {error && <p className="error">{error}</p>}
 
           <form onSubmit={handleSubmit}>
-            <input name="username" placeholder="Email" required />
+            <input name="username" placeholder="Username" required />
             <div className="poswrod-admin-wrapper">
               <input
                 name="password"

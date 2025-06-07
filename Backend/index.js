@@ -4,11 +4,14 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const connectDB = require("./Connection/Database");
 const mongoose = require("mongoose");
+ 
+
 // const mongoSanitize = require("express-mongo-sanitize");
 
 // Middleware
 app.use(bodyParser.json());
 app.use(express.json());
+
 // app.use(mongoSanitize());
 
 // const cors = require("cors");
@@ -49,6 +52,11 @@ app.use("/api/college", collegeRoutes);
 // Blogs Routes ----------------
 const blogRoutes = require("./Routes/blogRoutes");
 app.use("/api/blog", blogRoutes); 
+
+
+// Career Routes ----------------
+const careerRoutes = require("./Routes/careerRoutes");
+app.use("/api/career", careerRoutes);
 
 
 

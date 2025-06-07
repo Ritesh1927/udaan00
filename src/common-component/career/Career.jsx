@@ -1,9 +1,45 @@
-import React from "react";
+import React, { Fragment, useState } from "react";
 import CareerImg from "../../assets/career.png";
 import "./Career.css";
-function Career() {
+import axios from "axios";
+
+const Career = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    designation: "",
+    dob: "",
+    address: "",
+    expected_salary: "",
+    last_salary: "",
+    resume: null,
+  });
+
+  const handleChange = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleFileChange = (e) =>
+    setFormData({ ...formData, resume: e.target.files[0] });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const data = new FormData();
+    Object.entries(formData).forEach(([key, value]) => data.append(key, value));
+
+    try {
+      await axios.post("/api/career/email", data, {
+         
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+      
+      // alert("Form submitted successfully!");
+    } catch (error) {
+      console.error("Error submitting form", error);
+    }
+  };
+
   return (
-    <>
+    <Fragment>
       <div className="career-banner">
         <img src={CareerImg} alt="" />
       </div>
@@ -60,8 +96,81 @@ function Career() {
           </li>
         </ul>
       </div>
-    </>
+
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          required
+          onChange={handleChange}
+        />
+        <br></br>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          onChange={handleChange}
+        />
+        <br></br>
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Phone Number"
+          required
+          onChange={handleChange}
+        />
+        <br></br>
+        <input
+          type="text"
+          name="designation"
+          placeholder="Designation"
+          required
+          onChange={handleChange}
+        />
+        <br></br>
+        <input type="date" 
+        name="dob"
+         required 
+         onChange={handleChange} 
+         /> 
+         <br></br>
+        <input
+          type="text"
+          name="address"
+          placeholder="Address"
+          required
+          onChange={handleChange}
+        />
+        <br></br>
+        <input
+          type="file"
+          name="resume"
+          accept=".pdf"
+          required
+          onChange={handleFileChange}
+        />
+        <br></br>
+        <input
+          type="text"
+          name="expected_salary"
+          placeholder="Expected Salary"
+          required
+          onChange={handleChange}
+        />
+        <br></br>
+        <input
+          type="text"
+          name="last_salary"
+          placeholder="Last Salary"
+          onChange={handleChange}
+        />
+        <br></br>
+        <button type="submit">Submit</button>
+      </form>
+    </Fragment>
   );
-}
+};
 
 export default Career;
