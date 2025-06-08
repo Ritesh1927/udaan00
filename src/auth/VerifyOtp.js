@@ -12,6 +12,10 @@ export default function VerifyOtp() {
   const navigate = useNavigate();
   const { state } = useLocation();
 
+  function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -20,8 +24,9 @@ export default function VerifyOtp() {
         otp,
       });
       login(res.data.user, res.data.token);
-      setMessage("Login successful");
-      navigate("/profile");
+      setMessage("Login successful, Redirecting to the Home page");
+      await delay(2000);
+      navigate("/");
     } catch (err) {
       setMessage(err.response?.data?.message || "OTP verification failed");
     }
