@@ -3,6 +3,7 @@ import "../admin/Admin.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Admin = () => {
+  const [activeSection, setActiveSection] = useState("collegeAdd");
   const [showPassword, setShowPassword] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [error, setError] = useState("");
@@ -184,7 +185,6 @@ const Admin = () => {
 
     await fetch(`/api/blog/delete/${id}`, { method: "DELETE" });
 
-     
     fetchBlogs();
   };
 
@@ -196,6 +196,22 @@ const Admin = () => {
   return isAuthenticated ? (
     <Fragment>
       <div className="admin-panel container">
+        
+        <div className="sidebar">
+          <button onClick={() => setActiveSection("collegeAdd")}>
+            College Add
+          </button>
+          <button onClick={() => setActiveSection("collegeList")}>
+            College List
+          </button>
+          <button onClick={() => setActiveSection("blogAdd")}>
+            Blog Add
+            </button>
+          <button onClick={() => setActiveSection("blogList")}>
+            Blog List
+          </button>
+        </div>
+
         <h1 className="text-center">Welcome to Admin Panel</h1>
         <br />
         <button
@@ -205,232 +221,259 @@ const Admin = () => {
           Logout
         </button>
 
+        {activeSection === "collegeAdd" && (
         <div className="admin-panel-form">
           <h1>College Management</h1>
           <br />
-          <form onSubmit={handleSub} className="college-form">
-            <input type="number" name="nirf" placeholder="NIRF Rank" required />
-            <input
-              type="text"
-              name="collegeName"
-              placeholder="College Name"
-              required
-            />
-            <input type="text" name="address" placeholder="Address" required />
-            <input
-              type="text"
-              name="accreditation"
-              placeholder="Accreditation"
-              required
-            />
-            <input type="text" name="fees" placeholder="Fees" required />
-            <input
-              type="text"
-              name="exams"
-              placeholder="Exams Required"
-              required
-            />
-            <input
-              type="text"
-              name="avgPackage"
-              placeholder="Average Package"
-              required
-            />
-            <input
-              type="text"
-              name="description"
-              placeholder="Description"
-              required
-            />
-            <input
-              type="text"
-              name="imageUrl"
-              placeholder="Image URL"
-              required
-            />
-            <input type="text" name="rating" placeholder="Rating" required />
-            <select name="category" required>
-              <option value="Medical">Medical</option>
-              <option value="Management">Management</option>
-              <option value="Engineering">Engineering</option>
-            </select>
-            <button type="submit">Add College</button>
-          </form>
-
-          <h1>Product Search</h1>
-          <div className="search-product">
-            <input
-              type="text"
-              className="product-search"
-              placeholder="Search products..."
-              value={searchTerm}
-              onChange={handleSearch}
-            />
-            <button className="search-button" onClick={click}>
-              Search
-            </button>
-          </div>
-
-          <br />
-          <h2>College Data</h2>
-          <br />
-          <div className="college-admin-list-wrapper">
-            {filter.length > 0
-              ? filter.map((college) => (
-                  <div className="Admin-clg-wrapper" key={college._id}>
-                    <div className="admin-clg-info-wrapper">
-                      <div className="admin-clg-img">
-                        <img
-                          src={college.imageUrl}
-                          alt={college.collegeName}
-                          // width="100"
-                        />
-                      </div>
-                      <div className="admin-clg-info">
-                        <h1 className="text-center admin-clg-name">
-                          {college.collegeName}
-                        </h1>
-                        <div className=" name-clg-category-section">
-                          <div>
-                            <span className="admin-num-heading">nirf -</span>{" "}
-                            {college.nirf}
-                          </div>
-                          <div>{college.category} college</div>
-                        </div>
-                        <div className="name-clg-category-section">
-                          <div>
-                            <span className="admin-num-heading">Address -</span>{" "}
-                            {college.address}
-                          </div>
-
-                          <div>
-                            <span className="admin-num-heading">
-                              Avg Package -
-                            </span>{" "}
-                            {college.avgPackage}
-                          </div>
-                        </div>
-                        <div>
-                          <span className="admin-num-heading">Fees -</span>{" "}
-                          {college.fees}
-                        </div>
-                        <div>
-                          <span className="admin-num-heading">
-                            Accreditation -
-                          </span>{" "}
-                          {college.accreditation}
-                        </div>
-                        <div>
-                          <span className="admin-num-heading">Ratings -</span>{" "}
-                          {college.rating}
-                        </div>
-                        <div>
-                          <span className="admin-num-heading">
-                            Description -
-                          </span>{" "}
-                          {college.description.length > 100 ? (
-                            <>
-                              {expandedDescriptions[college._id]
-                                ? college.description
-                                : `${college.description.slice(0, 100)}...`}
-                              <button
-                                className="read-more-btn"
-                                onClick={() => toggleReadMore(college._id)}
-                              >
-                                {expandedDescriptions[college._id]
-                                  ? "Read Less"
-                                  : "Read More"}
-                              </button>
-                            </>
-                          ) : (
-                            college.description
-                          )}
-                        </div>
-                        <div className="update-btn-wraper">
-                          <button
-                            className="button-admin-1"
-                            onClick={() => handleUpdate(college)}
-                          >
-                            Update
-                          </button>
-                          <button
-                            className="button-admin-1"
-                            onClick={() => handleDelete(college._id)}
-                          >
-                            Delete
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))
-              : searchTerm && <p>No products found</p>}
-          </div>
-        </div>
-
-        {modalOpen && (
-        <div className="modal-overlay">
-          <div className="modal">
-            <h2>Edit College</h2>
-            <form onSubmit={handleModalSubmit} className="college-form">
+            <form onSubmit={handleSub} className="college-form">
               <input
+                type="number"
+                name="nirf"
+                placeholder="NIRF Rank"
+                required
+              />
+              <input
+                type="text"
                 name="collegeName"
-                defaultValue={editCollege.collegeName}
+                placeholder="College Name"
                 required
               />
               <input
+                type="text"
                 name="address"
-                defaultValue={editCollege.address}
+                placeholder="Address"
                 required
               />
               <input
+                type="text"
                 name="accreditation"
-                defaultValue={editCollege.accreditation}
+                placeholder="Accreditation"
                 required
               />
-              <input name="nirf" defaultValue={editCollege.nirf} required />
-              <input name="fees" defaultValue={editCollege.fees} required />
-              <input name="exams" defaultValue={editCollege.exams} required />
+              <input type="text" name="fees" placeholder="Fees" required />
               <input
+                type="text"
+                name="exams"
+                placeholder="Exams Required"
+                required
+              />
+              <input
+                type="text"
                 name="avgPackage"
-                defaultValue={editCollege.avgPackage}
+                placeholder="Average Package"
                 required
               />
               <input
+                type="text"
                 name="description"
-                defaultValue={editCollege.description}
+                placeholder="Description"
                 required
               />
               <input
+                type="text"
                 name="imageUrl"
-                defaultValue={editCollege.imageUrl}
+                placeholder="Image URL"
                 required
               />
-              <input name="rating" defaultValue={editCollege.rating} required />
-              <select
-                name="category"
-                defaultValue={editCollege.category}
-                required
-              >
+              <input type="text" name="rating" placeholder="Rating" required />
+              <select name="category" required>
                 <option value="Medical">Medical</option>
                 <option value="Management">Management</option>
                 <option value="Engineering">Engineering</option>
               </select>
-              <button type="submit">Save</button>
-              <button
-                className="admoin-edit-under"
-                type="button"
-                onClick={() => setModalOpen(false)}
-              >
-                Cancel
-              </button>
+              <button type="submit">Add College</button>
             </form>
           </div>
-        </div>
-      )}
+           )}
 
+          {activeSection === "collegeList" && (
+            <div>
+              <br />
+              <h2>College Data</h2>
+              <br />
+              <div className="search-product">
+                <input
+                  type="text"
+                  className="product-search"
+                  placeholder="Search products..."
+                  value={searchTerm}
+                  onChange={handleSearch}
+                />
+                <button className="search-button" onClick={click}>
+                  Search
+                </button>
+              </div>
+              <div className="college-admin-list-wrapper">
+                {filter.length > 0
+                  ? filter.map((college) => (
+                      <div className="Admin-clg-wrapper" key={college._id}>
+                        <div className="admin-clg-info-wrapper">
+                          <div className="admin-clg-img">
+                            <img
+                              src={college.imageUrl}
+                              alt={college.collegeName}
+                              // width="100"
+                            />
+                          </div>
+                          <div className="admin-clg-info">
+                            <h1 className="text-center admin-clg-name">
+                              {college.collegeName}
+                            </h1>
+                            <div className=" name-clg-category-section">
+                              <div>
+                                <span className="admin-num-heading">
+                                  nirf -
+                                </span>{" "}
+                                {college.nirf}
+                              </div>
+                              <div>{college.category} college</div>
+                            </div>
+                            <div className="name-clg-category-section">
+                              <div>
+                                <span className="admin-num-heading">
+                                  Address -
+                                </span>{" "}
+                                {college.address}
+                              </div>
+
+                              <div>
+                                <span className="admin-num-heading">
+                                  Avg Package -
+                                </span>{" "}
+                                {college.avgPackage}
+                              </div>
+                            </div>
+                            <div>
+                              <span className="admin-num-heading">Fees -</span>{" "}
+                              {college.fees}
+                            </div>
+                            <div>
+                              <span className="admin-num-heading">
+                                Accreditation -
+                              </span>{" "}
+                              {college.accreditation}
+                            </div>
+                            <div>
+                              <span className="admin-num-heading">
+                                Ratings -
+                              </span>{" "}
+                              {college.rating}
+                            </div>
+                            <div>
+                              <span className="admin-num-heading">
+                                Description -
+                              </span>{" "}
+                              {college.description.length > 100 ? (
+                                <>
+                                  {expandedDescriptions[college._id]
+                                    ? college.description
+                                    : `${college.description.slice(0, 100)}...`}
+                                  <button
+                                    className="read-more-btn"
+                                    onClick={() => toggleReadMore(college._id)}
+                                  >
+                                    {expandedDescriptions[college._id]
+                                      ? "Read Less"
+                                      : "Read More"}
+                                  </button>
+                                </>
+                              ) : (
+                                college.description
+                              )}
+                            </div>
+                            <div className="update-btn-wraper">
+                              <button
+                                className="button-admin-1"
+                                onClick={() => handleUpdate(college)}
+                              >
+                                Update
+                              </button>
+                              <button
+                                className="button-admin-1"
+                                onClick={() => handleDelete(college._id)}
+                              >
+                                Delete
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))
+                  : searchTerm && <p>No products found</p>}
+              </div>
+            </div>
+          )}
+        
+
+        {modalOpen && (
+          <div className="modal-overlay">
+            <div className="modal">
+              <h2>Edit College</h2>
+              <form onSubmit={handleModalSubmit} className="college-form">
+                <input
+                  name="collegeName"
+                  defaultValue={editCollege.collegeName}
+                  required
+                />
+                <input
+                  name="address"
+                  defaultValue={editCollege.address}
+                  required
+                />
+                <input
+                  name="accreditation"
+                  defaultValue={editCollege.accreditation}
+                  required
+                />
+                <input name="nirf" defaultValue={editCollege.nirf} required />
+                <input name="fees" defaultValue={editCollege.fees} required />
+                <input name="exams" defaultValue={editCollege.exams} required />
+                <input
+                  name="avgPackage"
+                  defaultValue={editCollege.avgPackage}
+                  required
+                />
+                <input
+                  name="description"
+                  defaultValue={editCollege.description}
+                  required
+                />
+                <input
+                  name="imageUrl"
+                  defaultValue={editCollege.imageUrl}
+                  required
+                />
+                <input
+                  name="rating"
+                  defaultValue={editCollege.rating}
+                  required
+                />
+                <select
+                  name="category"
+                  defaultValue={editCollege.category}
+                  required
+                >
+                  <option value="Medical">Medical</option>
+                  <option value="Management">Management</option>
+                  <option value="Engineering">Engineering</option>
+                </select>
+                <button type="submit">Save</button>
+                <button
+                  className="admoin-edit-under"
+                  type="button"
+                  onClick={() => setModalOpen(false)}
+                >
+                  Cancel
+                </button>
+              </form>
+            </div>
+          </div>
+        )}
+
+        {activeSection === "blogAdd" && (
         <div className="blogs-add-container">
           <h2>Add Blog</h2>
+
           <form onSubmit={handleBlogSubmit} className="college-form">
             <input type="text" name="title" placeholder="Title" required />
             <input type="text" name="name" placeholder="Name" required />
@@ -449,7 +492,11 @@ const Admin = () => {
             ></textarea>
             <button type="submit">Add Blog</button>
           </form>
+          
         </div>
+        )}
+
+        {activeSection === "blogList" && (
 
         <div className="blogs-display-container">
           <h2>Blogs</h2>
@@ -477,27 +524,38 @@ const Admin = () => {
             </div>
           ))}
         </div>
+        )}
       </div>
+       
+
 
       {modalOpen && editCollege && (
-  <div className="modal-overlay">
-    <div className="modal">
-      <h2>Edit Blog</h2>
-      <form onSubmit={handleModalBlogSubmit} className="blog-form">
-        <input name="title" defaultValue={editCollege.title} required />
-        <input name="name" defaultValue={editCollege.name} required />
-        <input name="coursename" defaultValue={editCollege.coursename} required />
-        <input name="image" defaultValue={editCollege.image} required />
-        <textarea name="description" defaultValue={editCollege.description} required></textarea>
+        <div className="modal-overlay">
+          <div className="modal">
+            <h2>Edit Blog</h2>
+            <form onSubmit={handleModalBlogSubmit} className="blog-form">
+              <input name="title" defaultValue={editCollege.title} required />
+              <input name="name" defaultValue={editCollege.name} required />
+              <input
+                name="coursename"
+                defaultValue={editCollege.coursename}
+                required
+              />
+              <input name="image" defaultValue={editCollege.image} required />
+              <textarea
+                name="description"
+                defaultValue={editCollege.description}
+                required
+              ></textarea>
 
-        <button type="submit">Save</button>
-        <button type="button" onClick={() => setModalOpen(false)}>Cancel</button>
-      </form>
-    </div>
-  </div>
-)}
-
-      
+              <button type="submit">Save</button>
+              <button type="button" onClick={() => setModalOpen(false)}>
+                Cancel
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </Fragment>
   ) : (
     <div className="admin-login-container">

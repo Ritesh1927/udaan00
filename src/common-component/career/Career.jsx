@@ -18,8 +18,20 @@ const Career = () => {
 
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  const handleFileChange = (e) =>
-    setFormData({ ...formData, resume: e.target.files[0] });
+  const handleFileChange = (e) => {
+  const file = e.target.files[0];
+
+  if (file) {
+    const maxSize = 5 * 1024 * 1024; // 5MB ko bytes me convert karna
+    if (file.size > maxSize) {
+      alert("File size 5MB or less allowed!");
+      e.target.value = ""; // File input ko reset karna
+      return; // Function yahin stop ho jayega
+    }
+  }
+
+  setFormData({ ...formData, resume: file }); // Agar file size valid hai to state update hoga
+};
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,7 +44,7 @@ const Career = () => {
         headers: { "Content-Type": "multipart/form-data" },
       });
       
-      // alert("Form submitted successfully!");
+      alert("Form submitted successfully!");
     } catch (error) {
       console.error("Error submitting form", error);
     }

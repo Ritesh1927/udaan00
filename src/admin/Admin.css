@@ -365,3 +365,30 @@
         height: 200px;
     }
 }
+
+
+/*-------------   sidebar  ---------------*/
+
+.sidebar {
+  /* width: 900px; */
+  background-color: #333;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.sidebar button:hover {
+  background-color: #555;
+}
