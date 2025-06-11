@@ -1,0 +1,326 @@
+/* src/component/LoginModal/LoginModal.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Dim background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* Ensure it's on top of other content */
+}
+
+.modal-content {
+    background: #fff;
+    border-radius: 12px;
+    /* More rounded corners */
+    width: 90%;
+    max-width: 800px;
+    /* Adjust max-width as needed */
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.modal-close-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.modal-body {
+    display: flex;
+    width: 100%;
+}
+
+.modal-left-panel {
+    flex: 1;
+    background: linear-gradient(to bottom, #6a11cb, #2575fc);
+    /* Gradient from image */
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* Align text to the left */
+    text-align: left;
+    /* Ensure text alignment */
+    border-radius: 12px 0 0 12px;
+    /* Rounded only on left side */
+}
+
+.modal-left-panel h2 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.modal-left-panel p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.modal-features {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-features div {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+}
+
+.modal-features .icon {
+    margin-right: 10px;
+    font-size: 1.4em;
+}
+
+.modal-right-panel {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-tabs {
+    display: flex;
+    width: 100%;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 12px 0;
+    border: none;
+    background: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    font-weight: 600;
+    color: #888;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.tab-button.active {
+    color: #6a11cb;
+}
+
+.tab-button.active::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #6a11cb;
+    /* Active tab underline color */
+    border-radius: 2px;
+}
+
+.auth-form {
+    width: 100%;
+    max-width: 350px;
+    /* Limit form width */
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+    /* Include padding in width */
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #6a11cb;
+    box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.1);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-btn.login-btn {
+    background-color: #ff5722;
+    /* Orange color from image */
+}
+
+.submit-btn.login-btn:hover {
+    background-color: #e04e1e;
+}
+
+.submit-btn.register-btn {
+    background-color: #2575fc;
+    /* Blue color for register */
+}
+
+.submit-btn.register-btn:hover {
+    background-color: #1e64d3;
+}
+
+.or-separator {
+    text-align: center;
+    margin: 30px 0;
+    position: relative;
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+.or-separator::before,
+.or-separator::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: #eee;
+}
+
+.or-separator::before {
+    left: 0;
+}
+
+.or-separator::after {
+    right: 0;
+}
+
+.social-login {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.social-login button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.social-login button svg {
+    margin-right: 8px;
+}
+
+.social-login button.google-btn {
+    color: #333;
+}
+
+.social-login button.google-btn:hover {
+    background-color: #f8f8f8;
+    border-color: #c0c0c0;
+}
+
+.social-login button.facebook-btn {
+    color: #3b5998;
+}
+
+.social-login button.facebook-btn:hover {
+    background-color: #e6f0ff;
+    border-color: #a7c0e8;
+}
+
+.forgot-password {
+    background: none;
+    border: none;
+    color: #2575fc;
+    cursor: pointer;
+    font-size: 0.95em;
+    margin-top: 15px;
+    text-decoration: underline;
+    text-align: center;
+    width: 100%;
+}
+
+.forgot-password:hover {
+    color: #1e64d3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .modal-content {
+        flex-direction: column;
+        max-width: 95%;
+    }
+
+    .modal-left-panel {
+        border-radius: 12px 12px 0 0;
+        /* Rounded on top for small screens */
+        padding: 30px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .modal-left-panel h2 {
+        font-size: 1.8em;
+    }
+
+    .modal-left-panel p {
+        font-size: 1em;
+    }
+
+    .modal-right-panel {
+        padding: 30px;
+    }
+
+    .social-login {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

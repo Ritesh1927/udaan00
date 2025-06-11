@@ -19,19 +19,19 @@ const Career = () => {
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
   const handleFileChange = (e) => {
-  const file = e.target.files[0];
+    const file = e.target.files[0];
 
-  if (file) {
-    const maxSize = 5 * 1024 * 1024; // 5MB ko bytes me convert karna
-    if (file.size > maxSize) {
-      alert("File size 5MB or less allowed!");
-      e.target.value = ""; // File input ko reset karna
-      return; // Function yahin stop ho jayega
+    if (file) {
+      const maxSize = 5 * 1024 * 1024; // 5MB ko bytes me convert karna
+      if (file.size > maxSize) {
+        alert("File size 5MB or less allowed!");
+        e.target.value = ""; // File input ko reset karna
+        return; // Function yahin stop ho jayega
+      }
     }
-  }
 
-  setFormData({ ...formData, resume: file }); // Agar file size valid hai to state update hoga
-};
+    setFormData({ ...formData, resume: file }); // Agar file size valid hai to state update hoga
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,10 +40,9 @@ const Career = () => {
 
     try {
       await axios.post("/api/career/email", data, {
-         
         headers: { "Content-Type": "multipart/form-data" },
       });
-      
+
       alert("Form submitted successfully!");
     } catch (error) {
       console.error("Error submitting form", error);
@@ -108,79 +107,76 @@ const Career = () => {
           </li>
         </ul>
       </div>
-
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          required
-          onChange={handleChange}
-        />
-        <br></br>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          required
-          onChange={handleChange}
-        />
-        <br></br>
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Phone Number"
-          required
-          onChange={handleChange}
-        />
-        <br></br>
-        <input
-          type="text"
-          name="designation"
-          placeholder="Designation"
-          required
-          onChange={handleChange}
-        />
-        <br></br>
-        <input type="date" 
-        name="dob"
-         required 
-         onChange={handleChange} 
-         /> 
-         <br></br>
-        <input
-          type="text"
-          name="address"
-          placeholder="Address"
-          required
-          onChange={handleChange}
-        />
-        <br></br>
-        <input
-          type="file"
-          name="resume"
-          accept=".pdf"
-          required
-          onChange={handleFileChange}
-        />
-        <br></br>
-        <input
-          type="text"
-          name="expected_salary"
-          placeholder="Expected Salary"
-          required
-          onChange={handleChange}
-        />
-        <br></br>
-        <input
-          type="text"
-          name="last_salary"
-          placeholder="Last Salary"
-          onChange={handleChange}
-        />
-        <br></br>
-        <button type="submit">Submit</button>
-      </form>
+      <div className="">
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            required
+            onChange={handleChange}
+          />
+          <br></br>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            onChange={handleChange}
+          />
+          <br></br>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone Number"
+            required
+            onChange={handleChange}
+          />
+          <br></br>
+          <input
+            type="text"
+            name="designation"
+            placeholder="Designation"
+            required
+            onChange={handleChange}
+          />
+          <br></br>
+          <input type="date" name="dob" required onChange={handleChange} />
+          <br></br>
+          <input
+            type="text"
+            name="address"
+            placeholder="Address"
+            required
+            onChange={handleChange}
+          />
+          <br></br>
+          <input
+            type="file"
+            name="resume"
+            accept=".pdf"
+            required
+            onChange={handleFileChange}
+          />
+          <br></br>
+          <input
+            type="text"
+            name="expected_salary"
+            placeholder="Expected Salary"
+            required
+            onChange={handleChange}
+          />
+          <br></br>
+          <input
+            type="text"
+            name="last_salary"
+            placeholder="Last Salary"
+            onChange={handleChange}
+          />
+          <br></br>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </Fragment>
   );
 };

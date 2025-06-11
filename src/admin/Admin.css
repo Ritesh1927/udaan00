@@ -1,4 +1,4 @@
-.admin-panel {
+/* .admin-panel {
     font-family: Arial, sans-serif;
     padding: 20px;
 }
@@ -17,10 +17,10 @@
     margin: 10px 0;
     padding: 8px;
 }
-
+ */
 
 /* Container */
-.admin-login-container {
+/* .admin-login-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,12 +47,12 @@
     right: 11px;
     z-index: 9;
     top: 14px;
-}
+} */
 
 
 
 /* Card */
-.admin-login-card {
+/* .admin-login-card {
     display: flex;
     background: #fff;
     border-radius: 20px;
@@ -60,10 +60,10 @@
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
     max-width: 900px;
     width: 100%;
-}
+} */
 
 /* Left section */
-.login-left {
+/* .login-left {
     flex: 1;
     padding: 40px 30px;
     display: flex;
@@ -136,10 +136,10 @@
 .signup-msg a {
     color: #a855f7;
     text-decoration: none;
-}
+} */
 
 /* Right section */
-.login-right {
+/* .login-right {
     flex: 1;
     background-color: #eee;
 }
@@ -196,14 +196,14 @@
     background-color: #dddddd;
     margin-bottom: 50px;
     padding: 30px;
-}
+} */
 
-.Admin-clg-wrapper {
-    /* width: 30%; */
+/* .Admin-clg-wrapper {
+  
     display: flex;
-}
+} */
 
-.admin-clg-info-wrapper {
+/* .admin-clg-info-wrapper {
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -252,7 +252,7 @@
     gap: 30px;
 }
 
-/* Modal background overlay */
+
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -264,10 +264,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 /* Modal content box */
-.modal {
+/* .modal {
     background-color: #fff;
     padding: 30px;
     width: 90%;
@@ -278,15 +278,15 @@
     z-index: 1001;
 }
 
-/* Modal title */
+
 .modal h2 {
     margin-bottom: 20px;
     text-align: center;
     font-size: 24px;
-}
+} */
 
 /* Modal input styles */
-.modal input,
+/* .modal input,
 .modal select,
 .modal textarea {
     width: 100%;
@@ -299,10 +299,10 @@
 
 .admin-num-heading {
     font-weight: 700;
-}
+} */
 
 /* Modal button styles */
-.modal .admoin-edit-under {
+/* .modal .admoin-edit-under {
     padding: 10px 16px;
     font-size: 16px;
     border: none;
@@ -319,10 +319,10 @@
 .modal .cancel-btn {
     background-color: #ccc;
     color: #333;
-}
+} */
 
 /* Modal close button (optional if you want an X) */
-.modal .close-icon {
+/* .modal .close-icon {
     position: absolute;
     top: 15px;
     right: 20px;
@@ -353,10 +353,10 @@
     width: 35%;
     padding-left: 10px;
     height: 40px;
-}
+} */
 
 /* Responsive */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .admin-login-card {
         flex-direction: column;
     }
@@ -364,13 +364,13 @@
     .login-right {
         height: 200px;
     }
-}
+} */
 
 
 /*-------------   sidebar  ---------------*/
-
+/* 
 .sidebar {
-  /* width: 900px; */
+ 
   background-color: #333;
   border-radius: 10px;
   padding: 20px;
@@ -391,4 +391,97 @@
 }
 .sidebar button:hover {
   background-color: #555;
+} */
+
+/* .admin-dashboard-container {
+    display: flex;
+
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #1e1e2f;
+  
+}
+
+
+
+
+.logout-button-sidebar {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.logout-button-sidebar:hover {
+    background-color: #d9363e;
+}
+
+.admin-panel-content {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: #f5f6fa;
+} */
+
+.admin-dashboard-container {
+    width: 100%;
+}
+
+.admin-panel {
+    width: 98vw;
+    display: flex;
+}
+
+.sidebar {
+    width: 19vw;
+    height: 82vh;
+    background-color: #1e1e2f;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logout-admin-wrapper {
+    padding: 20px;
+
+}
+
+.logout-btn {
+    background-color: #34344e !important;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.sidebar-inner {
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.sidebar button:hover {
+    background-color: #34344e;
+}
+
+.admin-panel-content {
+    width: 78vw;
 }

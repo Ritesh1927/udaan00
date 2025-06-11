@@ -1,108 +1,139 @@
+// src/nav/Navbar.js
 import React, { useState, useRef, useEffect } from "react";
 import "../nav/Navbar.css";
 import Logoimg from "../../assets/Udaan_logo2.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import CoustomDropdown from "../../component/dropdown/CustomDropdown";
 import { FiMenu, FiX } from "react-icons/fi";
 import userProfile1 from "../../assets/profile1.png";
 import { useAuth } from "../../auth/authContext";
+import { FaChevronDown, FaUser } from "react-icons/fa";
 
 const Navbar = () => {
   const { user } = useAuth();
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [profileOpen, setProfileOpen] = useState(false);
-
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
-  const navigate = useNavigate();
+
+  const toggleMobileMenu = () => setMobileMenuOpen((prev) => !prev);
+  const toggleMobileDropdown = (e) => {
+    e.preventDefault();
+    setMobileDropdownOpen((prev) => !prev);
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setProfileOpen(false);
+        setMobileDropdownOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleOptionClick = (option) => {
-    setProfileOpen(false);
-    switch (option) {
-      case "Insert Profile":
-        navigate("/insert-profile");
-        break;
-      case "Settings":
-        navigate("/settings");
-        break;
-      default:
-        break;
-    }
-  };
-
   return (
-    <nav className="navbar-main-container">
-      <div className="nav-header">
-        <div className="logo-container">
-          <img className="logo-img" src={Logoimg} alt="Logo" />
+    <nav className="navbar">
+      <div className="nav-container">
+        <div className="logo-section">
+          <img src={Logoimg} alt="Udaan 360 Logo" />
         </div>
+        <div className="student-count">
+          <div className="number">25,000+</div>
+          <div className="text">Students Successfully Counseled</div>
+        </div>
+        <div className="nav-menu">
+          <ul className="menu-items">
+            <li>
+              <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" onClick={() => setMobileMenuOpen(false)}>
+                About us
+              </Link>
+            </li>
+            <li>
+              <CoustomDropdown />
+            </li>
+            <li>
+              <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
+                Contact us
+              </Link>
+            </li>
+            <li>
+              <Link to="/franchise" onClick={() => setMobileMenuOpen(false)}>
+                Franchise
+              </Link>
+            </li>
+          </ul>
+          <div className="auth-buttons">
+            {user ? (
+              <Link to="/profile">
+                <img className="profile-img" src={userProfile1} alt="Profile" />
+              </Link>
+            ) : (
+              <Link to="/login" className="nav-login-btn">
+                Login
+              </Link>
+            )}
+          </div>
+        </div>
+        <button className="menu-toggle" onClick={toggleMobileMenu}>
+          {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+        </button>
+      </div>
 
-        <ul className={`nav-elements-container ${menuOpen ? "active" : ""}`}>
+      {/* Mobile Menu */}
+      <div className={`mobile-menu ${mobileMenuOpen ? "active" : ""}`}>
+        <ul className="mobile-menu-items">
           <li>
-            <Link
-              className="nav-elements"
-              to="/"
-              onClick={() => setMenuOpen(false)}
-            >
+            <Link to="/" onClick={toggleMobileMenu}>
               Home
             </Link>
           </li>
           <li>
-            <Link
-              className="nav-elements"
-              to="/about"
-              onClick={() => setMenuOpen(false)}
-            >
-              About us
+            <Link to="/about" onClick={toggleMobileMenu}>
+              About Us
             </Link>
           </li>
           <li>
             <CoustomDropdown />
           </li>
           <li>
-            <Link
-              className="nav-elements"
-              to="/contact"
-              onClick={() => setMenuOpen(false)}
-            >
-              Contact us
+            <Link to="/contact" onClick={toggleMobileMenu}>
+              Contact Us
             </Link>
           </li>
           <li>
-            <Link
-              className="nav-elements"
-              to="/franchise"
-              onClick={() => setMenuOpen(false)}
-            >
+            <Link to="/franchise" onClick={toggleMobileMenu}>
               Franchise
             </Link>
           </li>
-        </ul>
-
-        <div className="auth-buttons">
           {user ? (
             <Link to="/profile">
               <img className="profile-img" src={userProfile1} alt="Profile" />
             </Link>
           ) : (
-            <Link to="/login" className="nav-login-btn">
+            <Link to="/login" className="mobile-login-btn">
               Login
             </Link>
           )}
-        </div>
-
-        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-        </button>
+          {/* {!user && (
+            <li>
+              <button
+                type="button"
+                className="mobile-login-btn"
+                onClick={() => {
+                  openModal();
+                  toggleMobileMenu();
+                }}
+              >
+                <FaUser /> Login
+              </button>
+            </li>
+          )} */}
+        </ul>
       </div>
     </nav>
   );
