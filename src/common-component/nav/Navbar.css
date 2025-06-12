@@ -264,7 +264,7 @@
     font-weight: 700 !important;
     box-shadow: 0 4px 15px rgba(229, 46, 113, 0.3);
     transition: all 0.3s ease;
-    cursor: pointer;
+    cursor: pointer;    
     border: none;
     text-decoration: none;
     display: flex;

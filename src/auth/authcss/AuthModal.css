@@ -1,0 +1,73 @@
+:root {
+    --modal-bg: rgba(0, 0, 0, 0.5);
+    --modal-content-bg: #ffffff;
+    --modal-border-radius: 12px;
+    --modal-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --modal-close-color: #6b7280;
+    --modal-close-hover: #4b5563;
+    --modal-padding: 1.5rem;
+    --modal-max-width: 420px;
+}
+
+/* Modal Overlay */
+.auth-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--modal-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+    /* Subtle blur effect */
+}
+
+/* Modal Content */
+.auth-modal-content {
+    background: var(--modal-content-bg);
+    border-radius: var(--modal-border-radius);
+    box-shadow: var(--modal-shadow);
+    width: 90%;
+    max-width: var(--modal-max-width);
+    padding: var(--modal-padding);
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Close Button */
+.auth-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--modal-close-color);
+    transition: color 0.2s;
+}
+
+.auth-modal-close:hover {
+    color: var(--modal-close-hover);
+}
+
+/* Modal Body (Login/Register Forms) */
+.auth-modal-body {
+    padding: 1rem 0;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

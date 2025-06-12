@@ -73,7 +73,7 @@ const Navbar = () => {
                 <img className="profile-img" src={userProfile1} alt="Profile" />
               </Link>
             ) : (
-              <Link to="/login" className="nav-login-btn">
+              <Link to="/login" className="nav-login-btn login-btn">
                 Login
               </Link>
             )}
