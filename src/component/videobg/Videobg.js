@@ -4,6 +4,7 @@ import Videobck from "../../assets/videoback.png";
 import Councel from "../../assets/councel2.png";
 import { FaCirclePlay } from "react-icons/fa6";
 import { FaClock, FaEye } from "react-icons/fa";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const videos = [
   {
@@ -143,6 +144,20 @@ const Videobg = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="videos-footer">
+        {/* <button className="view-all-btn"> */}
+        <a
+          className="view-all-btn"
+          target="_blank"
+          href="https://youtube.com/@udaancareertalks?si=n1StJhpzYpQGBtGj"
+        >
+          <span>View All Videos</span>
+          <i class="fas fa-arrow-right">
+            <FaArrowRightLong />
+          </i>
+        </a>
+        {/* </button> */}
       </div>
     </>
   );

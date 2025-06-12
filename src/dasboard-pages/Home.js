@@ -15,7 +15,8 @@ import TestimonialSlider from "./Testimonials";
 import ResultCards from "../component/resultcards/ResultCards";
 import BlinkingStrip from "../component/strip/BlinkingStrip";
 import Faq from "../component/faq/Faq";
-import HomeForm from "../common-component/homeform/HomeForm";
+// import HomeForm from "../common-component/homeform/HomeForm";
+import AdmissionUpdate from "../component/admissionupdate/AdmissionUpdate";
 
 const Home = () => {
   return (
@@ -26,23 +27,24 @@ const Home = () => {
       <div>
         <Carousel />
       </div>
-      <section className="container">
-        <div>
+      <section className="">
+        <div className="container">
           <h1 className="home-cards-section-heading">Check Your Result Now </h1>
           <ResultCards />
         </div>
-        <div className="inner-container">
-          <div className="welcome-heading inline mt20">
+        <div className="inner-container ">
+          <div className="welcome-heading inline mt20 container">
             <div className="left-home-container">
               <div>
-                <p className="welcome-tag">
+                <h2 className="welcome-tag platform-quote">
                   {/* Welcome to <span className="udaan-name">UDAAN</span> */}
                   "Empowering Your Journey: From Education to Elevation"
-                </p>
+                </h2>
                 <p className="welcome-tag2">
-                  Udaan360: A comprehensive Platform for all your educational
-                  needs- Test Preparations, Admissions, Skill Development, and
-                  Career Placement.
+                  <span className="brand-highlight"> Udaan360:</span> A
+                  comprehensive Platform for all your educational needs- Test
+                  Preparations, Admissions, Skill Development, and Career
+                  Placement.
                 </p>
               </div>
 
@@ -54,76 +56,38 @@ const Home = () => {
             </div>
           </div>
           {/* //////  Home Form   //////////// */}
-          <div>
+          {/* <div className="container">
             <HomeForm />
-          </div>
+          </div> */}
           {/* ////////////////video tag /////////////////// */}
-          <div className="video-container-wrapper">
+          <div className="video-container-wrapper ">
             <Videobg />
           </div>
 
           {/* Cards Section */}
-          <h1 className="home-cards-section-heading ">What's in it for you!</h1>
-          <div className="start-parent-cont">
-            <div className="start-child-cont">
-              <Cards
-                src={Img3}
-                head="Explore and be aware"
-                content="Explore hundreds of career options and academic pathways."
-                className="step-1-card"
-                buttonclass="step-1-button"
-              />
+          <section className="benefits-section">
+            <div className="benefits-container">
+              <div className="benefits-header">
+                <h1 className="home-cards-section-heading ">
+                  What's in it for you!
+                </h1>
+              </div>
+              <Cards />
             </div>
-            <div className="start-child-cont">
-              <Cards
-                src={Img2}
-                icon={<FaClipboardList size={40} color="#9364D4" />}
-                head="Discover your abilities and skills"
-                content="
-             Use scientific diagnostic tools to recognise your abilities and interests.
-            "
-                className="step-2-card"
-                buttonclass="step-2-button"
-              />
-            </div>
-            <div className="start-child-cont">
-              <Cards
-                src={Img}
-                head="Set realistic career goals"
-                content="Select career paths aligned with your interests, skills and aptitude."
-                className="step-3-card"
-                buttonclass="step-3-button"
-              />
-            </div>
-            <div className="start-child-cont">
-              <Cards
-                src={Img4}
-                head="Get Guidance from experienced counsellors"
-                content="Gain clarity and select your career or academic options with expert guidance."
-                className="step-4-card"
-                buttonclass="step-4-button"
-              />
-            </div>
-            <div className="start-child-cont">
-              <Cards
-                src={Img5}
-                head="Boost confidence"
-                content="Eliminate doubt and be confident about your career and academic pathways."
-                className="step-5-card"
-                buttonclass="step-5-button"
-              />
-            </div>
-          </div>
+          </section>
         </div>
+        <AdmissionUpdate />
         <div className="shloak-container">
           <h1 className="upper-shloak">
-            <span className="">"</span> विद्यां चाविद्यां च यस्तद्वेदोभयं सह।
-          </h1>
-          <h1 className="lower-shloak">
-            अविद्यया मृत्युं तीर्त्वा विद्ययामृतमश्नुते॥ <span>"</span>
+            <p>
+              {" "}
+              " विद्यां चाविद्यां च यस्तद्वेदोभयं सह।
+              <br />
+              अविद्यया मृत्युं तीर्त्वा विद्ययामृतमश्नुते॥ "
+            </p>
           </h1>
 
-          <div>
+          <div className="english-translation">
             <h2 className="english-shloak">
               "One who understands both knowledge (Vidya) and ignorance (Avidya)
               together, transcends ignorance and attains immortality through
@@ -133,7 +97,7 @@ const Home = () => {
         </div>
       </section>
 
-      <div className="parallax mt40"></div>
+      <div className="parallax"></div>
       <div>
         <Faq />
       </div>
