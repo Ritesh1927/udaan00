@@ -1,58 +1,40 @@
 import React, { useState } from "react";
-import api from "../utils/api";
-import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "./authContext";
-import "../../src/auth/authcss/Reset.css";
 import axios from "axios";
+import "../../src/auth/authcss/Reset.css";
 
-export default function VerifyOtp() {
+export default function VerifyOtp({ email, onClose, switchToLogin }) {
   const [otp, setOtp] = useState("");
   const [message, setMessage] = useState("");
   const { login } = useAuth();
-  const navigate = useNavigate();
-  const { state } = useLocation();
-
-  function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/auth/verify-otp", {
-        email: state.email,
-        otp,
-      });
+      const res = await axios.post("/api/auth/verify-otp", { email, otp });
       login(res.data.user, res.data.token);
-      setMessage("Login successful, Redirecting to the Home page");
-      await delay(2000);
-      navigate("/");
+      onClose();
     } catch (err) {
       setMessage(err.response?.data?.message || "OTP verification failed");
     }
   };
 
   return (
-    <div className="reset-main-container">
-      <div className="reset-form-wrapper">
-        <div className="reset-left">
-          <h2>Verify OTP</h2>
-          <p>Enter the OTP sent to your email.</p>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              value={otp}
-              onChange={(e) => setOtp(e.target.value)}
-              placeholder="Enter OTP"
-              required
-            />
-            <button type="submit">Verify OTP</button>
-            {/* <p>{message}</p> */}
-          </form>
-          <p style={{ marginTop: "20px", color: "red" }}>{message}</p>
-        </div>
-        <dixv className="reset-right" />
-      </div>
+    <div className="otp-form-container">
+      <h2>Verify OTP</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          value={otp}
+          onChange={(e) => setOtp(e.target.value)}
+          placeholder="Enter OTP"
+          required
+        />
+        <button type="submit">Verify</button>
+      </form>
+      <button type="button" onClick={switchToLogin}>
+        Back to Login
+      </button>
+      {message && <p>{message}</p>}
     </div>
   );
 }

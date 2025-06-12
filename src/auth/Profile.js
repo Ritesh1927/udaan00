@@ -57,7 +57,7 @@ export default function Profile() {
 
   const handleLogout = () => {
     logout();
-    navigate("/login"); // Optional: Redirect to login after logout
+    navigate("/"); // Optional: Redirect to login after logout
   };
 
   return (

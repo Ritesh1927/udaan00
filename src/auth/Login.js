@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useAuth } from "./authContext";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import "../../src/auth/authcss/Auth.css";
+import axios from "axios";
 
 export default function Login({ onClose, onLoginSuccess, switchToRegister, switchToReset }) {
   const [email, setEmail] = useState("");
@@ -12,9 +11,7 @@ export default function Login({ onClose, onLoginSuccess, switchToRegister, switc
   const [showPassword, setShowPassword] = useState(false);
   const { login } = useAuth();
 
-  const togglePassword = () => {
-    setShowPassword((prev) => !prev);
-  };
+  const togglePassword = () => setShowPassword((prev) => !prev);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,8 +21,8 @@ export default function Login({ onClose, onLoginSuccess, switchToRegister, switc
 
       if (res.data.message === "OTP sent to email") {
         onLoginSuccess(email);
-      } else {
-        login(res.data.token);
+      } else if (res.data.token) {
+        login(res.data.user, res.data.token);
         onClose();
       }
     } catch (err) {
@@ -68,22 +65,17 @@ export default function Login({ onClose, onLoginSuccess, switchToRegister, switc
           </div>
         </div>
 
-        <button type="button" className="text-link" onClick={switchToReset}>
+        <button type="button" onClick={switchToReset}>
           Forgot password?
         </button>
-
-        <button type="submit" className="auth-submit-btn">
-          Log in
+        <button type="submit">Log in</button>
+        <button type="button" onClick={switchToRegister}>
+          Don't have an account? Sign up
         </button>
 
         {message && <p className="auth-message">{message}</p>}
 
-        <div className="auth-switch">
-          Don't have an account?{" "}
-          <button type="button" className="text-link" onClick={switchToRegister}>
-            Sign up
-          </button>
-        </div>
+        
       </form>
     </div>
   );

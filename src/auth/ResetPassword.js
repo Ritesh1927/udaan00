@@ -1,42 +1,36 @@
-// ResetPassword.js
 import { useState } from "react";
-import { useParams } from "react-router-dom";
-import api from "../utils/api";
-import { useNavigate } from "react-router-dom";
-import "../../src/auth/authcss/Reset.css";
 import axios from "axios";
+import "../../src/auth/authcss/Reset.css";
 
-export default function ResetPassword() {
+export default function ResetPassword({ token, onSuccess }) {
   const [password, setPassword] = useState("");
-  const { token } = useParams();
-  const navigate = useNavigate();
+  const [message, setMessage] = useState("");
 
   const handleReset = async (e) => {
     e.preventDefault();
-    await axios.post(`/api/auth/reset-password/${token}`, { password });
-    alert("Password updated successfully");
-    navigate("/login");
+    try {
+      await axios.post(`/api/auth/reset-password/${token}`, { password });
+      setMessage("Password updated successfully!");
+      onSuccess();
+    } catch (err) {
+      setMessage(err.response?.data?.message || "Password reset failed");
+    }
   };
 
   return (
-    <div className="reset-main-container">
-      <div className="reset-form-wrapper">
-        <div className="reset-left">
-          <h2>Reset Password</h2>
-          <p>Enter your new password below</p>
-          <form onSubmit={handleReset}>
-            <input
-              type="password"
-              placeholder="New password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <button type="submit">Reset Password</button>
-          </form>
-        </div>
-        <div className="reset-right" />
-      </div>
+    <div className="reset-form-container">
+      <h2>Reset Password</h2>
+      <form onSubmit={handleReset}>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="New password"
+          required
+        />
+        <button type="submit">Reset Password</button>
+      </form>
+      {message && <p>{message}</p>}
     </div>
   );
 }
