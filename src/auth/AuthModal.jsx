@@ -1,44 +1,61 @@
-import { useState } from "react";
-// Reuse existing Login page
+import React, { useState } from "react";
 import Login from "./Login";
-import Register from "./Register"; // Reuse existing Register page
-// import OTPVerification from "./OTPVerification";
-// import ForgotPassword from "./ForgotPassword";
-import "./authcss/AuthModal.css";
+import Register from "./Register";
+import ResetRequest from "./ResetRequest";
+import VerifyOtp from "./VerifyOtp";
+import { FaTimes } from "react-icons/fa";
+import "../../src/auth/authcss/AuthModal.css";
 
-const AuthModal = ({ initialMode = "login", onClose }) => {
-  const [mode, setMode] = useState(initialMode); // "login", "register", "otp", "forgotPassword"
+const AuthModal = ({ initialTab = "login", onClose }) => {
+  const [currentTab, setCurrentTab] = useState(initialTab);
+  const [emailForOtp, setEmailForOtp] = useState("");
+
+  const handleLoginSuccess = (email) => {
+    if (email) {
+      setEmailForOtp(email);
+      setCurrentTab("otp");
+    } else {
+      onClose();
+    }
+  };
 
   return (
-    <div className="auth-modal-overlay ">
-      <div className="auth-modal-content">
-        <button
-          onClick={onClose}
-          className="auth-modal-close"
-          aria-label="Close modal"
-        >
-          &times;
+    <div className="auth-modal-overlay">
+      <div className="auth-modal">
+        <button className="close-btn" onClick={onClose}>
+          <FaTimes />
         </button>
-        <div className="auth-modal-body">
-          {mode === "login" && (
-            <Login
-              onSwitchToRegister={() => setMode("register")}
-              onForgotPassword={() => setMode("forgotPassword")}
-            />
-          )}
-          {mode === "register" && (
-            <Register
-              onSwitchToLogin={() => setMode("login")}
-              onClose={onClose}
-              onRegisterSuccess={(user) => {
-                // Handle post-registration logic
-                console.log("Registered user:", user);
-              }}
-            />
-          )}
-          {/* {mode === "otp" && <OTPVerification onClose={onClose} />}
-          {mode === "forgotPassword" && <ForgotPassword onClose={onClose} />} */}
-        </div>
+        
+        {currentTab === "login" && (
+          <Login 
+            onClose={onClose}
+            onLoginSuccess={handleLoginSuccess}
+            switchToRegister={() => setCurrentTab("register")}
+            switchToReset={() => setCurrentTab("reset")}
+          />
+        )}
+
+        {currentTab === "register" && (
+          <Register 
+            onClose={onClose}
+            switchToLogin={() => setCurrentTab("login")}
+          />
+        )}
+
+        {currentTab === "reset" && (
+          <ResetRequest 
+            onClose={onClose}
+            switchToLogin={() => setCurrentTab("login")}
+          />
+        )}
+
+        {currentTab === "otp" && (
+          <VerifyOtp 
+            email={emailForOtp}
+            onClose={onClose}
+            switchToLogin={() => setCurrentTab("login")}
+          />
+        )}
       </div>
     </div>
   );
