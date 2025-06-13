@@ -1,18 +1,20 @@
 import { useState } from "react";
 import axios from "axios";
 import "../../src/auth/authcss/Reset.css";
+import { useAuthModal } from "./useAuthModal";
 
-export default function ResetRequest({ onClose, switchToLogin, onTokenReceived }) {
+export default function ResetRequest({ onClose, onTokenReceived }) {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const { switchTab } = useAuthModal();
+
+  const switchToLogin = () => switchTab('login');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post("/api/auth/request-reset", { email });
       setMessage("Reset link sent to your email");
-      // Simulate token receipt for demo - in real app this would come from URL
-      onTokenReceived("simulated-token"); 
     } catch (err) {
       setMessage(err.response?.data?.message || "Error sending reset link");
     }

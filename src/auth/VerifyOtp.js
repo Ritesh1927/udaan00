@@ -2,18 +2,21 @@ import React, { useState } from "react";
 import { useAuth } from "./authContext";
 import axios from "axios";
 import "../../src/auth/authcss/Reset.css";
+import { useAuthModal } from "./useAuthModal";
 
-export default function VerifyOtp({ email, onClose, switchToLogin }) {
+export default function VerifyOtp() {
   const [otp, setOtp] = useState("");
   const [message, setMessage] = useState("");
   const { login } = useAuth();
+  const { modalData, switchTab } = useAuthModal();
+  const email = modalData.email;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post("/api/auth/verify-otp", { email, otp });
       login(res.data.user, res.data.token);
-      onClose();
+      setMessage("Login Successfull")
     } catch (err) {
       setMessage(err.response?.data?.message || "OTP verification failed");
     }
@@ -22,6 +25,7 @@ export default function VerifyOtp({ email, onClose, switchToLogin }) {
   return (
     <div className="otp-form-container">
       <h2>Verify OTP</h2>
+      <p>Enter the OTP sent to {email}</p>
       <form onSubmit={handleSubmit}>
         <input
           value={otp}
@@ -31,7 +35,7 @@ export default function VerifyOtp({ email, onClose, switchToLogin }) {
         />
         <button type="submit">Verify</button>
       </form>
-      <button type="button" onClick={switchToLogin}>
+      <button type="button" onClick={() => switchTab('login')}>
         Back to Login
       </button>
       {message && <p>{message}</p>}

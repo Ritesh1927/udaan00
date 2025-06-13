@@ -394,6 +394,11 @@
     transform: none !important;
 }
 
+.profile-img{
+    height: 60px;
+    border-radius: 50%;
+    width: 60px;
+}
 
 /* /////////////////max  480px ////////// */
 @media (max-width: 480px) {

@@ -3,13 +3,18 @@ import { useAuth } from "./authContext";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "../../src/auth/authcss/Auth.css";
 import axios from "axios";
+import { useAuthModal } from "./useAuthModal";
 
-export default function Login({ onClose, onLoginSuccess, switchToRegister, switchToReset }) {
+export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const { login } = useAuth();
+  const { switchTab } = useAuthModal();
+
+  const switchToReset = () => switchTab('reset');
+  const switchToRegister = () => switchTab('register');
 
   const togglePassword = () => setShowPassword((prev) => !prev);
 
@@ -18,12 +23,11 @@ export default function Login({ onClose, onLoginSuccess, switchToRegister, switc
     setMessage("");
     try {
       const res = await axios.post("/api/auth/login", { email, password });
-
+      
       if (res.data.message === "OTP sent to email") {
-        onLoginSuccess(email);
+        switchTab('otp', { email }); // Switch to OTP tab and pass email
       } else if (res.data.token) {
         login(res.data.user, res.data.token);
-        onClose();
       }
     } catch (err) {
       setMessage(err.response?.data?.message || "Login failed");
