@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.396f4af4.css",
-    "main.js": "/static/js/main.7317ac0f.js",
+    "main.css": "/static/css/main.bda75839.css",
+    "main.js": "/static/js/main.39321d2d.js",
     "static/js/453.ac42ff46.chunk.js": "/static/js/453.ac42ff46.chunk.js",
     "static/media/About0002.png": "/static/media/About0002.c49bc4b800322fd393ff.png",
     "static/media/councel2.png": "/static/media/councel2.efdaf72c308618cc8bc4.png",
@@ -9,6 +9,7 @@
     "static/media/Aiimsj.png": "/static/media/Aiimsj.4d777d0873e123c1f8b0.png",
     "static/media/iim.png": "/static/media/iim.28c0bc544a65673f4394.png",
     "static/media/classroom.png": "/static/media/classroom.78f2d96787fe428df1da.png",
+    "static/media/career.png": "/static/media/career.043a653a28e8be2895ed.png",
     "static/media/banner003.png": "/static/media/banner003.4cb15d8781f2a2b7a8f4.png",
     "static/media/profile1.png": "/static/media/profile1.05467aeec95fe6aba985.png",
     "static/media/thaparuniversity.jpg": "/static/media/thaparuniversity.f99003d68522fd9d4e3f.jpg",
@@ -16,6 +17,7 @@
     "static/media/skilldoc.png": "/static/media/skilldoc.51bc61f809ad531c9065.png",
     "static/media/home.png": "/static/media/home.56a647a0b9ed1ac9391e.png",
     "static/media/soa.png": "/static/media/soa.47ab3bc2865ce6125b29.png",
+    "static/media/Franchise.png": "/static/media/Franchise.ddd2d711f30c9f68e6f1.png",
     "static/media/udanbanner06.png": "/static/media/udanbanner06.77ece3a59fa9cee42132.png",
     "static/media/Dattamegh.png": "/static/media/Dattamegh.f9804a465057fa2a7d11.png",
     "static/media/Galgotia.png": "/static/media/Galgotia.d9aa960666c9f16a3fcc.png",
@@ -112,6 +114,7 @@
     "static/media/Dypatil.jpg": "/static/media/Dypatil.7f195ca652d7c876101e.jpg",
     "static/media/icon1.png": "/static/media/icon1.c6844002b5db43a87b09.png",
     "static/media/star.png": "/static/media/star.681d56ed910a40c8f3cc.png",
+    "static/media/teaching-blog.jpg": "/static/media/teaching-blog.05fe41a6c0b6941814a6.jpg",
     "static/media/akgec.avif": "/static/media/akgec.5afc882c1e540643b615.avif",
     "static/media/usflag.png": "/static/media/usflag.8227622373342af63e5f.png",
     "static/media/card2.png": "/static/media/card2.34d1c4ee9ec9d6ee73e8.png",
@@ -156,12 +159,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.396f4af4.css.map": "/static/css/main.396f4af4.css.map",
-    "main.7317ac0f.js.map": "/static/js/main.7317ac0f.js.map",
+    "main.bda75839.css.map": "/static/css/main.bda75839.css.map",
+    "main.39321d2d.js.map": "/static/js/main.39321d2d.js.map",
     "453.ac42ff46.chunk.js.map": "/static/js/453.ac42ff46.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.396f4af4.css",
-    "static/js/main.7317ac0f.js"
+    "static/css/main.bda75839.css",
+    "static/js/main.39321d2d.js"
   ]
 }
