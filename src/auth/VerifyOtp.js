@@ -10,6 +10,11 @@ export default function VerifyOtp() {
   const { login } = useAuth();
   const { modalData, switchTab } = useAuthModal();
   const email = modalData.email;
+  const { closeModal } = useAuthModal();
+
+  function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,6 +22,8 @@ export default function VerifyOtp() {
       const res = await axios.post("/api/auth/verify-otp", { email, otp });
       login(res.data.user, res.data.token);
       setMessage("Login Successfull")
+      await delay(2000);
+      closeModal();
     } catch (err) {
       setMessage(err.response?.data?.message || "OTP verification failed");
     }
