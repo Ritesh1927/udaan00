@@ -10,7 +10,6 @@ import { toast, ToastContainer } from "react-toastify";
 import "./Contact.css";
 import MapLocation from "../component/map/MapLocation";
 
-
 // ... (imports section finished)
 
 const Contact = () => {
@@ -74,7 +73,6 @@ const Contact = () => {
 
   return (
     <>
- 
       <div className="Register-p-cont">
         <div className="register-form-container">
           <h4 className="contact-heading">Register for counselling</h4>

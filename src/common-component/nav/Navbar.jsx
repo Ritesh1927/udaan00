@@ -7,8 +7,7 @@ import { FiMenu, FiX } from "react-icons/fi";
 import userProfile1 from "../../assets/profile1.png";
 import { useAuth } from "../../auth/authContext";
 import { FaUser } from "react-icons/fa";
-import { useAuthModal } from "../../auth/useAuthModal"; 
-
+import { useAuthModal } from "../../auth/useAuthModal";
 
 const Navbar = () => {
   const { user } = useAuth();
@@ -17,11 +16,11 @@ const Navbar = () => {
   const dropdownRef = useRef(null);
   const { openModal } = useAuthModal();
 
-  const handleLoginClick = () => openModal('login');
-  const handleRegisterClick = () => openModal('register');
-  
+  const handleLoginClick = () => openModal("login");
+  const handleRegisterClick = () => openModal("register");
+
   const handleProfileClick = () => {
-    openModal('profile');
+    openModal("profile");
     setMobileMenuOpen(false); // Close mobile menu if open
   };
 
@@ -32,12 +31,12 @@ const Navbar = () => {
   };
 
   const handleMobileLogin = () => {
-    openModal('login');
+    openModal("login");
     setMobileMenuOpen(false);
   };
 
   const handleMobileRegister = () => {
-    openModal('register');
+    openModal("register");
     setMobileMenuOpen(false);
   };
 
@@ -89,22 +88,22 @@ const Navbar = () => {
           </ul>
           <div className="auth-buttons">
             {user ? (
-              <button onClick={handleProfileClick}>
+              <button className="profile-bbtn" onClick={handleProfileClick}>
                 <img className="profile-img" src={userProfile1} alt="Profile" />
               </button>
             ) : (
-                <button 
-                  className="nav-login-btn login-btn" 
-                  onClick={handleLoginClick}
-                >
-                  Login
-                </button>
-                // <button 
-                //   className="nav-register-btn register-btn" 
-                //   onClick={handleRegisterClick}
-                // >
-                //   Register
-                // </button>
+              <button
+                className="nav-login-btn login-btn"
+                onClick={handleLoginClick}
+              >
+                Login
+              </button>
+              // <button
+              //   className="nav-register-btn register-btn"
+              //   onClick={handleRegisterClick}
+              // >
+              //   Register
+              // </button>
             )}
           </div>
         </div>
@@ -141,7 +140,7 @@ const Navbar = () => {
           </li>
           {user ? (
             <li>
-              <button onClick={handleProfileClick}>
+              <button className="profile-bbtn" onClick={handleProfileClick}>
                 <img className="profile-img" src={userProfile1} alt="Profile" />
               </button>
             </li>
@@ -149,20 +148,20 @@ const Navbar = () => {
             <>
               <li>
                 <button
-                  className="mobile-login-btn"
+                  className="mobile-login-btn "
                   onClick={handleMobileLogin}
                 >
                   <FaUser /> Login
                 </button>
               </li>
-              <li>
+              {/* <li>
                 <button
                   className="mobile-register-btn"
                   onClick={handleMobileRegister}
                 >
                   Register
                 </button>
-              </li>
+              </li> */}
             </>
           )}
         </ul>

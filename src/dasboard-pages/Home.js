@@ -15,7 +15,6 @@ import TestimonialSlider from "./Testimonials";
 import ResultCards from "../component/resultcards/ResultCards";
 import BlinkingStrip from "../component/strip/BlinkingStrip";
 import Faq from "../component/faq/Faq";
-// import HomeForm from "../common-component/homeform/HomeForm";
 import AdmissionUpdate from "../component/admissionupdate/AdmissionUpdate";
 
 const Home = () => {
@@ -28,8 +27,7 @@ const Home = () => {
         <Carousel />
       </div>
       <section className="">
-        <div className="container">
-          <h1 className="home-cards-section-heading">Check Your Result Now </h1>
+        <div>
           <ResultCards />
         </div>
         <div className="inner-container ">
@@ -50,15 +48,11 @@ const Home = () => {
 
               {/* ///////////////////////////////// */}
             </div>
-
             <div className="home-banner-img">
               <img src={Homeimg} alt="" />
             </div>
           </div>
-          {/* //////  Home Form   //////////// */}
-          {/* <div className="container">
-            <HomeForm />
-          </div> */}
+
           {/* ////////////////video tag /////////////////// */}
           <div className="video-container-wrapper ">
             <Videobg />

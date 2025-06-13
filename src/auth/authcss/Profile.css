@@ -29,7 +29,8 @@
 .profile-subtext {
   color: #888;
   font-size: 14px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  margin-top: 8px;
 }
 
 .input-group {
@@ -79,7 +80,12 @@
   background: #8a3fcc;
 }
 
-.logout-btn {
+.profile-button-group {
+  display: flex;
+  gap: 20px;
+}
+
+.profile-logout-btn {
   width: 100%;
   /* margin-top: 20px; */
   padding: 12px;
@@ -93,9 +99,10 @@
   border-radius: 10px;
   cursor: pointer;
   transition: background 0.3s ease;
+  font-size: 14px;
 }
 
-.logout-btn:hover {
+.profile-logout-btn:hover {
   background: #7e22ce;
   color: #fff;
 }
@@ -113,4 +120,10 @@
   gap: 12px;
   align-items: center;
   margin-top: 20px;
+}
+
+@media (max-width:768px) {
+  .update-btn {
+    font-size: 14px;
+  }
 }

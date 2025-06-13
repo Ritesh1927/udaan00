@@ -47,17 +47,17 @@ export default function Profile({ onClose }) {
 
   const handleLogout = () => {
     logout();
-    // onClose(); 
-    closeModal(); 
+    // onClose();
+    closeModal();
   };
 
   return (
     <div className="profile-modal-container">
-      <button className="close-button" onClick={onClose}>×</button>
-      
+      {/* <button className="close-button" onClick={onClose}>×</button> */}
+
       <h2>My Profile</h2>
       <p className="profile-subtext">Update your personal information</p>
-      
+
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Name:</label>
@@ -84,13 +84,13 @@ export default function Profile({ onClose }) {
           />
         </div>
 
-        <div className="button-group">
+        <div className="profile-button-group">
           <button type="submit" className="update-btn">
             Update Details
           </button>
-          <button 
-            type="button" 
-            className="logout-btn"
+          <button
+            type="button"
+            className="profile-logout-btn"
             onClick={handleLogout}
           >
             Logout

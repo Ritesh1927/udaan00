@@ -9,48 +9,48 @@ import { FaArrowRightLong } from "react-icons/fa6";
 const videos = [
   {
     id: 1,
-    title: "Complete Career Guidance for Students",
+    title: "Motivation for Life",
     category: "Educational Content",
     description:
       "Learn how to choose the right career path with expert guidance from Udaan360.",
-    url: "https://www.youtube.com/embed/_-WdYbyAUd8",
-    thumbnail: "https://img.youtube.com/vi/4Ucdx0gcA_g/0.jpg",
+    url: "https://www.youtube.com/embed/KwFcqoiWB84",
+    thumbnail: "https://img.youtube.com/vi/KwFcqoiWB84/0.jpg",
   },
   {
     id: 2,
-    title: "Study Abroad: Complete Process",
+    title: "Engineering- Salaries, Branches, Opportunities,Admissions",
     category: "Educational Content",
     description:
       "Comprehensive guide to studying abroad including application process, visa requirements, and tips for success.",
-    url: "https://www.youtube.com/embed/JL_6v8pQMTU?autoplay=1",
-    thumbnail: "https://img.youtube.com/vi/JL_6v8pQMTU/0.jpg",
+    url: "https://www.youtube.com/embed/Le6FsQUx-fQ",
+    thumbnail: "https://img.youtube.com/vi/Le6FsQUx-fQ/0.jpg",
   },
   {
     id: 3,
-    title: "JEE Preparation Strategy",
+    title: "JEE Mains 2022: Admissions & Results",
     category: "Educational Content",
     description:
       "Best practices and strategies to crack JEE with confidence and excellence.",
-    url: "https://www.youtube.com/embed/LOUljE8Kx7I?autoplay=1",
-    thumbnail: "https://img.youtube.com/vi/LOUljE8Kx7I/0.jpg",
+    url: "https://www.youtube.com/embed/RV6vD9vjMbI",
+    thumbnail: "https://img.youtube.com/vi/RV6vD9vjMbI/0.jpg",
   },
   {
     id: 4,
-    title: "Student Success Stories",
+    title: "Upskilling - What, Why How?",
     category: "Educational Content",
     description:
       "Real-life success stories to inspire and motivate your educational journey.",
-    url: "https://www.youtube.com/embed/zpOULjyy-n8?autoplay=1",
-    thumbnail: "https://img.youtube.com/vi/zpOULjyy-n8/0.jpg",
+    url: "https://www.youtube.com/embed/Knxezc3DGoo",
+    thumbnail: "https://img.youtube.com/vi/Knxezc3DGoo/0.jpg",
   },
   {
     id: 5,
-    title: "Scholarship Application Guide",
+    title: "Safe Score for NEET 2022",
     category: "Educational Content",
     description:
       "Step-by-step guidance to apply for scholarships and maximize your funding opportunities.",
-    url: "https://www.youtube.com/embed/kJQP7kiw5Fk?autoplay=1",
-    thumbnail: "https://img.youtube.com/vi/kJQP7kiw5Fk/0.jpg",
+    url: "https://www.youtube.com/embed/w3CSP_zUpb8",
+    thumbnail: "https://img.youtube.com/vi/w3CSP_zUpb8/0.jpg",
   },
 ];
 

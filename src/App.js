@@ -5,11 +5,13 @@ import Navbar from "./common-component/nav/Navbar";
 import WhatsAppButton from "./common-component/whatsup/WhatsAppButton";
 import { AuthProvider } from "./auth/authContext";
 import AuthModal from "./auth/AuthModal";
-
+// import LeadForm from "./common-component/leadform/LeadTile";
+import LeadTile from "./common-component/leadform/LeadTile";
 function App() {
   return (
     <div className="App">
       <AuthProvider>
+        <LeadTile />
         <Navbar />
         <div className="main-outlet-container">
           <Outlet />
