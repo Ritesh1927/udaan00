@@ -105,6 +105,121 @@
     background: url('../../assets/llogin-right.jpg  ') no-repeat center center/cover;
 }
 
+.auth-tab-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.auth-tab-btn {
+    flex: 1;
+    padding: 10px 20px;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: #666;
+    font-size: 14px;
+}
+
+/* .auth-tab-btn:hover {
+    background-color: #007bff;
+    color: white;
+} */
+
+/* Active button with gradient */
+.auth-tab-btn.active {
+    background: linear-gradient(135deg, #ff8a00 0%, #e52e71 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(229, 46, 113, 0.3);
+}
+
+.auth-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 4px;
+}
+
+.form-group {
+    margin-bottom: 8px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ff8a00;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(255, 138, 0, 0.1);
+}
+
+.pass-word {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 49px;
+    top: 52.8%;
+}
+
+.forgot-paswrd {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: #ff8a00;
+}
+
+.form-submit {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(135deg, #ff8a00 0%, #e52e71 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 35px;
+}
+
+.form-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(229, 46, 113, 0.4);
+}
+
+.register-toggle {
+    position: absolute;
+    right: 58px;
+    top: 70.7%;
+}
+
+.create-tag-register {
+    margin-bottom: 10px;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
     .register-form-wrapper {
@@ -114,6 +229,14 @@
 
     .register-left {
         padding: 30px 20px;
+    }
+
+    .register-toggle {
+        right: 84.7%;
+    }
+
+    .password-toggle {
+        top: 61%;
     }
 
     .register-right {

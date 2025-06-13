@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useAuth } from "./authContext";
 import axios from "axios";
+import "../../src/auth/authcss/Register.css";
 import "../../src/auth/authcss/Reset.css";
+import { FaArrowLeft } from "react-icons/fa";
 import { useAuthModal } from "./useAuthModal";
 
 export default function VerifyOtp() {
@@ -13,7 +15,7 @@ export default function VerifyOtp() {
   const { closeModal } = useAuthModal();
 
   function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
   const handleSubmit = async (e) => {
@@ -21,7 +23,7 @@ export default function VerifyOtp() {
     try {
       const res = await axios.post("/api/auth/verify-otp", { email, otp });
       login(res.data.user, res.data.token);
-      setMessage("Login Successfull")
+      setMessage("Login Successfull");
       await delay(2000);
       closeModal();
     } catch (err) {
@@ -31,18 +33,34 @@ export default function VerifyOtp() {
 
   return (
     <div className="otp-form-container">
-      <h2>Verify OTP</h2>
-      <p>Enter the OTP sent to {email}</p>
-      <form onSubmit={handleSubmit}>
-        <input
-          value={otp}
-          onChange={(e) => setOtp(e.target.value)}
-          placeholder="Enter OTP"
-          required
-        />
-        <button type="submit">Verify</button>
+      <h3 className="  mb20">
+        Enter the OTP sent to :-{" "}
+        <span className="verify-email-heading-mail">{email}</span>
+      </h3>
+
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <div className="form-group mt10">
+          <label htmlFor="">Verify Otp</label>
+          <input
+            value={otp}
+            onChange={(e) => setOtp(e.target.value)}
+            placeholder="Enter OTP"
+            required
+          />
+        </div>
+
+        <button className="form-submit verify-otp-form-submit" type="submit">
+          Verify
+        </button>
       </form>
-      <button type="button" onClick={() => switchTab('login')}>
+      <button
+        className="back-btn"
+        type="button"
+        onClick={() => switchTab("login")}
+      >
+        <i>
+          <FaArrowLeft />
+        </i>
         Back to Login
       </button>
       {message && <p>{message}</p>}
