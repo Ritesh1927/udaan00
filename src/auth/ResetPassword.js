@@ -1,42 +1,68 @@
-// ResetPassword.js
-import { useState } from "react";
-import { useParams } from "react-router-dom";
-import api from "../utils/api";
-import { useNavigate } from "react-router-dom";
-import "../../src/auth/authcss/Reset.css";
+import { useState, useEffect } from "react";
 import axios from "axios";
+import { useParams, useNavigate } from "react-router-dom";
+import { useAuthModal } from "./useAuthModal";
+import "../../src/auth/authcss/Reset.css";
 
 export default function ResetPassword() {
   const [password, setPassword] = useState("");
-  const { token } = useParams();
+  const [message, setMessage] = useState("");
+  const { token } = useParams(); // Get token from URL
   const navigate = useNavigate();
+  const { closeModal } = useAuthModal();
+  const { switchTab } = useAuthModal();
+
 
   const handleReset = async (e) => {
     e.preventDefault();
-    await axios.post(`/api/auth/reset-password/${token}`, { password });
-    alert("Password updated successfully");
-    navigate("/login");
+    try {
+      const res = await axios.post(`/api/auth/reset-password/${token}`, { password });
+      
+      if (res.data.message === "Password updated successfully") {
+        setMessage(res.data.message);
+        setTimeout(() => {
+          closeModal();
+          navigate("/");
+        }, 1500);
+      } else {
+        setMessage(res.data.message || "Password reset failed");
+      }
+    } catch (err) {
+      setMessage(err.response?.data?.message || "Password reset failed");
+    }
   };
 
+  // Handle direct URL access (maintains previous workflow)
+  useEffect(() => {
+    if (!token) {
+      navigate("/reset-request");
+    }
+  }, [token, navigate]);
+
   return (
-    <div className="reset-main-container">
-      <div className="reset-form-wrapper">
-        <div className="reset-left">
-          <h2>Reset Password</h2>
-          <p>Enter your new password below</p>
-          <form onSubmit={handleReset}>
-            <input
-              type="password"
-              placeholder="New password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <button type="submit">Reset Password</button>
-          </form>
-        </div>
-        <div className="reset-right" />
-      </div>
+    <div className="reset-modal-container">
+      <h2>Reset Password</h2>
+      <form onSubmit={handleReset}>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="New password"
+          required
+          // minLength={8}
+        />
+        <button type="submit" className="reset-submit-btn">
+          Reset Password
+        </button>
+      </form>
+      
+      {message && (
+        <p className={`reset-message ${
+          message.includes("successfully") ? "success" : "error"
+        }`}>
+          {message}
+        </p>
+      )}
     </div>
   );
 }

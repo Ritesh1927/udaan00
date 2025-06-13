@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import api from "../utils/api";
-import { Link } from "react-router-dom";
-import "../auth/authcss/Register.css";
 import axios from "axios";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useAuthModal } from "./useAuthModal"; 
+import { useAuth } from "./authContext";
+import "../../src/auth/authcss/Register.css";
 
-export default function Register() {
+export default function Register({ onClose }) {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -14,11 +14,11 @@ export default function Register() {
   });
   const [message, setMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const { switchTab } = useAuthModal(); // Get modal navigation methods
+  const { login } = useAuth();
 
-  // ..........................show  passwrod
-  const togglePassword = () => {
-    setShowPassword((prev) => !prev);
-  };
+  const togglePassword = () => setShowPassword((prev) => !prev);
+
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -27,63 +27,72 @@ export default function Register() {
     try {
       const res = await axios.post("/api/auth/register", form);
       setMessage(res.data.message);
+      
+      // Optional: Auto-login after registration
+      if (res.data.token) {
+        login(res.data.user, res.data.token);
+        onClose(); // Close modal after successful registration
+      }
     } catch (err) {
       setMessage(err.response?.data?.message || "Error");
     }
   };
 
   return (
-    <div className="register-main-container">
-      <div className="register-form-wrapper">
-        <div className="register-left">
-          <h2>Sign Up</h2>
-          <p>Create your account to get started</p>
-          <form onSubmit={handleSubmit}>
-            <input
-              name="name"
-              placeholder="Full Name"
-              onChange={handleChange}
-              required
-            />
-            <input
-              name="email"
-              type="email"
-              placeholder="Email"
-              onChange={handleChange}
-              required
-            />
-            <input
-              name="mobile"
-              type="text"
-              placeholder="Mobile Number"
-              onChange={handleChange}
-              required
-            />
-            <div className="login-pass-wrapper-2">
-              <input
-                name="password"
-                type={showPassword ? "text" : "password"}
-                placeholder="Password"
-                onChange={handleChange}
-                required
-                className="register-pass"
-              />
-              <span
-                onClick={togglePassword}
-                className="toggle-password-icon-login-2"
-              >
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
-              </span>
-            </div>
-            <button type="submit">Register</button>
-            <Link to="/login">
-              Already have an account? <span>Log In</span>
-            </Link>
-            <p>{message}</p>
-          </form>
+    <div className="register-modal-container">
+      <h2>Sign Up</h2>
+      <p>Create your account to get started</p>
+      
+      <form onSubmit={handleSubmit}>
+        <input
+          name="name"
+          placeholder="Full Name"
+          onChange={handleChange}
+          required
+        />
+        <input
+          name="email"
+          type="email"
+          placeholder="Email"
+          onChange={handleChange}
+          required
+        />
+        <input
+          name="mobile"
+          type="text"
+          placeholder="Mobile Number"
+          onChange={handleChange}
+          required
+        />
+        
+        <div className="password-input-wrapper">
+          <input
+            name="password"
+            type={showPassword ? "text" : "password"}
+            placeholder="Password"
+            onChange={handleChange}
+            required
+          />
+          <span onClick={togglePassword} className="password-toggle">
+            {showPassword ? <FaEyeSlash /> : <FaEye />}
+          </span>
         </div>
-        <div className="register-right" />
-      </div>
+
+        <button type="submit">Register</button>
+        
+        <div className="auth-switch-text">
+          Already have an account?{" "}
+          <button 
+            type="button" 
+            className="text-link"
+            onClick={() => switchTab('login')}
+          >
+            Log In
+          </button>
+        </div>
+        
+        {message && <p className="auth-message">{message}</p>}
+      </form>
     </div>
   );
 }

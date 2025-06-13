@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import api from "../utils/api";
 import axios from "axios";
 
 const AuthContext = createContext();
@@ -7,9 +6,8 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(localStorage.getItem('token') || '');
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
 
-  // Fetch user only when token changes — NOT when user changes
   useEffect(() => {
     const fetchUser = async () => {
       try {
@@ -19,26 +17,23 @@ export const AuthProvider = ({ children }) => {
         setUser(res.data.user);
       } catch (err) {
         console.error("Failed to fetch user:", err);
-        setUser(null);
-        localStorage.removeItem('token'); // Ensure token is cleared if invalid
-        setToken('');
+        logout(); // Clear all auth state on failure
       } finally {
-        setLoading(false); // Done loading
+        setLoading(false);
       }
     };
 
     if (token) {
       fetchUser();
     } else {
-      setUser(null); // Just to be safe
       setLoading(false);
     }
-  }, [token]); // ✅ Removed `user` from dependency array
+  }, [token]);
 
-  const login = (userData, newToken) => {
-    setUser(userData);
-    setToken(newToken);
+  const login = async (userData, newToken) => {
     localStorage.setItem('token', newToken);
+    setToken(newToken);
+    setUser(userData);
   };
 
   const logout = () => {
@@ -47,8 +42,17 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem('token');
   };
 
+  const value = {
+    user,
+    token,
+    login,
+    logout,
+    loading,
+    isAuthenticated: !!token
+  };
+
   return (
-    <AuthContext.Provider value={{ user, token, login, logout, loading }}>
+    <AuthContext.Provider value={value}>
       {children}
     </AuthContext.Provider>
   );

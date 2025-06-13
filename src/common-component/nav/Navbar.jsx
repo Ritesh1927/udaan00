@@ -1,4 +1,3 @@
-// src/nav/Navbar.js
 import React, { useState, useRef, useEffect } from "react";
 import "../nav/Navbar.css";
 import Logoimg from "../../assets/Udaan_logo2.png";
@@ -7,18 +6,39 @@ import CoustomDropdown from "../../component/dropdown/CustomDropdown";
 import { FiMenu, FiX } from "react-icons/fi";
 import userProfile1 from "../../assets/profile1.png";
 import { useAuth } from "../../auth/authContext";
-import { FaChevronDown, FaUser } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
+import { useAuthModal } from "../../auth/useAuthModal"; 
+
 
 const Navbar = () => {
   const { user } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const { openModal } = useAuthModal();
+
+  const handleLoginClick = () => openModal('login');
+  const handleRegisterClick = () => openModal('register');
+  
+  const handleProfileClick = () => {
+    openModal('profile');
+    setMobileMenuOpen(false); // Close mobile menu if open
+  };
 
   const toggleMobileMenu = () => setMobileMenuOpen((prev) => !prev);
   const toggleMobileDropdown = (e) => {
     e.preventDefault();
     setMobileDropdownOpen((prev) => !prev);
+  };
+
+  const handleMobileLogin = () => {
+    openModal('login');
+    setMobileMenuOpen(false);
+  };
+
+  const handleMobileRegister = () => {
+    openModal('register');
+    setMobileMenuOpen(false);
   };
 
   useEffect(() => {
@@ -69,13 +89,22 @@ const Navbar = () => {
           </ul>
           <div className="auth-buttons">
             {user ? (
-              <Link to="/profile">
+              <button onClick={handleProfileClick}>
                 <img className="profile-img" src={userProfile1} alt="Profile" />
-              </Link>
+              </button>
             ) : (
-              <Link to="/login" className="nav-login-btn login-btn">
-                Login
-              </Link>
+                <button 
+                  className="nav-login-btn login-btn" 
+                  onClick={handleLoginClick}
+                >
+                  Login
+                </button>
+                // <button 
+                //   className="nav-register-btn register-btn" 
+                //   onClick={handleRegisterClick}
+                // >
+                //   Register
+                // </button>
             )}
           </div>
         </div>
@@ -111,28 +140,31 @@ const Navbar = () => {
             </Link>
           </li>
           {user ? (
-            <Link to="/profile">
-              <img className="profile-img" src={userProfile1} alt="Profile" />
-            </Link>
-          ) : (
-            <Link to="/login" className="mobile-login-btn">
-              Login
-            </Link>
-          )}
-          {/* {!user && (
             <li>
-              <button
-                type="button"
-                className="mobile-login-btn"
-                onClick={() => {
-                  openModal();
-                  toggleMobileMenu();
-                }}
-              >
-                <FaUser /> Login
+              <button onClick={handleProfileClick}>
+                <img className="profile-img" src={userProfile1} alt="Profile" />
               </button>
             </li>
-          )} */}
+          ) : (
+            <>
+              <li>
+                <button
+                  className="mobile-login-btn"
+                  onClick={handleMobileLogin}
+                >
+                  <FaUser /> Login
+                </button>
+              </li>
+              <li>
+                <button
+                  className="mobile-register-btn"
+                  onClick={handleMobileRegister}
+                >
+                  Register
+                </button>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </nav>
