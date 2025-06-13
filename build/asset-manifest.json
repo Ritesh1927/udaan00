@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.bda75839.css",
-    "main.js": "/static/js/main.39321d2d.js",
+    "main.css": "/static/css/main.c1e58c45.css",
+    "main.js": "/static/js/main.9fae6be1.js",
     "static/js/453.ac42ff46.chunk.js": "/static/js/453.ac42ff46.chunk.js",
     "static/media/About0002.png": "/static/media/About0002.c49bc4b800322fd393ff.png",
     "static/media/councel2.png": "/static/media/councel2.efdaf72c308618cc8bc4.png",
@@ -122,7 +122,6 @@
     "static/media/mba2.avif": "/static/media/mba2.bb2cc47662f2d973c4ca.avif",
     "static/media/DreamCourse.png": "/static/media/DreamCourse.22ffb2ed12d165a2cba4.png",
     "static/media/telangana.jpg": "/static/media/telangana.f6d6e51917e7ef260a83.jpg",
-    "static/media/Logo3.png": "/static/media/Logo3.6f4110492cb3e7fb5654.png",
     "static/media/confidence.png": "/static/media/confidence.65385b63e04825376f48.png",
     "static/media/Udaan_logo2.png": "/static/media/Udaan_logo2.713f01c6fe99523eb6fb.png",
     "static/media/biharboard.jpg": "/static/media/biharboard.ca4877192294969ccbc8.jpg",
@@ -159,12 +158,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.bda75839.css.map": "/static/css/main.bda75839.css.map",
-    "main.39321d2d.js.map": "/static/js/main.39321d2d.js.map",
+    "main.c1e58c45.css.map": "/static/css/main.c1e58c45.css.map",
+    "main.9fae6be1.js.map": "/static/js/main.9fae6be1.js.map",
     "453.ac42ff46.chunk.js.map": "/static/js/453.ac42ff46.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bda75839.css",
-    "static/js/main.39321d2d.js"
+    "static/css/main.c1e58c45.css",
+    "static/js/main.9fae6be1.js"
   ]
 }
