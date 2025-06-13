@@ -1,5 +1,6 @@
 import React from "react";
-
+import { FaDownload } from "react-icons/fa";
+import "../footer/Footer.css";
 const DownloadPdf = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
@@ -11,20 +12,12 @@ const DownloadPdf = () => {
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "12px" }}>
-      <button
-        onClick={handleDownload}
-        style={{
-          padding: "10px 20px",
-          fontSize: "16px",
-          backgroundColor: "#705BA4",
-          color: "#fff",
-          border: "none",
-          borderRadius: "5px",
-          cursor: "pointer",
-        }}
-      >
-        Download PDF
+    <div className="footer-download">
+      <button className="download-pdf-btn" onClick={handleDownload}>
+        <i class="fas fa-download">
+          <FaDownload />
+        </i>
+        Download Pdf
       </button>
     </div>
   );
