@@ -38,12 +38,14 @@ import OnlineMba from "./dasboard-pages/OnlineMba";
 import Blogs from "./dasboard-pages/Blogs";
 import CollegeList from "./admin/CollegeList";
 import Career from "./common-component/career/Career";
+import { AuthModalProvider } from './auth/AuthModalContext';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <AuthProvider>
       <BrowserRouter>
+    <AuthProvider>
+      <AuthModalProvider>
         <ScrollToTop />
         <Routes>
           <Route path="" element={<App />}>
@@ -81,21 +83,20 @@ root.render(
 
             {/* <= add all new routes here  */}
 
-            <Route
+            {/* <Route
               path="/profile"
               element={
                 <ProtectedRoute>
                   <Profile />
                 </ProtectedRoute>
               }
-            />
-          </Route> 
-          <Route path="/admin" element={<Admin />} />
-
+            /> */}
+          </Route>
           <Route path="*" element={<Error />}></Route>
         </Routes>
-      </BrowserRouter>
+      </AuthModalProvider>
     </AuthProvider>
+      </BrowserRouter>
   </React.StrictMode>
 );
 

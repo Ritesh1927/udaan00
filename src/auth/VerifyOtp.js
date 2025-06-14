@@ -1,58 +1,69 @@
 import React, { useState } from "react";
-import api from "../utils/api";
-import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "./authContext";
-import "../../src/auth/authcss/Reset.css";
 import axios from "axios";
+import "../../src/auth/authcss/Register.css";
+import "../../src/auth/authcss/Reset.css";
+import { FaArrowLeft } from "react-icons/fa";
+import { useAuthModal } from "./useAuthModal";
 
 export default function VerifyOtp() {
   const [otp, setOtp] = useState("");
   const [message, setMessage] = useState("");
   const { login } = useAuth();
-  const navigate = useNavigate();
-  const { state } = useLocation();
+  const { modalData, switchTab } = useAuthModal();
+  const email = modalData.email;
+  const { closeModal } = useAuthModal();
 
   function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/auth/verify-otp", {
-        email: state.email,
-        otp,
-      });
+      const res = await axios.post("/api/auth/verify-otp", { email, otp });
       login(res.data.user, res.data.token);
-      setMessage("Login successful, Redirecting to the Home page");
+      setMessage("Login Successfull");
       await delay(2000);
-      navigate("/");
+      closeModal();
     } catch (err) {
       setMessage(err.response?.data?.message || "OTP verification failed");
     }
   };
 
   return (
-    <div className="reset-main-container">
-      <div className="reset-form-wrapper">
-        <div className="reset-left">
-          <h2>Verify OTP</h2>
-          <p>Enter the OTP sent to your email.</p>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              value={otp}
-              onChange={(e) => setOtp(e.target.value)}
-              placeholder="Enter OTP"
-              required
-            />
-            <button type="submit">Verify OTP</button>
-            {/* <p>{message}</p> */}
-          </form>
-          <p style={{ marginTop: "20px", color: "red" }}>{message}</p>
+    <div className="otp-form-container">
+      <h3 className="  mb20">
+        Enter the OTP sent to :-{" "}
+        <span className="verify-email-heading-mail">{email}</span>
+      </h3>
+
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <div className="form-group mt10">
+          <label htmlFor="">Verify Otp</label>
+          <input
+            value={otp}
+            onChange={(e) => setOtp(e.target.value)}
+            placeholder="Enter OTP"
+            required
+          />
         </div>
-        <dixv className="reset-right" />
-      </div>
+
+        <button className="form-submit verify-otp-form-submit" type="submit">
+          Verify
+        </button>
+      </form>
+      <button
+        className="back-btn"
+        type="button"
+        onClick={() => switchTab("login")}
+      >
+        <i>
+          <FaArrowLeft />
+        </i>
+        Back to Login
+      </button>
+      {message && <p>{message}</p>}
     </div>
   );
 }

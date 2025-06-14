@@ -20,54 +20,28 @@ const Carousel = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
-    autoplay: false,
+    autoplay: true,
     swipeToSlide: true,
   };
 
   return (
     <div className="udan-carousel">
       <Slider {...settings}>
-        {/* <div>
-          <div className="image-banner-container">
-            <div className="Banner-img-wrapper">
-              <img src={Cbanner1} alt="" />
-            </div>
-            <div className="img-discription-link ">
-              <h1>Get Admisson Now </h1>
-              <div className="admission-links-blinking-section">
-                <button className="admission-links-blinking-card">
-                  <FaStethoscope className="admission-links-blinking-icon" />
-                  <p className="admission-links-blinking-text">
-                    Medical Admission
-                  </p>
-                </button>
-                <button className="admission-links-blinking-card">
-                  <FaLaptopCode className="admission-links-blinking-icon" />
-                  <p className="admission-links-blinking-text">
-                    Engineering Admission
-                  </p>
-                </button>
-                <button className="admission-links-blinking-card">
-                  <FaBriefcase className="admission-links-blinking-icon" />
-                  <p className="admission-links-blinking-text">
-                    Management Admission
-                  </p>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div> */}
-        <div className="">
+        <div className="slider-wrapper">
+          {/* /////////slide */}
           <div className="image-banner-container">
             <div className="Banner-img-wrapper">
               {/* <img src={Banner} alt="" /> */}
               <Careercycle />
             </div>
             <div className="img-discription-link">
-              <h1 className="banner-heading">
-                India's Premier Education Consultant:{" "}
-                <span className="company-name">Udaan360</span>
-              </h1>
+              <div className="slide-text">
+                <h1 className="banner-heading">
+                  India's Premier Education Consultant:{" "}
+                  <span className="company-name">Udaan360</span>
+                </h1>
+              </div>
+
               <p className="banner-content">
                 Recognized as one of the India's leading education consultancy
                 firm, dedicated to students comfort & success and institutes
@@ -77,8 +51,7 @@ const Carousel = () => {
                 <a
                   className="Explore-btn-a"
                   target="blank"
-                  href="https://wa.me/917355308287?text=hello%20%2C%20i%20want%20to%20know%20more
-"
+                  href="https://wa.me/917355308287?text=hello%20%2C%20i%20want%20to%20know%20more"
                 >
                   Explore Now
                 </a>
@@ -86,9 +59,11 @@ const Carousel = () => {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="slider-wrapper">
+          {/* /////////1st slide ////////// */}
           <div className="image-banner-container">
-            <div className="Banner-img-wrapper sir-img-wrap">
+            {/* sir-img-wrap */}
+            <div className="Banner-img-wrapper ">
               <img src={Banner2} alt="" />
             </div>
             <div className="img-discription-link">
@@ -99,7 +74,7 @@ const Carousel = () => {
 
               <p className="banner-content">
                 20 years of extensive experience in guiding over 25,000 students
-                towards fulfilling their academic and professional goals.​
+                towards fulfilling their academic and professional goals.
               </p>
               <button className="Explore-btn">
                 <a
@@ -114,7 +89,7 @@ const Carousel = () => {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="slider-wrapper">
           <div className="image-banner-container">
             <div className="Banner-img-wrapper sir-img-wrap">
               <img src={Banner3} alt="" />
@@ -139,7 +114,7 @@ const Carousel = () => {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="slider-wrapper">
           <div className="image-banner-container">
             <div className="Banner-img-wrapper sir-img-wrap">
               <img src={Banner4} alt="" />
@@ -169,7 +144,7 @@ const Carousel = () => {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="slider-wrapper">
           <div className="image-banner-container">
             <div className="Banner-img-wrapper last-img-slider sir-img-wrap">
               <img src={Banner5} alt="" />

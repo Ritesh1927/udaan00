@@ -4,25 +4,60 @@
     background-color: #163f85;
     overflow: hidden;
     display: flex;
-    align-items: center;
-    height: 40px;
     font-family: "Hanken Grotesk", sans-serif;
+    display: flex;
+    align-items: stretch;
+    height: 45px;
 }
 
 /* Only anchor blinks, blinker div remains solid */
 .blinker {
-    width: 160px;
-    text-align: center;
-    background-color: red;
-    height: 100%;
+    background: linear-gradient(135deg, #ff8a00 0%, #e52e71 100%);
+    padding: 0 30px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    color: white;
+    font-weight: 800;
     font-size: 16px;
-    font-weight: bold;
-    z-index: 10;
-    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    min-width: 200px;
+    animation: pulse 2s infinite;
 }
+
+.blinker::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: flashMove 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+@keyframes flashMove {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
 
 .blinker a {
     color: #fff;
@@ -30,15 +65,21 @@
     text-decoration: none;
 }
 
-@keyframes blink-animation {
+.blinker i {
+    margin-right: 10px;
+    font-size: 18px;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
 
     0%,
     100% {
-        opacity: 1;
+        transform: translateY(0);
     }
 
     50% {
-        opacity: 0;
+        transform: translateY(-3px);
     }
 }
 
@@ -76,6 +117,123 @@
 }
 
 
+
+
+/* //////////////////////// */
+/* Ticker Section */
+.ticker-section {
+    background: white;
+    margin-top: 3px;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    z-index: 100;
+    font-family: 'Arial', sans-serif;
+}
+
+.ticker-container {
+    display: flex;
+    align-items: stretch;
+    height: 45px;
+    /* Changed from 60px to 45px */
+}
+
+/* Get Admission Flash Section */
+.admission-flash {
+    background: linear-gradient(135deg, #ff8a00 0%, #e52e71 100%);
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 800;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    min-width: 200px;
+    animation: pulse 2s infinite;
+    z-index: 1;
+}
+
+.admission-flash::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: flashMove 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes flashMove {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+.admission-flash i {
+    margin-right: 10px;
+    font-size: 20px;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+/* Ticker Text */
+.ticker-content {
+    flex: 1;
+    overflow: hidden;
+    background: white;
+    display: flex;
+    align-items: center;
+}
+
+.ticker-text {
+    color: #333;
+    font-weight: 600;
+    white-space: nowrap;
+    animation: scroll 20s linear infinite;
+    padding-left: 100%;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
 @media (max-width:680px) {
     .blinker {
         width: 120px;
@@ -87,5 +245,23 @@
 
     .blinker a {
         font-size: 14px;
+    }
+}
+
+@media (max-width:768px) {
+    .ticker-content {
+        height: 40px;
+    }
+
+    .admission-flash {
+        padding: 0 8px;
+        font-weight: 700;
+        font-size: 13px;
+        min-width: 180px;
+    }
+
+    .admission-flash i {
+        font-size: 16px;
+
     }
 }

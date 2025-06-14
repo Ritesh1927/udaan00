@@ -1,188 +1,438 @@
-.footer-main-continer {
-    background-color: #31546e;
-    width: 100%;
-    font-family: 'Nunito', sans-serif;
-    color: #fff;
-    padding: 20px 0;
-    height: fit-content;
-    /* position: fixed;
-    bottom: 0; */
-    /* margin-top: 70px; */
+/* Footer Section */
+.footer-section {
+    background: #2c3e50;
+    color: white;
+    padding: 60px 0 0 0;
+    font-family: "Arial", sans-serif;
 }
 
-.social-link-wrap {
-    color: #fff;
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.footer-inner-wrapper {
+.footer-main {
     display: grid;
-    grid-column-gap: 20px;
-    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
-    width: 92%;
-    margin: auto;
-    /* padding: 0 5%; */
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    gap: 40px;
+    margin-bottom: 50px;
 }
 
-/* Make footer responsive */
-@media screen and (max-width: 1024px) {
-    .footer-inner-wrapper {
-        grid-template-columns: 1fr 1fr;
-        row-gap: 30px;
-    }
+.footer-column {
+    position: relative;
 }
 
-@media screen and (max-width: 768px) {
-    .footer-inner-wrapper {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .footer-inner-wrapper {
-        text-align: left;
-    }
-
-    .footer-logo-wrapper {
-        margin: 0 auto;
-    }
-
-    .social-media-links {
-        display: flex;
-        /* justify-content: center; */
-        gap: 15px;
-    }
-
-    .footer-inner-second-section {
-        padding: 10px 0;
-    }
-
-    /* 
-    .location-section {
-        justify-content: center;
-    } */
-}
-
-.footer-logo-wrapper {
-    width: 170px;
-}
-
-.footer-logo-wrapper img {
-    width: 100%;
-}
-
-.footer-contact-msg-heading {
+.footer-heading {
     font-size: 20px;
-    color: #E7718E;
     font-weight: 700;
+    margin-bottom: 25px;
+    color: #ff8a00;
+    position: relative;
 }
 
-.footer-contact-msg {
-    line-height: 25px;
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(135deg, #ff8a00 0%, #e52e71 100%);
+    border-radius: 2px;
+}
+
+/* Categories Column */
+.category-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.category-btn {
+    background: white;
+    color: #2c3e50;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 12px;
     font-size: 16px;
-    color: #fff;
     font-weight: 600;
-    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.Find-us-links {
+.category-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btech-btn:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.medical-btn:hover {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+}
+
+.management-btn:hover {
+    background: linear-gradient(135deg, #f39c12 0%, #d35400 100%);
+    color: white;
+}
+
+.category-btn i {
     font-size: 18px;
-    font-weight: 600;
-    padding: 8px 10px 8px 0;
 }
 
-.social-links {
-    font-size: 20px;
-    padding-right: 15px;
+/* Footer Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    position: relative;
+}
+
+.footer-links a:hover {
+    color: #ff8a00;
+    padding-left: 10px;
+}
+
+.footer-links a::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 2px;
+    background: #ff8a00;
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover::before {
+    width: 6px;
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.contact-item i {
+    color: #ff8a00;
+    margin-top: 2px;
+    font-size: 16px;
+    min-width: 16px;
+}
+
+.contact-item a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #ff8a00;
+}
+
+/* Universities Section */
+.universities-section {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+}
+
+.universities-heading {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #ff8a00;
+    text-align: center;
+}
+
+.country-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.country-tab {
+    background: transparent;
+    color: #333;
+    border: 2px solid #4a6372;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.country-tab.active,
+.country-tab:hover {
+    background: linear-gradient(135deg, #ff8a00 0%, #e52e71 100%);
+    color: white;
+    border-color: transparent;
+}
+
+.universities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.university-card-footer {
+    background: #2c3e50;
+    border: 2px solid #4a6372;
+    border-radius: 15px;
+    padding: 20px;
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.Study-abroad-heading {
-    padding-bottom: 5px;
-    font-size: 18px;
+.university-card-footer:hover {
+    border-color: #ff8a00;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 138, 0, 0.2);
 }
 
-.study-links {
-    color: #fff;
-    text-decoration: none;
+.university-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+    line-height: 1.3;
 }
 
-.right-icons-set {
-    padding-right: 3px;
+.university-location {
+    font-size: 13px;
+    color: #bdc3c7;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.course-count {
+    background: linear-gradient(135deg, #ff8a00 0%, #e52e71 100%);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
     font-size: 12px;
+    font-weight: 600;
 }
 
-.footer-inner-second-section li {
-    padding-top: 10px;
-    list-style: none;
-}
-
-.footer-inner-second-section {
-    padding: 15px 0 0 15px;
-}
-
-.location-section {
-    display: flex;
-    gap: 8px;
-    padding-top: 8px;
+/* Footer Bottom */
+.footer-bottom {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
     align-items: center;
+    padding: 30px 0;
+    border-top: 1px solid #4a6372;
 }
 
-.location-section p {
-    font-size: 16px;
+.footer-brand h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ff8a00;
+    margin-bottom: 10px;
 }
 
-.location-icon {
-    font-size: 12px
+.footer-brand p {
+    font-size: 14px;
+    color: #bdc3c7;
+    line-height: 1.5;
+    margin: 0;
 }
 
-.phone-icon {
-    font-size: 12px;
-}
-
-.mail-icon {
-    font-size: 17px;
-    margin-top: 5px;
-}
-
-.location-section a {
-    color: #fff;
-    font-size: 16px;
+.footer-brand a {
+    color: #ff8a00;
     text-decoration: none;
 }
 
-.australia-address {
-    padding: 8px 15px 0px 25px;
+.footer-social h4 {
     font-size: 16px;
-    text-align: left;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 15px;
 }
 
-/* Mobile-specific styles */
-@media screen and (max-width: 480px) {
-    .footer-contact-msg {
-        font-size: 16px;
-        padding: 0 10px;
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #4a6372;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    border-color: transparent;
+}
+
+.social-link.facebook:hover {
+    background: #3b5998;
+}
+
+.social-link.instagram:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-link.linkedin:hover {
+    background: #0077b5;
+}
+
+.social-link.youtube:hover {
+    background: #ff0000;
+}
+
+.download-pdf-btn {
+    background: linear-gradient(135deg, #ff8a00 0%, #e52e71 100%);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.download-pdf-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 138, 0, 0.3);
+}
+
+/* Footer Copyright */
+.footer-copyright {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #4a6372;
+    background: #1a252f;
+}
+
+.footer-copyright p {
+    margin: 0;
+    font-size: 14px;
+    color: #bdc3c7;
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 1024px) {
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
     }
 
-    .Find-us-links {
+    .footer-bottom {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .universities-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-section {
+        padding: 40px 0 0 0;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .universities-section {
+        padding: 30px 20px;
+    }
+
+    .country-tabs {
+        gap: 8px;
+    }
+
+    .country-tab {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    .universities-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .category-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .category-btn {
+        flex: 1;
+        min-width: 140px;
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 0 15px;
+    }
+
+    .universities-section {
+        padding: 20px 15px;
+    }
+
+    .footer-heading {
         font-size: 18px;
     }
 
-    .social-links {
-        font-size: 24px;
-    }
-
-    .study-links {
-        font-size: 16px;
-    }
-
-    .location-section {
-        /* flex-direction: column; */
-        /* text-align: center; */
-    }
-
-
-
-    .australia-address {
-        padding: 8px 0;
-        /* text-align: center; */
+    .category-btn {
+        min-width: 120px;
+        padding: 10px 12px;
+        font-size: 13px;
     }
 }

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import "../../common-component/nav/Navbar";
+import "../../common-component/nav/Navbar.css";
 import { useNavigate } from "react-router-dom";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 

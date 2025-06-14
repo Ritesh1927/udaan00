@@ -1,0 +1,240 @@
+/* .auth-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+} */
+
+.auth-modal {
+  background-color: white;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: #666;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add your existing auth form styles here */
+.auth-form-container {
+  /* Your existing styles */
+}
+
+/* Update your existing Auth.css to work with the modal */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  z-index: 10000;
+  animation: fadeIn 0.3s ease;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Add padding to prevent edge touching */
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.login-popup {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 900px;
+  width: 95%;
+  max-height: 90vh;
+  /* Reduced from 95vh to 90vh */
+  position: relative;
+  animation: slideUp 0.4s ease;
+  display: flex;
+  overflow: hidden;
+}
+
+.popup-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 30px 25px;
+  /* Reduced padding */
+  border-radius: 20px 0 0 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  animation: headerShine 4s infinite;
+}
+
+@keyframes headerShine {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+
+  100% {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+.popup-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.popup-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+.popup-close i {
+  margin-top: 4px;
+  font-size: 16px;
+}
+
+.popup-title {
+  color: white;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 5;
+  line-height: 1.2;
+}
+
+.popup-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+  position: relative;
+  z-index: 5;
+  margin-bottom: 30px;
+}
+
+.popup-features {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  text-align: left;
+  position: relative;
+  z-index: 5;
+}
+
+.popup-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.popup-features li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.popup-features i {
+  color: #ff8a00;
+  font-size: 16px;
+}
+
+.popup-body {
+  padding: 30px;
+  /* Reduced from 40px */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* Changed from center to flex-start */
+  overflow-y: auto;
+  /* Add scroll to body content */
+  max-height: 100%;
+}
+
+@media (max-width:768px) {
+  .login-popup {
+    flex-direction: column;
+    max-width: 95%;
+    max-height: 95vh;
+    overflow-y: auto;
+    height: 90vh;
+  }
+
+  .popup-body {
+    padding: 30px 20px;
+  }
+
+  .popup-features {
+    display: none;
+  }
+
+  .popup-header {
+    border-radius: 20px 0 0 0px;
+    flex: 0 0 190px;
+  }
+}
