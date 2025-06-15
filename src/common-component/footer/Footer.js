@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 import {
   FaFacebookF,
@@ -14,33 +15,48 @@ import {
 } from "react-icons/fa";
 // import {  } from "react-icons/fa";
 import DownloadPdf from "../download/DownloadPdf";
-import FooterUniversity from "../footeruniversity/FooterUniversity";
+// import FooterUniversity from "../footeruniversity/FooterUniversity";
 const Footer = () => {
   return (
     <>
       <footer className="footer-section">
         <div className="footer-container">
           {/* <!-- Universities Section --> */}
-          <FooterUniversity />
+          {/* <FooterUniversity /> */}
           {/* <!-- Main Footer Content --> */}
           <div className="footer-main">
             {/* <!-- Left Column - Categories --> */}
             <div className="footer-column categories-column">
               <h3 className="footer-heading">Enroll Now For Admissions</h3>
               <div className="category-buttons">
-                <button className="category-btn btech-btn">
+                <button
+                  className="category-btn btech-btn"
+                  onClick={() => (window.location.href = "/admisson?tab=btech")}
+                >
                   <i className="fas fa-cogs">
                     <FaCogs />
                   </i>
                   B.Tech
                 </button>
-                <button className="category-btn medical-btn">
+
+                <button
+                  className="category-btn medical-btn"
+                  onClick={() =>
+                    (window.location.href = "/admisson?tab=medical")
+                  }
+                >
                   <i className="fas fa-stethoscope">
                     <FaStethoscope />
                   </i>
                   Medical
                 </button>
-                <button className="category-btn management-btn">
+
+                <button
+                  className="category-btn management-btn"
+                  onClick={() =>
+                    (window.location.href = "/admisson?tab=management")
+                  }
+                >
                   <i className="fas fa-chart-line">
                     <FaChartLine />
                   </i>
@@ -76,7 +92,7 @@ const Footer = () => {
               <h3 className="footer-heading">Other Links</h3>
               <ul className="footer-links">
                 <li>
-                  <a href="#scholarships">Scholarships</a>
+                  <Link href="#scholarships">Scholarships</Link>
                 </li>
                 <li>
                   <a href="#visa-assistance">Visa Assistance</a>
@@ -86,6 +102,9 @@ const Footer = () => {
                 </li>
                 <li>
                   <a href="#blogs">Blogs</a>
+                </li>
+                <li>
+                  <a href="#blogs">Carrer</a>
                 </li>
               </ul>
             </div>

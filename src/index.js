@@ -75,7 +75,7 @@ root.render(
 
             {/* add all new routes here => */}
 
-            <Route path="/admin" element={<Admin />} />
+           
             <Route path="/onlineMba" element={<OnlineMba />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/collegelist" element={<CollegeList />} />
@@ -93,6 +93,7 @@ root.render(
             /> */}
           </Route>
           <Route path="*" element={<Error />}></Route>
+           <Route path="/admin" element={<Admin />} />
         </Routes>
       </AuthModalProvider>
     </AuthProvider>

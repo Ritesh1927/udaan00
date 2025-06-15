@@ -1,13 +1,25 @@
 /* Navigation Bar */
 .navbar {
-    background: white;
+    /* background: white;
     padding: 8px 0;
-    /* Changed from 15px to 8px */
+
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: visible;
     z-index: 1000;
+    font-family: 'Arial', sans-serif; */
+
+    background: white;
+    padding: 8px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* position: relative; */
+    overflow: visible;
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
     font-family: 'Arial', sans-serif;
+    backdrop-filter: top;
+    top: 0;
 }
 
 .nav-container {
@@ -457,7 +469,7 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .nav-container {
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
         justify-content: space-between;
     }
 

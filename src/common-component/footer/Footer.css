@@ -6,6 +6,8 @@
     font-family: "Arial", sans-serif;
 }
 
+
+
 .footer-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -163,10 +165,14 @@
 
 /* Universities Section */
 .universities-section {
-    background: white;
+    background: #2c3e50;
     padding: 40px;
+}
+
+.university-inner-section {
+    background: white;
     border-radius: 20px;
-    margin-bottom: 40px;
+    padding: 40px;
 }
 
 .universities-heading {
