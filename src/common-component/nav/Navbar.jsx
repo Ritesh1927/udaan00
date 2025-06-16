@@ -51,110 +51,119 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="navbar">
-      <div className="nav-container">
-        <div className="logo-section">
-          <img src={Logoimg} alt="Udaan 360 Logo" />
+    <navbar className="nav-nav">
+      <nav className="navbar">
+        <div className="nav-container">
+          <div className="logo-section">
+            <img src={Logoimg} alt="Udaan 360 Logo" />
+          </div>
+          <div className="student-count">
+            <div className="number">25,000+</div>
+            <div className="text">Students Successfully Counseled</div>
+          </div>
+          <div className="nav-menu">
+            <ul className="menu-items">
+              <li>
+                <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" onClick={() => setMobileMenuOpen(false)}>
+                  About us
+                </Link>
+              </li>
+              <li>
+                <CoustomDropdown />
+              </li>
+              <li>
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
+                  Contact us
+                </Link>
+              </li>
+              <li>
+                <Link to="/franchise" onClick={() => setMobileMenuOpen(false)}>
+                  Franchise
+                </Link>
+              </li>
+            </ul>
+            <div className="auth-buttons">
+              {user ? (
+                <button className="profile-bbtn" onClick={handleProfileClick}>
+                  <img
+                    className="profile-img"
+                    src={userProfile1}
+                    alt="Profile"
+                  />
+                </button>
+              ) : (
+                <button
+                  className="nav-login-btn login-btn"
+                  onClick={handleLoginClick}
+                >
+                  Login
+                </button>
+                // <button
+                //   className="nav-register-btn register-btn"
+                //   onClick={handleRegisterClick}
+                // >
+                //   Register
+                // </button>
+              )}
+            </div>
+          </div>
+          <button className="menu-toggle" onClick={toggleMobileMenu}>
+            {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+          </button>
         </div>
-        <div className="student-count">
-          <div className="number">25,000+</div>
-          <div className="text">Students Successfully Counseled</div>
-        </div>
-        <div className="nav-menu">
-          <ul className="menu-items">
+
+        {/* Mobile Menu */}
+        <div className={`mobile-menu ${mobileMenuOpen ? "active" : ""}`}>
+          <ul className="mobile-menu-items">
             <li>
-              <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+              <Link to="/" onClick={toggleMobileMenu}>
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/about" onClick={() => setMobileMenuOpen(false)}>
-                About us
+              <Link to="/about" onClick={toggleMobileMenu}>
+                About Us
               </Link>
             </li>
             <li>
               <CoustomDropdown />
             </li>
             <li>
-              <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                Contact us
+              <Link to="/contact" onClick={toggleMobileMenu}>
+                Contact Us
               </Link>
             </li>
             <li>
-              <Link to="/franchise" onClick={() => setMobileMenuOpen(false)}>
+              <Link to="/franchise" onClick={toggleMobileMenu}>
                 Franchise
               </Link>
             </li>
-          </ul>
-          <div className="auth-buttons">
             {user ? (
-              <button className="profile-bbtn" onClick={handleProfileClick}>
-                <img className="profile-img" src={userProfile1} alt="Profile" />
-              </button>
-            ) : (
-              <button
-                className="nav-login-btn login-btn"
-                onClick={handleLoginClick}
-              >
-                Login
-              </button>
-              // <button
-              //   className="nav-register-btn register-btn"
-              //   onClick={handleRegisterClick}
-              // >
-              //   Register
-              // </button>
-            )}
-          </div>
-        </div>
-        <button className="menu-toggle" onClick={toggleMobileMenu}>
-          {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      <div className={`mobile-menu ${mobileMenuOpen ? "active" : ""}`}>
-        <ul className="mobile-menu-items">
-          <li>
-            <Link to="/" onClick={toggleMobileMenu}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" onClick={toggleMobileMenu}>
-              About Us
-            </Link>
-          </li>
-          <li>
-            <CoustomDropdown />
-          </li>
-          <li>
-            <Link to="/contact" onClick={toggleMobileMenu}>
-              Contact Us
-            </Link>
-          </li>
-          <li>
-            <Link to="/franchise" onClick={toggleMobileMenu}>
-              Franchise
-            </Link>
-          </li>
-          {user ? (
-            <li>
-              <button className="profile-bbtn" onClick={handleProfileClick}>
-                <img className="profile-img" src={userProfile1} alt="Profile" />
-              </button>
-            </li>
-          ) : (
-            <>
               <li>
-                <button
-                  className="mobile-login-btn "
-                  onClick={handleMobileLogin}
-                >
-                  <FaUser /> Login
+                <button className="profile-bbtn" onClick={handleProfileClick}>
+                  <img
+                    className="profile-img"
+                    src={userProfile1}
+                    alt="Profile"
+                  />
                 </button>
               </li>
-              {/* <li>
+            ) : (
+              <>
+                <li>
+                  <button
+                    className="mobile-login-btn "
+                    onClick={handleMobileLogin}
+                  >
+                    <FaUser /> Login
+                  </button>
+                </li>
+                {/* <li>
                 <button
                   className="mobile-register-btn"
                   onClick={handleMobileRegister}
@@ -162,11 +171,12 @@ const Navbar = () => {
                   Register
                 </button>
               </li> */}
-            </>
-          )}
-        </ul>
-      </div>
-    </nav>
+              </>
+            )}
+          </ul>
+        </div>
+      </nav>
+    </navbar>
   );
 };
 

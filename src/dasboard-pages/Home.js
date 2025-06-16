@@ -16,6 +16,7 @@ import ResultCards from "../component/resultcards/ResultCards";
 import BlinkingStrip from "../component/strip/BlinkingStrip";
 import Faq from "../component/faq/Faq";
 import AdmissionUpdate from "../component/admissionupdate/AdmissionUpdate";
+import FooterUniversity from "../common-component/footeruniversity/FooterUniversity";
 
 const Home = () => {
   return (
@@ -99,6 +100,7 @@ const Home = () => {
       <div className="Form-forward-container">
         <TestimonialSlider />
       </div>
+      <FooterUniversity />
     </>
   );
 };
