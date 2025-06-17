@@ -1,15 +1,6 @@
 /* Navigation Bar */
 .navbar {
-    /* background: white;
-    padding: 8px 0;
-
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: visible;
-    z-index: 1000;
-    font-family: 'Arial', sans-serif; */
-
-    background: white;
+ background: white;
     padding: 8px 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     /* position: relative; */
@@ -20,6 +11,7 @@
     font-family: 'Arial', sans-serif;
     backdrop-filter: top;
     top: 0;
+    margin-bottom: auto;
 }
 
 .nav-container {
@@ -510,12 +502,6 @@
     .mobile-menu.active {
         display: block;
     }
-
-    /* .mobile-dropdown-content {
-        display: none;
-        padding-left: 20px;
-        margin-top: 5px;
-    } */
 
     .mobile-dropdown.open .mobile-dropdown-content {
         display: block;

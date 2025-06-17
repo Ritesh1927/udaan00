@@ -101,6 +101,7 @@ const Navbar = () => {
                   className="nav-login-btn login-btn"
                   onClick={handleLoginClick}
                 >
+                  <i><FaUser/></i>
                   Login
                 </button>
                 // <button
