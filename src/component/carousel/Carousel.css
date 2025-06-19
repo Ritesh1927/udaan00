@@ -8,7 +8,7 @@
 
 .udan-carousel .slick-slider {
     position: relative;
-    border-radius: 12px;
+    /* border-radius: 12px; */
     overflow: visible;
     height: 550px;
     /* min-height: 500px; */
