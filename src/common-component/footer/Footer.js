@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 import {
   FaFacebookF,
@@ -14,263 +15,48 @@ import {
 } from "react-icons/fa";
 // import {  } from "react-icons/fa";
 import DownloadPdf from "../download/DownloadPdf";
+// import FooterUniversity from "../footeruniversity/FooterUniversity";
 const Footer = () => {
   return (
     <>
       <footer className="footer-section">
         <div className="footer-container">
           {/* <!-- Universities Section --> */}
-          <div className="universities-section">
-            <h3 className="universities-heading">
-              Top Universities to Study Abroad
-            </h3>
-
-            {/* <!-- Country Tabs --> */}
-            <div className="country-tabs">
-              <button className="country-tab active">United Kingdom</button>
-              <button className="country-tab">USA</button>
-              <button className="country-tab">Germany</button>
-              <button className="country-tab">Canada</button>
-              <button className="country-tab">Australia</button>
-            </div>
-
-            {/* <!-- Universities Grid --> */}
-            <div className="universities-grid" id="universitiesGrid">
-              {/* <!-- UK Universities (default) --> */}
-              <div className="university-card-footer" data-country="uk">
-                <div className="university-info">
-                  <h4 className="university-name">University of Birmingham</h4>
-                  <p className="university-location">
-                    Birmingham, United Kingdom
-                  </p>
-                  <span className="course-count">497+ Courses</span>
-                </div>
-              </div>
-
-              <div className="university-card-footer" data-country="uk">
-                <div className="university-info">
-                  <h4 className="university-name">Coventry University</h4>
-                  <p className="university-location">
-                    Priory Street, Coventry, United Kingdom
-                  </p>
-                  <span className="course-count">519+ Courses</span>
-                </div>
-              </div>
-
-              <div className="university-card-footer" data-country="uk">
-                <div className="university-info">
-                  <h4 className="university-name">University of Greenwich</h4>
-                  <p className="university-location">London, United Kingdom</p>
-                  <span className="course-count">450+ Courses</span>
-                </div>
-              </div>
-
-              <div className="university-card-footer" data-country="uk">
-                <div className="university-info">
-                  <h4 className="university-name">Middlesex University</h4>
-                  <p className="university-location">
-                    Hendon, London, United Kingdom
-                  </p>
-                  <span className="course-count">503+ Courses</span>
-                </div>
-              </div>
-
-              <div className="university-card-footer" data-country="uk">
-                <div className="university-info">
-                  <h4 className="university-name">Heriot Watt University</h4>
-                  <p className="university-location">
-                    Riccarton, Edinburgh, United Kingdom
-                  </p>
-                  <span className="course-count">335+ Courses</span>
-                </div>
-              </div>
-
-              <div className="university-card-footer" data-country="uk">
-                <div className="university-info">
-                  <h4 className="university-name">Aston University</h4>
-                  <p className="university-location">
-                    Birmingham, United Kingdom
-                  </p>
-                  <span className="course-count">373+ Courses</span>
-                </div>
-              </div>
-
-              {/* <!-- USA Universities --> */}
-              <div
-                className="university-card"
-                data-country="usa"
-                style={{ display: "none" }}
-              >
-                <div className="university-info">
-                  <h4 className="university-name">
-                    Florida International University
-                  </h4>
-                  <p className="university-location">Miami, United States</p>
-                  <span className="course-count">379+ Courses</span>
-                </div>
-              </div>
-
-              <div
-                className="university-card"
-                data-country="usa"
-                style={{ display: "none" }}
-              >
-                <div className="university-info">
-                  <h4 className="university-name">Auburn University</h4>
-                  <p className="university-location">Auburn, United States</p>
-                  <span className="course-count">451+ Courses</span>
-                </div>
-              </div>
-
-              <div
-                className="university-card"
-                data-country="usa"
-                style={{ display: "none" }}
-              >
-                <div className="university-info">
-                  <h4 className="university-name">Roosevelt University</h4>
-                  <p className="university-location">Chicago, United States</p>
-                  <span className="course-count">385+ Courses</span>
-                </div>
-              </div>
-
-              {/* <!-- Germany Universities --> */}
-              <div
-                className="university-card"
-                data-country="germany"
-                style={{ display: "none" }}
-              >
-                <div className="university-info">
-                  <h4 className="university-name">
-                    The Ludwig Maximilian University of Munich
-                  </h4>
-                  <p className="university-location">Bavaria, Germany</p>
-                  <span className="course-count">425+ Courses</span>
-                </div>
-              </div>
-
-              <div
-                className="university-card"
-                data-country="germany"
-                style={{ display: "none" }}
-              >
-                <div className="university-info">
-                  <h4 className="university-name">Heidelberg University</h4>
-                  <p className="university-location">
-                    Baden-Württemberg, Germany
-                  </p>
-                  <span className="course-count">378+ Courses</span>
-                </div>
-              </div>
-
-              {/* <!-- Canada Universities --> */}
-              <div
-                className="university-card"
-                data-country="canada"
-                style={{ display: "none" }}
-              >
-                <div className="university-info">
-                  <h4 className="university-name">University Canada West</h4>
-                  <p className="university-location">
-                    Granville Street, Vancouver, Canada
-                  </p>
-                  <span className="course-count">457+ Courses</span>
-                </div>
-              </div>
-
-              <div
-                className="university-card"
-                data-country="canada"
-                style={{ display: "none" }}
-              >
-                <div className="university-info">
-                  <h4 className="university-name">Great Plains College</h4>
-                  <p className="university-location">
-                    Swift Current, SK, Canada
-                  </p>
-                  <span className="course-count">366+ Courses</span>
-                </div>
-              </div>
-
-              <div
-                className="university-card"
-                data-country="canada"
-                style={{ display: "none" }}
-              >
-                <div className="university-info">
-                  <h4 className="university-name">Parkland College</h4>
-                  <p className="university-location">
-                    Sprystai Way, Yorkton, Canada
-                  </p>
-                  <span className="course-count">366+ Courses</span>
-                </div>
-              </div>
-
-              {/* <!-- Australia Universities --> */}
-              <div
-                className="university-card"
-                data-country="australia"
-                style={{ display: "none" }}
-              >
-                <div className="university-info">
-                  <h4 className="university-name">
-                    Parklands Christian College
-                  </h4>
-                  <p className="university-location">
-                    Park Ridge QLD, Australia
-                  </p>
-                  <span className="course-count">366+ Courses</span>
-                </div>
-              </div>
-
-              <div
-                className="university-card"
-                data-country="australia"
-                style={{ display: "none" }}
-              >
-                <div className="university-info">
-                  <h4 className="university-name">
-                    The University of Melbourne
-                  </h4>
-                  <p className="university-location">
-                    Grattan Street Parkville, Victoria Australia
-                  </p>
-                  <span className="course-count">411+ Courses</span>
-                </div>
-              </div>
-
-              <div
-                className="university-card"
-                data-country="australia"
-                style={{ display: "none" }}
-              >
-                <div className="university-info">
-                  <h4 className="university-name">Monash University</h4>
-                  <p className="university-location">Victoria, Australia</p>
-                  <span className="course-count">411+ Courses</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* <FooterUniversity /> */}
           {/* <!-- Main Footer Content --> */}
           <div className="footer-main">
             {/* <!-- Left Column - Categories --> */}
             <div className="footer-column categories-column">
               <h3 className="footer-heading">Enroll Now For Admissions</h3>
               <div className="category-buttons">
-                <button className="category-btn btech-btn">
+                <button
+                  className="category-btn btech-btn"
+                  onClick={() => (window.location.href = "/admisson?tab=btech")}
+                >
                   <i className="fas fa-cogs">
                     <FaCogs />
                   </i>
                   B.Tech
                 </button>
-                <button className="category-btn medical-btn">
+
+                <button
+                  className="category-btn medical-btn"
+                  onClick={() =>
+                    (window.location.href = "/admisson?tab=medical")
+                  }
+                >
                   <i className="fas fa-stethoscope">
                     <FaStethoscope />
                   </i>
                   Medical
                 </button>
-                <button className="category-btn management-btn">
+
+                <button
+                  className="category-btn management-btn"
+                  onClick={() =>
+                    (window.location.href = "/admisson?tab=management")
+                  }
+                >
                   <i className="fas fa-chart-line">
                     <FaChartLine />
                   </i>
@@ -306,7 +92,7 @@ const Footer = () => {
               <h3 className="footer-heading">Other Links</h3>
               <ul className="footer-links">
                 <li>
-                  <a href="#scholarships">Scholarships</a>
+                  <Link href="#scholarships">Scholarships</Link>
                 </li>
                 <li>
                   <a href="#visa-assistance">Visa Assistance</a>
@@ -316,6 +102,9 @@ const Footer = () => {
                 </li>
                 <li>
                   <a href="#blogs">Blogs</a>
+                </li>
+                <li>
+                  <a href="#blogs">Carrer</a>
                 </li>
               </ul>
             </div>

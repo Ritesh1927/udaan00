@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import Star from "../assets/star.png";
 // ////////////// medical clg
 import Aims from "../assets/aimsdelhi.avif";
@@ -842,10 +843,27 @@ const colleges = {
   ],
 };
 const Admisson = () => {
-  const [activeTab, setActiveTab] = useState("btech");
+  // const [activeTab, setActiveTab] = useState("btech");
+  // const [expanded, setExpanded] = useState({});
+
+  // const handleTabClick = (type) => setActiveTab(type);
+  // const toggleRead = (idx) => {
+  //   setExpanded((prev) => ({ ...prev, [idx]: !prev[idx] }));
+  // };
+  const [searchParams, setSearchParams] = useSearchParams();
+  const urlTab = searchParams.get("tab");
+
+  // Initialize activeTab from URL or default to 'btech'
+  const [activeTab, setActiveTab] = useState(urlTab || "btech");
   const [expanded, setExpanded] = useState({});
 
-  const handleTabClick = (type) => setActiveTab(type);
+  // Sync with URL when tab changes
+  const handleTabClick = (type) => {
+    setActiveTab(type);
+    setSearchParams({ tab: type });
+  };
+
+  // Rest of your component remains the same...
   const toggleRead = (idx) => {
     setExpanded((prev) => ({ ...prev, [idx]: !prev[idx] }));
   };
