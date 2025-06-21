@@ -93,6 +93,7 @@ root.render(
             /> */}
           </Route>
           <Route path="*" element={<Error />}></Route>
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </AuthModalProvider>
     </AuthProvider>

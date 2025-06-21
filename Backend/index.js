@@ -34,7 +34,7 @@ app.use((req, res, next) => {
   }
   next();
 });
-
+ 
 
 // Authentication Routes ----------------
 const authRoutes = require("./Routes/authRoutes");
@@ -132,6 +132,20 @@ app.post("/api/contact", async (req, res) => {
 });
 
 
+///////////------ contact list display ----------------
+
+app.get("/api/contact", async (req, res) => {
+  try {
+    const contacts = await Contactschema.find(); // assuming you've imported your Contact model
+    res.json(contacts);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch contacts" });
+  }
+});
+
+////////////---------------
+
+
 app.post("/api/franchise", async (req, res) => {
 
 
@@ -177,6 +191,19 @@ app.post("/api/franchise", async (req, res) => {
     // res.send(error)
   }
 });
+
+//////////// ----------- franchise data display ----------------
+
+app.get("/api/franchise", async (req, res) => {
+  try {
+    const  franchisedata = await  franchisemodel.find(); 
+    res.json(franchisedata);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch contacts" });
+  }
+});
+
+
 
 // Health check--------------------------------------------------------------------------
 // app.get("/", (req, res) => {

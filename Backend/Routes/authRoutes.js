@@ -12,6 +12,17 @@ const generateToken = (userId) =>
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
 
+
+///// ---- for register data display -----
+router.get("/register", async (req, res) => {
+  try {
+    const  registerdata = await  User.find(); 
+    res.json(registerdata);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch contacts" });
+  }
+});
+
 router.post("/register", async (req, res) => {
   const { name, email, password, mobile } = req.body;
   const existingUser = await User.findOne({ email });

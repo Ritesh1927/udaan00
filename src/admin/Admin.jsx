@@ -1,8 +1,14 @@
 import React, { Fragment, useState, useEffect } from "react";
 import "../admin/Admin.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import ContactList from "./ContactList";
+import FranchiseList from "./FranchiseList";
+import UserList from "./UserList";
+
+
 
 const Admin = () => {
+
   const [activeSection, setActiveSection] = useState("collegeAdd");
   const [showPassword, setShowPassword] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -15,6 +21,8 @@ const Admin = () => {
   const [filter, setFilter] = useState([]);
   const [blogs, setBlogs] = useState([]);
   const [expandedDescriptions, setExpandedDescriptions] = useState({});
+
+
 
   const togglePassword = () => {
     setShowPassword((prev) => !prev);
@@ -188,6 +196,8 @@ const Admin = () => {
     fetchBlogs();
   };
 
+ 
+
   useEffect(() => {
     fetchColleges();
     fetchBlogs();
@@ -211,6 +221,15 @@ const Admin = () => {
               <button onClick={() => setActiveSection("blogList")}>
                 Blog List
               </button>
+              <button onClick={() => setActiveSection("contactList")}>
+                Contact List
+              </button>
+              <button onClick={() => setActiveSection("franchiseList")}>
+                franchise data
+              </button>
+              <button onClick={() => setActiveSection("UserList")}>
+                 user data
+              </button>
             </div>
             <div className="logout-admin-wrapper">
               <button
@@ -219,17 +238,31 @@ const Admin = () => {
               >
                 Logout
               </button>
+
+              
             </div>
           </div>
           <div className="admin-panel-content">
             <h1 className="text-center">Welcome to Admin Panel</h1>
             <br />
-            <button
+            {/* <button
               className="button-admin logout-button-sidebar"
               onClick={() => setIsAuthenticated(false)}
             >
               Logout
-            </button>
+            </button> */}
+             {activeSection === "contactList" && (
+               <ContactList/>
+             )
+             }
+             {activeSection === "franchiseList" && (
+               <FranchiseList/>
+             )
+             }
+             {activeSection === "UserList" && (
+               <UserList/>
+             )
+             }
 
             {activeSection === "collegeAdd" && (
               <div className="admin-panel-form">
@@ -540,7 +573,9 @@ const Admin = () => {
                   ></textarea>
                   <button type="submit">Add Blog</button>
                 </form>
+               
               </div>
+              
             )}
 
             {activeSection === "blogList" && (
@@ -604,6 +639,7 @@ const Admin = () => {
             </form>
           </div>
         </div>
+        
       )}
     </Fragment>
   ) : (
