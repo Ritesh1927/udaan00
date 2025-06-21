@@ -1,9 +1,9 @@
 import React, { Fragment, useState, useEffect } from "react";
 import "../admin/Admin.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import ContactList from "./ContactList";
-import FranchiseList from "./FranchiseList";
-import UserList from "./UserList";
+import ContactList from "../admin/ContactList";
+import FranchiseList from "../admin/FranchiseList";
+import UserList from "../admin/UserList";
 
 
 
