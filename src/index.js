@@ -14,8 +14,6 @@ import Home from "./dasboard-pages/Home";
 import SkillMigration from "./dasboard-pages/SkillMigration";
 import Testimonials from "./dasboard-pages/Testimonials";
 import Franchise from "./dasboard-pages/Franchise";
-// import Profile from "./component/insert-profile/Profile";
-// import BoardList from "./component/abroaduniversity/BoardList";
 import TenthBoardList from "./component/resultcards/TenthBoardList";
 import TwelfthBoardList from "./component/resultcards/TwelfthBoardList";
 import PrivacyPolicy from "./common-component/privacy/PrivacyPolicy";
@@ -38,70 +36,64 @@ import OnlineMba from "./dasboard-pages/OnlineMba";
 import Blogs from "./dasboard-pages/Blogs";
 import CollegeList from "./admin/CollegeList";
 import Career from "./common-component/career/Career";
-import { AuthModalProvider } from './auth/AuthModalContext';
+import { AuthModalProvider } from "./auth/AuthModalContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-      <BrowserRouter>
-    <AuthProvider>
-      <AuthModalProvider>
-        <ScrollToTop />
-        <Routes>
-          <Route path="" element={<App />}>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/about" element={<About />}></Route>
-            <Route path="/contact" element={<Contact />}></Route>
-            <Route path="/admisson" element={<Admisson />} />
-            <Route path="/sip" element={<Sip />} />
-            <Route path="/aboradstudy" element={<AbroadStudy />} />
-            <Route path="/testimonials" element={<Testimonials />} />
-            <Route path="/skillmigration" element={<SkillMigration />} />
-            <Route path="/franchise" element={<Franchise />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            {/* <Route path="/insert-profile" element={<Profile />} /> */}
-            <Route path="/boards/10th" element={<TenthBoardList />} />
-            <Route path="/boards/12th" element={<TwelfthBoardList />} />
-            <Route path="/privacy" element={<PrivacyPolicy />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/verify-otp" element={<Otp />} />
-            <Route path="/reset-request" element={<ResetRequest />} />
-            <Route path="/reset-password/:token" element={<ResetPassword />} />
-            <Route path="/stream-selection" element={<StreamSelection />} />
-            <Route path="/exam-preparation" element={<ExamPreparation />} />
-            <Route path="/placement" element={<Placement />} />
-            <Route path="/career-counselling" element={<CareerCounselling />} />
+    <BrowserRouter>
+      <AuthProvider>
+        <AuthModalProvider>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<App />}>
+              <Route index element={<Home />} />
+              <Route path="about" element={<About />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="admisson" element={<Admisson />} />
+              <Route path="sip" element={<Sip />} />
+              <Route path="aboradstudy" element={<AbroadStudy />} />
+              <Route path="testimonials" element={<Testimonials />} />
+              <Route path="skillmigration" element={<SkillMigration />} />
+              <Route path="franchise" element={<Franchise />} />
+              <Route path="login" element={<Login />} />
+              <Route path="register" element={<Register />} />
+              <Route path="boards/10th" element={<TenthBoardList />} />
+              <Route path="boards/12th" element={<TwelfthBoardList />} />
+              <Route path="privacy" element={<PrivacyPolicy />} />
+              <Route path="terms" element={<Terms />} />
+              <Route path="verify-otp" element={<Otp />} />
+              <Route path="reset-request" element={<ResetRequest />} />
+              <Route path="reset-password/:token" element={<ResetPassword />} />
+              <Route path="stream-selection" element={<StreamSelection />} />
+              <Route path="exam-preparation" element={<ExamPreparation />} />
+              <Route path="placement" element={<Placement />} />
+              <Route path="career-counselling" element={<CareerCounselling />} />
+              <Route path="onlineMba" element={<OnlineMba />} />
+              <Route path="blogs" element={<Blogs />} />
+              <Route path="collegelist" element={<CollegeList />} />
+              <Route path="career" element={<Career />} />
 
-            {/* add all new routes here => */}
+              {/* Example protected route: */}
+              {/* <Route
+                path="profile"
+                element={
+                  <ProtectedRoute>
+                    <Profile />
+                  </ProtectedRoute>
+                }
+              /> */}
 
-           
-            <Route path="/onlineMba" element={<OnlineMba />} />
-            <Route path="/blogs" element={<Blogs />} />
-            <Route path="/collegelist" element={<CollegeList />} />
-            <Route path="/career" element={<Career />} />
+              <Route path="*" element={<Error />} />
+            </Route>
 
-            {/* <= add all new routes here  */}
-
-            {/* <Route
-              path="/profile"
-              element={
-                <ProtectedRoute>
-                  <Profile />
-                </ProtectedRoute>
-              }
-            /> */}
-          </Route>
-          <Route path="*" element={<Error />}></Route>
-           <Route path="/admin" element={<Admin />} />
-        </Routes>
-      </AuthModalProvider>
-    </AuthProvider>
-      </BrowserRouter>
+            {/* If Admin has separate layout */}
+            <Route path="/admin" element={<Admin />} />
+          </Routes>
+        </AuthModalProvider>
+      </AuthProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
