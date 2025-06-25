@@ -1,0 +1,76 @@
+.sidebar {
+  width: 15vw;
+  height: 100vh;
+  background-color: #1e1e2f;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: 5vw;
+}
+
+.sidebar-inner {
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar button:hover {
+  background-color: #34344e;
+}
+
+.logout-admin-wrapper {
+  padding: 20px;
+}
+
+.logout-btn {
+  background-color: #34344e !important;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: 0.25s;
+}
+
+.logout-btn:hover {
+  border: 1px solid #8a8ac2;
+}
+
+/* Main content adjustment */
+.admin-panel {
+  display: flex;
+  width: 100%;
+}
+
+.admin-panel-content {
+  width: 78vw;
+  transition: width 0.3s ease;
+}
+
+.admin-panel-content.expanded {
+  width: 92vw;
+}

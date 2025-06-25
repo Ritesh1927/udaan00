@@ -4,6 +4,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import ContactList from "../admin/ContactList";
 import FranchiseList from "../admin/FranchiseList";
 import UserList from "../admin/UserList";
+import Sidebar from "./Sidebar";
 
 
 
@@ -21,6 +22,9 @@ const Admin = () => {
   const [filter, setFilter] = useState([]);
   const [blogs, setBlogs] = useState([]);
   const [expandedDescriptions, setExpandedDescriptions] = useState({});
+  // const [activeSection, setActiveSection] = useState("collegeAdd");
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  // const [isAuthenticated, setIsAuthenticated] = useState(true);
 
 
 
@@ -207,7 +211,7 @@ const Admin = () => {
     <Fragment>
       <div className="admin-dashboard-container">
         <div className="admin-panel ">
-          <div className="sidebar">
+          {/* <div className="sidebar">
             <div className="sidebar-inner">
               <button onClick={() => setActiveSection("collegeAdd")}>
                 College Add
@@ -241,8 +245,14 @@ const Admin = () => {
 
               
             </div>
-          </div>
-          <div className="admin-panel-content">
+          </div> */}
+        <Sidebar
+        isCollapsed={isCollapsed}
+        setIsCollapsed={setIsCollapsed}
+        setActiveSection={setActiveSection}
+        setIsAuthenticated={setIsAuthenticated}
+      />
+            <div className={`admin-panel-content ${isCollapsed ? "expanded" : ""}`}>
             <h1 className="text-center">Welcome to Admin Panel</h1>
             <br />
             {/* <button
