@@ -64,10 +64,12 @@
 .admin-panel {
   display: flex;
   width: 100%;
+  justify-content: space-between;
 }
 
 .admin-panel-content {
-  width: 78vw;
+  width: 85vw;
+  padding: 40px 70px ;
   transition: width 0.3s ease;
 }
 
