@@ -61,6 +61,12 @@ const LeadForm = ({ onClose }) => {
         examPercentage: "",
       });
       setSelectedCourse("");
+          // ✅ Close modal after 3 seconds
+    if (onClose) {
+      setTimeout(() => {
+        onClose();
+      }, 3000);
+    }
     } catch (error) {
       const errorMsg = error.response?.data?.message || "Submission failed";
       toast.error(errorMsg);
@@ -68,7 +74,7 @@ const LeadForm = ({ onClose }) => {
       setIsSubmitting(false);
     }
   };
-  return (
+  return (  
     <div className="modal-overlay">
       <div className="lead-modal">
         <button className="close-button" onClick={onClose}>
@@ -316,6 +322,15 @@ const LeadForm = ({ onClose }) => {
           </div>
         </div>
       </div>
+           <ToastContainer
+      position="top-right"
+      autoClose={3000} // automatically close after 3 seconds
+      hideProgressBar={false}
+      closeOnClick
+      pauseOnHover
+      draggable
+      theme="colored"
+    />
     </div>
   );
 };

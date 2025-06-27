@@ -298,7 +298,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <ToastContainer position="top-right" />
+        <ToastContainer  position="top-right" />
       </div>
     </>
   );

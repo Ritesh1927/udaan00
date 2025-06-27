@@ -211,41 +211,7 @@ const Admin = () => {
     <Fragment>
       <div className="admin-dashboard-container">
         <div className="admin-panel ">
-          {/* <div className="sidebar">
-            <div className="sidebar-inner">
-              <button onClick={() => setActiveSection("collegeAdd")}>
-                College Add
-              </button>
-              <button onClick={() => setActiveSection("collegeList")}>
-                College List
-              </button>
-              <button onClick={() => setActiveSection("blogAdd")}>
-                Blog Add
-              </button>
-              <button onClick={() => setActiveSection("blogList")}>
-                Blog List
-              </button>
-              <button onClick={() => setActiveSection("contactList")}>
-                Contact List
-              </button>
-              <button onClick={() => setActiveSection("franchiseList")}>
-                franchise data
-              </button>
-              <button onClick={() => setActiveSection("UserList")}>
-                 user data
-              </button>
-            </div>
-            <div className="logout-admin-wrapper">
-              <button
-                className="logout-btn"
-                onClick={() => setIsAuthenticated(false)}
-              >
-                Logout
-              </button>
-
-              
-            </div>
-          </div> */}
+      
         <Sidebar
         isCollapsed={isCollapsed}
         setIsCollapsed={setIsCollapsed}
