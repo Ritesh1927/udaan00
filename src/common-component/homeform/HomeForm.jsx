@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "../homeform/HomeForm.css";
+import "./HomeForm.css";
 import { IoPersonOutline } from "react-icons/io5";
 import { IoMailOutline } from "react-icons/io5";
 import { LuPhone } from "react-icons/lu";
 import { TbCirclePercentage } from "react-icons/tb";
-import { FaLocationDot } from "react-icons/fa6";
+// import { FaLocationDot } from "react-icons/fa6";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 const HomeForm = () => {

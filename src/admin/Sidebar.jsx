@@ -1,5 +1,5 @@
 import React from "react";
-import "../admin/Sidebaar.css"
+import "./Sidebaar.css"
 
 import {
   FaPlus,

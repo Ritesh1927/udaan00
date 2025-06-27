@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-import "../admin/Admin.css";
+import "./Admin.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 

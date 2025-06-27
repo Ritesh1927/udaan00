@@ -1,9 +1,9 @@
 import React, { Fragment, useState, useEffect } from "react";
-import "../admin/Admin.css";
+import "./Admin.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import ContactList from "../admin/ContactList";
-import FranchiseList from "../admin/FranchiseList";
-import UserList from "../admin/UserList";
+import ContactList from "./ContactList";
+import FranchiseList from "./FranchiseList";
+import UserList from "./UserList";
 import Sidebar from "./Sidebar";
 
 
@@ -646,7 +646,7 @@ const Admin = () => {
         </div>
 
         <div className="login-right">
-          <img src="https://images.unsplash.com/photo-1531496651551-427d8319623e" />
+          {/* <img src="https://images.unsplash.com/photo-1531496651551-427d8319623e" /> */}
         </div>
       </div>
     </div>
