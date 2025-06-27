@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./LeadForm.css";
-import { IoPersonOutline } from "react-icons/io5";
-import { IoMailOutline } from "react-icons/io5";
-import { LuPhone } from "react-icons/lu";
-import { TbCirclePercentage } from "react-icons/tb";
-import { FaLocationDot } from "react-icons/fa6";
+// import { IoPersonOutline } from "react-icons/io5";
+// import { IoMailOutline } from "react-icons/io5";
+// import { LuPhone } from "react-icons/lu";
+// import { TbCirclePercentage } from "react-icons/tb";
+// import { FaLocationDot } from "react-icons/fa6";
 import axios from "axios";
 import { FaTimes } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa6";
