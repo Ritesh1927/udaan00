@@ -3,18 +3,28 @@ import { useSearchParams } from "react-router-dom";
 import Star from "../assets/star.png";
 // ////////////// medical clg
 import Aims from "../assets/aimsdelhi.avif";
-import KMC from "../assets/kmc.jpg";
+import Jamiam from "../assets/JamiaMed.avif"
+import KM from "../assets/km.avif"
+import Lhmc from "../assets/Lhmc.jpeg"
 import Shardha from "../assets/shardha.png";
 import KMCM from "../assets/kmcmanglore.jpeg";
+import Psg from "../assets/Psg.jpeg"
+import IGMIMS from "../assets/Igims.jpeg"
 import AIIMSJ from "../assets/Aiimsj.png";
 import VMCC from "../assets/vmcc.jpg";
+import Msrch from "../assets/msrh.jpg"
+import Gmch from "../assets/Gmch.jpg"
+import KMC from "../assets/kmc.jpg";
 import AIIMSBH from "../assets/AiimsBh.jpg";
+import DMC from "../assets/DMC.jpg"
+import Mamc from "../assets/Mamc.jpg"
 import Saveetha from "../assets/Saveetha.jpg";
 import Stjohn from "../assets/Stjohn.jpg";
 import SRMCRI from "../assets/Srmcri.jpg";
 import AIIMSRI from "../assets/Aiimsri.jpg";
 import IPGME from "../assets/Ipgme.jpg";
 import Dattamegh from "../assets/Dattamegh.png";
+import Grant from "../assets/Grant-medical.jpg"
 // /////////////////// management clg
 import IIM from "../assets/iim.png";
 import XLRI from "../assets/xlri.jpg";
@@ -754,7 +764,7 @@ const colleges = {
         "Datta Meghe Institute of Medical Sciences is one of the popular medical institutes in Wardha having A+ NAAC Accreditation. It is an excellent place for pursuing academic excellence in Medicine, Dentistry, Nursing, Physiotherapy, Ayurveda, Pharmacy, Allied Sciences, Allied Health Sciences, Epidemiology, Online Distance Learning and Virtual Learning. The institute offers numerous programmes at the Certificate, Diploma, UG, PG and Doctoral levels. Admissions at Datta Meghe are done through merit and entrance basis.",
     },
     {
-      img: Dattamegh,
+      img: IGMIMS,
       name: " IGIMS",
       rank: "#27",
       location: "Patna, Bihar",
@@ -765,6 +775,32 @@ const colleges = {
       exams: " NEET PG",
       description:
         "IGIMS Patna Admissions 2023: Bihar NEET UG counselling 2023 seat allotment round 2 will be declared on September 11, 2023.  MCC NEET PG 2023 counselling seat allotment round 3 will be released on September 16, 2023. IGIMS Patna was founded on November 19, 1983, as an autonomous institution modelled after the All India Institute of Medical Sciences in New Delhi. The goal was to provide super-speciality medical services within Bihar. IGMS Patna courses include BSc,  MBBS, BDS, MD, M.Ch, and Diploma. IGMS Patna is a government college located in Patna, Bihar.",
+    },
+        {
+      img: Jamiam,
+      name: " Jamia Hamdard",
+      rank: "#37",
+      location: "New Delhi, Delhi",
+      rating: "4.3  ",
+      fees: "12,00,000 INR",
+      accerdition: "AICTE , NAAC",
+      package: "6 LPA",
+      exams: " NEET PG",
+      description:
+        " Jamia Hamdard is a Deemed to be University Institute, established in 1989. Jamia Hamdard is one of the best Medical colleges in New Delhi, Delhi. MBBS is one of the most popular programs at Jamia Hamdard offered for a duration of 66 Months. Jamia Hamdard MBBS fees is INR 12,00,000.",
+    },
+            {
+      img: Lhmc,
+      name: " LHMC",
+      rank: "#29",
+      location: "New Delhi, Delhi",
+      rating: "4.7 ",
+      fees: "4,483 INR",
+      accerdition: "AICTE , NAAC",
+      package: "4.2 LPA",
+      exams: " NEET PG",
+      description:
+        " LHMC is a Private Institute, established in 1916. LHMC is one of the best Medical colleges in New Delhi, Delhi. MBBS is one of the most popular programs at LHMC offered for a duration of 5 Years. LHMC MBBS fees is INR 4,483.",
     },
     {
       img: KMCM,
@@ -793,7 +829,98 @@ const colleges = {
       description:
         "CMC Vellore admission offers intensive, full-time Master of Science (M.Sc.) programme for students who want to continue their studies in science. The M.Sc. specializations offered by CMC Vellore are Otorhinolaryngology, General Surgery, Obstetrics & Gynaecology, Ophthalmology, Orthopedics, ENT, Bioengineering. The total duration of M.Sc. programmes at CMC Vellore is 2-3 years. ",
     },
-
+  {
+        img: Grant,
+        name: " Grant Medical College ",
+        rank: "#33  ",
+        location: "Mumbai, Maharashtra",
+        rating: "5.0",
+        fees: "103,200 - 571,500 INR",
+        accerdition: "NAAC A+ , NBA ",
+        package: "₹10–15 LPA",
+        exams: "NEET ",
+        description:
+          "Grant Medical College is a Government Institute, established in 1845. Grant Medical College is one of the best Medical colleges in Mumbai, Maharashtra. MBBS is one of the most popular programs at Grant Medical College offered for a duration of 6 Years.",
+      },
+         {
+        img: Gmch,
+        name: "  GMCH Chandigarh",
+        rank: "#35  ",
+        location: "Chandigarh, Chandigarh",
+        rating: "3.7",
+        fees: " ₹78,380 INR",
+        accerdition: "MCI ",
+        package: "₹9.5 LPA",
+        exams: "NEET ",
+        description:
+          "GMCH Chandigarh is a Government Institute, established in 1991. GMCH Chandigarh is one of the best Medical colleges in Chandigarh. MBBS is one of the most popular programs at GMCH Chandigarh offered for a duration of 5 Years.",
+      },
+           {
+        img: Mamc,
+        name: "  MAMC Delhi",
+        rank: "#35  ",
+        location: "Delhi ",
+        rating: "4.5",
+        fees: " ₹10,000 INR",
+        accerdition: "MCI ",
+        package: "₹2.76LPA",
+        exams: "NEET ",
+        description:
+          "MAMC Delhi is a Public Institute, established in 1959. MAMC Delhi is one of the best Medical colleges in Delhi. MBBS is one of the most popular programs at MAMC Delhi offered for a duration of 66 Months. MAMC Delhi MBBS fees is INR 10,000.",
+      },
+                       {
+        img: Psg,
+        name: "  PSG Institute of Medical Sciences & Research",
+        rank: "#41 ",
+        location: "Coimbatore, Tamil Nadu",
+        rating: "3.8",
+        fees: " ₹4,50,000 INR",
+        accerdition: "MCI ",
+        package: "₹ 9.30 LPA",
+        exams: "NEET  ss",
+        description:
+          " PSG Institute of Medical Sciences & Research is a Private Institute, established in 1985. PSG Institute of Medical Sciences & Research is one of the best Medical colleges in Coimbatore, Tamil Nadu. MBBS is one of the most popular programs at PSG Institute of Medical Sciences & Research offered for a duration of 5.5 - 66 Years. PSG Institute of Medical Sciences & Research MBBS fees is INR 4,50,000.",
+      },
+             {
+        img:Msrch,
+        name: "  MSRMC Bangalore",
+        rank: "#46 ",
+        location: "Bengaluru, Karnataka",
+        rating: "3.5",
+        fees: " ₹98,08,000 INR",
+        accerdition: "MCI ,NABL ",
+        package: "₹6.6 LPA",
+        exams: "NEET  ss",
+        description:
+          "MSRMC Bangalore is a Private Institute, established in 1979. MSRMC Bangalore is one of the best Medical colleges in Bengaluru, Karnataka. MBBS is one of the most popular programs at MSRMC Bangalore offered for a duration of 4 Years.s",
+      },
+                 {
+        img: DMC,
+        name: "  DMCH Ludhiana",
+        rank: "#40  ",
+        location: "Ludhiana, Punjab ",
+        rating: "4.2",
+        fees: " ₹11,00,000 INR",
+        accerdition: "MCI ",
+        package: "₹Rs 7 LPA",
+        exams: "NEET ",
+        description:
+          "DMCH Ludhiana is a Private Institute, established in 1964. DMCH Ludhiana is one of the best Medical colleges in Ludhiana, Punjab. MBBS is one of the most popular programs at DMCH Ludhiana offered for a duration of 66 Months.",
+      },
+        {
+        img: KM,
+        name: "  KM University",
+        rank: "#33  ",
+        location: "Mathura, Uttar Pradesh",
+        rating: "5.0",
+        fees: " 20,000 to Rs 1,40,000 INR",
+        accerdition: "NAAC ",
+        package: "₹960,000 LPA",
+        exams: "NEET ",
+        description:
+          "KM University is a Private University, established in . KM University is one of the best Medical colleges in Mathura, Uttar Pradesh. MBBS is one of the most popular programs at KM University offered for a duration of 5 Years.",
+      },
+              
     {
       img: Shardha,
       name: " Sharda University  ",
