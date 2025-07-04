@@ -3,6 +3,7 @@ import "../dasboard-pages/OnlineMba.css";
 import MBAbanner from "../../src/assets/Banners-08.jpg";
 import Mba from "../assets/Mba1.jpg";
 import Mba2 from "../assets/mba2.avif";
+import OnlineMbaClg from "../component/onlinembaclg/OnlineMbaClg";
 
 const OnlineMba = () => {
   return (
@@ -130,6 +131,7 @@ const OnlineMba = () => {
           step toward your leadership journey.
         </p>
       </section>
+      <OnlineMbaClg/>
     </>
   );
 };
