@@ -174,7 +174,7 @@ const Admin = () => {
         </div>
 
         {/* blogs display container */}
-        <div className="blogs-display-container">
+        {/* <div className="blogs-display-container">
           <h2>Blogs</h2>
           {blogs.map((blog) => (
             <div key={blog._id}>
@@ -185,7 +185,7 @@ const Admin = () => {
               <img src={blog.image} alt={blog.title} />
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </Fragment>
   ) : (

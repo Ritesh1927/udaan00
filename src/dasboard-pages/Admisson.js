@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Star from "../assets/star.png";
 // ////////////// medical clg
@@ -77,6 +77,7 @@ import { LiaCertificateSolid } from "react-icons/lia";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import { PiCertificate } from "react-icons/pi";
 import "./Admisson.css";
+import axios from "axios";
 
 // Change this constant to adjust the description cutoff
 const DESCRIPTION_LIMIT = 220;
@@ -984,6 +985,14 @@ const Admisson = () => {
   const [activeTab, setActiveTab] = useState(urlTab || "btech");
   const [expanded, setExpanded] = useState({});
 
+
+// --- state ----
+
+  // const [Colleges, setColleges] = useState([]);
+
+
+  
+
   // Sync with URL when tab changes
   const handleTabClick = (type) => {
     setActiveTab(type);
@@ -995,8 +1004,88 @@ const Admisson = () => {
     setExpanded((prev) => ({ ...prev, [idx]: !prev[idx] }));
   };
 
+  // ------ functions ------
+
+  // const fetchColleges = async () => {
+  //   const response = await axios.get("/api/college/list");
+    
+  //   setColleges(response.data);
+    
+  // };
+  //   useEffect(() => {
+  //     fetchColleges(); 
+  //   }, []);
+
+
+
   return (
     <Fragment>
+
+
+{/* <div>
+      {Colleges.map((college) => (
+                        <div className="Admin-clg-wrapper" key={college._id}>
+                          <div className="admin-clg-info-wrapper">
+                            <div className="admin-clg-img">
+                              <img
+                                src={college.imageUrl}
+                                alt={college.collegeName}
+                                // width="100"
+                              />
+                            </div>
+                            <div className="admin-clg-info">
+                              <h1 className="text-center admin-clg-name">
+                                {college.collegeName}
+                              </h1>
+                              <div className=" name-clg-category-section">
+                                <div>
+                                  <span className="admin-num-heading">
+                                    nirf -
+                                  </span>{" "}
+                                  {college.nirf}
+                                </div>
+                                <div>{college.category} college</div>
+                              </div>
+                              <div className="name-clg-category-section">
+                                <div>
+                                  <span className="admin-num-heading">
+                                    Address -
+                                  </span>{" "}
+                                  {college.address}
+                                </div>
+
+                                <div>
+                                  <span className="admin-num-heading">
+                                    Avg Package -
+                                  </span>{" "}
+                                  {college.avgPackage}
+                                </div>
+                              </div>
+                              <div>
+                                <span className="admin-num-heading">
+                                  Fees -
+                                </span>{" "}
+                                {college.fees}
+                              </div>
+                              <div>
+                                <span className="admin-num-heading">
+                                  Accreditation -
+                                </span>{" "}
+                                {college.accreditation}
+                              </div>
+                              <div>
+                                <span className="admin-num-heading">
+                                  Ratings -
+                                </span>{" "}
+                                {college.rating}
+                              </div>
+                              
+                              </div>
+                          </div>
+                        </div>
+                      ))}
+    </div> */}
+
       {/* //////////////////////////////////////////////////// */}
       <section className="college-section container">
         <h2 className="section-title">Explore Colleges by Category</h2>
