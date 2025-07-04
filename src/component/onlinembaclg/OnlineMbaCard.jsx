@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGraduationCap, FaCalendarAlt, FaDownload } from "react-icons/fa";
+import { FaGraduationCap, FaCalendarAlt } from "react-icons/fa";
 import "./OnlineMbaClg.css";
 const OnlineMbaCard = ({ college }) => {
   return (

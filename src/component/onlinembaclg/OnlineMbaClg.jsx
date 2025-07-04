@@ -8,7 +8,7 @@ import opu from "../../assets/opu.svg"
 import Birla from "../../assets/Birla.svg"
 import opj from "../../assets/opj.svg"
 import IMT from "../../assets/IMT.svg"
-import { FaGraduationCap, FaCalendarAlt, FaDownload } from "react-icons/fa";
+// import { FaGraduationCap, FaCalendarAlt, FaDownload } from "react-icons/fa";
 import OnlineMbaCard from "./OnlineMbaCard";
 
 const collegeData = [
