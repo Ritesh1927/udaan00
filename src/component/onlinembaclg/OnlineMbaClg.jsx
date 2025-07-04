@@ -121,7 +121,7 @@ return (
         <div className="container mt15">
             <h1 className="online-mba-clg-heading">
                 {" "}
-                Online MBA Programs From <span> Top Universities </span>
+                Online MBA Programs From <span> Top Universities </span>Powered By upgrad
             </h1>
             <hr className="mt15 mb15" />
 
