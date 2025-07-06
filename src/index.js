@@ -37,6 +37,7 @@ import Blogs from "./dasboard-pages/Blogs";
 import CollegeList from "./admin/CollegeList";
 import Career from "./common-component/career/Career";
 import { AuthModalProvider } from "./auth/AuthModalContext";
+import UniversityDetail from "./component/abroaduniversity/UniversityDetail";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -73,7 +74,7 @@ root.render(
               <Route path="blogs" element={<Blogs />} />
               <Route path="collegelist" element={<CollegeList />} />
               <Route path="career" element={<Career />} />
-
+              <Route path="/university/:name" element={<UniversityDetail />} />
             {/* <= add all new routes here  */}
 
             {/* <Route

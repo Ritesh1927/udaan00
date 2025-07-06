@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../abroaduniversity/AbroadUniversity.css";
 import Birmingham from "../../assets/Birmingham.jpg";
 import Conventry from "../../assets/conventry.jpg";
@@ -17,29 +18,48 @@ import Parkland from "../../assets/parkland.jpg";
 import Universitymalbourne from "../../assets/universitymalbourne.jpeg";
 const universityData = {
   "United Kingdom": [
-    {
-      name: "University of Birmingham",
-      location: "Birmingham, United Kingdom",
-      courses: "497+ Courses",
-      logo: Birmingham,
-    },
+  {
+  name: "University of Birmingham",
+  location: "Birmingham, United Kingdom",
+  courses: "497+ Courses",
+  logo: Birmingham,
+  about: "The University of Birmingham is a public research university...",
+  website: "https://www.birmingham.ac.uk",
+  tuition: "£15,000 - £20,000 per year",
+  intake: "September, January",
+},
     {
       name: "Coventry university",
       location: "Priory Street, Coventry, United Kingdom",
       courses: "519+ Courses",
       logo: Conventry,
+      about: "The University of Birmingham is a public research university...",
+      tuition: "£15,000 - £20,000 per year",
+      intake: "September, January",
+      website: "https://www.coventry.ac.uk/international-students-hub/c/welcome-south-asia-students/?utm_campaign=nn-international-202425-phase-2&utm_source=google&utm_medium=cpc&utm_term=study%20at%20coventry%20university&campaign_id=22310163303&gad_source=1&gad_campaignid=22310163303&gbraid=0AAAAAC8T5X3jVOm66OJ2-mtce4psag6Gx&gclid=Cj0KCQjwmqPDBhCAARIsADorxIbZCtLi3WK1Q9UKDEFkrV6omykxrX_g5_CXmDYDuhkiKmXdjk4D4-EaAhBmEALw_wcB"
     },
     {
       name: "University of GREENWICH",
       location: "London, United Kingdom",
       courses: "450+ Courses",
       logo: Greenwich,
+      about: "The University of Birmingham is a public research university...",
+      website: "https://www.gre.ac.uk/",
+      tuition: "£15,000 - £20,000 per year",
+      intake: "September, January",
+
+      
     },
     {
       name: "Middlesex University",
       location: "Hendon, London , United Kingdom",
       courses: "503+ Courses",
       logo: Middlesex,
+            about: "https://mdxuk.co/?utm_campaign=application&utm_source=google&gad_source=1",
+      website: "https://www.gre.ac.uk/",
+      tuition: "£15,000 - £20,000 per year",
+      intake: "September, January",
+
     },
     {
       name: "HERIOT WATT University",
@@ -140,6 +160,7 @@ const countries = [
   "Australia",
 ];
 const AbroadUniversity = () => {
+  const navigate = useNavigate();
   const [selectedCountry, setSelectedCountry] = useState("United Kingdom");
   return (
     <div className="university-wrapper">
@@ -152,9 +173,8 @@ const AbroadUniversity = () => {
         {countries.map((country) => (
           <button
             key={country}
-            className={`tab-button ${
-              selectedCountry === country ? "active" : ""
-            }`}
+            className={`tab-button ${selectedCountry === country ? "active" : ""
+              }`}
             onClick={() => setSelectedCountry(country)}
           >
             {country}
@@ -165,7 +185,13 @@ const AbroadUniversity = () => {
       <div className="university-grid">
         {universityData[selectedCountry].length > 0 ? (
           universityData[selectedCountry].map((uni, idx) => (
-            <div className="university-card" key={idx}>
+            <div
+              className="university-card"
+              key={idx}
+              onClick={() =>
+                navigate(`/university/${encodeURIComponent(uni.name)}`, { state: { uni } })
+              }
+            >
               <div className="logo-name-wrapper">
                 <img src={uni.logo} alt={uni.name} className="logo" />
               </div>
