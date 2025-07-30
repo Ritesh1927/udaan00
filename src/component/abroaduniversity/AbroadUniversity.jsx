@@ -163,7 +163,7 @@ const AbroadUniversity = () => {
   const navigate = useNavigate();
   const [selectedCountry, setSelectedCountry] = useState("United Kingdom");
   return (
-    <div className="university-wrapper">
+    <div className="university-wrapper ">
       <p className="why-heading new-heading">
         Top Universities to{" "}
         <span className="why-heading-color"> Study Abroad</span>

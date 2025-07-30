@@ -22,7 +22,7 @@ const AbroadStudy = () => {
           <img src={Sbanner} alt="Banner" />
         </div>
         <div className="container">
-          <div className="first-container-container ">
+          <div className="first-container-container ">  
             <p className="why-heading">
               Why Choose <span className="why-heading-color">Udaan360 ?</span>
             </p>
