@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.813eb5f1.css",
-    "main.js": "/static/js/main.2be3f0b3.js",
+    "main.css": "/static/css/main.9d0dd555.css",
+    "main.js": "/static/js/main.3a17c4b3.js",
     "static/js/453.ac42ff46.chunk.js": "/static/js/453.ac42ff46.chunk.js",
     "static/media/About0002.png": "/static/media/About0002.c49bc4b800322fd393ff.png",
     "static/media/councel2.png": "/static/media/councel2.efdaf72c308618cc8bc4.png",
@@ -26,15 +26,14 @@
     "static/media/jadhavpur.png": "/static/media/jadhavpur.e36503a192a717594a58.png",
     "static/media/hospital1.jpg": "/static/media/hospital1.f71279dd65c1025ae608.jpg",
     "static/media/service1.jpg": "/static/media/service1.834cdfff7ff721ade511.jpg",
-    "static/media/c-banner1.png": "/static/media/c-banner1.d75336b73fb5a4e359e4.png",
     "static/media/cmr.png": "/static/media/cmr.3de4a252e4462db7136f.png",
     "static/media/Gmch.jpg": "/static/media/Gmch.c94ea4c34b6f82faffdb.jpg",
     "static/media/universities100.png": "/static/media/universities100.35badddfe0c128882890.png",
     "static/media/iitdelhi.avif": "/static/media/iitdelhi.20b63f2f5cad53838cd8.avif",
     "static/media/shardha.png": "/static/media/shardha.87c82cc16c27ca2da5c1.png",
     "static/media/Ipgme.jpg": "/static/media/Ipgme.bc35c8a00d29d9e49a3c.jpg",
-    "static/media/locationbanner.jpg": "/static/media/locationbanner.6546fa1643d3dd652bb5.jpg",
     "static/media/mandi.png": "/static/media/mandi.6684278b549f6de61b74.png",
+    "static/media/Ajinkya-2.webp": "/static/media/Ajinkya-2.9c619e155ea401fd75d4.webp",
     "static/media/Stjohn.jpg": "/static/media/Stjohn.f0faec5391e5d3394dab.jpg",
     "static/media/iitkanpur.png": "/static/media/iitkanpur.8833e7638b98ff08ea82.png",
     "static/media/greatplains.png": "/static/media/greatplains.9d11b2a715e7466daf9d.png",
@@ -176,12 +175,12 @@
     "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
-    "main.813eb5f1.css.map": "/static/css/main.813eb5f1.css.map",
-    "main.2be3f0b3.js.map": "/static/js/main.2be3f0b3.js.map",
+    "main.9d0dd555.css.map": "/static/css/main.9d0dd555.css.map",
+    "main.3a17c4b3.js.map": "/static/js/main.3a17c4b3.js.map",
     "453.ac42ff46.chunk.js.map": "/static/js/453.ac42ff46.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.813eb5f1.css",
-    "static/js/main.2be3f0b3.js"
+    "static/css/main.9d0dd555.css",
+    "static/js/main.3a17c4b3.js"
   ]
 }
