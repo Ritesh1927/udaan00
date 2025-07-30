@@ -16,6 +16,28 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.Ajinky-banner-heading {
+    font-size: 25px;
+}
+
+.banner-content-ajinky-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 25px ;
+}
+
+.Intellipat-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    color: #fff;
+}
+
+.Intellipat-container p {
+    font-size: 14px;
+}
+
 .udan-carousel .slick-slide img {
     width: 100%;
     height: 100%;
@@ -303,11 +325,26 @@
     }
 
     .udan-carousel .slick-slide img {
-        width: 80%;
+        width: 100%;
     }
 
     .udan-carousel .banner-content {
         font-size: 18px;
+    }
+
+    .Ajinky-banner-heading {
+        font-size: 18px;
+    }
+    .sunstone-container{
+        margin-top: 10px ;
+    }
+
+    .Intellipat-container{
+        width: 100%;
+    }
+
+    .banner-content-ajinky-content {
+        display: block;
     }
 
     .udan-carousel .Explore-btn {

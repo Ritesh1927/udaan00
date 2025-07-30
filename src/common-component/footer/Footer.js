@@ -153,7 +153,7 @@ const Footer = () => {
           {/* <!-- Footer Bottom --> */}
           <div className="footer-bottom">
             <div className="footer-brand">
-              <h4>Division of Udaan Eduservices</h4>
+              <h4> Uudaan360 Edutech PVT LTD</h4>
               <p>
                 Have enquiries? Don't hesitate to drop us an email at{" "}
                 <a href="mailto:info@udaan360.com">info@udaan360.com</a>, and
