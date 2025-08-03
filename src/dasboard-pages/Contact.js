@@ -1,5 +1,3 @@
-
-
 import { FaPhone } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { FaClock } from "react-icons/fa";
@@ -8,10 +6,8 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 import React, { useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'; // ✅ Fix added here
 import "./Contact.css";
-
-
-// ... (imports section finished)
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,9 +15,9 @@ const Contact = () => {
     email: "",
     mobile: "",
     percentage: "",
-    appearedInExam: "no", // new field
-    examName: "", // new field
-    examPercentage: "", // new field
+    appearedInExam: "no",
+    examName: "",
+    examPercentage: "",
   });
   const [selectedCourse, setSelectedCourse] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -41,29 +37,27 @@ const Contact = () => {
 
     try {
       const payload = { ...formData, course: selectedCourse };
-      // If user didn't appear in exam, remove exam related fields from payload
       if (formData.appearedInExam === "no") {
         delete payload.examName;
         delete payload.examPercentage;
       }
-      console.log("Payload:", payload);
-      // console.log(payload);
       const response = await axios.post("/api/contact", payload, {
         headers: { "Content-Type": "application/json" },
       });
 
-      toast.success(response.data.message);
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        mobile: "",
-        percentage: "",
-        appearedInExam: "no",
-        examName: "",
-        examPercentage: "",
-      });
-      setSelectedCourse("");
+      toast.success(response.data.message || "Form submitted successfully!");
+setTimeout(() => {
+  setFormData({
+    name: "",
+    email: "",
+    mobile: "",
+    percentage: "",
+    appearedInExam: "no",
+    examName: "",
+    examPercentage: "",
+  });
+  setSelectedCourse("");
+}, 200);
     } catch (error) {
       const errorMsg = error.response?.data?.message || "Submission failed";
       toast.error(errorMsg);
@@ -76,26 +70,19 @@ const Contact = () => {
     <>
       <div className="contact-us-main-inner-section">
         <div className="contact-us-main-section">
-
-          {/* <!-- Simple Header --> */}
           <div className="contact-page-header">
             <h2>Contact Us</h2>
             <p>Ready to start your educational journey? Get in touch with us for personalized counselling and guidance.</p>
           </div>
 
-          {/* <!-- Main Content Grid --> */}
           <div className="contact-page-grid">
             <div className="contact-page-form-container">
               <h3 className="contact-page-form-title">Register for Counselling</h3>
 
-
               <form onSubmit={handleSubmit}>
-
-
                 <div class="contact-page-form-row">
                   <div className="contact-page-form-group">
                     <label for="firstName">Full Name *</label>
-                    {/* <input type="text" id="firstName" name="firstName" required /> */}
                     <input
                       type="text"
                       name="name"
@@ -104,7 +91,6 @@ const Contact = () => {
                       onFocus={() => setFocusedField("name")}
                       onBlur={() => setFocusedField("")}
                       placeholder="Full Name"
-                      // className="register-input-section"
                       required
                     />
                   </div>
@@ -118,7 +104,6 @@ const Contact = () => {
                       onFocus={() => setFocusedField("mobile")}
                       onBlur={() => setFocusedField("")}
                       placeholder="Phone Number "
-                      // className="register-input-section"
                       required
                     />
                   </div>
@@ -134,12 +119,11 @@ const Contact = () => {
                       onFocus={() => setFocusedField("email")}
                       onBlur={() => setFocusedField("")}
                       placeholder="Email Address "
-                      // className="register-input-section"
                       required
                     />
                   </div>
                   <div className="contact-page-form-group">
-                    <label for="12th percentage"> 12th Percentage * </label>
+                    <label for="12th percentage">12th Percentage *</label>
                     <input
                       type="number"
                       name="percentage"
@@ -148,27 +132,20 @@ const Contact = () => {
                       onFocus={() => setFocusedField("percentage")}
                       onBlur={() => setFocusedField("")}
                       placeholder="12th Percentage"
-                      // className="register-input-section"
                       required
                     />
                   </div>
-
-
                 </div>
                 <div className="contact-page-form-group">
                   <label for="email">Select Course *</label>
-
-                  {/* Course Dropdown */}
                   <select
-                    className={`course-dropdown ${focusedField === "dropdown" ? "focused" : ""
-                      }`}
+                    className={`course-dropdown ${focusedField === "dropdown" ? "focused" : ""}`}
                     value={selectedCourse}
                     onChange={(e) => setSelectedCourse(e.target.value)}
                     onFocus={() => setFocusedField("dropdown")}
                     onBlur={() => setFocusedField("")}
                     required
                     name="dropdown"
-                    type="dropdown"
                   >
                     <option value="" disabled>
                       Select Course
@@ -179,7 +156,6 @@ const Contact = () => {
                       </option>
                     ))}
                   </select>
-
                 </div>
                 <div className="contact-page-form-group">
                   <label>Did you appear in any competitive exam? *</label>
@@ -206,6 +182,7 @@ const Contact = () => {
                     </label>
                   </div>
                 </div>
+
                 {formData.appearedInExam === "yes" && (
                   <div className="contact-page-form-row">
                     <div className="contact-page-form-group">
@@ -239,9 +216,6 @@ const Contact = () => {
                   </div>
                 )}
 
-
-
-
                 <div className="register-btn-container">
                   <button
                     className=" contact-page-submit-button"
@@ -252,11 +226,9 @@ const Contact = () => {
                   </button>
                 </div>
               </form>
-
             </div>
-            {/* <!-- Contact Info Section --> */}
+
             <div className="contact-page-info">
-              {/* <!-- Locations --> */}
               <div className="contact-page-info-card">
                 <h3>Our Locations</h3>
 
@@ -285,7 +257,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* <!-- Contact Details --> */}
               <div className="contact-page-info-card">
                 <h3>Get in Touch</h3>
                 <div className="contact-page-details">
@@ -322,7 +293,7 @@ const Contact = () => {
                   </div>
                   <div className="contact-page-item">
                     <div className="contact-page-icon">
-                      <i className="fas fa-clock"><FaClock /></i>
+                      <FaClock />
                     </div>
                     <div className="contact-page-text">
                       <div className="contact-page-label">Hours</div>
@@ -350,8 +321,6 @@ const Contact = () => {
             </div>
           </div>
 
-
-
           <div className="contact-page-map-section">
             <div className="contact-page-map-header">
               <h3>
@@ -369,9 +338,12 @@ const Contact = () => {
               style={{ border: 0, width: '100%', height: '400px' }}
             ></iframe>
           </div>
-          <ToastContainer position="top-right" />
+
+       
         </div>
       </div>
+         {/* ✅ ToastContainer inserted correctly */}
+          <ToastContainer  ClassName="my-toast-container" position="top-right" />
     </>
   );
 };

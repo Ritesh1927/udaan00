@@ -13,7 +13,7 @@ function App() {
       <AuthProvider>
         <LeadTile />
         <Navbar />
-        <div className="main-outlet-container">
+        <div style={{ marginTop: '80px' }} className="main-outlet-container">
           <Outlet />
         </div>
         <WhatsAppButton />
