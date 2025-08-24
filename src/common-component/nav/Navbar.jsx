@@ -82,8 +82,8 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/franchise" onClick={() => setMobileMenuOpen(false)}>
-                  Franchise
+                <Link to="/eduvoyage" onClick={() => setMobileMenuOpen(false)}>
+              Eduvoyage
                 </Link>
               </li>
             </ul>

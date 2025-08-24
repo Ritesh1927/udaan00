@@ -14,6 +14,7 @@ const CustomDropdown = () => {
     { label: "Study Abroad", path: "/aboradstudy" },
     { label: "Skilled Migration ", path: "/skillmigration" },
     { label: " Online MBA ", path: "/onlineMba " },
+    { label: " Franchise", path: "/franchise " },
   ];
 
   // Function to handle selection
