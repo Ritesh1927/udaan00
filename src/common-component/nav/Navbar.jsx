@@ -12,12 +12,10 @@ import { useAuthModal } from "../../auth/useAuthModal";
 const Navbar = () => {
   const { user } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const { openModal } = useAuthModal();
 
   const handleLoginClick = () => openModal("login");
-  const handleRegisterClick = () => openModal("register");
 
   const handleProfileClick = () => {
     openModal("profile");
@@ -25,25 +23,16 @@ const Navbar = () => {
   };
 
   const toggleMobileMenu = () => setMobileMenuOpen((prev) => !prev);
-  const toggleMobileDropdown = (e) => {
-    e.preventDefault();
-    setMobileDropdownOpen((prev) => !prev);
-  };
 
   const handleMobileLogin = () => {
     openModal("login");
     setMobileMenuOpen(false);
   };
 
-  const handleMobileRegister = () => {
-    openModal("register");
-    setMobileMenuOpen(false);
-  };
-
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setMobileDropdownOpen(false);
+        // Agar dropdown hota to yaha close karna tha, abhi koi dropdown use nahi hai
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -51,7 +40,6 @@ const Navbar = () => {
   }, []);
 
   return (
-
     <nav className="navbar">
       <div className="nav-container">
         <div className="logo-section">
@@ -101,15 +89,11 @@ const Navbar = () => {
                 className="nav-login-btn login-btn"
                 onClick={handleLoginClick}
               >
-                <i><FaUser /></i>
+                <i>
+                  <FaUser />
+                </i>
                 Login
               </button>
-              // <button
-              //   className="nav-register-btn register-btn"
-              //   onClick={handleRegisterClick}
-              // >
-              //   Register
-              // </button>
             )}
           </div>
         </div>
@@ -140,8 +124,8 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/franchise" onClick={toggleMobileMenu}>
-              Franchise
+            <Link to="/eduvoyage" onClick={toggleMobileMenu}>
+              Eduvoyage
             </Link>
           </li>
           {user ? (
@@ -157,27 +141,15 @@ const Navbar = () => {
           ) : (
             <>
               <li>
-                <button
-                  className="mobile-login-btn "
-                  onClick={handleMobileLogin}
-                >
+                <button className="mobile-login-btn" onClick={handleMobileLogin}>
                   <FaUser /> Login
                 </button>
               </li>
-              {/* <li>
-                <button
-                  className="mobile-register-btn"
-                  onClick={handleMobileRegister}
-                >
-                  Register
-                </button>
-              </li> */}
             </>
           )}
         </ul>
       </div>
     </nav>
-
   );
 };
 

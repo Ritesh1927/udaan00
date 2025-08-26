@@ -1,11 +1,11 @@
 /* Navigation Bar */
 .navbar {
- background: white;
+    background: white;
     padding: 8px 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     /* position: relative; */
     overflow: visible;
-    z-index: 1000;
+    z-index: 9999;
     position: fixed;
     width: 100%;
     font-family: 'Arial', sans-serif;
@@ -488,7 +488,9 @@
         background: none;
         border: none;
         cursor: pointer;
-        color: #333;
+        color: #333 !important;
+        position: relative;
+        z-index: 10000;
         margin-left: auto;
     }
 
