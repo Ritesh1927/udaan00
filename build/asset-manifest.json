@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.fec18390.css",
-    "main.js": "/static/js/main.30ae9a88.js",
+    "main.css": "/static/css/main.40fdc6f6.css",
+    "main.js": "/static/js/main.cd1c27c1.js",
     "static/js/453.ac42ff46.chunk.js": "/static/js/453.ac42ff46.chunk.js",
     "static/media/About0002.png": "/static/media/About0002.c49bc4b800322fd393ff.png",
     "static/media/councel2.png": "/static/media/councel2.efdaf72c308618cc8bc4.png",
@@ -47,7 +47,6 @@
     "static/media/bookscomp.jpg": "/static/media/bookscomp.edd300697d646ea7a992.jpg",
     "static/media/anjali2.jpg": "/static/media/anjali2.11e87aa635639cb7d31f.jpg",
     "static/media/DMC.jpg": "/static/media/DMC.b5665f25506cf583d8e6.jpg",
-    "static/media/handholding.png": "/static/media/handholding.65c0ec7b27b95b40e427.png",
     "static/media/portugal.png": "/static/media/portugal.5b4124f87de8251629b6.png",
     "static/media/auburn.jpg": "/static/media/auburn.700ce6b0d4439987d5d0.jpg",
     "static/media/poojamaam.png": "/static/media/poojamaam.300a18dd75d2fe6f154b.png",
@@ -145,7 +144,6 @@
     "static/media/Jharkhand.jpg": "/static/media/Jharkhand.191201a7c24865845348.jpg",
     "static/media/vinay.jpg": "/static/media/vinay.db6e0c0c3edb433f6d59.jpg",
     "static/media/testPrep.png": "/static/media/testPrep.1908589d45d316aefbfe.png",
-    "static/media/misson.png": "/static/media/misson.e8466461d3b481027641.png",
     "static/media/IMT.svg": "/static/media/IMT.cefa5c4cbe7f6c79677379a4b4ec2cd7.svg",
     "static/media/Kerala.png": "/static/media/Kerala.2e3296b613f44885ea11.png",
     "static/media/Birla.svg": "/static/media/Birla.1b986befbf1168c0bd246e106886ab1a.svg",
@@ -157,7 +155,6 @@
     "static/media/sikkim.png": "/static/media/sikkim.4b6f6f26141be2973144.png",
     "static/media/Assam.jpg": "/static/media/Assam.c7434b3bf0561b90ffe1.jpg",
     "static/media/Ap-Board.png": "/static/media/Ap-Board.a8ff74e274080efc17c5.png",
-    "static/media/visson.png": "/static/media/visson.8d445b4cd5992052a920.png",
     "static/media/mpboard.jpg": "/static/media/mpboard.4d8d93fe7c07143744d2.jpg",
     "static/media/cgboard.jpg": "/static/media/cgboard.1f0f9b4a249039276f79.jpg",
     "static/media/Goldengate.svg": "/static/media/Goldengate.b9dcd4a1c8bed201d5b5e55d4abc2e1c.svg",
@@ -174,12 +171,12 @@
     "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
-    "main.fec18390.css.map": "/static/css/main.fec18390.css.map",
-    "main.30ae9a88.js.map": "/static/js/main.30ae9a88.js.map",
+    "main.40fdc6f6.css.map": "/static/css/main.40fdc6f6.css.map",
+    "main.cd1c27c1.js.map": "/static/js/main.cd1c27c1.js.map",
     "453.ac42ff46.chunk.js.map": "/static/js/453.ac42ff46.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fec18390.css",
-    "static/js/main.30ae9a88.js"
+    "static/css/main.40fdc6f6.css",
+    "static/js/main.cd1c27c1.js"
   ]
 }
