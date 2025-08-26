@@ -21,7 +21,7 @@ const Carousel = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
-    autoplay: false,
+    autoplay: true,
     swipeToSlide: true,
   };
 
@@ -189,10 +189,10 @@ const Carousel = () => {
                   <h2 className="mb10">
                     Intellipaat
                   </h2>
-                  <b className="mb5"> Colleges </b> 
-                  <p  className="mb5"> DY Patil University (Pune) <br />  S-VYASA University (Bengaluru)</p>
+                  <b className="mb5"> Colleges </b>
+                  <p className="mb5"> DY Patil University (Pune) <br />  S-VYASA University (Bengaluru)</p>
                   <p>
-                   Master Data Science, Machine Learning, Python, SQL, Power BI & Generative AI with this career-focused course by Intellipaat, in collaboration with iHUB, IIT Roorkee and Microsoft. Get hands-on training with real-time projects and earn a certificate from top institutions.
+                    Master Data Science, Machine Learning, Python, SQL, Power BI & Generative AI with this career-focused course by Intellipaat, in collaboration with iHUB, IIT Roorkee and Microsoft. Get hands-on training with real-time projects and earn a certificate from top institutions.
                   </p>
                 </div>
                 {/* ///////////////////////////// */}
@@ -200,8 +200,8 @@ const Carousel = () => {
                   <h2 className="mb10">
                     Sunstone
                   </h2>
-                  <b  className="mb5">Colleges </b> 
-                  <p  className="mb5">Ajeenkya DY Patil University, Pune (Pune) <br />  Rayat Bahra University, (Mohali) </p>
+                  <b className="mb5">Colleges </b>
+                  <p className="mb5">Ajeenkya DY Patil University, Pune (Pune) <br />  Rayat Bahra University, (Mohali) </p>
                   <p>Sunstone partners with 35+ colleges to offer MBA, BBA, BCA & more with 100% placement support, industry certifications, soft skills training, real-world projects, career mentorship, and access to top recruiters like Google, Amazon & Flipkart.</p>
                 </div>
 

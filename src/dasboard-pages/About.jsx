@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./About.css";
 // Importing image assets
-import study2 from "../assets/handholding.png";
+// import study2 from "../assets/handholding.png";
 import Abtbanner from "../assets/About0002.png";
 import Sir from "../assets/Sirimg01.png";
 import Mam from "../assets/poojamaam.png";
 import Kunalsir from "../assets/kunalsir.png";
-import Vison from "../assets/visson.png";
-import Misson from "../assets/misson.png";
+// import Vison from "../assets/visson.png";
+// import Misson from "../assets/misson.png";
 
 // Importing React Icons (Font Awesome icons converted to React Icons)
 import {
@@ -28,22 +28,15 @@ const About = () => {
 
   // useEffect hook to set up the IntersectionObserver
   useEffect(() => {
-    // Check if the ref is connected to a DOM element
     if (statsSectionRef.current) {
-      // Create a new IntersectionObserver instance
+      const element = statsSectionRef.current; // <- yaha copy kar liya
       const observer = new IntersectionObserver(
         (entries) => {
-          // Loop through each entry (though we only have one target)
           entries.forEach((entry) => {
-            // If the element is intersecting (in view)
             if (entry.isIntersecting) {
-              // Set hasAnimated to true to start the animation
               setHasAnimated(true);
             } else {
-              // If the element is not intersecting (out of view), reset hasAnimated
-              // This will cause the animation to restart if scrolled back into view
               setHasAnimated(false);
-              // Optionally, reset numbers to 0 when out of view
               const statNumbers = entry.target.querySelectorAll(".stat-number");
               statNumbers.forEach((numElement) => {
                 numElement.textContent = "0";
@@ -51,25 +44,17 @@ const About = () => {
             }
           });
         },
-        {
-          // Options for the observer:
-          root: null, // Use the viewport as the root
-          rootMargin: "0px", // No margin around the root
-          threshold: 0.5, // Trigger when 50% of the target is visible
-        }
+        { root: null, rootMargin: "0px", threshold: 0.5 }
       );
 
-      // Start observing the target element
-      observer.observe(statsSectionRef.current);
+      observer.observe(element);
 
-      // Cleanup function: stop observing when the component unmounts
       return () => {
-        if (statsSectionRef.current) {
-          observer.unobserve(statsSectionRef.current);
-        }
+        observer.unobserve(element); // <- ab wahi element use hoga, not ref.current
       };
     }
-  }, []); // Empty dependency array means this effect runs once on mount and cleans up on unmount
+  }, []);
+  // Empty dependency array means this effect runs once on mount and cleans up on unmount
 
   // useEffect hook to handle the number animation
   useEffect(() => {
@@ -122,9 +107,9 @@ const About = () => {
           <div className="about-header">
             <h2 className="about-title">
               <i>
-               <FaGraduationCap />
+                <FaGraduationCap />
               </i>
-            
+
               About Udaan360
             </h2>
             <p className="about-subtitle">
@@ -202,7 +187,7 @@ const About = () => {
               providing comprehensive educational and career development
               services. Our platform offers a seamless journey from academic
               counseling and admissions guidance to skill enhancement and global
-              career opportunities, particularly in healthcare and IT.
+              career opportunities.
             </p>
           </div>
 
@@ -233,8 +218,7 @@ const About = () => {
                 To bridge the gap between education and employment by offering
                 integrated solutions that cater to the diverse needs of students
                 and professionals, with specialized focus on career placement
-                assistance in healthcare and IT industries.
-              </p>
+                assistance . </p>
             </div>
           </div>
 
@@ -263,7 +247,7 @@ const About = () => {
           {/* <!-- Team Section --> */}
           <div className="team-section">
             <h3 className="team-title">
-           <i> <FaUsers />  </i>   
+              <i> <FaUsers />  </i>
               Our Leadership Team
             </h3>
 
@@ -274,7 +258,7 @@ const About = () => {
                   <img
                     src={Sir}
                     alt="Ankur Tyagi"
-                    // Removed onerror, safer to handle image loading in React
+                  // Removed onerror, safer to handle image loading in React
                   />
                 </div>
                 <h4 className="member-name">Ankur Tyagi</h4>
@@ -295,7 +279,7 @@ const About = () => {
                   <img
                     src={Mam}
                     alt="Pooja Aggarwal"
-                    // Removed onerror, safer to handle image loading in React
+                  // Removed onerror, safer to handle image loading in React
                   />
                 </div>
                 <h4 className="member-name">Pooja Aggarwal</h4>
@@ -315,7 +299,7 @@ const About = () => {
                   <img
                     src={Kunalsir}
                     alt="Kunal Handu"
-                    // Removed onerror, safer to handle image loading in React
+                  // Removed onerror, safer to handle image loading in React
                   />
                 </div>
                 <h4 className="member-name">Kunal Handu</h4>

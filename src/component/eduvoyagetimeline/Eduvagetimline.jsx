@@ -44,7 +44,7 @@ const Eduvagetimline = () => {
                 "Workshops & counseling sessions for clarity on courses and careers.",
                 "Stream-specific tours – Science, Commerce, Humanities.",
                 "College interaction – Faculty, students, alumni sessions.",
-                "Pathway to admissions – Connecting students directly with colleges.",
+                "Pathway to career – Connecting students directly with colleges.",
             ],
         },
         {
@@ -55,6 +55,16 @@ const Eduvagetimline = () => {
                 "Schools → Added value to their offering, strengthens parent trust.",
                 "Colleges → Authentic access to quality students, brand visibility, admissions pipeline.",
                 "Adds to the school’s extracurricular portfolio.",
+            ],
+        },
+        {
+            title: "Why It’s Unique",
+            side: "right",
+            points: [
+                "Bridges a Real Gap",
+                "Students rarely get structured exposure to colleges before admission.",
+                "Parents mostly depend on rankings, agents, or word of mouth.",
+                "Udaan 360 directly solves this by combining exposure + guidance.",
             ],
         },
     ];
@@ -69,7 +79,7 @@ const Eduvagetimline = () => {
                     className={`timeline-item ${item.side} ${visibleItems.includes(index.toString()) ? "show" : ""
                         }`}
                 >
-                    <div className="content">
+                    <div className="timeline-content">
                         <h2>{item.title}</h2>
                         <ul>
                             {item.points.map((point, i) => (
