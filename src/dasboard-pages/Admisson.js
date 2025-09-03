@@ -30,6 +30,10 @@ import IIM from "../assets/iim.png";
 import XLRI from "../assets/xlri.jpg";
 import Jipmer from "../assets/Jipmer.jpg";
 import CMC from "../assets/cmc.jpg";
+import Iimcalcutta from "../assets/Iim-calcutta.jpg";
+import Iimlucknow from "../assets/iim-lucknow.jpeg"
+import Iimbanglore from "../assets/iim-banglore.webp";
+import Symboisis from "../assets/symboisis.avif"
 // /////////////////// engneering clg
 import Amity from "../assets/Amity.avif";
 import Iitmadras from "../assets/iitmadras.avif";
@@ -70,7 +74,7 @@ import Mandi from "../assets/mandi.png";
 import IIEST from "../assets/iiest.jpg";
 import Dypatil from "../assets/Dypatil.jpg";
 
-import { CiStar } from "react-icons/ci";
+// import { CiStar } from "react-icons/ci";
 import { FaLocationDot } from "react-icons/fa6";
 import { RiMoneyRupeeCircleLine } from "react-icons/ri";
 import { LiaCertificateSolid } from "react-icons/lia";
@@ -776,7 +780,7 @@ const colleges = {
       description:
         "IGIMS Patna Admissions 2023: Bihar NEET UG counselling 2023 seat allotment round 2 will be declared on September 11, 2023.  MCC NEET PG 2023 counselling seat allotment round 3 will be released on September 16, 2023. IGIMS Patna was founded on November 19, 1983, as an autonomous institution modelled after the All India Institute of Medical Sciences in New Delhi. The goal was to provide super-speciality medical services within Bihar. IGMS Patna courses include BSc,  MBBS, BDS, MD, M.Ch, and Diploma. IGMS Patna is a government college located in Patna, Bihar.",
     },
-        {
+    {
       img: Jamiam,
       name: " Jamia Hamdard",
       rank: "#37",
@@ -789,7 +793,7 @@ const colleges = {
       description:
         " Jamia Hamdard is a Deemed to be University Institute, established in 1989. Jamia Hamdard is one of the best Medical colleges in New Delhi, Delhi. MBBS is one of the most popular programs at Jamia Hamdard offered for a duration of 66 Months. Jamia Hamdard MBBS fees is INR 12,00,000.",
     },
-            {
+    {
       img: Lhmc,
       name: " LHMC",
       rank: "#29",
@@ -829,98 +833,98 @@ const colleges = {
       description:
         "CMC Vellore admission offers intensive, full-time Master of Science (M.Sc.) programme for students who want to continue their studies in science. The M.Sc. specializations offered by CMC Vellore are Otorhinolaryngology, General Surgery, Obstetrics & Gynaecology, Ophthalmology, Orthopedics, ENT, Bioengineering. The total duration of M.Sc. programmes at CMC Vellore is 2-3 years. ",
     },
-  {
-        img: Grant,
-        name: " Grant Medical College ",
-        rank: "#33  ",
-        location: "Mumbai, Maharashtra",
-        rating: "5.0",
-        fees: "103,200 - 571,500 INR",
-        accerdition: "NAAC A+ , NBA ",
-        package: "₹10–15 LPA",
-        exams: "NEET ",
-        description:
-          "Grant Medical College is a Government Institute, established in 1845. Grant Medical College is one of the best Medical colleges in Mumbai, Maharashtra. MBBS is one of the most popular programs at Grant Medical College offered for a duration of 6 Years.",
-      },
-         {
-        img: Gmch,
-        name: "  GMCH Chandigarh",
-        rank: "#35  ",
-        location: "Chandigarh, Chandigarh",
-        rating: "3.7",
-        fees: " ₹78,380 INR",
-        accerdition: "MCI ",
-        package: "₹9.5 LPA",
-        exams: "NEET ",
-        description:
-          "GMCH Chandigarh is a Government Institute, established in 1991. GMCH Chandigarh is one of the best Medical colleges in Chandigarh. MBBS is one of the most popular programs at GMCH Chandigarh offered for a duration of 5 Years.",
-      },
-           {
-        img: Mamc,
-        name: "  MAMC Delhi",
-        rank: "#35  ",
-        location: "Delhi ",
-        rating: "4.5",
-        fees: " ₹10,000 INR",
-        accerdition: "MCI ",
-        package: "₹2.76LPA",
-        exams: "NEET ",
-        description:
-          "MAMC Delhi is a Public Institute, established in 1959. MAMC Delhi is one of the best Medical colleges in Delhi. MBBS is one of the most popular programs at MAMC Delhi offered for a duration of 66 Months. MAMC Delhi MBBS fees is INR 10,000.",
-      },
-                       {
-        img: Psg,
-        name: "  PSG Institute of Medical Sciences & Research",
-        rank: "#41 ",
-        location: "Coimbatore, Tamil Nadu",
-        rating: "3.8",
-        fees: " ₹4,50,000 INR",
-        accerdition: "MCI ",
-        package: "₹ 9.30 LPA",
-        exams: "NEET  ss",
-        description:
-          " PSG Institute of Medical Sciences & Research is a Private Institute, established in 1985. PSG Institute of Medical Sciences & Research is one of the best Medical colleges in Coimbatore, Tamil Nadu. MBBS is one of the most popular programs at PSG Institute of Medical Sciences & Research offered for a duration of 5.5 - 66 Years. PSG Institute of Medical Sciences & Research MBBS fees is INR 4,50,000.",
-      },
-             {
-        img:Msrch,
-        name: "  MSRMC Bangalore",
-        rank: "#46 ",
-        location: "Bengaluru, Karnataka",
-        rating: "3.5",
-        fees: " ₹98,08,000 INR",
-        accerdition: "MCI ,NABL ",
-        package: "₹6.6 LPA",
-        exams: "NEET  ss",
-        description:
-          "MSRMC Bangalore is a Private Institute, established in 1979. MSRMC Bangalore is one of the best Medical colleges in Bengaluru, Karnataka. MBBS is one of the most popular programs at MSRMC Bangalore offered for a duration of 4 Years.s",
-      },
-                 {
-        img: DMC,
-        name: "  DMCH Ludhiana",
-        rank: "#40  ",
-        location: "Ludhiana, Punjab ",
-        rating: "4.2",
-        fees: " ₹11,00,000 INR",
-        accerdition: "MCI ",
-        package: "₹Rs 7 LPA",
-        exams: "NEET ",
-        description:
-          "DMCH Ludhiana is a Private Institute, established in 1964. DMCH Ludhiana is one of the best Medical colleges in Ludhiana, Punjab. MBBS is one of the most popular programs at DMCH Ludhiana offered for a duration of 66 Months.",
-      },
-        {
-        img: KM,
-        name: "  KM University",
-        rank: "#33  ",
-        location: "Mathura, Uttar Pradesh",
-        rating: "5.0",
-        fees: " 20,000 to Rs 1,40,000 INR",
-        accerdition: "NAAC ",
-        package: "₹960,000 LPA",
-        exams: "NEET ",
-        description:
-          "KM University is a Private University, established in . KM University is one of the best Medical colleges in Mathura, Uttar Pradesh. MBBS is one of the most popular programs at KM University offered for a duration of 5 Years.",
-      },
-              
+    {
+      img: Grant,
+      name: " Grant Medical College ",
+      rank: "#33  ",
+      location: "Mumbai, Maharashtra",
+      rating: "5.0",
+      fees: "103,200 - 571,500 INR",
+      accerdition: "NAAC A+ , NBA ",
+      package: "₹10–15 LPA",
+      exams: "NEET ",
+      description:
+        "Grant Medical College is a Government Institute, established in 1845. Grant Medical College is one of the best Medical colleges in Mumbai, Maharashtra. MBBS is one of the most popular programs at Grant Medical College offered for a duration of 6 Years.",
+    },
+    {
+      img: Gmch,
+      name: "  GMCH Chandigarh",
+      rank: "#35  ",
+      location: "Chandigarh, Chandigarh",
+      rating: "3.7",
+      fees: " ₹78,380 INR",
+      accerdition: "MCI ",
+      package: "₹9.5 LPA",
+      exams: "NEET ",
+      description:
+        "GMCH Chandigarh is a Government Institute, established in 1991. GMCH Chandigarh is one of the best Medical colleges in Chandigarh. MBBS is one of the most popular programs at GMCH Chandigarh offered for a duration of 5 Years.",
+    },
+    {
+      img: Mamc,
+      name: "  MAMC Delhi",
+      rank: "#35  ",
+      location: "Delhi ",
+      rating: "4.5",
+      fees: " ₹10,000 INR",
+      accerdition: "MCI ",
+      package: "₹2.76LPA",
+      exams: "NEET ",
+      description:
+        "MAMC Delhi is a Public Institute, established in 1959. MAMC Delhi is one of the best Medical colleges in Delhi. MBBS is one of the most popular programs at MAMC Delhi offered for a duration of 66 Months. MAMC Delhi MBBS fees is INR 10,000.",
+    },
+    {
+      img: Psg,
+      name: "  PSG Institute of Medical Sciences & Research",
+      rank: "#41 ",
+      location: "Coimbatore, Tamil Nadu",
+      rating: "3.8",
+      fees: " ₹4,50,000 INR",
+      accerdition: "MCI ",
+      package: "₹ 9.30 LPA",
+      exams: "NEET  ss",
+      description:
+        " PSG Institute of Medical Sciences & Research is a Private Institute, established in 1985. PSG Institute of Medical Sciences & Research is one of the best Medical colleges in Coimbatore, Tamil Nadu. MBBS is one of the most popular programs at PSG Institute of Medical Sciences & Research offered for a duration of 5.5 - 66 Years. PSG Institute of Medical Sciences & Research MBBS fees is INR 4,50,000.",
+    },
+    {
+      img: Msrch,
+      name: "  MSRMC Bangalore",
+      rank: "#46 ",
+      location: "Bengaluru, Karnataka",
+      rating: "3.5",
+      fees: " ₹98,08,000 INR",
+      accerdition: "MCI ,NABL ",
+      package: "₹6.6 LPA",
+      exams: "NEET  ss",
+      description:
+        "MSRMC Bangalore is a Private Institute, established in 1979. MSRMC Bangalore is one of the best Medical colleges in Bengaluru, Karnataka. MBBS is one of the most popular programs at MSRMC Bangalore offered for a duration of 4 Years.s",
+    },
+    {
+      img: DMC,
+      name: "  DMCH Ludhiana",
+      rank: "#40  ",
+      location: "Ludhiana, Punjab ",
+      rating: "4.2",
+      fees: " ₹11,00,000 INR",
+      accerdition: "MCI ",
+      package: "₹Rs 7 LPA",
+      exams: "NEET ",
+      description:
+        "DMCH Ludhiana is a Private Institute, established in 1964. DMCH Ludhiana is one of the best Medical colleges in Ludhiana, Punjab. MBBS is one of the most popular programs at DMCH Ludhiana offered for a duration of 66 Months.",
+    },
+    {
+      img: KM,
+      name: "  KM University",
+      rank: "#33  ",
+      location: "Mathura, Uttar Pradesh",
+      rating: "5.0",
+      fees: " 20,000 to Rs 1,40,000 INR",
+      accerdition: "NAAC ",
+      package: "₹960,000 LPA",
+      exams: "NEET ",
+      description:
+        "KM University is a Private University, established in . KM University is one of the best Medical colleges in Mathura, Uttar Pradesh. MBBS is one of the most popular programs at KM University offered for a duration of 5 Years.",
+    },
+
     {
       img: Shardha,
       name: " Sharda University  ",
@@ -941,15 +945,68 @@ const colleges = {
     {
       img: IIM,
       name: " IIM Ahmedabad ",
-      rank: "#31  ",
+      rank: "#1  ",
       location: "Ahmedabad, Uttar Pradesh",
       rating: "4.5",
       fees: "12,00,000 - 25,00,000",
       accerdition: "EQUIS , EFMD ",
       package: "57.12 LPA",
-      exams: "NEET ,MET",
+      exams: "CAT , CMAT",
       description:
         "IIM Ahmedabad has successfully placed 100% of its students from the PGP batch of 2025. Students were placed across 30 cohorts in three clusters. The placements were conducted through Laterals Placements Processes. Firms from multiple sectors, such as technology, banking, finance, consulting, analytics, etc, participated in the IIM Ahmedabad Placement. Students were offered roles in middle and senior management positions from Boston Consulting Group, Accenture Strategy, Goldman Sachs, Avendus Capital, Tata Administrative Services, GMR Group, FinIQ Consulting, Navi, etc.",
+    },
+    {
+      img: Iimbanglore,
+      name: " IIM Bangalore ",
+      rank: "#2  ",
+      location: "Bengaluru, Karnataka",
+      rating: "4.9",
+      fees: " 24.5 Lacs ",
+      accerdition: "AICTE , EFMD ",
+      package: "35.92 LPA",
+      exams: "CAT ",
+      description:
+        "IIM Bangalore is a Government Institute, established in 1973. IIM Bangalore is one of the best Management colleges in Bengaluru, Karnataka. MBA is one of the most popular programs at IIM Bangalore offered for a duration of 2 Years. ",
+    },
+
+    {
+      img: Iitdelhi,
+      name: " IIT Delhi  ",
+      rank: "#4  ",
+      location: " Delhi ",
+      rating: "4.6",
+      fees: " 2 Lacs ",
+      accerdition: " NAAC ",
+      package: "1.25 Crore  ",
+      exams: "CAT ",
+      description: "IIT Delhi is a Government Institute, established in 1961. IIT Delhi is one of the best Management colleges in Delhi. MBA is one of the most popular programs at IIT Delhi offered for a duration of 2 Years. IIT Delhi MBA fees is INR 2,00,000.",
+    },
+
+    {
+      img: Iimcalcutta,
+      name: " IIM Calcutta ",
+      rank: "#5 ",
+      location: "Kolkata, West Bengal",
+      rating: "4.5",
+      fees: " 27 Lacs ",
+      accerdition: "UGC , AMBA ",
+      package: "30.9 LPA",
+      exams: "CAT ",
+      description:
+        "IIM Calcutta is a Government Institute, established in 1961. IIM Calcutta is one of the best Management colleges in Kolkata, West Bengal.MBA is one of the most popular programs at IIM Calcutta offered for a duration of 1 - 2 Years.IIM Calcutta MBA fees is INR 31,00,000. ",
+    },
+    {
+      img: Iimlucknow,
+      name: "IIM Lucknow",
+      rank: "#7",
+      location: "Lucknow, Uttar Pradesh",
+      rating: "4.3",
+      fees: " 9,50,000 Lacs ",
+      accerdition: "AICTE , AACSB ",
+      package: "32 LPA",
+      exams: "CAT ",
+      description:
+        "IIM Lucknow is a Government Institute, established in 1984. IIM Lucknow is one of the best Management colleges in Lucknow, Uttar Pradesh. MBA is one of the most popular programs at IIM Lucknow offered for a duration of 16 Months. IIM Lucknow MBA fees is INR 9,50,000. ",
     },
     {
       img: XLRI,
@@ -960,9 +1017,61 @@ const colleges = {
       fees: "4,00,000 - 58,84,000",
       accerdition: "AACSB , EFMD ",
       package: "30.5 LPA",
-      exams: "NEET ,MET",
+      exams: "CAT ,CMAT",
       description:
         "XLRI (Xavier School of Management) in Jamshedpur, Jharkhand, is a renowned business school known for its strong focus on ethical and socially responsible leadership. Founded in 1949 by Jesuit Fathers, it's the oldest business school in India. XLRI emphasizes academic excellence, holistic student development, and a commitment to improving society through ethical management practices. It offers a range of management programs, including PGDM (HRM), PGDM (GM), and others. ",
+    },
+    {
+      img: Iitbombay,
+      name: " IIT Bombay ",
+      rank: "#10  ",
+      location: "Mumbai, Maharashtra",
+      rating: "4.9",
+      fees: "2,00,000 - 42,00,000",
+      accerdition: "AICTE, EFMD ",
+      package: "21.8 LPA",
+      exams: "CAT , GATE",
+      description:
+        "IIT Bombay is a Public Institute, established in 1958. IIT Bombay is one of the best Management colleges in Mumbai, Maharashtra. MBA is one of the most popular programs at IIT Bombay offered for a duration of 18 Months - 2 Years. IIT Bombay MBA fees is INR 2,00,000 - INR 42,00,000.",
+    },
+    {
+      img: Symboisis,
+      name: " Symbiosis Group Of Institutes ",
+      rank: "#13  ",
+      location: "Pune, Maharashtra",
+      rating: "4.3",
+      fees: "6,60,000 - 8,53,000",
+      accerdition: " NAAC ",
+      package: "16.2 LPA",
+      exams: "CAT , SNAP",
+      description:
+        "Symbiosis Group Of Institutes is a University Institute, established in 1978. Symbiosis Group Of Institutes is one of the best Management colleges in Pune, Maharashtra. MBA is one of the most popular programs at Symbiosis Group Of Institutes offered for a duration of 2 Years. Symbiosis Group Of Institutes MBA fees is INR 6,60,000 - INR 8,53,000.",
+    },
+    {
+      img: Iitmadras,
+      name: " IIT Madras ",
+      rank: "#16",
+      location: "Chennai, Tamil Nadu",
+      rating: "4.8",
+      fees: "3,00,000 ",
+      accerdition: " AICTE ",
+      package: "12.4 LPA",
+      exams: "CAT , IIT JAM  ",
+      description:
+        " IIT Madras is a Government Institute, established in 2008. IIT Madras is one of the best Management colleges in Chennai, Tamil Nadu. MBA is one of the most popular programs at IIT Madras offered for a duration of 2 Years. IIT Madras MBA fees is INR 3,00,000.",
+    },
+    {
+      img: IITkharagpur,
+      name: " IIT Kharagpur ",
+      rank: "#19",
+      location: "Kharagpur, West Bengal",
+      rating: "4.7",
+      fees: "6,20,000 ",
+      accerdition: " UGC ",
+      package: "24.5 LPA",
+      exams: "CAT , IIT JAM  ",
+      description:
+        "      IIT Kharagpur is a Government Institute, established in 1951. IIT Kharagpur is one of the best Management colleges in Kharagpur, West Bengal.MBA is one of the most popular programs at IIT Kharagpur offered for a duration of 2 Years.IIT Kharagpur MBA fees is INR 6, 20,000.   ",
     },
 
     // { name: "XLRI Jamshedpur", location: "Jamshedpur" },
@@ -1008,17 +1117,15 @@ const Admisson = () => {
             B.Tech
           </div>
           <div
-            className={`category-card ${
-              activeTab === "medical" ? "active" : ""
-            }`}
+            className={`category-card ${activeTab === "medical" ? "active" : ""
+              }`}
             onClick={() => handleTabClick("medical")}
           >
             Medical
           </div>
           <div
-            className={`category-card ${
-              activeTab === "management" ? "active" : ""
-            }`}
+            className={`category-card ${activeTab === "management" ? "active" : ""
+              }`}
             onClick={() => handleTabClick("management")}
           >
             Management
