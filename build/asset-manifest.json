@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.cd2ecceb.css",
-    "main.js": "/static/js/main.75ba3767.js",
+    "main.js": "/static/js/main.484be9fe.js",
     "static/js/453.ac42ff46.chunk.js": "/static/js/453.ac42ff46.chunk.js",
     "static/media/About0002.png": "/static/media/About0002.c49bc4b800322fd393ff.png",
     "static/media/councel2.png": "/static/media/councel2.efdaf72c308618cc8bc4.png",
@@ -91,6 +91,7 @@
     "static/media/ashi2.jpg": "/static/media/ashi2.0860b73af694224855d5.jpg",
     "static/media/BITMesra.avif": "/static/media/BITMesra.f944372b7af6f9d0fa7c.avif",
     "static/media/Banners-08.jpg": "/static/media/Banners-08.79c5c07890e52316ce4d.jpg",
+    "static/media/Iim-calcutta.jpg": "/static/media/Iim-calcutta.b5518e4d503f5997adfa.jpg",
     "static/media/srm1.avif": "/static/media/srm1.cd07e6a64718766f67d1.avif",
     "static/media/maltaflag.png": "/static/media/maltaflag.4b6f03853c68755c4320.png",
     "static/media/IITGuwahati.avif": "/static/media/IITGuwahati.f194ef4baee07aac61f2.avif",
@@ -108,6 +109,8 @@
     "static/media/nittrichy.avif": "/static/media/nittrichy.2e4596d206a73f1bb052.avif",
     "static/media/IITKharagpur.avif": "/static/media/IITKharagpur.63e128728d9c6ec0523a.avif",
     "static/media/iitgandhinagar.jpeg": "/static/media/iitgandhinagar.564d7d25f3ae1fb376b9.jpeg",
+    "static/media/symboisis.avif": "/static/media/symboisis.a90e2259ec6004b59bca.avif",
+    "static/media/iim-banglore.webp": "/static/media/iim-banglore.cd36971fe48b47a47ba6.webp",
     "static/media/iitbombay.avif": "/static/media/iitbombay.513741c2a238df903044.avif",
     "static/media/asutraliaflag.jpg": "/static/media/asutraliaflag.28fbae2059a7ebe82816.jpg",
     "static/media/IITHYDERABAD.avif": "/static/media/IITHYDERABAD.5c299bb2c70345cea69e.avif",
@@ -157,6 +160,7 @@
     "static/media/Ap-Board.png": "/static/media/Ap-Board.a8ff74e274080efc17c5.png",
     "static/media/mpboard.jpg": "/static/media/mpboard.4d8d93fe7c07143744d2.jpg",
     "static/media/cgboard.jpg": "/static/media/cgboard.1f0f9b4a249039276f79.jpg",
+    "static/media/iim-lucknow.jpeg": "/static/media/iim-lucknow.e2e660cbc19a286cb51e.jpeg",
     "static/media/Goldengate.svg": "/static/media/Goldengate.b9dcd4a1c8bed201d5b5e55d4abc2e1c.svg",
     "static/media/Upboard.jpg": "/static/media/Upboard.913b62fd56caab570036.jpg",
     "static/media/odisha.jpg": "/static/media/odisha.62f420d61b7ddb674fe7.jpg",
@@ -172,11 +176,11 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "main.cd2ecceb.css.map": "/static/css/main.cd2ecceb.css.map",
-    "main.75ba3767.js.map": "/static/js/main.75ba3767.js.map",
+    "main.484be9fe.js.map": "/static/js/main.484be9fe.js.map",
     "453.ac42ff46.chunk.js.map": "/static/js/453.ac42ff46.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cd2ecceb.css",
-    "static/js/main.75ba3767.js"
+    "static/js/main.484be9fe.js"
   ]
 }
