@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.cd2ecceb.css",
-    "main.js": "/static/js/main.484be9fe.js",
+    "main.css": "/static/css/main.9568f97e.css",
+    "main.js": "/static/js/main.6b05b9ae.js",
     "static/js/453.ac42ff46.chunk.js": "/static/js/453.ac42ff46.chunk.js",
     "static/media/About0002.png": "/static/media/About0002.c49bc4b800322fd393ff.png",
     "static/media/councel2.png": "/static/media/councel2.efdaf72c308618cc8bc4.png",
@@ -16,9 +16,11 @@
     "static/media/Mba1.jpg": "/static/media/Mba1.5630acf3c0542261f582.jpg",
     "static/media/skilldoc.png": "/static/media/skilldoc.51bc61f809ad531c9065.png",
     "static/media/home.png": "/static/media/home.56a647a0b9ed1ac9391e.png",
+    "static/media/pyramid.png": "/static/media/pyramid.39b3466460273a7264ca.png",
     "static/media/soa.png": "/static/media/soa.47ab3bc2865ce6125b29.png",
     "static/media/udanbanner06.png": "/static/media/udanbanner06.77ece3a59fa9cee42132.png",
     "static/media/Dattamegh.png": "/static/media/Dattamegh.f9804a465057fa2a7d11.png",
+    "static/media/youknw.png": "/static/media/youknw.71d415b9ef96d703ca16.png",
     "static/media/Galgotia.png": "/static/media/Galgotia.d9aa960666c9f16a3fcc.png",
     "static/media/NITcalicut.jpeg": "/static/media/NITcalicut.3479be3928c77abe9e25.jpeg",
     "static/media/Middlesex.jpg": "/static/media/Middlesex.6a2b4e20e98b5b846c01.jpg",
@@ -73,7 +75,9 @@
     "static/media/Amity.avif": "/static/media/Amity.a2dc1033da53473e11d6.avif",
     "static/media/cmrit.jpg": "/static/media/cmrit.31f98235660aca45d472.jpg",
     "static/media/kartikey.jpg": "/static/media/kartikey.a72afb96d408ce6e8f9c.jpg",
+    "static/media/Arrow.png": "/static/media/Arrow.e181d2092a922352bffe.png",
     "static/media/whatsup.png": "/static/media/whatsup.513b7ce143dd5e2397ee.png",
+    "static/media/IIT-Roorkee.jpeg": "/static/media/IIT-Roorkee.5aae380db6b71c1b16f6.jpeg",
     "static/media/AiimsBh.jpg": "/static/media/AiimsBh.8a8eba0d4aae113dfd68.jpg",
     "static/media/NitRourkela.jpg": "/static/media/NitRourkela.46cae601e2d63642fb1a.jpg",
     "static/media/universitymalbourne.jpeg": "/static/media/universitymalbourne.01afad9cc5861fdc1c76.jpeg",
@@ -114,6 +118,7 @@
     "static/media/iitbombay.avif": "/static/media/iitbombay.513741c2a238df903044.avif",
     "static/media/asutraliaflag.jpg": "/static/media/asutraliaflag.28fbae2059a7ebe82816.jpg",
     "static/media/IITHYDERABAD.avif": "/static/media/IITHYDERABAD.5c299bb2c70345cea69e.avif",
+    "static/media/iimudaipur.jpeg": "/static/media/iimudaipur.7f8b6c06e787a59710d3.jpeg",
     "static/media/mehak2.jpg": "/static/media/mehak2.89fc8da93b7236bc4dde.jpg",
     "static/media/conventry.jpg": "/static/media/conventry.fd4ca17db895f6368553.jpg",
     "static/media/Uttarakhand.jpg": "/static/media/Uttarakhand.8960c43fe3c41bf76dd1.jpg",
@@ -175,12 +180,12 @@
     "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
-    "main.cd2ecceb.css.map": "/static/css/main.cd2ecceb.css.map",
-    "main.484be9fe.js.map": "/static/js/main.484be9fe.js.map",
+    "main.9568f97e.css.map": "/static/css/main.9568f97e.css.map",
+    "main.6b05b9ae.js.map": "/static/js/main.6b05b9ae.js.map",
     "453.ac42ff46.chunk.js.map": "/static/js/453.ac42ff46.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cd2ecceb.css",
-    "static/js/main.484be9fe.js"
+    "static/css/main.9568f97e.css",
+    "static/js/main.6b05b9ae.js"
   ]
 }
