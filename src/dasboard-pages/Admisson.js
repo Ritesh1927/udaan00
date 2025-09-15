@@ -32,8 +32,10 @@ import Jipmer from "../assets/Jipmer.jpg";
 import CMC from "../assets/cmc.jpg";
 import Iimcalcutta from "../assets/Iim-calcutta.jpg";
 import Iimlucknow from "../assets/iim-lucknow.jpeg"
+import IITRoorkee from "../assets/IIT-Roorkee.jpeg"
 import Iimbanglore from "../assets/iim-banglore.webp";
 import Symboisis from "../assets/symboisis.avif"
+import Iimudaipur from "../assets/iimudaipur.jpeg"
 // /////////////////// engneering clg
 import Amity from "../assets/Amity.avif";
 import Iitmadras from "../assets/iitmadras.avif";
@@ -1061,6 +1063,19 @@ const colleges = {
         " IIT Madras is a Government Institute, established in 2008. IIT Madras is one of the best Management colleges in Chennai, Tamil Nadu. MBA is one of the most popular programs at IIT Madras offered for a duration of 2 Years. IIT Madras MBA fees is INR 3,00,000.",
     },
     {
+      img: IITRoorkee,
+      name: " IIT Roorkee ",
+      rank: "#18",
+      location: "Roorkee, Uttarakhand",
+      rating: "4.6",
+      fees: "2,00,000 ",
+      accerdition: " NAAC",
+      package: "34.05 LPA",
+      exams: "CAT , IIT JAM  ",
+      description:
+        " IIT Roorkee is a Government Institute, established in 1947. IIT Roorkee is one of the best Management colleges in Roorkee, Uttarakhand. MBA is one of the most popular programs at IIT Roorkee offered for a duration of 2 Years. IIT Roorkee MBA fees is INR 2,00,000..",
+    },
+    {
       img: IITkharagpur,
       name: " IIT Kharagpur ",
       rank: "#19",
@@ -1072,6 +1087,19 @@ const colleges = {
       exams: "CAT , IIT JAM  ",
       description:
         "      IIT Kharagpur is a Government Institute, established in 1951. IIT Kharagpur is one of the best Management colleges in Kharagpur, West Bengal.MBA is one of the most popular programs at IIT Kharagpur offered for a duration of 2 Years.IIT Kharagpur MBA fees is INR 6, 20,000.   ",
+    },
+    {
+      img: Iimudaipur,
+      name: " IIM Udaipur ",
+      rank: "#22",
+      location: "Kharagpur, West Bengal",
+      rating: "5.0",
+      fees: "11,19,307 - 22,65,000 ",
+      accerdition: " AACSB ",
+      package: "13 LPA",
+      exams: "CAT ",
+      description:
+        "     IIM Udaipur is a Government Institute, established in 2011. IIM Udaipur is one of the best Management colleges in Udaipur, Rajasthan.MBA is one of the most popular programs at IIM Udaipur offered for a duration of 1 - 2 Years.IIM Udaipur MBA fees is INR 11, 19, 307 - INR 22, 65,000. ",
     },
 
     // { name: "XLRI Jamshedpur", location: "Jamshedpur" },

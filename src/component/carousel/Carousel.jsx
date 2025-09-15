@@ -71,12 +71,16 @@ const Carousel = () => {
               <h1 className="banner-heading">
                 25,000+ Students counselled <br />
                 <span className="company-name">Ankur Tyagi</span>
+                <p>
+                  Founder And CEO
+                </p>
               </h1>
 
               <p className="banner-content">
                 20 years of extensive experience in guiding over 25,000 students
                 towards fulfilling their academic and professional goals.
               </p>
+
               <button className="Explore-btn">
                 <a
                   className="Explore-btn-a"

@@ -1,0 +1,69 @@
+.pyramid-wrapper {
+    font-family: sans-serif;
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.icon {
+    font-size: 22px;
+}
+
+.pyramid {
+    width: 500px;
+    height: 500px;
+    /* thoda bada for 4 sections */
+    display: flex;
+    flex-direction: column;
+    -webkit-clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    margin: 20px auto;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.colleges-eduvoyage-inner-heading {
+    font-size: 10px;
+}
+
+.colleges-eduvoyage-inner-heading-1 {
+    margin-top: 8px;
+    margin-bottom: 4px;
+    font-size: 13px;
+}
+
+.first-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pyramid__section {
+    flex: 1 1 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.pyramid__section:nth-of-type(1) {
+    background-color: #ff9800;
+    /* Orange */
+}
+
+.pyramid__section:nth-of-type(2) {
+    background-color: #f44336;
+    /* Red */
+}
+
+.pyramid__section:nth-of-type(3) {
+    background-color: #e91e63;
+    /* Pink */
+}
+
+.pyramid__section:nth-of-type(4) {
+    background-color: #9c27b0;
+    /* Purple */
+}

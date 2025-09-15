@@ -104,11 +104,13 @@
 }
 
 .eduvoyage-contact-page-header p {
-    font-size: 16px;
+    font-size: 18px;
     color: #666;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
 .first-upper-eduvoyage-container {
@@ -129,24 +131,38 @@
     max-width: 1200px;
     margin: auto;
     padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    /* spacing between items */
 }
 
 .timeline-item {
     padding: 20px 40px;
     position: relative;
     width: 50%;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateX(0);
+    transition: all 0.8s ease-out;
 }
 
 .timeline-item.left {
     left: 0;
+    transform: translateX(-150px);
 }
 
 .timeline-item.right {
     left: 50%;
+    transform: translateX(150px);
+}
+
+.timeline-item.show {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .timeline-item .timeline-content {
-
     background: #fff;
     position: relative;
     border-radius: 8px;
@@ -182,12 +198,10 @@
 }
 
 .timeline-item h2 {
-    /* margin-bottom: 10px; */
     font-size: 20px;
-    color: #333;
+    color: #fff;
     padding: 20px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #fff;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
@@ -203,25 +217,6 @@
     line-height: 1.5;
 }
 
-/* Animation states */
-.timeline-item {
-    opacity: 0;
-    transform: translateX(0);
-    transition: all 0.8s ease-out;
-}
-
-.timeline-item.left {
-    transform: translateX(-150px);
-}
-
-.timeline-item.right {
-    transform: translateX(150px);
-}
-
-.timeline-item.show {
-    opacity: 1;
-    transform: translateX(0);
-}
 
 /* ///////////////// */
 .benifit-education-container {
@@ -312,6 +307,83 @@
     margin-top: 12px;
 }
 
+/* /////////////////    eduvoyage offering ///////////////////////*/
+
+.eduvoyage-offering-container {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.eduvoyage-offering-heading {
+    color: #333;
+    font-size: 30x;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+.Eduvoyage-offer-inner-content {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+
+.Eduvoyage-offer-inner-content img {
+    width: 20px;
+}
+
+.Eduvoyage-offer-inner-content p {
+    color: #fff;
+    line-height: 28px;
+}
+
+.eduvoyage-inner-heading {
+    color: gold;
+    font-size: 19px;
+    letter-spacing: 2px;
+    text-decoration: underline;
+}
+
+.you-knw-fact-container {
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    width: 80%;
+
+}
+
+.youknw-container {
+    width: 40%;
+}
+
+.youknw-container img {
+    width: 100%;
+}
+
+.pyaimd-img-container {
+    width: 50%;
+}
+
+.pyaimd-img-container img {
+    width: 100%;
+}
+
+.eduvoyage-background-container {
+    height: 350px;
+    background-repeat: no-repeat;
+    width: 100%;
+
+}
+
+
+/* ///////////////////////////////////////////////////////////////// */
+
 /* Responsive */
 @media (max-width:1024px) {
     .benifit-education-container {
@@ -320,36 +392,59 @@
 }
 
 @media screen and (max-width: 768px) {
+
+
     .timeline-container::after {
-        left: 10px;
-    }
-
-    .eduvoyage-hero-title {
-        font-size: 36px;
-    }
-
-    .eduvoyage-hero-description {
-        font-size: 24px;
+        left: 20px;
     }
 
     .timeline-item {
         width: 100%;
-        padding-left: 40px;
-        padding-right: 25px;
+        left: 0 !important;
+        padding-left: 50px;
+        padding-right: 15px;
+        transform: translateX(0);
+        /* reset animation direction */
     }
 
+    .timeline-item.left,
     .timeline-item.right {
-        left: 0%;
+        transform: translateX(0px);
+        /* single direction animation */
     }
 
     .timeline-item::before {
-        left: 0px;
+        left: 10px;
+        right: auto;
+    }
+}
+
+@media (max-width:768px) {
+    .you-knw-fact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .youknw-container {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+    }
+
+    .pyaimd-img-container {
+        display: flex;
+        justify-content: center;
+        width: 75%;
     }
 }
 
 @media (max-width:480px) {
     .Eduvoyage-container-main-container {
         padding: 0 15px;
+    }
+
+    .pyaimd-img-container {
+        width: 100%;
     }
 
     .benifit-card-header {
@@ -359,5 +454,25 @@
     .benifit-card-header h3 {
         font-size: 25px;
         margin-top: 8px;
+    }
+
+    .eduvoyage-offering-heading {
+        font-size: 25px;
+    }
+
+    .Eduvoyage-offer-inner-content {
+        gap: 5px;
+    }
+
+    .eduvoyage-offering-container {
+        padding: 10px;
+    }
+
+    .eduvoyage-inner-heading {
+        font-size: 17px;
+    }
+
+    .Eduvoyage-offer-inner-content p {
+        line-height: 25px;
     }
 }
