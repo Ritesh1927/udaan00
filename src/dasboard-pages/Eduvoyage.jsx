@@ -3,13 +3,10 @@ import React from 'react'
 import "./Eduvoyage.css"
 import UdaanLogo from "../assets/Udaan_logo2.png"
 import Eduvagetimline from '../component/eduvoyagetimeline/Eduvagetimline'
-import { FaSchool } from "react-icons/fa";
+import { FaSchool, FaUsers, FaUser, FaUniversity } from "react-icons/fa";
 import { PiStudentBold } from "react-icons/pi";
-import { FaUniversity } from "react-icons/fa";
 import Arrownew from ".././assets/Arrow.png"
-import Youknw from "../assets/youknw.png"
-import Pyramid from "../assets/pyramid.png"
-import Gridcards from '../component/gridcards/Gridcards';
+// import Gridcards from '../component/gridcards/Gridcards';
 
 // import EduDiamond from '../component/edudiamond/Edudiamond';
 const Eduvoyage = () => {
@@ -183,23 +180,95 @@ const Eduvoyage = () => {
 
                     </div>
                     {/* Some facts that you knw  */}
-                    {/* <div className='eduvoyage-background-container '>
-                        <p>Every child is a world of untapped Brilliance, understanding their uniqueness is the key
-                            to unlocking their true potential.</p>
-                    </div> */}
-                    <h2 className='eduvoyage-heading '>
-                        Some Facts That You Must Know
-                    </h2>
-                    <div className='you-knw-fact-container'>
-                        <div className='youknw-container'>
-                            <img src={Youknw} alt="" />
+
+                    <main className="edu-container">
+                        {/* Heading Section */}
+                        <div className="edu-heading">
+                            <h1>
+                                Some Facts You <span className="highlight-text">Must Know</span>
+                            </h1>
+                            <p className="edu-subtitle">
+                                Key challenges and opportunities in the current educational landscape.
+                            </p>
+                            <div className="underline"></div>
                         </div>
-                        <div className='pyaimd-img-container'>
-                            <img src={Pyramid} alt="" />
-                            {/* <EduDiamond /> */}
+
+                        {/* Two Column Layout */}
+                        <div className="edu-grid">
+                            {/* Left Column - Info Blocks */}
+                            <div className="edu-info-blocks">
+                                {[
+                                    {
+                                        icon: <FaUniversity />,
+                                        title: "Colleges",
+                                        text: "Find it hard to connect directly with quality students, leading to recruitment challenges and a mismatch of talent."
+                                    },
+                                    {
+                                        icon: <FaSchool />,
+                                        title: "Schools",
+                                        text: "Often struggle to provide real-world exposure and practical skills, leaving students unprepared for the workforce."
+                                    },
+                                    {
+                                        icon: <FaUsers />,
+                                        title: "Parents",
+                                        text: "Are overwhelmed by too much information and lack structured guidance to support their children's career decisions effectively."
+                                    },
+                                    {
+                                        icon: <FaUser />,
+                                        title: "Students",
+                                        text: "Are often uncertain about choosing the right course or career path, feeling lost in a sea of options without clear direction."
+                                    }
+                                ].map((item, index) => (
+                                    <div key={index} className="info-row">
+                                        <div className="icon-wrapper">{item.icon}</div>
+                                        <div>
+                                            <h3>{item.title}</h3>
+                                            <p>{item.text}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Right Column - Cards */}
+                            <div className="edu-cards">
+                                {[
+                                    {
+                                        title: "Humanities Skills Matter",
+                                        text: (
+                                            <>
+                                                A 2021 report shows that{" "}
+                                                <span className="highlight">93% of employers</span> value skills like critical thinking and communication, often honed in humanities, over a candidate’s undergraduate major.
+                                            </>
+                                        )
+                                    },
+                                    {
+                                        title: "Graduate Skill Gap",
+                                        text: (
+                                            <>
+                                                According to a survey,{" "}
+                                                <span className="highlight">55% of recent graduates</span> do not feel their college education gave them the skills needed to succeed in their first job.
+                                            </>
+                                        )
+                                    },
+                                    {
+                                        title: "Bridging Education & Industry",
+                                        text: (
+                                            <>
+                                                Businesses with strong learning cultures, which often involve industry-education partnerships, have{" "}
+                                                <span className="highlight">30-50% higher employee retention rates.</span>
+                                            </>
+                                        )
+                                    }
+                                ].map((card, index) => (
+                                    <div key={index} className="edu-card">
+                                        <h3>{card.title}</h3>
+                                        <p>{card.text}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                    <Gridcards />
+                    </main>
+                    {/* <Gridcards /> */}
 
                 </div>
             </div>

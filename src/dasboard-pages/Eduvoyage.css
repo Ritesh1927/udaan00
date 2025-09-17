@@ -308,6 +308,133 @@
 }
 
 /* /////////////////    eduvoyage offering ///////////////////////*/
+.edu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+    background: #f9fafb;
+    font-family: 'Inter', sans-serif;
+}
+
+.edu-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.edu-heading h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.highlight-text {
+    color: #7c3aed;
+    /* Purple accent */
+}
+
+.edu-subtitle {
+    margin-top: 0.5rem;
+    font-size: 1.125rem;
+    color: #4b5563;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.underline {
+    width: 100px;
+    height: 3px;
+    background-color: #7c3aed;
+    border-radius: 4px;
+    margin: 1rem auto 0;
+}
+
+.edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+    align-items: center;
+}
+
+.edu-info-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.icon-wrapper {
+    background: #f3e8ff;
+    color: #7c3aed;
+    padding: 1rem;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-row h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.info-row p {
+    margin-top: 0.4rem;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+.edu-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.edu-card {
+    background: white;
+    padding: 1.8rem;
+    border-radius: 12px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.edu-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.edu-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #111827;
+}
+
+.edu-card p {
+    font-size: 1rem;
+    color: #374151;
+    line-height: 1.6;
+}
+
+.highlight {
+    font-weight: 600;
+    color: #7c3aed;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .edu-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 .eduvoyage-offering-container {
     background: linear-gradient(135deg, #667eea, #764ba2);
@@ -350,36 +477,7 @@
     text-decoration: underline;
 }
 
-.you-knw-fact-container {
-    display: flex;
-    margin: auto;
-    justify-content: space-between;
-    width: 80%;
 
-}
-
-.youknw-container {
-    width: 40%;
-}
-
-.youknw-container img {
-    width: 100%;
-}
-
-.pyaimd-img-container {
-    width: 50%;
-}
-
-.pyaimd-img-container img {
-    width: 100%;
-}
-
-.eduvoyage-background-container {
-    height: 350px;
-    background-repeat: no-repeat;
-    width: 100%;
-
-}
 
 
 /* ///////////////////////////////////////////////////////////////// */
@@ -439,6 +537,14 @@
 }
 
 @media (max-width:480px) {
+    .edu-heading h1 {
+        font-size: 25px;
+    }
+
+    .edu-heading {
+        text-align: start;
+    }
+
     .Eduvoyage-container-main-container {
         padding: 0 15px;
     }
