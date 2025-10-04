@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import Star from "../assets/star.png";
+// import Star from "../assets/star.png";
 // ////////////// medical clg
 import Aims from "../assets/aimsdelhi.avif";
 import Jamiam from "../assets/JamiaMed.avif"
@@ -76,12 +76,18 @@ import Mandi from "../assets/mandi.png";
 import IIEST from "../assets/iiest.jpg";
 import Dypatil from "../assets/Dypatil.jpg";
 
+
+import { FaUniversity } from "react-icons/fa";
+import { MdLocationOn } from "react-icons/md";
+import { BsCurrencyRupee } from "react-icons/bs";
+import { HiOutlineBadgeCheck } from "react-icons/hi";
+import { PiExam } from "react-icons/pi";
 // import { CiStar } from "react-icons/ci";
-import { FaLocationDot } from "react-icons/fa6";
-import { RiMoneyRupeeCircleLine } from "react-icons/ri";
-import { LiaCertificateSolid } from "react-icons/lia";
-import { FaHandHoldingUsd } from "react-icons/fa";
-import { PiCertificate } from "react-icons/pi";
+// import { FaLocationDot } from "react-icons/fa6";
+// import { RiMoneyRupeeCircleLine } from "react-icons/ri";
+// import { LiaCertificateSolid } from "react-icons/lia";
+// import { FaHandHoldingUsd } from "react-icons/fa";
+// import { PiCertificate } from "react-icons/pi";
 import "./Admisson.css";
 
 // Change this constant to adjust the description cutoff
@@ -1107,13 +1113,7 @@ const colleges = {
   ],
 };
 const Admisson = () => {
-  // const [activeTab, setActiveTab] = useState("btech");
-  // const [expanded, setExpanded] = useState({});
 
-  // const handleTabClick = (type) => setActiveTab(type);
-  // const toggleRead = (idx) => {
-  //   setExpanded((prev) => ({ ...prev, [idx]: !prev[idx] }));
-  // };
   const [searchParams, setSearchParams] = useSearchParams();
   const urlTab = searchParams.get("tab");
 
@@ -1160,7 +1160,8 @@ const Admisson = () => {
           </div>
         </div>
 
-        <div className="college-cards">
+
+        <div className="college-list">
           {colleges[activeTab].map((college, index) => {
             const fullText = college.description.trim();
             const isLong = fullText.length > DESCRIPTION_LIMIT;
@@ -1172,101 +1173,70 @@ const Admisson = () => {
 
             return (
               <div key={index} className="college-card">
-                <div className="inner-college-card">
+                <div className="adm-inner-card-flex">
+                  {/* College Image */}
                   <div className="clg-img-wrap">
                     <img src={college.img} alt={college.name} />
                   </div>
+
+
+                  {/* Right Side Content */}
                   <div className="admisn-clg-details">
-                    <div className="inline clgname-location">
-                      <h3>{college.name}</h3>
+                    <div className="adm-card-header">
+                      <h2 className="adm-college-title"><FaUniversity className="adm-title-icon" /> {college.name}</h2>
+                      <div className="adm-card-badges">
+                        <span className="adm-nirf-badge">#{college.rank} NIRF</span>
+                        <span className="adm-rating-badge">⭐ {college.rating}</span>
+                      </div>
                     </div>
 
-                    <p className="nirf-ranking">
-                      <span className="rank-no">{college.rank}</span> NIRF
+
+                    {/* Location */}
+                    <p className="adm-college-location"><MdLocationOn /> {college.location}</p>
+
+
+                    {/* Info Grid */}
+                    <div className="adm-info-grid">
+                      <div className="adm-info-item">
+                        <BsCurrencyRupee className="adm-info-icon" />
+                        <span className="adm-info-value">{college.fees}</span>
+                        <span className="adm-info-label">Fees</span>
+                      </div>
+                      <div className="adm-info-item">
+                        <span className="adm-info-value">{college.package} LPA</span>
+                        <span className="adm-info-label">Avg Package</span>
+                      </div>
+                      <div className="adm-info-item">
+                        <HiOutlineBadgeCheck className="adm-info-icon" />
+                        <span className="adm-info-value">{college.accerdition}</span>
+                        <span className="adm-info-label">Accreditation</span>
+                      </div>
+                      <div className="adm-info-item">
+                        <PiExam className="adm-info-icon" />
+                        <span className="adm-info-value">{college.exams}</span>
+                        <span className="adm-info-label">Exams</span>
+                      </div>
+                    </div>
+
+
+                    {/* Description */}
+                    <p className="adm-college-description">
+                      {displayText}
+                      {isLong && (
+                        <button className="adm-read-more" onClick={() => toggleRead(index)}>
+                          {isOpen ? "Read Less" : "Read More"}
+                        </button>
+                      )}
                     </p>
-                    <div className="inline addres-admisn-wrapper">
-                      <p className="clg-sepecific">
-                        <i className="admisn-location">
-                          <FaLocationDot />
-                        </i>
-                        {college.location}
-                      </p>
-                      <button className="ranking-btn">
-                        {college.rating}
-                        <div className="star-img-container ">
-                          <img src={Star} alt="" />
-                        </div>
-                        {/* <i className="clg-sepecific-icon">
-                            <CiStar />
-                          </i> */}
+
+
+                    {/* CTA Button */}
+                    <div className="adm-card-footer">
+                      <button className="adm-counselling-btn">
+                        <a href="https://wa.me/917355308287?text=hello%20%2C%20i%20want%20to%20know%20more" target="_blank" rel="noopener noreferrer">Get Free Counselling</a>
                       </button>
                     </div>
-                    <div className="inline address-certificate-container">
-                      <div>
-                        <p className="clg-sepecific">
-                          <i className="clg-sepecific-icon">
-                            <RiMoneyRupeeCircleLine />
-                          </i>
-                          {college.fees}
-                        </p>
-                        <span className="under-heading"> Fees</span>
-                      </div>
-                      <div>
-                        <p className="clg-sepecific">
-                          <i className="clg-sepecific-icon">
-                            <LiaCertificateSolid />
-                          </i>
-                          {college.accerdition}
-                        </p>
-                        <span className="under-heading"> Accerdition</span>
-                      </div>
-                      <div>
-                        <p className="clg-sepecific">
-                          <i className="clg-sepecific-icon">
-                            <FaHandHoldingUsd />
-                          </i>
-                          {college.package}
-                        </p>
-                        <span className="under-heading">Avg Package</span>
-                      </div>
-                      <div>
-                        <p className="clg-sepecific">
-                          <i className="clg-sepecific-icon">
-                            <PiCertificate />
-                          </i>
-                          {college.exams}
-                        </p>
-                        <span className="under-heading">Exams</span>
-                      </div>
-                    </div>
-
-                    <div>
-                      <p className="clg-admisn-discription">
-                        {displayText}
-                        {isLong && (
-                          <button
-                            className="read-more-btn"
-                            onClick={() => toggleRead(index)}
-                          >
-                            {isOpen ? "Read Less" : "Read More"}
-                          </button>
-                        )}
-                      </p>
-                    </div>
                   </div>
-                </div>
-                <div className="get-free-counselling-container">
-                  <hr />
-                  <button>
-                    {" "}
-                    <a
-                      href="https://wa.me/917355308287?text=hello%20%2C%20i%20want%20to%20know%20more"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Get Free Counselling
-                    </a>{" "}
-                  </button>
                 </div>
               </div>
             );

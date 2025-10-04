@@ -39,6 +39,7 @@ import Career from "./common-component/career/Career";
 import { AuthModalProvider } from "./auth/AuthModalContext";
 import UniversityDetail from "./component/abroaduniversity/UniversityDetail";
 import Eduvoyage from "./dasboard-pages/Eduvoyage";
+import Settleabroad from "./dasboard-pages/Settleabroad";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -76,10 +77,11 @@ root.render(
               <Route path="collegelist" element={<CollegeList />} />
               <Route path="career" element={<Career />} />
               <Route path="/university/:name" element={<UniversityDetail />} />
-                    <Route path="/eduvoyage" element={<Eduvoyage />} />
-            {/* <= add all new routes here  */}
+              <Route path="/eduvoyage" element={<Eduvoyage />} />
+              <Route path="/settleabroad" element={<Settleabroad />} />
+              {/* <= add all new routes here  */}
 
-            {/* <Route
+              {/* <Route
               path="/profile"
               element={
                 <ProtectedRoute>
@@ -87,13 +89,13 @@ root.render(
                 </ProtectedRoute>
               }
             /> */}
-          </Route>
-          <Route path="*" element={<Error />}></Route>
-           <Route path="/admin" element={<Admin />} />
-        </Routes>
-      </AuthModalProvider>
-    </AuthProvider>
-      </BrowserRouter>
+            </Route>
+            <Route path="*" element={<Error />}></Route>
+            <Route path="/admin" element={<Admin />} />
+          </Routes>
+        </AuthModalProvider>
+      </AuthProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

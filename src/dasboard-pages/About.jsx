@@ -292,28 +292,6 @@ const About = () => {
                   pathways.
                 </p>
               </div>
-
-              {/* <!-- Team Member 3 --> */}
-              <div className="team-member">
-                <div className="member-photo">
-                  <img
-                    src={Kunalsir}
-                    alt="Kunal Handu"
-                  // Removed onerror, safer to handle image loading in React
-                  />
-                </div>
-                <h4 className="member-name">Kunal Handu</h4>
-                <p className="member-position">Director Placements</p>
-                <p className="member-bio">
-                  Serial entrepreneur, with interest in Technology, Talent
-                  Acquisition, Education and Sports, having exceptional sense
-                  for money and accountability to go along with hunger for
-                  numbers. Prolific recruitment pro with over 19+ years of total
-                  experience completely in core recruitment having managed mid
-                  management and leadership hiring across different domains,
-                  skill and geographies.
-                </p>
-              </div>
             </div>
           </div>
         </div>
