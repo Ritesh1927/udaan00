@@ -77,7 +77,7 @@ import IIEST from "../assets/iiest.jpg";
 import Dypatil from "../assets/Dypatil.jpg";
 
 
-import { FaUniversity } from "react-icons/fa";
+// import { FaUniversity } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import { BsCurrencyRupee } from "react-icons/bs";
 import { HiOutlineBadgeCheck } from "react-icons/hi";
@@ -88,6 +88,7 @@ import { PiExam } from "react-icons/pi";
 // import { LiaCertificateSolid } from "react-icons/lia";
 // import { FaHandHoldingUsd } from "react-icons/fa";
 // import { PiCertificate } from "react-icons/pi";
+import { FaStar } from "react-icons/fa";
 import "./Admisson.css";
 
 // Change this constant to adjust the description cutoff
@@ -1134,115 +1135,131 @@ const Admisson = () => {
 
   return (
     <Fragment>
-      {/* //////////////////////////////////////////////////// */}
-      <section className="college-section container">
-        <h2 className="section-title">Explore Colleges by Category</h2>
-        <div className="category-tabs">
-          <div
-            className={`category-card ${activeTab === "btech" ? "active" : ""}`}
-            onClick={() => handleTabClick("btech")}
-          >
-            B.Tech
+      <div className=" college-section-admission-container  ">
+        {/* //////////////////////////////////////////////////// */}
+        <section className="college-section container">
+          <h2 className="section-title">Explore Colleges by Category</h2>
+          <div className="category-tabs">
+            <div
+              className={`category-card ${activeTab === "btech" ? "active" : ""}`}
+              onClick={() => handleTabClick("btech")}
+            >
+              B.Tech
+            </div>
+            <div
+              className={`category-card ${activeTab === "medical" ? "active" : ""
+                }`}
+              onClick={() => handleTabClick("medical")}
+            >
+              Medical
+            </div>
+            <div
+              className={`category-card ${activeTab === "management" ? "active" : ""
+                }`}
+              onClick={() => handleTabClick("management")}
+            >
+              Management
+            </div>
           </div>
-          <div
-            className={`category-card ${activeTab === "medical" ? "active" : ""
-              }`}
-            onClick={() => handleTabClick("medical")}
-          >
-            Medical
-          </div>
-          <div
-            className={`category-card ${activeTab === "management" ? "active" : ""
-              }`}
-            onClick={() => handleTabClick("management")}
-          >
-            Management
-          </div>
-        </div>
 
 
-        <div className="college-list">
-          {colleges[activeTab].map((college, index) => {
-            const fullText = college.description.trim();
-            const isLong = fullText.length > DESCRIPTION_LIMIT;
-            const isOpen = expanded[index];
-            const displayText =
-              isLong && !isOpen
-                ? fullText.slice(0, DESCRIPTION_LIMIT) + "..."
-                : fullText;
+          <div className="college-list">
+            {colleges[activeTab].map((college, index) => {
+              const fullText = college.description.trim();
+              const isLong = fullText.length > DESCRIPTION_LIMIT;
+              const isOpen = expanded[index];
+              const displayText =
+                isLong && !isOpen
+                  ? fullText.slice(0, DESCRIPTION_LIMIT) + "..."
+                  : fullText;
 
-            return (
-              <div key={index} className="college-card">
-                <div className="adm-inner-card-flex">
-                  {/* College Image */}
-                  <div className="clg-img-wrap">
-                    <img src={college.img} alt={college.name} />
-                  </div>
-
-
-                  {/* Right Side Content */}
-                  <div className="admisn-clg-details">
-                    <div className="adm-card-header">
-                      <h2 className="adm-college-title"><FaUniversity className="adm-title-icon" /> {college.name}</h2>
-                      <div className="adm-card-badges">
-                        <span className="adm-nirf-badge">#{college.rank} NIRF</span>
-                        <span className="adm-rating-badge">⭐ {college.rating}</span>
-                      </div>
+              return (
+                <div key={index} className="college-card">
+                  <div className="adm-inner-card-flex">
+                    {/* College Image */}
+                    <div className="clg-img-wrap">
+                      <img src={college.img} alt={college.name} />
                     </div>
 
 
-                    {/* Location */}
-                    <p className="adm-college-location"><MdLocationOn /> {college.location}</p>
+                    {/* Right Side Content */}
+                    <div className="admisn-clg-details">
+                      <div className="adm-card-header">
+                        <h2 className="adm-college-title">{college.name}</h2>
+                        <div className="adm-card-badges">
+                          <span className="adm-nirf-badge">{college.rank} NIRF</span>
+                          <p className="adm-rating-badge"><span>{college.rating} </span> <span className="mt2"> <i><FaStar /></i> </span></p>
+                        </div>
+                      </div>
 
 
-                    {/* Info Grid */}
-                    <div className="adm-info-grid">
-                      <div className="adm-info-item">
-                        <BsCurrencyRupee className="adm-info-icon" />
-                        <span className="adm-info-value">{college.fees}</span>
-                        <span className="adm-info-label">Fees</span>
-                      </div>
-                      <div className="adm-info-item">
-                        <span className="adm-info-value">{college.package} LPA</span>
-                        <span className="adm-info-label">Avg Package</span>
-                      </div>
-                      <div className="adm-info-item">
-                        <HiOutlineBadgeCheck className="adm-info-icon" />
-                        <span className="adm-info-value">{college.accerdition}</span>
-                        <span className="adm-info-label">Accreditation</span>
-                      </div>
-                      <div className="adm-info-item">
-                        <PiExam className="adm-info-icon" />
-                        <span className="adm-info-value">{college.exams}</span>
-                        <span className="adm-info-label">Exams</span>
-                      </div>
-                    </div>
+                      {/* Location */}
+                      <p className="adm-college-location"><MdLocationOn /> {college.location}</p>
 
 
-                    {/* Description */}
-                    <p className="adm-college-description">
-                      {displayText}
-                      {isLong && (
-                        <button className="adm-read-more" onClick={() => toggleRead(index)}>
-                          {isOpen ? "Read Less" : "Read More"}
+                      {/* Info Grid */}
+                      <div className="adm-info-grid">
+                        <div className="adm-info-item adm-info-other">
+                          <BsCurrencyRupee className="adm-info-icon" />
+                          <div>
+                            <span className="adm-info-value">{college.fees}</span>
+                            <br />
+                            <span className="adm-info-label">Fees</span>
+                          </div>
+
+                        </div>
+                        <div className="adm-info-item">
+                          <p className="adm-info-value">{college.package}</p>
+                          <p className="adm-info-label">Avg Package</p>
+                        </div>
+                        <div className="adm-info-item adm-info-other  ">
+                          <HiOutlineBadgeCheck className="adm-info-icon " />
+                          <div>
+                            <span className="adm-info-value">{college.accerdition}</span>
+                            <br />
+                            <span className="adm-info-label">Accreditation</span>
+                          </div>
+
+                        </div>
+                        <div className="adm-info-item adm-info-other">
+                          <div>
+                            <PiExam className="adm-info-icon" />
+                          </div>
+                          <div>
+                            <span className="adm-info-value">{college.exams}</span>
+                            <br />
+                            <span className="adm-info-label">Exams</span>
+                          </div>
+
+                        </div>
+                      </div>
+
+
+                      {/* Description */}
+                      <p className="adm-college-description">
+                        {displayText}
+                        {isLong && (
+                          <button className="adm-read-more" onClick={() => toggleRead(index)}>
+                            {isOpen ? "Read Less" : "Read More"}
+                          </button>
+                        )}
+                      </p>
+
+
+                      {/* CTA Button */}
+                      <div className="adm-card-footer">
+                        <button className="adm-counselling-btn">
+                          <a href="https://wa.me/917355308287?text=hello%20%2C%20i%20want%20to%20know%20more" target="_blank" rel="noopener noreferrer">Get Free Counselling</a>
                         </button>
-                      )}
-                    </p>
-
-
-                    {/* CTA Button */}
-                    <div className="adm-card-footer">
-                      <button className="adm-counselling-btn">
-                        <a href="https://wa.me/917355308287?text=hello%20%2C%20i%20want%20to%20know%20more" target="_blank" rel="noopener noreferrer">Get Free Counselling</a>
-                      </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+              );
+            })}
+          </div>
+        </section>
+      </div>
     </Fragment>
   );
 };

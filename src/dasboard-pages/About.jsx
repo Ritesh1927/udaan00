@@ -5,7 +5,7 @@ import "./About.css";
 import Abtbanner from "../assets/About0002.png";
 import Sir from "../assets/Sirimg01.png";
 import Mam from "../assets/poojamaam.png";
-import Kunalsir from "../assets/kunalsir.png";
+// import Kunalsir from "../assets/kunalsir.png";
 // import Vison from "../assets/visson.png";
 // import Misson from "../assets/misson.png";
 
