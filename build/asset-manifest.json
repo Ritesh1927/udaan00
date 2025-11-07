@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.1fee2824.css",
-    "main.js": "/static/js/main.25229bf1.js",
+    "main.css": "/static/css/main.f31bbec7.css",
+    "main.js": "/static/js/main.e59ba407.js",
     "static/js/453.ac42ff46.chunk.js": "/static/js/453.ac42ff46.chunk.js",
     "static/media/About0002.png": "/static/media/About0002.c49bc4b800322fd393ff.png",
     "static/media/councel2.png": "/static/media/councel2.efdaf72c308618cc8bc4.png",
@@ -57,7 +57,6 @@
     "static/media/Grant-medical.jpg": "/static/media/Grant-medical.dcbe3c3020e8c804ee7c.jpg",
     "static/media/Nitwrangal.avif": "/static/media/Nitwrangal.394bfe5b70de4c084b96.avif",
     "static/media/abes.jpg": "/static/media/abes.237bb335ded4cb8c54e4.jpg",
-    "static/media/kunalsir.png": "/static/media/kunalsir.af253d36502f7aaa205d.png",
     "static/media/greenwich.jpg": "/static/media/greenwich.a2133e39492a1fc4ac0c.jpg",
     "static/media/Heriot.jpg": "/static/media/Heriot.a417c3c7c941348d393d.jpg",
     "static/media/xlri.jpg": "/static/media/xlri.9a133871e4771b4492a3.jpg",
@@ -177,12 +176,12 @@
     "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
-    "main.1fee2824.css.map": "/static/css/main.1fee2824.css.map",
-    "main.25229bf1.js.map": "/static/js/main.25229bf1.js.map",
+    "main.f31bbec7.css.map": "/static/css/main.f31bbec7.css.map",
+    "main.e59ba407.js.map": "/static/js/main.e59ba407.js.map",
     "453.ac42ff46.chunk.js.map": "/static/js/453.ac42ff46.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1fee2824.css",
-    "static/js/main.25229bf1.js"
+    "static/css/main.f31bbec7.css",
+    "static/js/main.e59ba407.js"
   ]
 }

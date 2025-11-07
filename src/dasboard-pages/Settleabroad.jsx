@@ -15,7 +15,10 @@ import {
     MdTranslate,
     MdArticle
 } from "react-icons/md";
-
+import Image1 from "../assets/setleabroad1.png"
+import Image2 from "../assets/setleabroad2.png"
+import Image3 from "../assets/setleabroad3.png"
+import Image4 from "../assets/setleabroad4.png"
 // Single-file React component named Settleabroad
 // Uses only custom CSS included in a <style> block — no Tailwind or other frameworks.
 // This component is a near-exact JSX conversion of the provided HTML and styling.
@@ -57,7 +60,8 @@ export default function Settleabroad() {
 
                             <div className="hero-image-wrap">
                                 <div className="accent-bg" aria-hidden="true"></div>
-                                <img alt="Smiling student in a professional kitchen environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACoKWUcTj2DgqEk8fVvGUQ_pKmcGdC0d5-WMoj1R_A-wMiLqzrm3M7_I4nKQJDc3795j5_vxmyYQVGwdqXVK_nnwoPXowSNKE5DgSmI2SpevFnaPM40cmtbLTz3UHjwKfzotCeva66prhk0stIsWCA_xlRgEwPP3HL3M_BMnLNXOVsMSzBrZLACw_eRFKXznOUmb-D-DIH_pgfVgmJHEjUFM2wvShCa1MK_CLPQx3rurYcLfmypVGq-JmBzk1bM4yLXAyi-HxNEYbx" />
+                                <img alt="Smiling student in a professional kitchen environment" src={Image1} />
+
                             </div>
                         </div>
                     </div>
@@ -173,7 +177,7 @@ export default function Settleabroad() {
                             <div className='grid-img-container'>
                                 <img
                                     alt="Students learning in a modern kitchen setting"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAee7tYGMF3qfwPgcv_Cd0mGhvbMXlH6JEVAiwr9tQ-pYK8jcwKFLrenLOcX6mZy3THWDufWPTBR5bExmAQAfizAY9a5Urn51MIW9yUQux70dVV6Jws_7HyUAybY-ZZEHOdm2vNRefNxRBb8ygVtQbcYz2x-61vo_VnQsA5kAgAtHjAbs-nEFk1HdeRIQp7EXJnNrsdVqJ-WDhtXGpPSDOR9XD6Ahsgsu35Yn8T3LrAjpcAObN5ihhQZGKdyI-eaDpyZz1NQZ5Sk1ol"
+                                    src={Image2}
                                 />
                             </div>
                             <div>
@@ -240,7 +244,7 @@ export default function Settleabroad() {
 
                         <div className="countries-grid">
                             <div className="country-card">
-                                <img alt="Mauritius beach" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjvqmoBqek1P6YiXou8bSJcTHsRw_kke3vLA2KspQ1Mf3Akz9dVwB_Eypa_IVftogcnCc5BoH_DhQS5W_CIQmIheGIrVuhfGubDrPBnth847STvhJ4c6XNNr0zZaZGf68Vus6PIgDhVnhnnXGOmjeXYPSmBzsPyIFpwtDu1z1f2Zg9PhjJuZAwaUURzgk14DBsKJY8lomM6Z4txEXEII5WRqcHHFt09boV7GDbACl1lB4-hHX8OaOmgS_nxTlMe8lxk4d8HpeZIoR9" />
+                                <img alt="Mauritius beach" src={Image3} />
                                 <div className="card-body">
                                     <div style={{ display: 'flex', alignItems: 'center', marginBottom: 8 }}>
                                         <span className="flag">🇲🇺</span>
@@ -251,7 +255,7 @@ export default function Settleabroad() {
                             </div>
 
                             <div className="country-card">
-                                <img alt="Malta coast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4oEDPkbdHq2urxNUYD6bCA0gXOZ_6SQpPT0P2mG3MUPZKJCXX_Kw0Xn-_1GMH1HSIgO7I3Gg3Lljbe8AbKKEW4l1OZBc25xGCjQa_GIm0DDLVag1jzv6s1vWtSMP0GBAW49f-xgy7osX6JzaPGLRQb8sAGKVtyAqMyxL1xwczVhe4zLb4xoONZYiSCXBtefq2J1sNx0gHzvQ490ACwStezGVQCLYFQnjh3t41G-aZsH-I_NuuYAwE7ntUQ-iKs3D_822CaV2S-vfy" />
+                                <img alt="Malta coast" src={Image4} />
                                 <div className="card-body">
                                     <div style={{ display: 'flex', alignItems: 'center', marginBottom: 8 }}>
                                         <span className="flag">🇲🇹</span>
