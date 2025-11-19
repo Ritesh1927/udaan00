@@ -63,7 +63,19 @@ const Footer = () => {
                   Management
                 </button>
               </div>
+              {/* franchise secition */}
+              <div className="footer-column study-abroad-column mt20">
+                <h3 className="footer-heading">Franchise</h3>
+                <ul className="footer-links">
+                  <li>
+                    <Link to="/dehradun">Dehradun</Link>
+                  </li>
+
+
+                </ul>
+              </div>
             </div>
+
 
             {/* <!-- Middle Column - Study Abroad --> */}
             <div className="footer-column study-abroad-column">
@@ -164,14 +176,14 @@ const Footer = () => {
             <div className="footer-social">
               <h4>Find us on</h4>
               <div className="social-links">
-         <a
-  href="https://facebook.com/udaancareertalks" 
-  className="social-link facebook"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <FaFacebookF />
-</a>
+                <a
+                  href="https://facebook.com/udaancareertalks"
+                  className="social-link facebook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaFacebookF />
+                </a>
 
                 {/* <a href="#" className="social-link facebook">
                   <i className="fab fa-facebook-f">

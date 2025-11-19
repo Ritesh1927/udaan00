@@ -40,6 +40,7 @@ import { AuthModalProvider } from "./auth/AuthModalContext";
 import UniversityDetail from "./component/abroaduniversity/UniversityDetail";
 import Eduvoyage from "./dasboard-pages/Eduvoyage";
 import Settleabroad from "./dasboard-pages/Settleabroad";
+import Dehradun from "./component/franchise/Dehradun";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -79,7 +80,12 @@ root.render(
               <Route path="/university/:name" element={<UniversityDetail />} />
               <Route path="/eduvoyage" element={<Eduvoyage />} />
               <Route path="/settleabroad" element={<Settleabroad />} />
+
               {/* <= add all new routes here  */}
+              {/* Franchise router */}
+              <Route path="/dehradun" element={<Dehradun />} />
+
+
 
               {/* <Route
               path="/profile"
