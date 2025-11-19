@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f31bbec7.css",
-    "main.js": "/static/js/main.2e8effcc.js",
+    "main.css": "/static/css/main.405b193a.css",
+    "main.js": "/static/js/main.1e26c9bd.js",
     "static/js/453.ac42ff46.chunk.js": "/static/js/453.ac42ff46.chunk.js",
     "static/media/About0002.png": "/static/media/About0002.c49bc4b800322fd393ff.png",
     "static/media/councel2.png": "/static/media/councel2.efdaf72c308618cc8bc4.png",
@@ -23,11 +23,15 @@
     "static/media/NITcalicut.jpeg": "/static/media/NITcalicut.3479be3928c77abe9e25.jpeg",
     "static/media/Middlesex.jpg": "/static/media/Middlesex.6a2b4e20e98b5b846c01.jpg",
     "static/media/jadhavpur.png": "/static/media/jadhavpur.e36503a192a717594a58.png",
+    "static/media/unnamed3.png": "/static/media/unnamed3.9a0a202de4a22ef1060a.png",
     "static/media/hospital1.jpg": "/static/media/hospital1.f71279dd65c1025ae608.jpg",
+    "static/media/unnamed4.png": "/static/media/unnamed4.433c5788115d833fc607.png",
     "static/media/service1.jpg": "/static/media/service1.834cdfff7ff721ade511.jpg",
+    "static/media/unnamed1.png": "/static/media/unnamed1.e278785a373ee7b5c733.png",
     "static/media/cmr.png": "/static/media/cmr.3de4a252e4462db7136f.png",
     "static/media/Gmch.jpg": "/static/media/Gmch.c94ea4c34b6f82faffdb.jpg",
     "static/media/universities100.png": "/static/media/universities100.35badddfe0c128882890.png",
+    "static/media/unnamed2.png": "/static/media/unnamed2.306aec3161bfc7c4d1bf.png",
     "static/media/iitdelhi.avif": "/static/media/iitdelhi.20b63f2f5cad53838cd8.avif",
     "static/media/shardha.png": "/static/media/shardha.87c82cc16c27ca2da5c1.png",
     "static/media/Ipgme.jpg": "/static/media/Ipgme.bc35c8a00d29d9e49a3c.jpg",
@@ -66,6 +70,7 @@
     "static/media/xlri.jpg": "/static/media/xlri.9a133871e4771b4492a3.jpg",
     "static/media/Ludwig.jpg": "/static/media/Ludwig.e8f00b3e2080f061a2a7.jpg",
     "static/media/manipur.png": "/static/media/manipur.31bd07336c06f0963dd5.png",
+    "static/media/dehradunbanner.webp": "/static/media/dehradunbanner.25b1e3ec822a89296cee.webp",
     "static/media/studyabroad-banner.jpg": "/static/media/studyabroad-banner.21c05df8a9428bfd0257.jpg",
     "static/media/anna.jpeg": "/static/media/anna.60ed34787af7123e3d32.jpeg",
     "static/media/IITbhu.jpg": "/static/media/IITbhu.c9dc926f3217852e793e.jpg",
@@ -174,18 +179,18 @@
     "static/media/florida.jpg": "/static/media/florida.598be72d9391df7e3564.jpg",
     "static/media/Igims.jpeg": "/static/media/Igims.efba2b9d846b53f433e0.jpeg",
     "static/media/km.avif": "/static/media/km.601fd6a279208291bfcd.avif",
+    "index.html": "/index.html",
     "static/media/Banner+b.webp": "/static/media/Banner+b.9d9d323b3509007802b6.webp",
     "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
-    "index.html": "/index.html",
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
-    "main.f31bbec7.css.map": "/static/css/main.f31bbec7.css.map",
-    "main.2e8effcc.js.map": "/static/js/main.2e8effcc.js.map",
+    "main.405b193a.css.map": "/static/css/main.405b193a.css.map",
+    "main.1e26c9bd.js.map": "/static/js/main.1e26c9bd.js.map",
     "453.ac42ff46.chunk.js.map": "/static/js/453.ac42ff46.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f31bbec7.css",
-    "static/js/main.2e8effcc.js"
+    "static/css/main.405b193a.css",
+    "static/js/main.1e26c9bd.js"
   ]
 }
