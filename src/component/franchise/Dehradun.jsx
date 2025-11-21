@@ -12,6 +12,7 @@ import Collage1 from "../../assets/unnamed1.png"
 import Collage2 from "../../assets/unnamed2.png"
 import Collage3 from "../../assets/unnamed3.png"
 import Collage4 from "../../assets/unnamed4.png"
+import PradeepSir from "../../assets/Pradeepsir.png"
 import "../franchise/Dehradun.css";
 
 const Dehradun = () => {
@@ -98,12 +99,9 @@ const Dehradun = () => {
                 <div className="director-card">
                     <div className="director-flex">
                         <div className="director-img-container-span">
-                            <div
-                                className="director-img"
-                                style={{
-                                    backgroundImage: `url("https://lh3.googleusercontent.com/aida-public/AB6AXuDt-rS-NIM8EqBdG6yrmRbT9aMceJlpqxO7P2OHK9C3R6FahMhye_a6sj-6buyE5JsfLGLOIIH2Ts954y1GQz6UaUeeXihux_ug5mlfxn-14EwnceyKmILtVvRuhwY18IdvmIw9bXIb-9REavFL_Gr8Cyq1iFBwgrr2zNkn6V_FzhSicDPlatGvO7-l8yzYX4OSpQ-5rtsaiLoV0oc-zc7ApqZADOtc5V-g9b6gDRZ-hKzdKYiu5Btgt06CJBxgyutQKr_RFwSw")`,
-                                }}
-                            ></div>
+                            <div className="director-img" >
+                                <img src={PradeepSir} alt="" />
+                            </div>
                         </div>
 
 
