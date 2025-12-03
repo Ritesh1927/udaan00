@@ -19,7 +19,7 @@ const Dehradun = () => {
     const items = [
         {
             icon: <FaAward className="feature-icon" />,
-            title: "18+ Years Leadership Experience",
+            title: "20+ Years Leadership Experience",
             desc: "Benefit from decades of proven expertise in academic and career guidance."
         },
         {
@@ -106,7 +106,7 @@ const Dehradun = () => {
 
 
                         <div className="director-text">
-                            <h3 className="heading-md">Meet Our Centre Head – Mr. Pradeep</h3>
+                            <h3 className="heading-md">Meet Our Managing Direct– Mr. Pradeep</h3>
 
                             <p className="body-text">
                                 Mr. Pradeep, Managing Director of Udaan360 Dehradun, brings 18+ years of
