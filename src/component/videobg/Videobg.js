@@ -5,54 +5,59 @@ import Councel from "../../assets/councel2.png";
 import { FaCirclePlay } from "react-icons/fa6";
 import { FaClock, FaEye } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
-
+import Thumbnail1 from "../../assets/Thumbnail1.png"
+import Thumnail2 from "../../assets/Thumbnail2.png"
+import Thumnail3 from "../../assets/Thumbnail3.png"
+import Thumbnail4 from "../../assets/Thumnail4.png"
+import Thumbnail5 from "../../assets/Thumbnail5.png"
 const videos = [
   {
     id: 1,
-    title: "Motivation for Life",
+    title: "Academic Pressure: The Dark Truth",
     category: "Educational Content",
     description:
-      "Learn how to choose the right career path with expert guidance from Udaan360.",
-    url: "https://www.youtube.com/embed/KwFcqoiWB84",
-    thumbnail: "https://img.youtube.com/vi/KwFcqoiWB84/0.jpg",
+      "THE DARK REALITY OF ACADEMIC PRESSURE #trending #darkreality #academicpressure #ytshorts",
+    url: "https://www.youtube.com/embed/JFxbSR-PnBA",
+    thumbnail: Thumbnail1,
   },
   {
     id: 2,
-    title: "Engineering- Salaries, Branches, Opportunities,Admissions",
+    title: "Don’t Choose Career Blindly!",
     category: "Educational Content",
     description:
-      "Comprehensive guide to studying abroad including application process, visa requirements, and tips for success.",
-    url: "https://www.youtube.com/embed/Le6FsQUx-fQ",
-    thumbnail: "https://img.youtube.com/vi/Le6FsQUx-fQ/0.jpg",
+      "Choosing a course without knowing your potential = Shooting in the dark #career #rightpath #trending",
+    url: "https://www.youtube.com/embed/662ycWcpkr0",
+    thumbnail: Thumnail3,
   },
   {
     id: 3,
-    title: "JEE Mains 2022: Admissions & Results",
+    title: "Right Start, Bright Future",
     category: "Educational Content",
     description:
-      "Best practices and strategies to crack JEE with confidence and excellence.",
-    url: "https://www.youtube.com/embed/RV6vD9vjMbI",
-    thumbnail: "https://img.youtube.com/vi/RV6vD9vjMbI/0.jpg",
+      "A future where every young mind gets the right start — that’s the vision. #ceo #vision #ytshorts",
+    url: "https://www.youtube.com/embed/c1fjCeWBG2M",
+    thumbnail: Thumbnail4,
   },
   {
     id: 4,
-    title: "Upskilling - What, Why How?",
+    title: "Beyond IIT & NEET",
     category: "Educational Content",
     description:
-      "Real-life success stories to inspire and motivate your educational journey.",
-    url: "https://www.youtube.com/embed/Knxezc3DGoo",
-    thumbnail: "https://img.youtube.com/vi/Knxezc3DGoo/0.jpg",
+      "Education is more than IIT & NEET — It’s about purpose, not pressure. #education #purpose",
+    url: "https://www.youtube.com/embed/5ZYtu7t2pQ0",
+    thumbnail: Thumnail2,
   },
   {
     id: 5,
-    title: "Safe Score for NEET 2022",
+    title: "If Not MBBS?",
     category: "Educational Content",
     description:
-      "Step-by-step guidance to apply for scholarships and maximize your funding opportunities.",
-    url: "https://www.youtube.com/embed/w3CSP_zUpb8",
-    thumbnail: "https://img.youtube.com/vi/w3CSP_zUpb8/0.jpg",
+      "If not MBBS? #career #alternatives #medical",
+    url: "https://www.youtube.com/embed/NRfLRRpjs7A",
+    thumbnail: Thumbnail5,
   },
 ];
+
 
 const Videobg = () => {
   const [selectedVideo, setSelectedVideo] = useState(videos[0]);
@@ -119,9 +124,8 @@ const Videobg = () => {
               {videos.map((video, index) => (
                 <div
                   key={video.id}
-                  className={`video-card ${
-                    selectedVideo.id === video.id ? "active" : ""
-                  }`}
+                  className={`video-card ${selectedVideo.id === video.id ? "active" : ""
+                    }`}
                   onClick={() => setSelectedVideo(video)}
                 >
                   <div className="video-thumbnail">
