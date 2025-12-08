@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import "../videobg/Videobg.css";
-import Videobck from "../../assets/videoback.png";
-import Councel from "../../assets/councel2.png";
+// import Videobck from "../../assets/videoback.png";
+// import Councel from "../../assets/councel2.png";
 import { FaCirclePlay } from "react-icons/fa6";
 import { FaClock, FaEye } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";

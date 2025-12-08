@@ -20,7 +20,7 @@ const Eduvoyage = () => {
                             EduVoyage - An initiative by  :  <img src={UdaanLogo} alt="Udaan360" className="brand-logo" />
                         </h1>
                         <p className="eduvoyage-hero-description">
-                            A journey beyond classrooms
+                            EduVoyage - Crafting Futures Together
                         </p>
                     </div>
 
@@ -34,21 +34,17 @@ const Eduvoyage = () => {
                         <h2 className='eduvoyage-heading '>
                             About EduVoyage
                         </h2>
-                        <p>EduVoyage - Crafting Futures Together</p>
+                        <p>EduVoyage -  A journey beyond classrooms</p>
                     </div>
 
                     {/* /////////////// */}
                     <p className='first-upper-eduvoyage-container'>
-                        EduVoyage is a student centric unique initiative by Udaan360 designed to provide
-                        school students with first-hand exposure to top colleges and universities , through
-                        carefully curated campus visits, interactive sessions with faculty, insights into diverse
-                        courses.
-                        <br></br>
-                        EduVoyage helps students explore real academic environments, understand career
-                        opportunities, and make confident, well-informed decisions about their future.
-                        <br />
-                        This will help them to take correct successive career decisions towards their
-                        aspirations.
+                        In Alignment with NEP 2020, EduVoyage, an initiative by Udaan360, is designed to
+                        help students integrate skill-based learning, real-life competency development,
+                        and practical career understanding into their academic ecosystem.
+                        EduVoyage is a student-centric and future-focused ecosystem that brings
+                        together skill-based learning, university & industry exposure, real-life career
+                        pathways, assessments, and academic support-all in one integrated solution.
                     </p>
 
                     <Eduvagetimline />
@@ -127,59 +123,78 @@ const Eduvoyage = () => {
                         <div className='Eduvoyage-offer-inner-content  '>
                             <img src={Arrownew} alt="" />
                             <p>
-                                <b className='eduvoyage-inner-heading'>Experiential Approach      </b> –
-                                Let’s open doors to real world- learning. Through guided tours
-                                and immersive experiences, we take you beyond the pages into actual classrooms,
-                                where knowledge comes alive and future path become clearer.
+                                <div className='inline align-center'>
+                                    <b className='eduvoyage-inner-heading'>Skillo</b>
+                                    <b> - Skill-Based Learning Programs</b>
+                                </div>
+
+                                NSDC & Skill India certified, real-world skills such as AI, coding, entrepreneurship,
+                                communication, design thinking & innovation, delivered by top industry experts.
                             </p>
                         </div>
                         <div className='Eduvoyage-offer-inner-content  '>
                             <img src={Arrownew} alt="" />
                             <p>
-                                <b className='eduvoyage-inner-heading'>Industry Academia Connect    </b> –
-                                We link wisdom of classrooms with the demands of real
-                                world, helping you evolve. We connect you to industry experts, emerging trends and real
-                                workplace environments.
+                                <div className='inline align-center'>
+                                    <b className='eduvoyage-inner-heading'>EduVoyage</b> – <b>
+                                        Career Exploration & Real-Life Exposure
+                                    </b>
+                                </div>
+
+                                University and industry visits, expert interactions & experiential learning to build clarity,
+                                confidence & informed decision-making
                             </p>
                         </div>
                         <div className='Eduvoyage-offer-inner-content  '>
                             <img src={Arrownew} alt="" />
                             <p>
-                                <b className='eduvoyage-inner-heading'>Skill awareness and Global Prospective   </b> –
-                                Guidance for emerging and cross- stream career options across the Globe.
+                                <b className='eduvoyage-inner-heading'>Psychometric Testing & Career Guidance  </b> –
+                                Scientific assessments to help students discover strengths, interests & the right future
+                                pathways.
                             </p>
                         </div>
                         <div className='Eduvoyage-offer-inner-content  '>
                             <img src={Arrownew} alt="" />
                             <p>
-                                <b className='eduvoyage-inner-heading'>Expert Admission Support   </b> –
-                                Seamless guidance to choose best colleges in India & overseas. 100% transparency - verified fees, approvals, accredations.
+                                <b className='eduvoyage-inner-heading'>SAAS Assessment Platform    </b> –
+                                Smart digital assessments, performance analytics & topic-wise insights to support
+                                personalised learning and measurable progress
                             </p>
                         </div>
                         <div className='Eduvoyage-offer-inner-content  '>
                             <img src={Arrownew} alt="" />
                             <p>
-                                <b className='eduvoyage-inner-heading'>Career Clarity Workshops   </b> –
-                                Data-backed seminars and workshops for smarter decisions. Focus on outcomes, not just admission
+                                <b className='eduvoyage-inner-heading'>AI-Based Teacher Training & Mentorship  </b> –
+                                Upskilling educators with modern teaching methodologies and NEP-compliant practices.
                             </p>
                         </div>
                         <div className='Eduvoyage-offer-inner-content  '>
                             <img src={Arrownew} alt="" />
                             <p>
-                                <b className='eduvoyage-inner-heading'>Holistic Development  </b> –
-                                Personality, communication & confidence building sessions in alliance with the individual requirements
+                                <b className='eduvoyage-inner-heading'>Academic & Competitive Exam Preparation </b> –
+                                Holistic preparation through School Integrated Program (SIP) for boards, JEE , NEET , CUET
+                                & other entrance exams.
                             </p>
                         </div>
-                        <div className='Eduvoyage-offer-inner-content  '>
+                        {/* <div className='Eduvoyage-offer-inner-content  '>
                             <img src={Arrownew} alt="" />
                             <p>
                                 <b className='eduvoyage-inner-heading'>Participation Certificates  </b> –
                                 Eduvoyage will provide certificates for attending the workshops.
                             </p>
-                        </div>
+                        </div> */}
 
                     </div>
                     {/* Some facts that you knw  */}
+                    <h1 className='eduvoyage-offering-heading mt40' >The Real Challenges in Our Education System</h1>
+                    <p className='first-upper-eduvoyage-container'>
+                        For years, students have been trapped in a cycle of rote learning, mark-based
+                        pressure, and theoretical education, leaving them unprepared for the realities of life.
+                        They lack clarity, exposure, confidence, and essential future skills, and often make
+                        career choices based on pressure rather than passion.
+                        Teachers are burdened with manual tasks, assessments are outdated, and schools
+                        struggle to align with the new competency-based model mandated by NEP 2020.
+                    </p>
 
                     <main className="edu-container">
                         {/* Heading Section */}
@@ -270,8 +285,8 @@ const Eduvoyage = () => {
                     </main>
                     {/* <Gridcards /> */}
 
-                </div>
-            </div>
+                </div >
+            </div >
 
         </>
     )
