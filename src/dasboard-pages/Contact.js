@@ -14,16 +14,16 @@ const Contact = () => {
     name: "",
     email: "",
     mobile: "",
-    percentage: "",
-    appearedInExam: "no",
-    examName: "",
-    examPercentage: "",
+    query: "",
+    // appearedInExam: "no",
+    // examName: "",
+    // examPercentage: "",
   });
   const [selectedCourse, setSelectedCourse] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [focusedField, setFocusedField] = useState("");
 
-  const courses = ["BCA", "MCA", "B.TECH", "M.TECH", "BBA", "MBA", "MBBS"];
+  // const courses = ["BCA", "MCA", "B.TECH", "M.TECH", "BBA", "MBA", "MBBS"];
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -46,18 +46,18 @@ const Contact = () => {
       });
 
       toast.success(response.data.message || "Form submitted successfully!");
-setTimeout(() => {
-  setFormData({
-    name: "",
-    email: "",
-    mobile: "",
-    percentage: "",
-    appearedInExam: "no",
-    examName: "",
-    examPercentage: "",
-  });
-  setSelectedCourse("");
-}, 200);
+      setTimeout(() => {
+        setFormData({
+          name: "",
+          email: "",
+          mobile: "",
+          query: "",
+          // appearedInExam: "no",
+          // examName: "",
+          // examPercentage: "",
+        });
+        setSelectedCourse("");
+      }, 200);
     } catch (error) {
       const errorMsg = error.response?.data?.message || "Submission failed";
       toast.error(errorMsg);
@@ -77,10 +77,10 @@ setTimeout(() => {
 
           <div className="contact-page-grid">
             <div className="contact-page-form-container">
-              <h3 className="contact-page-form-title">Register for Counselling</h3>
+              <h3 className="contact-page-form-title">Get A Callback </h3>
 
               <form onSubmit={handleSubmit}>
-                <div class="contact-page-form-row">
+                <div className="contact-page-form-row">
                   <div className="contact-page-form-group">
                     <label for="firstName">Full Name *</label>
                     <input
@@ -108,7 +108,7 @@ setTimeout(() => {
                     />
                   </div>
                 </div>
-                <div class="contact-page-form-row">
+                <div class="contact-page-form">
                   <div className="contact-page-form-group">
                     <label for="email">Email Address *</label>
                     <input
@@ -123,20 +123,20 @@ setTimeout(() => {
                     />
                   </div>
                   <div className="contact-page-form-group">
-                    <label for="12th percentage">12th Percentage *</label>
+                    <label >Your Query *</label>
                     <input
-                      type="number"
-                      name="percentage"
-                      value={formData.percentage}
+                      type="text"
+                      name="query"
+                      value={formData.query}
                       onChange={handleInputChange}
-                      onFocus={() => setFocusedField("percentage")}
+                      onFocus={() => setFocusedField("query")}
                       onBlur={() => setFocusedField("")}
-                      placeholder="12th Percentage"
+                      placeholder="Write your Query "
                       required
                     />
                   </div>
                 </div>
-                <div className="contact-page-form-group">
+                {/* <div className="contact-page-form-group">
                   <label for="email">Select Course *</label>
                   <select
                     className={`course-dropdown ${focusedField === "dropdown" ? "focused" : ""}`}
@@ -156,8 +156,8 @@ setTimeout(() => {
                       </option>
                     ))}
                   </select>
-                </div>
-                <div className="contact-page-form-group">
+                </div> */}
+                {/* <div className="contact-page-form-group">
                   <label>Did you appear in any competitive exam? *</label>
                   <div className="contact-page-radio-group">
                     <label className="contact-page-radio-option" for="examYes">
@@ -181,9 +181,9 @@ setTimeout(() => {
                       <span>No</span>
                     </label>
                   </div>
-                </div>
+                </div> */}
 
-                {formData.appearedInExam === "yes" && (
+                {/* {formData.appearedInExam === "yes" && (
                   <div className="contact-page-form-row">
                     <div className="contact-page-form-group">
                       <label>Exam Name *</label>
@@ -214,7 +214,7 @@ setTimeout(() => {
                       />
                     </div>
                   </div>
-                )}
+                )} */}
 
                 <div className="register-btn-container">
                   <button
@@ -339,11 +339,11 @@ setTimeout(() => {
             ></iframe>
           </div>
 
-       
+
         </div>
       </div>
-         {/* ✅ ToastContainer inserted correctly */}
-          <ToastContainer  ClassName="my-toast-container" position="top-right" />
+      {/* ✅ ToastContainer inserted correctly */}
+      <ToastContainer ClassName="my-toast-container" position="top-right" />
     </>
   );
 };

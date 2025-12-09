@@ -1,20 +1,23 @@
         .contact-us-main-section {
             max-width: 1200px;
-              margin:  auto;
+            margin: auto;
             padding: 20px;
             position: relative;
             z-index: 5;
-            padding-top: 30px ;
-          
+            padding-top: 30px;
+
         }
-          .contact-us-main-inner-section{
-           background-color: #F8F9FA;
-           }
-       .contact-page-header {
+
+        .contact-us-main-inner-section {
+            background-color: #F8F9FA;
+        }
+
+        .contact-page-header {
             text-align: center;
             margin-bottom: 50px;
         }
-     .contact-page-header h2 {
+
+        .contact-page-header h2 {
             font-size: 36px;
             background: linear-gradient(135deg, #7b4397 0%, #ff8a00 100%);
             background-clip: text;
@@ -61,7 +64,9 @@
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            height: fit-content;
         }
+
         .contact-page-form-title {
             font-size: 24px;
             color: #333;
@@ -70,15 +75,17 @@
             font-weight: 600;
         }
 
-              .contact-page-form-row {
+        .contact-page-form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
-           .contact-page-form-group {
+
+        .contact-page-form-group {
             margin-bottom: 20px;
         }
-       .contact-page-form-group label {
+
+        .contact-page-form-group label {
             display: block;
             margin-bottom: 8px;
             color: #555;
@@ -95,9 +102,10 @@
             font-size: 14px;
             transition: border-color 0.3s ease;
             background: #fff;
-            cursor: pointer!important;
-                }
-               .contact-page-form-group input:focus,
+            cursor: pointer !important;
+        }
+
+        .contact-page-form-group input:focus,
         .contact-page-form-group select:focus {
             outline: none;
             border-color: #7b4397;
@@ -136,7 +144,8 @@
             gap: 15px;
             margin-top: 10px;
         }
-                .contact-page-submit-button {
+
+        .contact-page-submit-button {
             width: 100%;
             background: linear-gradient(135deg, #7b4397 0%, #ff8a00 100%);
             color: white;
@@ -154,13 +163,15 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(123, 67, 151, 0.3);
         }
-          /* Contact Info Section - Contact Page Specific */
+
+        /* Contact Info Section - Contact Page Specific */
         .contact-page-info {
             display: flex;
             flex-direction: column;
             gap: 30px;
         }
-    .contact-page-info-card {
+
+        .contact-page-info-card {
             background: white;
             padding: 30px;
             border-radius: 15px;
@@ -173,7 +184,8 @@
             margin-bottom: 20px;
             font-weight: 600;
         }
-                .contact-page-location-item {
+
+        .contact-page-location-item {
             display: flex;
             align-items: flex-start;
             margin-bottom: 20px;
@@ -253,8 +265,9 @@
             margin-right: 12px;
             font-size: 14px;
         }
+
         .contact-page-icon i {
-            padding-top: 5px ;
+            padding-top: 5px;
         }
 
         .contact-page-text {
@@ -272,7 +285,8 @@
             color: #333;
             font-size: 14px;
         }
-                /* Map Section - Contact Page Specific */
+
+        /* Map Section - Contact Page Specific */
         .contact-page-map-section {
             margin-top: 40px;
             background: white;
@@ -314,29 +328,34 @@
                 margin: 20px auto;
                 padding: 0 15px;
             }
-                   .contact-page-header h2 {
+
+            .contact-page-header h2 {
                 font-size: 28px;
             }
-                 .contact-page-form-row {
+
+            .contact-page-form-row {
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
-                  .contact-page-radio-group {
+
+            .contact-page-radio-group {
                 grid-template-columns: 1fr;
                 gap: 10px;
             }
 
         }
 
-                @media (max-width: 480px) {
+        @media (max-width: 480px) {
             .contact-us-main-section {
                 padding: 0 10px;
             }
-                 .contact-page-header h2 {
+
+            .contact-page-header h2 {
                 font-size: 24px;
             }
-              .contact-page-details {
-                    grid-template-columns: 1fr ;
-              }
+
+            .contact-page-details {
+                grid-template-columns: 1fr;
+            }
 
         }
