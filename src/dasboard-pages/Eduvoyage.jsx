@@ -2,10 +2,11 @@ import React from 'react'
 
 import "./Eduvoyage.css"
 import UdaanLogo from "../assets/Udaan_logo2.png"
-import Eduvagetimline from '../component/eduvoyagetimeline/Eduvagetimline'
+
 import { FaSchool, FaUsers, FaUser, FaUniversity } from "react-icons/fa";
 import { PiStudentBold } from "react-icons/pi";
 import Arrownew from ".././assets/Arrow.png"
+import NepEduvoyage from '../component/nep-eduvoyage/NepEduvoyage';
 // import Gridcards from '../component/gridcards/Gridcards';
 
 // import EduDiamond from '../component/edudiamond/Edudiamond';
@@ -20,7 +21,7 @@ const Eduvoyage = () => {
                             EduVoyage - An initiative by  :  <img src={UdaanLogo} alt="Udaan360" className="brand-logo" />
                         </h1>
                         <p className="eduvoyage-hero-description">
-                            EduVoyage - Crafting Futures Together
+                            EduVoyage -शिक्षा से कौशल तक, सक्षम् भारत की ओर
                         </p>
                     </div>
 
@@ -40,17 +41,21 @@ const Eduvoyage = () => {
                     {/* /////////////// */}
                     <p className='first-upper-eduvoyage-container'>
                         In Alignment with NEP 2020, EduVoyage, an initiative by Udaan360, is designed to
-                        help students integrate skill-based learning, real-life competency development,
-                        and practical career understanding into their academic ecosystem.
-                        EduVoyage is a student-centric and future-focused ecosystem that brings
-                        together skill-based learning, university & industry exposure, real-life career
-                        pathways, assessments, and academic support-all in one integrated solution.
+                        shape skills and empower Saksham Bharat. It help students to align skill-based
+                        learning, real-world competency development, and experiential career exposure into
+                        their formal academic journey—building readiness for higher education,
+                        employment, and entrepreneurship.
+                        <br />
+                        EduVoyage offers end-to-end support for NEP 2020 implementation and audit
+                        readiness in schools by integrating skill-based learning, competency-driven
+                        assessments, career exposure, university–industry linkages, and academic support
+                        into a single, structured ecosystem aligned with national mandates.
                     </p>
-
-                    <Eduvagetimline />
+                    <NepEduvoyage />
+                    {/* <Eduvagetimline /> */}
 
                     {/* //////////////////////////  Benifits container  //////////////////////// */}
-                    <div className='benifit-education-container'>
+                    {/* <div className='benifit-education-container'>
                         <div className='student-main-benifit-container benifit-card'>
                             <div className='benifit-card-header'>
                                 <div className='benifit-icon-0 benifit-icon'>
@@ -114,11 +119,11 @@ const Eduvoyage = () => {
                             </ul>
                         </div>
 
-                    </div>
+                    </div> */}
 
                     {/* //////////////////   EduVoyage Offerings container     ///////////////////// */}
 
-                    <h1 className='eduvoyage-offering-heading'>EduVoyage Offerings</h1>
+                    <h1 className='eduvoyage-offering-heading mt50'>EduVoyage Offerings</h1>
                     <div className='eduvoyage-offering-container'>
                         <div className='Eduvoyage-offer-inner-content  '>
                             <img src={Arrownew} alt="" />
@@ -191,7 +196,9 @@ const Eduvoyage = () => {
                         For years, students have been trapped in a cycle of rote learning, mark-based
                         pressure, and theoretical education, leaving them unprepared for the realities of life.
                         They lack clarity, exposure, confidence, and essential future skills, and often make
-                        career choices based on pressure rather than passion.
+                        career choices based on pressure rather than passion, which results in
+                        unemployability and a skill gap.
+                        <br />
                         Teachers are burdened with manual tasks, assessments are outdated, and schools
                         struggle to align with the new competency-based model mandated by NEP 2020.
                     </p>
