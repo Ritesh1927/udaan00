@@ -9,30 +9,6 @@ import { FaBullseye, FaRocket } from "react-icons/fa";
 const Cards = (props) => {
   return (
     <Fragment>
-      {/* <div classNameName={`step-card-cont ${props.classNameName}`}>
-        <div classNameName="card-1-cont">
-          <div classNameName="imgicon-card-container">
-            <div classNameName="icon-cont">
-              <img src={props.src} alt="" />
-            </div>
-          </div>
-
-       
-        </div>
-
-        <div classNameName={`card-1-head-cont ${props.card3head}`}>
-          {props.head}
-        </div>
-        <div classNameName="card-1-content">{props.content}</div>
-
-        <div classNameName="card-1-button-cont">
-          <button classNameName={props.buttonclassName}>
-            <div classNameName="button-rotated-icon">
-              
-            </div>
-          </button>
-        </div>
-      </div> */}
       {/* <!-- Benefits Grid --> */}
       <div className="benefits-grid">
         {/* <!-- Card 1 - Explore and be aware --> */}
