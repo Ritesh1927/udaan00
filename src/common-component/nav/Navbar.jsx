@@ -14,12 +14,13 @@ const Navbar = ({ isOpen, setIsOpen }) => {
   const navigate = useNavigate();
 
   const services = [
-    { label: "Skillo", path: "/services/skillo" },
-    { label: "Career Exploration", path: "/services/career" },
-    { label: "Teacher Training", path: "/services/teacher-training" },
-    { label: "Virtual Labs", path: "/services/virtual-labs" },
-    { label: "Holistic Reports", path: "/services/reports" },
-    { label: "NEP Alignment", path: "/services/nep-alignment" },
+    { label: "Admission In India", path: "/admisson" },
+    { label: "SIP", path: "/sip" },
+    { label: "Study Abroad", path: "/aboradstudy" },
+    { label: "Skilled Migration", path: "/skillmigration" },
+    { label: "Online MBA", path: "/onlineMba " },
+    { label: "Franchise", path: "/franchise " },
+    { label: "Settle Abroad", path: "/settleabroad" },
   ];
 
   const handleServiceClick = (path) => {
@@ -127,7 +128,7 @@ const Navbar = ({ isOpen, setIsOpen }) => {
 
             <li>
               <NavLink
-                to="/contactus"
+                to="/contact"
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
                   isActive ? "nav-link-active" : "nav-link"

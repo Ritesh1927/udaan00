@@ -47,7 +47,7 @@ export default function SemiCircularSelector() {
             <div className="grid items-center w-full grid-cols-1 gap-24 max-w-7xl md:grid-cols-2">
 
                 {/* LEFT SEMI WHEEL */}
-                <div className=" relative h-[620px] overflow-hidden">
+                <div className=" relative h-[800px] overflow-hidden">
                     <div
                         className="absolute -left-[260px] top-1/2 w-[520px] h-[520px]"
                         style={{
@@ -100,7 +100,7 @@ export default function SemiCircularSelector() {
                 </div>
 
                 {/* RIGHT CONTENT (FULL TITLE – UNCHANGED) */}
-                <div className="relative px-10">
+                <div className="relative px-7">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={activeIndex}
@@ -108,7 +108,7 @@ export default function SemiCircularSelector() {
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -20 }}
                             transition={{ duration: 0.4 }}
-                            className="p-8 border SemiCircularSelector  shadow-xl rounded-2xl backdrop-blur-xl bg-white/5 border-white/10"
+                            className="p-10 border shadow-xl SemiCircularSelector rounded-2xl backdrop-blur-xl bg-white/5 border-white/10"
                         >
                             <h2 className="mb-3 text-[26px] font-semibold">
                                 {ITEMS[activeIndex].title}
@@ -120,7 +120,7 @@ export default function SemiCircularSelector() {
                     </AnimatePresence>
 
                     {/* CONTROLS */}
-                    <div className="flex flex-col gap-3 mt-10 w-fit">
+                    <div className="flex flex-col gap-3 my-10 mt-10 w-fit">
                         <button
                             onClick={() => rotateWheel(1)}
                             className="px-6 py-2 text-purple-200 border rounded-full border-purple-500/40 hover:bg-purple-600/20"

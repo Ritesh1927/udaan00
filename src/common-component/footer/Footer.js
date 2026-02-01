@@ -21,7 +21,7 @@ const Footer = () => {
   return (
     <>
       <img src={Homesvg} className="footer-divider" />
-      <footer className="footer-section">
+      <footer className="footer-section ">
         <div className="footer-container">
           {/* <!-- Universities Section --> */}
           {/* <FooterUniversity /> */}

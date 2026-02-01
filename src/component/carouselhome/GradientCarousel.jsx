@@ -148,15 +148,7 @@ export default function GradientCarousel() {
                                         <ChevronRight size={18} />
                                     </button>
 
-                                    {/* <div className="flex-1 h-[3px] bg-white/10 rounded-full overflow-hidden ml-4">
-                                        <motion.div
-                                            key={index}
-                                            initial={{ width: "0%" }}
-                                            animate={{ width: "100%" }}
-                                            transition={{ duration: 4 }}
-                                            className="h-full bg-gradient-to-r from-violet-500 to-pink-500"
-                                        />
-                                    </div> */}
+
                                     <button className="eduvoyage-btn">
                                         <span className="eduvoyage-btn-inner">
                                             <a

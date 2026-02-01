@@ -118,7 +118,7 @@ const Home = () => {
   return (
     <>
       <div className='z-20 xl-[90%] w-full sm:p-[12px] md:w-[80%] m-auto' >
-        <div className="relative">
+        <div className="relative px-5">
           <h1 className="w-full text-[32px]   leading-[1.1]
     tracking-tight sm:text-[42px] md:text-[50px] lg:text-[70px] text-center text-white capitalize mt-[50px] "  >
             Empowering Your Journey: From Education to Elevation
@@ -148,7 +148,7 @@ const Home = () => {
         <Videobg />
       </div>
       {/* Cards Section */}
-      <section className="benefits-section m-auto sm:mb-[80px] w-[82%]">
+      <section className="benefits-section m-auto sm:mb-[80px] w-[90%]">
 
         <Cards />
 
