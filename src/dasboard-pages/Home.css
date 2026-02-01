@@ -1,218 +1,27 @@
-
-.platform-quote {
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 24px;
-    color: #7b4397;
-    font-family: Nunito, sans-serif;
-    margin-top: 0;
-}
-.welcome-tag2 {
-    font-size: 22px;
-    line-height: 1.4;
-    color: rgb(51, 51, 51);
-    font-weight: 400;
-    font-family: Nunito, sans-serif;
-}
-
-.brand-highlight {
-    color: rgb(123, 67, 151);
-    font-weight: 700;
-}
-
-.left-home-container {
-    width: 47%;
-}
-
-.home-banner-img {
-    width: 45%;
-    margin-top: 20px;
-}
-
-.english-shloak {
-    font-size: 18px;
-    color: #333;
-    line-height: 1.6;
-    font-style: italic;
-    font-weight: 500;
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-}
-
-.english-translation {
-    max-width: 900px;
-    margin: 30px auto !important;
-}
-
-.home-banner-img img {
-    width: 100%;
-}
-
-.shloak-container {
-    margin-top: 30px;
-    text-align: center;
-}
-
-.upper-shloak {
-    font-size: 32px;
-    font-weight: 700;
-    color: #ff8a00;
-    line-height: 1.4;
-    margin: 0;
-    font-family: 'Devanagari Sangam MN', 'Noto Sans Devanagari', serif;
-}
-
-
-.udaan-name {
-    color: #705BA4;
-    font-size: 50px;
-    font-family: 'Merriweather', serif;
-    font-weight: 900;
-}
-
-.welcome-heading {
-    justify-content: space-between;
-    align-items: center
-}
-
-.start-child-cont {
-    width: 100%;
-    margin-top: 40px;
-}
-
-.start-parent-cont {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 25px;
-    margin-bottom: 80px;
-}
-
-/* Benefits Section */
-.benefits-section {
-    background: #f8f9fa;
-    padding: 80px 0;
+.home-top-shadow-container {
     position: relative;
-    overflow: hidden;
-    font-family: 'Arial', sans-serif;
 }
 
-.benefits-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
+.main-wep-logo-container {
+    width: fit-content;
 }
 
-/* Section Header */
-.benefits-header {
-    text-align: left;
-    margin-bottom: 60px;
+.web-main-logo {
+    width: 150px;
+    z-index: 2;
 }
 
-.home-cards-section-heading {
-    font-size: 48px;
-    font-weight: 800;
-    color: #333;
-    margin: 0;
-    line-height: 1.2;
+.nav-main-top-container {
+    width: 80%;
+    margin: auto;
 }
 
-.inner-container {
-    background-image: url(../assets/home2.png);
-    background-repeat: no-repeat;
-    background-position: bottom right;
+.shadow-grad2 {
+    right: 0;
 }
 
-.parallax {
-
-    background-image: url("../assets/Flute1.png");
-    min-height: 300px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* margin-bottom: 30px; */
-    background-size: cover;
-}
-
-.our-team-container {
-    display: flex;
-}
-
-/* Responsive Design */
-@media (max-width: 1400px) {
-    .start-parent-cont {
-        grid-template-columns: repeat(5, 1fr);
-        gap: 20px;
+@media (max-width:540px) {
+    .little-star {
+        display: none;
     }
-}
-
-@media (max-width:1200px) {
-    .step-card-cont {
-        width: 100%;
-    }
-
-    .start-child-cont {
-        width: 70%;
-    }
-}
-
-@media (max-width:768px) {
-    .welcome-heading {
-        display: block;
-    }
-
-    .parallax {
-        background-attachment: scroll;
-    }
-
-    .left-home-container {
-        width: 100%;
-    }
-
-    .home-cards-section-heading {
-        font-size: 36px;
-        text-align: center;
-    }
-
-    .home-banner-img {
-        width: 100%;
-        ;
-    }
-
-    .benefits-section {
-        padding: 60px 0;
-    }
-}
-
-@media (max-width:480px) {
-    .start-child-cont {
-        width: 80%;
-    }
-
-    .upper-shloak {
-        font-size: 24px;
-    }
-
-    .welcome-tag {
-        font-size: 24px;
-    }
-
-    .welcome-tag2 {
-        font-size: 18px;
-        margin-top: 15px;
-    }
-
-    .udaan-name {
-        font-size: 32px;
-    }
-
-    .home-cards-section-heading {
-        margin-top: 15px;
-        font-size: 28px;
-    }
-
-    .start-parent-cont {
-        gap: 10px;
-    }
-
 }

@@ -1,0 +1,138 @@
+.wheel-layout {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(circle, #1a0629, #0b0214);
+    color: white;
+    overflow: hidden;
+}
+
+.SemiCircularSelector {
+    padding: 10px;
+}
+
+/* LEFT CLIP (only half visible) */
+.wheel-clip {
+    width: 300px;
+    height: 420px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* WHEEL */
+.wheel {
+    width: 360px;
+    height: 360px;
+    position: absolute;
+    left: -180px;
+    top: 30px;
+    border-radius: 50%;
+    border: 2px solid rgba(199, 125, 255, 0.3);
+}
+
+/* ITEMS */
+.wheel-item {
+    position: absolute;
+    transform-origin: center;
+    white-space: nowrap;
+    opacity: 0.45;
+    transition: opacity 0.4s ease;
+}
+
+
+.wheel-item.active {
+    opacity: 1;
+}
+
+/* //////// */
+.eduvoyage-btn-outer {
+    display: inline-block;
+    padding: 3px;
+    border-radius: 999px;
+    background: linear-gradient(120deg,
+            #7b40a7,
+            #c77dff,
+            #00f0ff,
+            #ff4ecd,
+            #7b40a7);
+    background-size: 800% 800%;
+    animation: neonBorderFlow 12s linear infinite;
+    box-shadow:
+        0 0 16px rgba(109, 54, 151, 0.6),
+        0 0 35px rgba(199, 125, 255, 0.4);
+}
+
+.eduvoyage-btn-inner {
+    padding: 12px 30px;
+    border-radius: 999px;
+    background: #0f0919;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: inset 0 0 14px rgba(49, 20, 71, 0.35);
+}
+
+.wheel-item.active .eduvoyage-btn-outer {
+    box-shadow:
+        0 0 30px rgba(199, 125, 255, 0.9),
+        0 0 3px rgba(146, 109, 216, 0.7);
+}
+
+.wheel-item:hover .eduvoyage-btn-inner {
+    background: #140b24;
+}
+
+@keyframes neonBorderFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@media (max-width: 450px) {
+    .eduvoyage-btn-inner {
+        padding: 10px 22px;
+        font-size: 13px;
+    }
+}
+
+
+/* RIGHT PANEL */
+.content-panel {
+    margin-left: auto;
+    padding: 40px;
+    max-width: 420px;
+}
+
+.content-panel h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.content-panel p {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+/* ////// */
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .wheel-layout {
+        flex-direction: column;
+    }
+
+    .wheel-clip {
+        height: 300px;
+    }
+
+    .content-panel {
+        text-align: center;
+        padding: 20px;
+    }
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
+import Homesvg from "../../assets/homedown.svg"
 import {
   FaFacebookF,
   FaInstagram,
@@ -19,6 +20,7 @@ import DownloadPdf from "../download/DownloadPdf";
 const Footer = () => {
   return (
     <>
+      <img src={Homesvg} className="footer-divider" />
       <footer className="footer-section">
         <div className="footer-container">
           {/* <!-- Universities Section --> */}

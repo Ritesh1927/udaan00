@@ -1,14 +1,16 @@
 /* Results Ribbon Section */
 .results-ribbon-section {
-    background: white;
+    background: #12041A;
     /* Changed from gradient to white */
     padding: 30px 0;
     position: relative;
     overflow: hidden;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     /* Lighter shadow for white bg */
-    z-index: 50;
+    /* z-index: 50; */
     font-family: "Arial", sans-serif;
+    color: #fff;
+    border: 1px solid #1c1528;
 }
 
 .results-ribbon-section::before {
@@ -62,7 +64,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    color: #333;
+    color: #fff;
     font-size: 24px;
     /* Slightly smaller for inline layout */
     font-weight: 800;
@@ -91,7 +93,7 @@
 }
 
 .ribbon-subtitle {
-    color: #666;
+    color: #fff;
     font-size: 14px;
     /* Smaller subtitle */
     font-weight: 500;
@@ -109,11 +111,11 @@
 }
 
 .result-card {
-    background: #f8f9fa;
+    background: #260936;
     border-radius: 8px;
     padding: 12px 15px;
     text-decoration: none;
-    color: #333;
+    color: #fff;
     transition: all 0.3s ease;
     display: flex;
     flex-direction: row;
@@ -121,9 +123,10 @@
     text-align: left;
     position: relative;
     overflow: hidden;
-    border: 2px solid #e9ecef;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 2px solid #12041A;
+    box-shadow: 0 2px 8px rgba(122, 121, 121, 0.08);
     min-height: 60px;
+    cursor: pointer;
 }
 
 .result-card::before {
@@ -144,7 +147,7 @@
 .result-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    background: white;
+    background: #220831;
     border-color: #ff8a00;
 }
 
@@ -175,7 +178,7 @@
 .result-name {
     font-size: 14px;
     font-weight: 700;
-    color: #333;
+    color: #fff;
     margin-bottom: 2px;
     line-height: 1.2;
 }

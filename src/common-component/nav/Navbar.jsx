@@ -1,155 +1,197 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { FiX } from "react-icons/fi";
 import "../nav/Navbar.css";
-import Logoimg from "../../assets/Udaan_logo2.png";
-import { Link } from "react-router-dom";
-import CoustomDropdown from "../../component/dropdown/CustomDropdown";
-import { FiMenu, FiX } from "react-icons/fi";
-import userProfile1 from "../../assets/profile1.png";
 import { useAuth } from "../../auth/authContext";
-import { FaUser } from "react-icons/fa";
 import { useAuthModal } from "../../auth/useAuthModal";
+import userProfile1 from "../../assets/profile1.png";
+import { FaUser } from "react-icons/fa";
 
-const Navbar = () => {
-  const { user } = useAuth();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const dropdownRef = useRef(null);
-  const { openModal } = useAuthModal();
+const Navbar = ({ isOpen, setIsOpen }) => {
+  const { user } = useAuth();               // ✅ from TopNav
+  const { openModal } = useAuthModal();     // ✅ from TopNav
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const handleLoginClick = () => openModal("login");
+  const services = [
+    { label: "Skillo", path: "/services/skillo" },
+    { label: "Career Exploration", path: "/services/career" },
+    { label: "Teacher Training", path: "/services/teacher-training" },
+    { label: "Virtual Labs", path: "/services/virtual-labs" },
+    { label: "Holistic Reports", path: "/services/reports" },
+    { label: "NEP Alignment", path: "/services/nep-alignment" },
+  ];
+
+  const handleServiceClick = (path) => {
+    navigate(path);
+    setIsOpen(false);
+    setServicesOpen(false);
+  };
+
+  /* ===== LOGIN / PROFILE (COPIED FROM TOPNAV) ===== */
+  const handleLoginClick = () => {
+    openModal("login");
+    setIsOpen(false);
+    setServicesOpen(false);
+  };
 
   const handleProfileClick = () => {
     openModal("profile");
-    setMobileMenuOpen(false); // Close mobile menu if open
+    setIsOpen(false);
+    setServicesOpen(false);
   };
-
-  const toggleMobileMenu = () => setMobileMenuOpen((prev) => !prev);
-
-  const handleMobileLogin = () => {
-    openModal("login");
-    setMobileMenuOpen(false);
-  };
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        // Agar dropdown hota to yaha close karna tha, abhi koi dropdown use nahi hai
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  /* =============================================== */
 
   return (
-    <nav className="navbar">
-      <div className="nav-container">
-        <div className="logo-section">
-          <img src={Logoimg} alt="Udaan 360 Logo" />
-        </div>
-        <div className="student-count">
-          <div className="number">25,000+</div>
-          <div className="text">Students Successfully Counseled</div>
-        </div>
-        <div className="nav-menu">
-          <ul className="menu-items">
+    <>
+      {/* Overlay */}
+      {isOpen && (
+        <div
+          onClick={() => setIsOpen(false)}
+          className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
+        />
+      )}
+
+      {/* Sidebar */}
+      <aside
+        className={`
+          fixed top-0 left-0 z-50 h-screen bg-[#12041A] text-white
+          w-[80%] sm:w-[60%] md:w-[30%]
+          transform transition-transform duration-300 ease-in-out
+          ${isOpen ? "translate-x-0" : "-translate-x-full"}
+          sidebar-animated-border
+        `}
+      >
+        <div className="flex flex-col items-center h-full p-6">
+          <div className="flex items-center w-full gap-3 mb-10">
+
+            {/* ✅ LOGIN / PROFILE BUTTON (FINAL FIX) */}
+            <div className="flex-1">
+              {user ? (
+                <button
+                  className="profile-bbtn"
+                  onClick={handleProfileClick}
+                >
+                  <img
+                    className="profile-img"
+                    src={userProfile1}
+                    alt="Profile"
+                  />
+                </button>
+              ) : (
+                <button
+                  onClick={handleLoginClick}
+                  className="flex items-center justify-center flex-1 w-full gap-2 py-3 text-sm rounded-full nav-login-button"
+                >
+                  <FaUser />
+                  Login
+                </button>
+              )}
+            </div>
+
+            {/* Close button */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="nav-close-button"
+            >
+              <FiX className="close-icon" />
+            </button>
+          </div>
+
+          {/* Menu */}
+          <ul className="space-y-6 text-2xl">
             <li>
-              <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+              <NavLink
+                to="/"
+                end
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) =>
+                  isActive ? "nav-link-active" : "nav-link"
+                }
+              >
                 Home
-              </Link>
+              </NavLink>
             </li>
+
             <li>
-              <Link to="/about" onClick={() => setMobileMenuOpen(false)}>
-                About us
-              </Link>
+              <NavLink
+                to="/about"
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) =>
+                  isActive ? "nav-link-active" : "nav-link"
+                }
+              >
+                About
+              </NavLink>
             </li>
+
             <li>
-              <CoustomDropdown />
+              <NavLink
+                to="/contactus"
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) =>
+                  isActive ? "nav-link-active" : "nav-link"
+                }
+              >
+                Contact
+              </NavLink>
             </li>
+
             <li>
-              <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                Contact us
-              </Link>
-            </li>
-            <li>
-              <Link to="/eduvoyage" onClick={() => setMobileMenuOpen(false)}>
+              <NavLink
+                to="/eduvoyage"
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) =>
+                  isActive ? "nav-link-active" : "nav-link"
+                }
+              >
                 EduVoyage
-              </Link>
+              </NavLink>
+            </li>
+
+            {/* Services Dropdown */}
+            <li className="w-full">
+              <button
+                type="button"
+                onClick={() => setServicesOpen(!servicesOpen)}
+                className="flex items-center justify-start w-full gap-2 nav-link"
+              >
+                Services
+                <span
+                  className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : "rotate-0"
+                    }`}
+                >
+                  ▼
+                </span>
+              </button>
+
+              <div
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${servicesOpen ? "max-h-[500px] mt-4" : "max-h-0"
+                  }`}
+              >
+                <div className="flex flex-col gap-3">
+                  {services.map((item, index) => (
+                    <p
+                      key={item.path}
+                      onClick={() => handleServiceClick(item.path)}
+                      style={{ transitionDelay: `${index * 80}ms` }}
+                      className={`cursor-pointer text-lg text-gray-300 hover:text-white 
+                        transform transition-all duration-500 ease-out
+                        ${servicesOpen
+                          ? "opacity-100 translate-y-0"
+                          : "opacity-0 -translate-y-2"
+                        }`}
+                    >
+                      {item.label}
+                    </p>
+                  ))}
+                </div>
+              </div>
             </li>
           </ul>
-          <div className="auth-buttons">
-            {user ? (
-              <button className="profile-bbtn" onClick={handleProfileClick}>
-                <img
-                  className="profile-img"
-                  src={userProfile1}
-                  alt="Profile"
-                />
-              </button>
-            ) : (
-              <button
-                className="nav-login-btn login-btn"
-                onClick={handleLoginClick}
-              >
-                <i>
-                  <FaUser />
-                </i>
-                Login
-              </button>
-            )}
-          </div>
         </div>
-        <button className="menu-toggle" onClick={toggleMobileMenu}>
-          {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      <div className={`mobile-menu ${mobileMenuOpen ? "active" : ""}`}>
-        <ul className="mobile-menu-items">
-          <li>
-            <Link to="/" onClick={toggleMobileMenu}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" onClick={toggleMobileMenu}>
-              About Us
-            </Link>
-          </li>
-          <li>
-            <CoustomDropdown />
-          </li>
-          <li>
-            <Link to="/contact" onClick={toggleMobileMenu}>
-              Contact Us
-            </Link>
-          </li>
-          <li>
-            <Link to="/eduvoyage" onClick={toggleMobileMenu}>
-              Eduvoyage
-            </Link>
-          </li>
-          {user ? (
-            <li>
-              <button className="profile-bbtn" onClick={handleProfileClick}>
-                <img
-                  className="profile-img"
-                  src={userProfile1}
-                  alt="Profile"
-                />
-              </button>
-            </li>
-          ) : (
-            <>
-              <li>
-                <button className="mobile-login-btn" onClick={handleMobileLogin}>
-                  <FaUser /> Login
-                </button>
-              </li>
-            </>
-          )}
-        </ul>
-      </div>
-    </nav>
+      </aside>
+    </>
   );
 };
 
