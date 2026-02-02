@@ -117,19 +117,91 @@ const Home = () => {
 
   return (
     <>
-      <div className='z-20 xl-[90%] w-full sm:p-[12px] md:w-[80%] m-auto' >
-        <div className="relative px-5">
-          <h1 className="w-full text-[32px]   leading-[1.1]
-    tracking-tight sm:text-[42px] md:text-[50px] lg:text-[70px] text-center text-white capitalize mt-[50px] "  >
+      <div className="relative z-20 w-full px-3 overflow-x-hidden overflow-y-hidden sm:px-4">
+        <div className="relative mx-auto w-full md:w-[80%] xl:w-[90%] py-10">
+
+          <h1
+            className="
+        w-full
+        text-[26px]
+        leading-tight
+        tracking-tight
+        text-center
+        text-white
+        capitalize
+        sm:text-[36px]
+        md:text-[48px]
+        lg:text-[64px]
+        mt-10
+      "
+          >
             Empowering Your Journey: From Education to Elevation
           </h1>
-          <img loading="lazy" className="absolute right-0 top-[50%] little-star" src={shapone} alt="loading" />
-          <p className=" w-full sm:w[90%] text-[16px] md:w-[90%] m-auto xl:w-[70%] text-center text-white capitalize mt-[20px] " >Udaan360: A comprehensive Platform for all your educational needs- Test Preparations, Admissions, Skill Development, and Career Placement.</p>
-          <img className="absolute bottom-[-80px]" src={bottom} alt="" />
-        </div>
 
-      </div >
-      <div className="my-[150px]">
+          {/* Top Right Decorative Image */}
+          <img
+            src={shapone}
+            alt=""
+            className="
+        pointer-events-none
+        absolute
+        top-1/2
+        right-2
+        w-[60px]
+        -translate-y-1/2
+        opacity-80
+        sm:w-[40px]
+        md:w-[50px]
+        lg:w-[80px]
+        little-star
+      "
+          />
+
+          <p
+            className="
+        mx-auto
+        mt-5
+        w-full
+        text-[18px]
+        text-center
+        text-white
+        capitalize
+        sm:w-[90%]
+        md:text-[18px]
+        xl:w-[70%]
+      "
+          >
+            Udaan360: From elite competitive exam preparation to global admissions
+            strategy, industry-aligned skill mastery, and career outcomes, Udaan360
+            curates a seamless, end-to-end education experience—designed for excellence,
+            guided by expertise, and defined by results
+          </p>
+
+          {/* Bottom Decorative Image */}
+          <img
+            src={bottom}
+            alt=""
+            className="
+        pointer-events-none
+        absolute
+        bottom-[15px]
+        left-1/2
+        w-[280px]
+        -translate-x-1/2
+        opacity-90
+        sm:w-[180px]
+        md:bottom-[-30px]
+        md:w-[220px]
+        lg:w-[260px]
+      "
+          />
+
+        </div>
+      </div>
+
+
+
+      <div className="md:my-[150px] sm:my-[50px]">
         <GradientCarousel />
       </div>
       {/*/////  results container  /////*/}
@@ -137,7 +209,6 @@ const Home = () => {
         <ResultCards />
       </div>
       <div>
-        <h1 className=" lg:text-[50px] text-white text-center my-[30px] ">Career Cycle Of Student </h1>
         <SemiCircularSelector />
       </div>
       {/* Top Ranked programs in India  */}

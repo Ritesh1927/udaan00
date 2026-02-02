@@ -43,101 +43,109 @@ export default function SemiCircularSelector() {
     };
 
     return (
-        <section className=" flex items-center min-h-screen  overflow-hidden bg-[#0b0214] text-white">
-            <div className="grid items-center w-full grid-cols-1 gap-24 max-w-7xl md:grid-cols-2">
+        <div className="bg-[#0b0214]">
+            <h1 className="text-center font-semibold text-white text-[28px] pt-[40px] sm:text-[34px] lg:text-[50px]">
+                Career Cycle of Student
+            </h1>
 
-                {/* LEFT SEMI WHEEL */}
-                <div className=" relative h-[800px] overflow-hidden">
-                    <div
-                        className="absolute -left-[260px] top-1/2 w-[520px] h-[520px]"
-                        style={{
-                            transform: `translateY(-50%) rotate(${rotation}deg)`,
-                            transition: "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1)",
-                        }}
-                    >
-                        {ITEMS.map((item, i) => {
-                            const angle = i * angleStep;
-                            const isActive = i === activeIndex;
+            <section className="flex items-center min-h-screen overflow-hidden text-white ">
 
-                            return (
-                                <button
-                                    key={i}
-                                    onClick={() => {
-                                        setActiveIndex(i);
-                                        setRotation(-i * angleStep);
-                                    }}
-                                    style={{
-                                        top: "50%",
-                                        left: "50%",
-                                        transform: `
+                <div className="grid items-center w-full grid-cols-1 gap-0 md:gap-24 max-w-7xl md:grid-cols-2">
+
+                    {/* LEFT SEMI WHEEL */}
+                    <div className=" relative h-[650px] overflow-hidden">
+                        <div
+                            className="absolute -left-[260px] top-1/2 w-[400px] h-[520px]"
+                            style={{
+                                transform: `translateY(-50%) rotate(${rotation}deg)`,
+                                transition: "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1)",
+                            }}
+                        >
+                            {ITEMS.map((item, i) => {
+                                const angle = i * angleStep;
+                                const isActive = i === activeIndex;
+
+                                return (
+                                    <button
+                                        key={i}
+                                        onClick={() => {
+                                            setActiveIndex(i);
+                                            setRotation(-i * angleStep);
+                                        }}
+                                        style={{
+                                            top: "50%",
+                                            left: "50%",
+                                            transform: `
                       translate(-50%, -50%)
                       rotate(${angle}deg)
                       translate(${radius}px)
                     `,
-                                    }}
-                                    className={`absolute wheel-item ${isActive ? "active" : ""}`}
-                                >
-                                    <span className="eduvoyage-btn-outer">
-                                        <span
-                                            className="eduvoyage-btn-inner"
-                                            style={{
-                                                whiteSpace: "nowrap",
-                                                overflow: "hidden",
-                                                textOverflow: "ellipsis",
-                                                maxWidth: "260px",
-                                                display: "inline-block"
-                                            }}
-                                        >
-                                            {item.title.length > 80
-                                                ? item.title.slice(0, 80) + "..."
-                                                : item.title}
+                                        }}
+                                        className={`absolute wheel-item ${isActive ? "active" : ""}`}
+                                    >
+                                        <span className="eduvoyage-btn-outer">
+                                            <span
+                                                className="eduvoyage-btn-inner"
+                                                style={{
+                                                    whiteSpace: "nowrap",
+                                                    overflow: "hidden",
+                                                    textOverflow: "ellipsis",
+                                                    maxWidth: "260px",
+                                                    display: "inline-block"
+                                                }}
+                                            >
+                                                {item.title.length > 80
+                                                    ? item.title.slice(0, 80) + "..."
+                                                    : item.title}
+                                            </span>
                                         </span>
-                                    </span>
-                                </button>
-                            );
-                        })}
+                                    </button>
+                                );
+                            })}
+                        </div>
                     </div>
-                </div>
 
-                {/* RIGHT CONTENT (FULL TITLE – UNCHANGED) */}
-                <div className="relative px-7">
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={activeIndex}
-                            initial={{ opacity: 0, x: 40 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -20 }}
-                            transition={{ duration: 0.4 }}
-                            className="p-10 border shadow-xl SemiCircularSelector rounded-2xl backdrop-blur-xl bg-white/5 border-white/10"
-                        >
-                            <h2 className="mb-3 text-[26px] font-semibold">
-                                {ITEMS[activeIndex].title}
-                            </h2>
-                            <p className="text-purple-200 text-[20px]">
-                                {ITEMS[activeIndex].desc}
-                            </p>
-                        </motion.div>
-                    </AnimatePresence>
+                    {/* RIGHT CONTENT (FULL TITLE – UNCHANGED) */}
+                    <div className="relative px-7">
+                        {/* CONTROLS */}
+                        <div className="flex flex-col gap-3 my-10 mt-10 w-fit">
+                            <button
+                                onClick={() => rotateWheel(1)}
+                                className="px-6 py-2 text-purple-200 border rounded-full border-purple-500/40 hover:bg-purple-600/20"
+                            >
+                                ↑ Previous
+                            </button>
 
-                    {/* CONTROLS */}
-                    <div className="flex flex-col gap-3 my-10 mt-10 w-fit">
-                        <button
-                            onClick={() => rotateWheel(1)}
-                            className="px-6 py-2 text-purple-200 border rounded-full border-purple-500/40 hover:bg-purple-600/20"
-                        >
-                            ↑ Previous
-                        </button>
+                            <button
+                                onClick={() => rotateWheel(-1)}
+                                className="px-6 py-2 text-purple-200 border rounded-full border-purple-500/40 hover:bg-purple-600/20"
+                            >
+                                ↓ Next
+                            </button>
+                        </div>
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={activeIndex}
+                                initial={{ opacity: 0, x: 40 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: -20 }}
+                                transition={{ duration: 0.4 }}
+                                className="p-10 border shadow-xl SemiCircularSelector rounded-2xl backdrop-blur-xl bg-white/5 border-white/10 mb-[40px]"
+                            >
+                                <h2 className="mb-3 text-[26px] font-semibold">
+                                    {ITEMS[activeIndex].title}
+                                </h2>
+                                <p className="text-purple-200 text-[20px]">
+                                    {ITEMS[activeIndex].desc}
+                                </p>
+                            </motion.div>
+                        </AnimatePresence>
 
-                        <button
-                            onClick={() => rotateWheel(-1)}
-                            className="px-6 py-2 text-purple-200 border rounded-full border-purple-500/40 hover:bg-purple-600/20"
-                        >
-                            ↓ Next
-                        </button>
+
                     </div>
-                </div>
 
-            </div>
-        </section>
+                </div>
+            </section>
+        </div>
     );
 }

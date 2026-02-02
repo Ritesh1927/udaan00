@@ -100,3 +100,9 @@
         transform: scale3d(1, 1, 1);
     }
 }
+
+@media (max-width:480px) {
+    .button-arrow-i {
+        padding: 12px 22px;
+    }
+}

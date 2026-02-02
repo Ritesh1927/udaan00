@@ -50,7 +50,7 @@ function Programcontent() {
     return (
         <section className="py-20">
             {/* ================= HEADING ================= */}
-            <h1 className="text-center font-semibold text-white text-[24px] sm:text-[34px] lg:text-[50px]">
+            <h1 className="text-center font-semibold text-white text-[28px] sm:text-[34px] lg:text-[50px]">
                 Explore Top Ranked Programs
             </h1>
 
