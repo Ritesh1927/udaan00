@@ -3,34 +3,64 @@ import "./Faq.css";
 
 const faqData = [
     {
-        question: "How is get admission in abroad university?",
+        question: "What is Udaan360?",
         answer:
-            "Getting admission abroad involves choosing the right course and university, meeting academic and language requirements (like IELTS/TOEFL), preparing documents such as your SOP, LORs, and resume, and applying to the university. Once accepted, the next step is securing your student visa.We support you through the entire process—from shortlisting universities to visa approval.",
+            "Udaan360 is a career guidance platform helping students choose the right stream, course, and college based on aptitude, interests, and career goals.",
     },
     {
-        question: "Do you offer complete solution for students?",
+        question: "Who should take career counseling?",
         answer:
-            "Absolutely! We provide end-to-end support—career counseling, university and course selection, application submission, visa assistance, and even post-arrival services like accommodation guidance.You focus on your dreams, and we’ll take care of the process.",
+            "Students from Class 8–12, college aspirants, and parents seeking clarity before major academic decisions",
     },
     {
-        question: "Which country is safe and better for higher study?",
+        question: "How is Udaan360 different from others?",
         answer:
-            "Countries like Japan, Australia, Germany, the UK, and the USA are safe, student-friendly, and offer globally recognized education.We help you pick the country that best fits your goals, budget, and lifestyle.",
+            "We offer personalized one-to-one counseling, not generic advice—focused on the student, not just marks or trends.",
+    },
+    {
+        question: "Do you help with stream selection after Class 10?",
+        answer:
+            "Yes. We guide students in choosing Science, Commerce, or Humanities aligned with their strengths and future plans",
     },
     {
         question: "Which country offer PR after study getting job?",
         answer:
-            "Countries like Japan, Australia, Germany, the UK, and the USA are safe, student-friendly, and offer globally recognized education.We help you pick the country that best fits your goals, budget, and lifestyle.",
+            "Absolutely. We help shortlist best-fit courses and colleges in India and abroad, including entrance exam guidance.",
     },
     {
-        question: "Can I get scholarship with my low CGPA?",
+        question: "Is counseling only based on marks?",
         answer:
-            "Yes! Many scholarships consider more than just grades—such as your extracurriculars, leadership, community involvement, or financial need.We’ll help you explore scholarships that match your full profile—not just your marks.",
+            "No. We consider aptitude, interests, personality, and aspirations along with academic performance.",
     },
     {
-        question: "Do you allow accommodation for students in abroad?",
+        question: "When is the right time for career counseling?",
         answer:
-            "Yes, we do. From university hostels to private apartments and homestays, we help you find safe, comfortable, and budget-friendly accommodation abroad.We make sure you feel at home even when you're miles away",
+            "Before choosing streams (Class 9–10), during Class 11–12, or before college admissions.",
+    },
+        {
+        question: "Are parents involved in the process?",
+        answer:
+            "Yes. Parent involvement is encouraged for better understanding and confident decision-making.",
+    },
+        {
+        question: "Is Udaan360 counseling free?",
+        answer:
+            "We conduct free orientation sessions and workshops. Detailed one-to-one counseling is available at affordable fees.",
+    },
+        {
+        question: "Online or offline counseling?",
+        answer:
+            "Both. We offer online sessions pan-India and offline sessions where available.",
+    },
+        {
+        question: "What if a student is confused about career options?",
+        answer:
+            "That’s common. Our process helps students discover interests, explore options, and gain clarity.",
+    },
+        {
+        question: "How can we book a session?",
+        answer:
+            "Contact us via website, phone, or WhatsApp to schedule a session.",
     },
 ];
 
