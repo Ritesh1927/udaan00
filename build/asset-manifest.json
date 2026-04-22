@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c28afab4.css",
-    "main.js": "/static/js/main.cd9f725b.js",
+    "main.css": "/static/css/main.72511905.css",
+    "main.js": "/static/js/main.e7a1d243.js",
     "static/js/453.43258913.chunk.js": "/static/js/453.43258913.chunk.js",
     "static/media/Thumnail4.png": "/static/media/Thumnail4.dee74e370848ed602675.png",
     "static/media/Thumbnail5.png": "/static/media/Thumbnail5.2ef5a575dd3bb8fb09ba.png",
@@ -17,7 +17,6 @@
     "static/media/Sir2.png": "/static/media/Sir2.dca3d338dba2ab02e036.png",
     "static/media/career.png": "/static/media/career.043a653a28e8be2895ed.png",
     "static/media/banner003.png": "/static/media/banner003.4cb15d8781f2a2b7a8f4.png",
-    "static/media/profile1.png": "/static/media/profile1.05467aeec95fe6aba985.png",
     "static/media/thaparuniversity.jpg": "/static/media/thaparuniversity.f99003d68522fd9d4e3f.jpg",
     "static/media/Mba1.jpg": "/static/media/Mba1.5630acf3c0542261f582.jpg",
     "static/media/skilldoc.png": "/static/media/skilldoc.51bc61f809ad531c9065.png",
@@ -50,7 +49,6 @@
     "static/media/greatplains.png": "/static/media/greatplains.9d11b2a715e7466daf9d.png",
     "static/media/iitropar.jpg": "/static/media/iitropar.bfaf958e7ececdfb2cd4.jpg",
     "static/media/Lhmc.jpeg": "/static/media/Lhmc.8ca2d19e1b6144a9c62b.jpeg",
-    "static/media/violetgradiant.avif": "/static/media/violetgradiant.bcd48b1082a2a55c5232.avif",
     "static/media/iiest.jpg": "/static/media/iiest.acab93f238140af63c51.jpg",
     "static/media/TamilNadu.png": "/static/media/TamilNadu.b435dfb913e5f9ffd368.png",
     "static/media/ritik.jpg": "/static/media/ritik.647ad03d4c680d4cb144.jpg",
@@ -62,7 +60,6 @@
     "static/media/auburn.jpg": "/static/media/auburn.700ce6b0d4439987d5d0.jpg",
     "static/media/poojamaam.png": "/static/media/poojamaam.300a18dd75d2fe6f154b.png",
     "static/media/ramaiah.jpg": "/static/media/ramaiah.05bc93783320f7448723.jpg",
-    "static/media/violetgradiant2.avif": "/static/media/violetgradiant2.5f0b007162455f480b77.avif",
     "static/media/Sirimg01.png": "/static/media/Sirimg01.b7d873efe8e2bd8fd82c.png",
     "static/media/kmc.jpg": "/static/media/kmc.f5b078bda2f5e207ad19.jpg",
     "static/media/Grant-medical.jpg": "/static/media/Grant-medical.dcbe3c3020e8c804ee7c.jpg",
@@ -84,7 +81,6 @@
     "static/media/Amity.avif": "/static/media/Amity.a2dc1033da53473e11d6.avif",
     "static/media/cmrit.jpg": "/static/media/cmrit.31f98235660aca45d472.jpg",
     "static/media/kartikey.jpg": "/static/media/kartikey.a72afb96d408ce6e8f9c.jpg",
-    "static/media/whatsup.png": "/static/media/whatsup.513b7ce143dd5e2397ee.png",
     "static/media/IIT-Roorkee.jpeg": "/static/media/IIT-Roorkee.5aae380db6b71c1b16f6.jpeg",
     "static/media/AiimsBh.jpg": "/static/media/AiimsBh.8a8eba0d4aae113dfd68.jpg",
     "static/media/NitRourkela.jpg": "/static/media/NitRourkela.46cae601e2d63642fb1a.jpg",
@@ -140,7 +136,6 @@
     "static/media/mba2.avif": "/static/media/mba2.bb2cc47662f2d973c4ca.avif",
     "static/media/DreamCourse.png": "/static/media/DreamCourse.22ffb2ed12d165a2cba4.png",
     "static/media/telangana.jpg": "/static/media/telangana.f6d6e51917e7ef260a83.jpg",
-    "static/media/whitelogo.webp": "/static/media/whitelogo.97aa3b6d6b81601eae1b.webp",
     "static/media/Udaan_logo2.png": "/static/media/Udaan_logo2.713f01c6fe99523eb6fb.png",
     "static/media/biharboard.jpg": "/static/media/biharboard.ca4877192294969ccbc8.jpg",
     "static/media/JamiaMed.avif": "/static/media/JamiaMed.df5f9a6f121338165fbc.avif",
@@ -185,12 +180,12 @@
     "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
-    "main.c28afab4.css.map": "/static/css/main.c28afab4.css.map",
-    "main.cd9f725b.js.map": "/static/js/main.cd9f725b.js.map",
+    "main.72511905.css.map": "/static/css/main.72511905.css.map",
+    "main.e7a1d243.js.map": "/static/js/main.e7a1d243.js.map",
     "453.43258913.chunk.js.map": "/static/js/453.43258913.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c28afab4.css",
-    "static/js/main.cd9f725b.js"
+    "static/css/main.72511905.css",
+    "static/js/main.e7a1d243.js"
   ]
 }
