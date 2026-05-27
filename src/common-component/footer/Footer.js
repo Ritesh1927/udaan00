@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
+import Homesvg from "../../assets/homedown.svg"
 import {
   FaFacebookF,
   FaInstagram,
@@ -19,7 +20,8 @@ import DownloadPdf from "../download/DownloadPdf";
 const Footer = () => {
   return (
     <>
-      <footer className="footer-section">
+      <img src={Homesvg} className="footer-divider" />
+      <footer className="footer-section ">
         <div className="footer-container">
           {/* <!-- Universities Section --> */}
           {/* <FooterUniversity /> */}
@@ -63,7 +65,19 @@ const Footer = () => {
                   Management
                 </button>
               </div>
+              {/* franchise secition */}
+              <div className="footer-column study-abroad-column mt20">
+                <h3 className="footer-heading">Franchise</h3>
+                <ul className="footer-links">
+                  <li>
+                    <Link to="/dehradun">Dehradun</Link>
+                  </li>
+
+
+                </ul>
+              </div>
             </div>
+
 
             {/* <!-- Middle Column - Study Abroad --> */}
             <div className="footer-column study-abroad-column">
@@ -153,7 +167,7 @@ const Footer = () => {
           {/* <!-- Footer Bottom --> */}
           <div className="footer-bottom">
             <div className="footer-brand">
-              <h4>Division of Udaan Eduservices</h4>
+              <h4> Uudaan360 Edutech PVT LTD</h4>
               <p>
                 Have enquiries? Don't hesitate to drop us an email at{" "}
                 <a href="mailto:info@udaan360.com">info@udaan360.com</a>, and
@@ -164,11 +178,20 @@ const Footer = () => {
             <div className="footer-social">
               <h4>Find us on</h4>
               <div className="social-links">
-                <a href="#" className="social-link facebook">
+                <a
+                  href="https://facebook.com/udaancareertalks"
+                  className="social-link facebook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaFacebookF />
+                </a>
+
+                {/* <a href="#" className="social-link facebook">
                   <i className="fab fa-facebook-f">
                     <FaFacebookF />
                   </i>
-                </a>
+                </a> */}
                 <a
                   href="https://www.instagram.com/udaan.360/?next=%2F&hl=en%5C"
                   className="social-link instagram"
@@ -188,12 +211,22 @@ const Footer = () => {
                 <a
                   href="https://youtube.com/@udaancareertalks?si=DmvAaioIicfSKlbv"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="social-link youtube"
                 >
                   <i className="fab fa-youtube">
                     <FaYoutube />
                   </i>
                 </a>
+                {/* <a
+                  href="https://youtube.com/@udaancareertalks?si=DmvAaioIicfSKlbv"
+                  target="_blank"
+                  className="social-link youtube"
+                >
+                  <i className="fab fa-youtube">
+                    <FaYoutube />
+                  </i>
+                </a> */}
               </div>
             </div>
 

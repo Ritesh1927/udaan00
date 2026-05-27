@@ -1,8 +1,9 @@
 import React, { Fragment, useState } from "react";
 import axios from "axios";
+import UdaanLogo from "../assets/Udaan_logo2.png"
 import { toast, ToastContainer } from "react-toastify";
 import "../dasboard-pages/Franchise.css";
-import FranchiseBan from "../assets/Franchise.png";
+// import FranchiseBan from "../assets/Franchise.png";
 
 const Franchise = () => {
   const [franchiesData, setFranchiesData] = useState({
@@ -58,10 +59,36 @@ const Franchise = () => {
 
   return (
     <Fragment>
-      <div className="Franchise-banner">
+      {/* <div className="Franchise-banner">
         <img src={FranchiseBan} alt="" />
-      </div>
+      </div> */}
 
+      <div className="franchise-page">
+<div className="franchise-main-section">
+     <div className="franchise-container">
+           {/* <!-- Hero Section --> */}
+            <div className="franchise-hero">
+                <h1 className="franchise-hero-title">
+                    Partner with <img src={UdaanLogo} alt="Udaan360" className="brand-logo"/>: Empower Students, Elevate Futures
+                </h1>
+                <p className="franchise-hero-description">
+                    Are you passionate about transforming education and guiding young minds toward meaningful careers? Join hands with Udaan360, a leading name in career counseling and student success, as we expand our presence across India and globally. We're inviting passionate partners and investors to be part of a high-impact, high-growth journey right from your city.
+                </p>
+            </div>
+
+               {/* <!-- Main Content Grid --> */}
+            <div className="franchise-content-grid">
+                    {/* <!-- Left Content Section --> */}
+                <div className="franchise-content">
+                  
+                </div>
+
+            </div>
+     </div>
+
+</div>
+      </div>
+{/* /////////////////////////// */}
       <div className="form-franchise-container-wrapper container">
         <div>
           <h1 className="franchise-heading">

@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const connectDB = require("./Connection/Database");
 const mongoose = require("mongoose");
- 
+
 
 // const mongoSanitize = require("express-mongo-sanitize");
 
@@ -34,7 +34,7 @@ app.use((req, res, next) => {
   }
   next();
 });
- 
+
 
 // Authentication Routes ----------------
 const authRoutes = require("./Routes/authRoutes");
@@ -51,7 +51,7 @@ app.use("/api/college", collegeRoutes);
 
 // Blogs Routes ----------------
 const blogRoutes = require("./Routes/blogRoutes");
-app.use("/api/blog", blogRoutes); 
+app.use("/api/blog", blogRoutes);
 
 
 // Career Routes ----------------
@@ -92,15 +92,15 @@ app.post("/api/contact", async (req, res) => {
       name,
       email,
       mobile,
-      percentage,
-      course,
-      appearedInExam,
-      examName,
-      examPercentage,
+      query,
+      // course,
+      // appearedInExam,
+      // examName,
+      // examPercentage,
     } = req.body;
 
     // Validation
-    if (!name || !email || !mobile || !percentage) {
+    if (!name || !email || !mobile || !query) {
       return res.status(400).json({ message: "All fields are required" });
     }
 
@@ -113,10 +113,10 @@ app.post("/api/contact", async (req, res) => {
       name,
       email,
       mobile,
-      percentage,
-      course,
-      appearedInExam,
-      ...(appearedInExam === "yes" && { examName, examPercentage }), // Only include if appearedInExam is 'yes'
+      query,
+      // course,
+      // appearedInExam,
+      // ...(appearedInExam === "yes" && { examName, examPercentage }), // Only include if appearedInExam is 'yes'
     });
     await newContact.save();
 
@@ -151,20 +151,20 @@ app.post("/api/franchise", async (req, res) => {
 
   console.log("---------- FRANCHISE REQUEST START ----------");
   console.log("Headers:", req.headers);
-  console.log("Body:", req.body); 
+  console.log("Body:", req.body);
   console.log("Request IP:", req.ip);
   console.log("Request Host:", req.get('host'));
 
   try {
-    const { orgizationname, mobile,  contactperson, email, description, websiteurl } = req.body;
+    const { orgizationname, mobile, contactperson, email, description, websiteurl } = req.body;
     //  console.log(req.body)
     if (!orgizationname || !mobile || !contactperson || !email || !description || !websiteurl) {
       return res.status(400).json({ message: "All fields are required" });
     }
-    const existingFranchise = await franchisemodel.findOne({ 
-      $or: [{ websiteurl }, { email }] 
+    const existingFranchise = await franchisemodel.findOne({
+      $or: [{ websiteurl }, { email }]
     });
-    
+
     if (existingFranchise) {
       let duplicateField = existingFranchise.websiteurl === websiteurl ? "Website URL" : "Email";
       return res.status(400).json({ message: `${duplicateField} already exists. Please enter a different one.` });
@@ -178,9 +178,9 @@ app.post("/api/franchise", async (req, res) => {
       email,
       description,
       websiteurl,
-       
+
     });
-    await  newfranchise.save();
+    await newfranchise.save();
 
     res.status(201).json({ message: "successful!" });
   } catch (error) {
@@ -196,7 +196,7 @@ app.post("/api/franchise", async (req, res) => {
 
 app.get("/api/franchise", async (req, res) => {
   try {
-    const  franchisedata = await  franchisemodel.find(); 
+    const franchisedata = await franchisemodel.find();
     res.json(franchisedata);
   } catch (err) {
     res.status(500).json({ error: "Failed to fetch contacts" });

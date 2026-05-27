@@ -51,7 +51,9 @@ const ResultCards = () => {
             <i className="fas fa-trophy">
               <FaTrophy />
             </i>
-            <span>Check Your Result Now</span>
+            <h1 className="text-center font-semibold text-white text-[28px] sm:text-[34px] lg:text-[50px]">
+              Check Your Result Now
+            </h1>
           </div>
           <div className="ribbon-subtitle">
             Get instant access to your exam results

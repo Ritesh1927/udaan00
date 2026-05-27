@@ -1,0 +1,58 @@
+body {
+    background-color: #070312;
+    color: white;
+    overflow-x: hidden
+}
+
+.glass-panel {
+    background: rgba(20, 15, 35, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)
+}
+
+.glass-nav {
+    background: rgba(7, 3, 18, 0.7);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+}
+
+.neon-text-gradient {
+    background: linear-gradient(to right, #a78bfa, #f472b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent
+}
+
+.neon-border-hover {
+    transition: all 0.3s ease
+}
+
+.neon-border-hover:hover {
+    border-color: rgba(124, 58, 237, 0.5);
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.15)
+}
+
+/* Subtle noise texture overlay */
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDzjepHgLdfG3nzKZbP4YHJai2TFT9_Bq5znnXwpnETgEMQatDDuBgHe7iKbGDXQgh9dPg02m11dRi_jjHHt8avYFYdYJ31ya2Sl-O8ZvPSO0JNWWJUXmMkmy2pnGJr2rAB_1apnyE3T4Q9v9bQe65ztSHYxfYBvWMLAXaZXDE-KM6teLgYh43-qxXKVFufVUtSOyUYQvIHQxRNUp-Fk7s47kPA6XlFh8EO0fPRQnmrf4TyP5B2Rb5Zv5T2KUvAFOPx7zQX8VqSMPI)
+}
+
+.glow-spot {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1
+}

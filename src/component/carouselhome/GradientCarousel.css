@@ -1,0 +1,74 @@
+/* ===== OUTER FRAME (STATIC) ===== */
+.carousel-outer-frame {
+    padding: 3px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* ===== ROTATING STRIP BORDER ===== */
+.carousel-rotating-border {
+    position: relative;
+    padding: 6px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.carousel-rotating-border::before {
+    content: "";
+    position: absolute;
+    inset: -60%;
+    background: conic-gradient(from 0deg,
+            transparent 85%,
+            #a855f7,
+            #ec4899,
+            #a855f7,
+            transparent 95%);
+    animation: spinBorder 10s linear infinite;
+}
+
+@keyframes spinBorder {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===== MAIN CARD ===== */
+.carousel-card {
+    position: relative;
+    z-index: 1;
+    background: #0f0919;
+    border-radius: 18px;
+    transform-style: preserve-3d;
+}
+
+/* ===== READ MORE ===== */
+.read-more-btn {
+    color: #c77dff;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+    text-shadow: 0 0 10px rgba(199, 125, 255, 0.9);
+}
+
+/* ===== PREMIUM ARROWS ===== */
+.nav-arrow {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg,
+            rgba(168, 85, 247, 0.6),
+            rgba(236, 72, 153, 0.4));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: white;
+    transition: all 0.35s ease;
+}
+
+.nav-arrow:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 22px rgba(199, 125, 255, 0.9);
+}

@@ -22,8 +22,8 @@ import Terms from "./common-component/terms/Terms";
 import Register from "./auth/Register";
 import Login from "./auth/Login";
 import Otp from "./auth/VerifyOtp";
-import Profile from "./auth/Profile";
-import ProtectedRoute from "./auth/ProtectedRoute";
+// import Profile from "./auth/Profile";
+// import ProtectedRoute from "./auth/ProtectedRoute";
 import { AuthProvider } from "./auth/authContext";
 import ResetRequest from "./auth/ResetRequest";
 import ResetPassword from "./auth/ResetPassword";
@@ -37,6 +37,10 @@ import Blogs from "./dasboard-pages/Blogs";
 import CollegeList from "./admin/CollegeList";
 import Career from "./common-component/career/Career";
 import { AuthModalProvider } from "./auth/AuthModalContext";
+import UniversityDetail from "./component/abroaduniversity/UniversityDetail";
+import Eduvoyage from "./dasboard-pages/Eduvoyage";
+import Settleabroad from "./dasboard-pages/Settleabroad";
+import Dehradun from "./component/franchise/Dehradun";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -73,10 +77,17 @@ root.render(
               <Route path="blogs" element={<Blogs />} />
               <Route path="collegelist" element={<CollegeList />} />
               <Route path="career" element={<Career />} />
+              <Route path="/university/:name" element={<UniversityDetail />} />
+              <Route path="/eduvoyage" element={<Eduvoyage />} />
+              <Route path="/settleabroad" element={<Settleabroad />} />
 
-            {/* <= add all new routes here  */}
+              {/* <= add all new routes here  */}
+              {/* Franchise router */}
+              <Route path="/dehradun" element={<Dehradun />} />
 
-            {/* <Route
+
+
+              {/* <Route
               path="/profile"
               element={
                 <ProtectedRoute>
@@ -84,13 +95,13 @@ root.render(
                 </ProtectedRoute>
               }
             /> */}
-          </Route>
-          <Route path="*" element={<Error />}></Route>
-           <Route path="/admin" element={<Admin />} />
-        </Routes>
-      </AuthModalProvider>
-    </AuthProvider>
-      </BrowserRouter>
+            </Route>
+            <Route path="*" element={<Error />}></Route>
+            <Route path="/admin" element={<Admin />} />
+          </Routes>
+        </AuthModalProvider>
+      </AuthProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

@@ -12,6 +12,7 @@
     height: 100%;
     object-fit: cover;
     object-position: top;
+    margin-top: 80px ;
 }
 
 .udaan-choose-why-child-wrap {
@@ -101,6 +102,9 @@
 
     .udaan-choose-why-child-wrap {
         justify-content: center;
+    }
+    .udaan-choose-why-child{
+        width: 47%;
     }
 }
 

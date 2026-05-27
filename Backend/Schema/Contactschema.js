@@ -20,52 +20,59 @@ const contactdata = new mongoose.Schema({
       "Please enter a valid email address",
     ], // Regex for email validation
   },
-  percentage: {
+  query: {
     type: String,
-    required: [true, "12th percentage is required"],
-    match: [
-      /^(100(\.0{1,2})?|(\d{1,2})(\.\d{1,2})?)$/,
-      "please eneter a valid percentage",
-    ],
+    required: [true, "Query is required"],
+    minlength: [5, "Query must be at least 5 characters long"],
+    maxlength: [500, "Query cannot exceed 500 characters"],
   },
-  course: {
-    type: String,
-    require: true,
-  },
-  appearedInExam: {
-    type: String,
-    required: [true, "Please specify if you appeared in any competitive exam"],
-    enum: {
-      values: ['yes', 'no'],
-      message: 'Appeared in exam must be either "yes" or "no"'
-    }
-  },
-  examName: {
-    type: String,
-    required: function() {
-      return this.appearedInExam === 'yes';
-    },
-    minlength: [2, "Exam name should have at least 2 characters"],
-  },
-  examPercentage: {
-    type: String,
-    required: function() {
-      return this.appearedInExam === 'yes';
-    },
-    match: [
-      /^(100(\.0{1,2})?|(\d{1,2})(\.\d{1,2})?)$/,
-      "please enter a valid percentage",
-    ],
-    validate: {
-      validator: function(value) {
-        if (this.appearedInExam === 'yes') {
-          return parseFloat(value) >= 0 && parseFloat(value) <= 100;
-        }
-        return true;
-      },
-      message: 'Percentage must be between 0 and 100'
-    }
-  }
+
+  // query: {
+  //   type: String,
+  //   required: [true, "12th percentage is required"],
+  //   match: [
+  //     /^(100(\.0{1,2})?|(\d{1,2})(\.\d{1,2})?)$/,
+  //     "please eneter a valid percentage",
+  //   ],
+  // },
+  // course: {
+  //   type: String,
+  //   require: true,
+  // },
+  // appearedInExam: {
+  //   type: String,
+  //   required: [true, "Please specify if you appeared in any competitive exam"],
+  //   enum: {
+  //     values: ['yes', 'no'],
+  //     message: 'Appeared in exam must be either "yes" or "no"'
+  //   }
+  // },
+  // examName: {
+  //   type: String,
+  //   required: function () {
+  //     return this.appearedInExam === 'yes';
+  //   },
+  //   minlength: [2, "Exam name should have at least 2 characters"],
+  // },
+  // examPercentage: {
+  //   type: String,
+  //   required: function () {
+  //     return this.appearedInExam === 'yes';
+  //   },
+  //   match: [
+  //     /^(100(\.0{1,2})?|(\d{1,2})(\.\d{1,2})?)$/,
+  //     "please enter a valid percentage",
+  //   ],
+  //   validate: {
+  //     validator: function (value) {
+  //       if (this.appearedInExam === 'yes') {
+  //         return parseFloat(value) >= 0 && parseFloat(value) <= 100;
+  //       }
+  //       return true;
+  //     },
+  //     message: 'Percentage must be between 0 and 100'
+  //   }
+  // }
 });
 
 const contactmodel = new mongoose.model("contact", contactdata);

@@ -1,12 +1,16 @@
 /* Footer Section */
 .footer-section {
-    background: #2c3e50;
+    background: #09030E;
     color: white;
     padding: 60px 0 0 0;
     font-family: "Arial", sans-serif;
 }
 
-
+.footer-divider {
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
 
 .footer-container {
     max-width: 1400px;
@@ -355,7 +359,7 @@
     text-align: center;
     padding: 20px 0;
     border-top: 1px solid #4a6372;
-    background: #1a252f;
+    background: #362143;
 }
 
 .footer-copyright p {

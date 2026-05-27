@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import Star from "../assets/star.png";
+// import Star from "../assets/star.png";
 // ////////////// medical clg
 import Aims from "../assets/aimsdelhi.avif";
 import Jamiam from "../assets/JamiaMed.avif"
@@ -30,6 +30,12 @@ import IIM from "../assets/iim.png";
 import XLRI from "../assets/xlri.jpg";
 import Jipmer from "../assets/Jipmer.jpg";
 import CMC from "../assets/cmc.jpg";
+import Iimcalcutta from "../assets/Iim-calcutta.jpg";
+import Iimlucknow from "../assets/iim-lucknow.jpeg"
+import IITRoorkee from "../assets/IIT-Roorkee.jpeg"
+import Iimbanglore from "../assets/iim-banglore.webp";
+import Symboisis from "../assets/symboisis.avif"
+import Iimudaipur from "../assets/iimudaipur.jpeg"
 // /////////////////// engneering clg
 import Amity from "../assets/Amity.avif";
 import Iitmadras from "../assets/iitmadras.avif";
@@ -70,12 +76,19 @@ import Mandi from "../assets/mandi.png";
 import IIEST from "../assets/iiest.jpg";
 import Dypatil from "../assets/Dypatil.jpg";
 
-import { CiStar } from "react-icons/ci";
-import { FaLocationDot } from "react-icons/fa6";
-import { RiMoneyRupeeCircleLine } from "react-icons/ri";
-import { LiaCertificateSolid } from "react-icons/lia";
-import { FaHandHoldingUsd } from "react-icons/fa";
-import { PiCertificate } from "react-icons/pi";
+
+// import { FaUniversity } from "react-icons/fa";
+import { MdLocationOn } from "react-icons/md";
+import { BsCurrencyRupee } from "react-icons/bs";
+import { HiOutlineBadgeCheck } from "react-icons/hi";
+import { PiExam } from "react-icons/pi";
+// import { CiStar } from "react-icons/ci";
+// import { FaLocationDot } from "react-icons/fa6";
+// import { RiMoneyRupeeCircleLine } from "react-icons/ri";
+// import { LiaCertificateSolid } from "react-icons/lia";
+// import { FaHandHoldingUsd } from "react-icons/fa";
+// import { PiCertificate } from "react-icons/pi";
+import { FaStar } from "react-icons/fa";
 import "./Admisson.css";
 import axios from "axios";
 
@@ -777,7 +790,7 @@ const colleges = {
       description:
         "IGIMS Patna Admissions 2023: Bihar NEET UG counselling 2023 seat allotment round 2 will be declared on September 11, 2023.  MCC NEET PG 2023 counselling seat allotment round 3 will be released on September 16, 2023. IGIMS Patna was founded on November 19, 1983, as an autonomous institution modelled after the All India Institute of Medical Sciences in New Delhi. The goal was to provide super-speciality medical services within Bihar. IGMS Patna courses include BSc,  MBBS, BDS, MD, M.Ch, and Diploma. IGMS Patna is a government college located in Patna, Bihar.",
     },
-        {
+    {
       img: Jamiam,
       name: " Jamia Hamdard",
       rank: "#37",
@@ -790,7 +803,7 @@ const colleges = {
       description:
         " Jamia Hamdard is a Deemed to be University Institute, established in 1989. Jamia Hamdard is one of the best Medical colleges in New Delhi, Delhi. MBBS is one of the most popular programs at Jamia Hamdard offered for a duration of 66 Months. Jamia Hamdard MBBS fees is INR 12,00,000.",
     },
-            {
+    {
       img: Lhmc,
       name: " LHMC",
       rank: "#29",
@@ -830,98 +843,98 @@ const colleges = {
       description:
         "CMC Vellore admission offers intensive, full-time Master of Science (M.Sc.) programme for students who want to continue their studies in science. The M.Sc. specializations offered by CMC Vellore are Otorhinolaryngology, General Surgery, Obstetrics & Gynaecology, Ophthalmology, Orthopedics, ENT, Bioengineering. The total duration of M.Sc. programmes at CMC Vellore is 2-3 years. ",
     },
-  {
-        img: Grant,
-        name: " Grant Medical College ",
-        rank: "#33  ",
-        location: "Mumbai, Maharashtra",
-        rating: "5.0",
-        fees: "103,200 - 571,500 INR",
-        accerdition: "NAAC A+ , NBA ",
-        package: "₹10–15 LPA",
-        exams: "NEET ",
-        description:
-          "Grant Medical College is a Government Institute, established in 1845. Grant Medical College is one of the best Medical colleges in Mumbai, Maharashtra. MBBS is one of the most popular programs at Grant Medical College offered for a duration of 6 Years.",
-      },
-         {
-        img: Gmch,
-        name: "  GMCH Chandigarh",
-        rank: "#35  ",
-        location: "Chandigarh, Chandigarh",
-        rating: "3.7",
-        fees: " ₹78,380 INR",
-        accerdition: "MCI ",
-        package: "₹9.5 LPA",
-        exams: "NEET ",
-        description:
-          "GMCH Chandigarh is a Government Institute, established in 1991. GMCH Chandigarh is one of the best Medical colleges in Chandigarh. MBBS is one of the most popular programs at GMCH Chandigarh offered for a duration of 5 Years.",
-      },
-           {
-        img: Mamc,
-        name: "  MAMC Delhi",
-        rank: "#35  ",
-        location: "Delhi ",
-        rating: "4.5",
-        fees: " ₹10,000 INR",
-        accerdition: "MCI ",
-        package: "₹2.76LPA",
-        exams: "NEET ",
-        description:
-          "MAMC Delhi is a Public Institute, established in 1959. MAMC Delhi is one of the best Medical colleges in Delhi. MBBS is one of the most popular programs at MAMC Delhi offered for a duration of 66 Months. MAMC Delhi MBBS fees is INR 10,000.",
-      },
-                       {
-        img: Psg,
-        name: "  PSG Institute of Medical Sciences & Research",
-        rank: "#41 ",
-        location: "Coimbatore, Tamil Nadu",
-        rating: "3.8",
-        fees: " ₹4,50,000 INR",
-        accerdition: "MCI ",
-        package: "₹ 9.30 LPA",
-        exams: "NEET  ss",
-        description:
-          " PSG Institute of Medical Sciences & Research is a Private Institute, established in 1985. PSG Institute of Medical Sciences & Research is one of the best Medical colleges in Coimbatore, Tamil Nadu. MBBS is one of the most popular programs at PSG Institute of Medical Sciences & Research offered for a duration of 5.5 - 66 Years. PSG Institute of Medical Sciences & Research MBBS fees is INR 4,50,000.",
-      },
-             {
-        img:Msrch,
-        name: "  MSRMC Bangalore",
-        rank: "#46 ",
-        location: "Bengaluru, Karnataka",
-        rating: "3.5",
-        fees: " ₹98,08,000 INR",
-        accerdition: "MCI ,NABL ",
-        package: "₹6.6 LPA",
-        exams: "NEET  ss",
-        description:
-          "MSRMC Bangalore is a Private Institute, established in 1979. MSRMC Bangalore is one of the best Medical colleges in Bengaluru, Karnataka. MBBS is one of the most popular programs at MSRMC Bangalore offered for a duration of 4 Years.s",
-      },
-                 {
-        img: DMC,
-        name: "  DMCH Ludhiana",
-        rank: "#40  ",
-        location: "Ludhiana, Punjab ",
-        rating: "4.2",
-        fees: " ₹11,00,000 INR",
-        accerdition: "MCI ",
-        package: "₹Rs 7 LPA",
-        exams: "NEET ",
-        description:
-          "DMCH Ludhiana is a Private Institute, established in 1964. DMCH Ludhiana is one of the best Medical colleges in Ludhiana, Punjab. MBBS is one of the most popular programs at DMCH Ludhiana offered for a duration of 66 Months.",
-      },
-        {
-        img: KM,
-        name: "  KM University",
-        rank: "#33  ",
-        location: "Mathura, Uttar Pradesh",
-        rating: "5.0",
-        fees: " 20,000 to Rs 1,40,000 INR",
-        accerdition: "NAAC ",
-        package: "₹960,000 LPA",
-        exams: "NEET ",
-        description:
-          "KM University is a Private University, established in . KM University is one of the best Medical colleges in Mathura, Uttar Pradesh. MBBS is one of the most popular programs at KM University offered for a duration of 5 Years.",
-      },
-              
+    {
+      img: Grant,
+      name: " Grant Medical College ",
+      rank: "#33  ",
+      location: "Mumbai, Maharashtra",
+      rating: "5.0",
+      fees: "103,200 - 571,500 INR",
+      accerdition: "NAAC A+ , NBA ",
+      package: "₹10–15 LPA",
+      exams: "NEET ",
+      description:
+        "Grant Medical College is a Government Institute, established in 1845. Grant Medical College is one of the best Medical colleges in Mumbai, Maharashtra. MBBS is one of the most popular programs at Grant Medical College offered for a duration of 6 Years.",
+    },
+    {
+      img: Gmch,
+      name: "  GMCH Chandigarh",
+      rank: "#35  ",
+      location: "Chandigarh, Chandigarh",
+      rating: "3.7",
+      fees: " ₹78,380 INR",
+      accerdition: "MCI ",
+      package: "₹9.5 LPA",
+      exams: "NEET ",
+      description:
+        "GMCH Chandigarh is a Government Institute, established in 1991. GMCH Chandigarh is one of the best Medical colleges in Chandigarh. MBBS is one of the most popular programs at GMCH Chandigarh offered for a duration of 5 Years.",
+    },
+    {
+      img: Mamc,
+      name: "  MAMC Delhi",
+      rank: "#35  ",
+      location: "Delhi ",
+      rating: "4.5",
+      fees: " ₹10,000 INR",
+      accerdition: "MCI ",
+      package: "₹2.76LPA",
+      exams: "NEET ",
+      description:
+        "MAMC Delhi is a Public Institute, established in 1959. MAMC Delhi is one of the best Medical colleges in Delhi. MBBS is one of the most popular programs at MAMC Delhi offered for a duration of 66 Months. MAMC Delhi MBBS fees is INR 10,000.",
+    },
+    {
+      img: Psg,
+      name: "  PSG Institute of Medical Sciences & Research",
+      rank: "#41 ",
+      location: "Coimbatore, Tamil Nadu",
+      rating: "3.8",
+      fees: " ₹4,50,000 INR",
+      accerdition: "MCI ",
+      package: "₹ 9.30 LPA",
+      exams: "NEET  ss",
+      description:
+        " PSG Institute of Medical Sciences & Research is a Private Institute, established in 1985. PSG Institute of Medical Sciences & Research is one of the best Medical colleges in Coimbatore, Tamil Nadu. MBBS is one of the most popular programs at PSG Institute of Medical Sciences & Research offered for a duration of 5.5 - 66 Years. PSG Institute of Medical Sciences & Research MBBS fees is INR 4,50,000.",
+    },
+    {
+      img: Msrch,
+      name: "  MSRMC Bangalore",
+      rank: "#46 ",
+      location: "Bengaluru, Karnataka",
+      rating: "3.5",
+      fees: " ₹98,08,000 INR",
+      accerdition: "MCI ,NABL ",
+      package: "₹6.6 LPA",
+      exams: "NEET  ss",
+      description:
+        "MSRMC Bangalore is a Private Institute, established in 1979. MSRMC Bangalore is one of the best Medical colleges in Bengaluru, Karnataka. MBBS is one of the most popular programs at MSRMC Bangalore offered for a duration of 4 Years.s",
+    },
+    {
+      img: DMC,
+      name: "  DMCH Ludhiana",
+      rank: "#40  ",
+      location: "Ludhiana, Punjab ",
+      rating: "4.2",
+      fees: " ₹11,00,000 INR",
+      accerdition: "MCI ",
+      package: "₹Rs 7 LPA",
+      exams: "NEET ",
+      description:
+        "DMCH Ludhiana is a Private Institute, established in 1964. DMCH Ludhiana is one of the best Medical colleges in Ludhiana, Punjab. MBBS is one of the most popular programs at DMCH Ludhiana offered for a duration of 66 Months.",
+    },
+    {
+      img: KM,
+      name: "  KM University",
+      rank: "#33  ",
+      location: "Mathura, Uttar Pradesh",
+      rating: "5.0",
+      fees: " 20,000 to Rs 1,40,000 INR",
+      accerdition: "NAAC ",
+      package: "₹960,000 LPA",
+      exams: "NEET ",
+      description:
+        "KM University is a Private University, established in . KM University is one of the best Medical colleges in Mathura, Uttar Pradesh. MBBS is one of the most popular programs at KM University offered for a duration of 5 Years.",
+    },
+
     {
       img: Shardha,
       name: " Sharda University  ",
@@ -942,15 +955,68 @@ const colleges = {
     {
       img: IIM,
       name: " IIM Ahmedabad ",
-      rank: "#31  ",
+      rank: "#1  ",
       location: "Ahmedabad, Uttar Pradesh",
       rating: "4.5",
       fees: "12,00,000 - 25,00,000",
       accerdition: "EQUIS , EFMD ",
       package: "57.12 LPA",
-      exams: "NEET ,MET",
+      exams: "CAT , CMAT",
       description:
         "IIM Ahmedabad has successfully placed 100% of its students from the PGP batch of 2025. Students were placed across 30 cohorts in three clusters. The placements were conducted through Laterals Placements Processes. Firms from multiple sectors, such as technology, banking, finance, consulting, analytics, etc, participated in the IIM Ahmedabad Placement. Students were offered roles in middle and senior management positions from Boston Consulting Group, Accenture Strategy, Goldman Sachs, Avendus Capital, Tata Administrative Services, GMR Group, FinIQ Consulting, Navi, etc.",
+    },
+    {
+      img: Iimbanglore,
+      name: " IIM Bangalore ",
+      rank: "#2  ",
+      location: "Bengaluru, Karnataka",
+      rating: "4.9",
+      fees: " 24.5 Lacs ",
+      accerdition: "AICTE , EFMD ",
+      package: "35.92 LPA",
+      exams: "CAT ",
+      description:
+        "IIM Bangalore is a Government Institute, established in 1973. IIM Bangalore is one of the best Management colleges in Bengaluru, Karnataka. MBA is one of the most popular programs at IIM Bangalore offered for a duration of 2 Years. ",
+    },
+
+    {
+      img: Iitdelhi,
+      name: " IIT Delhi  ",
+      rank: "#4  ",
+      location: " Delhi ",
+      rating: "4.6",
+      fees: " 2 Lacs ",
+      accerdition: " NAAC ",
+      package: "1.25 Crore  ",
+      exams: "CAT ",
+      description: "IIT Delhi is a Government Institute, established in 1961. IIT Delhi is one of the best Management colleges in Delhi. MBA is one of the most popular programs at IIT Delhi offered for a duration of 2 Years. IIT Delhi MBA fees is INR 2,00,000.",
+    },
+
+    {
+      img: Iimcalcutta,
+      name: " IIM Calcutta ",
+      rank: "#5 ",
+      location: "Kolkata, West Bengal",
+      rating: "4.5",
+      fees: " 27 Lacs ",
+      accerdition: "UGC , AMBA ",
+      package: "30.9 LPA",
+      exams: "CAT ",
+      description:
+        "IIM Calcutta is a Government Institute, established in 1961. IIM Calcutta is one of the best Management colleges in Kolkata, West Bengal.MBA is one of the most popular programs at IIM Calcutta offered for a duration of 1 - 2 Years.IIM Calcutta MBA fees is INR 31,00,000. ",
+    },
+    {
+      img: Iimlucknow,
+      name: "IIM Lucknow",
+      rank: "#7",
+      location: "Lucknow, Uttar Pradesh",
+      rating: "4.3",
+      fees: " 9,50,000 Lacs ",
+      accerdition: "AICTE , AACSB ",
+      package: "32 LPA",
+      exams: "CAT ",
+      description:
+        "IIM Lucknow is a Government Institute, established in 1984. IIM Lucknow is one of the best Management colleges in Lucknow, Uttar Pradesh. MBA is one of the most popular programs at IIM Lucknow offered for a duration of 16 Months. IIM Lucknow MBA fees is INR 9,50,000. ",
     },
     {
       img: XLRI,
@@ -961,9 +1027,87 @@ const colleges = {
       fees: "4,00,000 - 58,84,000",
       accerdition: "AACSB , EFMD ",
       package: "30.5 LPA",
-      exams: "NEET ,MET",
+      exams: "CAT ,CMAT",
       description:
         "XLRI (Xavier School of Management) in Jamshedpur, Jharkhand, is a renowned business school known for its strong focus on ethical and socially responsible leadership. Founded in 1949 by Jesuit Fathers, it's the oldest business school in India. XLRI emphasizes academic excellence, holistic student development, and a commitment to improving society through ethical management practices. It offers a range of management programs, including PGDM (HRM), PGDM (GM), and others. ",
+    },
+    {
+      img: Iitbombay,
+      name: " IIT Bombay ",
+      rank: "#10  ",
+      location: "Mumbai, Maharashtra",
+      rating: "4.9",
+      fees: "2,00,000 - 42,00,000",
+      accerdition: "AICTE, EFMD ",
+      package: "21.8 LPA",
+      exams: "CAT , GATE",
+      description:
+        "IIT Bombay is a Public Institute, established in 1958. IIT Bombay is one of the best Management colleges in Mumbai, Maharashtra. MBA is one of the most popular programs at IIT Bombay offered for a duration of 18 Months - 2 Years. IIT Bombay MBA fees is INR 2,00,000 - INR 42,00,000.",
+    },
+    {
+      img: Symboisis,
+      name: " Symbiosis Group Of Institutes ",
+      rank: "#13  ",
+      location: "Pune, Maharashtra",
+      rating: "4.3",
+      fees: "6,60,000 - 8,53,000",
+      accerdition: " NAAC ",
+      package: "16.2 LPA",
+      exams: "CAT , SNAP",
+      description:
+        "Symbiosis Group Of Institutes is a University Institute, established in 1978. Symbiosis Group Of Institutes is one of the best Management colleges in Pune, Maharashtra. MBA is one of the most popular programs at Symbiosis Group Of Institutes offered for a duration of 2 Years. Symbiosis Group Of Institutes MBA fees is INR 6,60,000 - INR 8,53,000.",
+    },
+    {
+      img: Iitmadras,
+      name: " IIT Madras ",
+      rank: "#16",
+      location: "Chennai, Tamil Nadu",
+      rating: "4.8",
+      fees: "3,00,000 ",
+      accerdition: " AICTE ",
+      package: "12.4 LPA",
+      exams: "CAT , IIT JAM  ",
+      description:
+        " IIT Madras is a Government Institute, established in 2008. IIT Madras is one of the best Management colleges in Chennai, Tamil Nadu. MBA is one of the most popular programs at IIT Madras offered for a duration of 2 Years. IIT Madras MBA fees is INR 3,00,000.",
+    },
+    {
+      img: IITRoorkee,
+      name: " IIT Roorkee ",
+      rank: "#18",
+      location: "Roorkee, Uttarakhand",
+      rating: "4.6",
+      fees: "2,00,000 ",
+      accerdition: " NAAC",
+      package: "34.05 LPA",
+      exams: "CAT , IIT JAM  ",
+      description:
+        " IIT Roorkee is a Government Institute, established in 1947. IIT Roorkee is one of the best Management colleges in Roorkee, Uttarakhand. MBA is one of the most popular programs at IIT Roorkee offered for a duration of 2 Years. IIT Roorkee MBA fees is INR 2,00,000..",
+    },
+    {
+      img: IITkharagpur,
+      name: " IIT Kharagpur ",
+      rank: "#19",
+      location: "Kharagpur, West Bengal",
+      rating: "4.7",
+      fees: "6,20,000 ",
+      accerdition: " UGC ",
+      package: "24.5 LPA",
+      exams: "CAT , IIT JAM  ",
+      description:
+        "      IIT Kharagpur is a Government Institute, established in 1951. IIT Kharagpur is one of the best Management colleges in Kharagpur, West Bengal.MBA is one of the most popular programs at IIT Kharagpur offered for a duration of 2 Years.IIT Kharagpur MBA fees is INR 6, 20,000.   ",
+    },
+    {
+      img: Iimudaipur,
+      name: " IIM Udaipur ",
+      rank: "#22",
+      location: "Kharagpur, West Bengal",
+      rating: "5.0",
+      fees: "11,19,307 - 22,65,000 ",
+      accerdition: " AACSB ",
+      package: "13 LPA",
+      exams: "CAT ",
+      description:
+        "     IIM Udaipur is a Government Institute, established in 2011. IIM Udaipur is one of the best Management colleges in Udaipur, Rajasthan.MBA is one of the most popular programs at IIM Udaipur offered for a duration of 1 - 2 Years.IIM Udaipur MBA fees is INR 11, 19, 307 - INR 22, 65,000. ",
     },
 
     // { name: "XLRI Jamshedpur", location: "Jamshedpur" },
@@ -971,13 +1115,7 @@ const colleges = {
   ],
 };
 const Admisson = () => {
-  // const [activeTab, setActiveTab] = useState("btech");
-  // const [expanded, setExpanded] = useState({});
 
-  // const handleTabClick = (type) => setActiveTab(type);
-  // const toggleRead = (idx) => {
-  //   setExpanded((prev) => ({ ...prev, [idx]: !prev[idx] }));
-  // };
   const [searchParams, setSearchParams] = useSearchParams();
   const urlTab = searchParams.get("tab");
 
@@ -1020,6 +1158,7 @@ const Admisson = () => {
 
   return (
     <Fragment>
+<<<<<<< HEAD
 
 
 {/* <div>
@@ -1095,138 +1234,133 @@ const Admisson = () => {
             onClick={() => handleTabClick("btech")}
           >
             B.Tech
+=======
+      <div className=" college-section-admission-container  ">
+        {/* //////////////////////////////////////////////////// */}
+        <section className="college-section container">
+          <h2 className="section-title">Explore Colleges by Category</h2>
+          <div className="category-tabs">
+            <div
+              className={`category-card ${activeTab === "btech" ? "active" : ""}`}
+              onClick={() => handleTabClick("btech")}
+            >
+              B.Tech
+            </div>
+            <div
+              className={`category-card ${activeTab === "medical" ? "active" : ""
+                }`}
+              onClick={() => handleTabClick("medical")}
+            >
+              Medical
+            </div>
+            <div
+              className={`category-card ${activeTab === "management" ? "active" : ""
+                }`}
+              onClick={() => handleTabClick("management")}
+            >
+              Management
+            </div>
+>>>>>>> 16d0846c2065e2b38972e99c3a08f88c95dd5268
           </div>
-          <div
-            className={`category-card ${
-              activeTab === "medical" ? "active" : ""
-            }`}
-            onClick={() => handleTabClick("medical")}
-          >
-            Medical
-          </div>
-          <div
-            className={`category-card ${
-              activeTab === "management" ? "active" : ""
-            }`}
-            onClick={() => handleTabClick("management")}
-          >
-            Management
-          </div>
-        </div>
 
-        <div className="college-cards">
-          {colleges[activeTab].map((college, index) => {
-            const fullText = college.description.trim();
-            const isLong = fullText.length > DESCRIPTION_LIMIT;
-            const isOpen = expanded[index];
-            const displayText =
-              isLong && !isOpen
-                ? fullText.slice(0, DESCRIPTION_LIMIT) + "..."
-                : fullText;
 
-            return (
-              <div key={index} className="college-card">
-                <div className="inner-college-card">
-                  <div className="clg-img-wrap">
-                    <img src={college.img} alt={college.name} />
-                  </div>
-                  <div className="admisn-clg-details">
-                    <div className="inline clgname-location">
-                      <h3>{college.name}</h3>
+          <div className="college-list">
+            {colleges[activeTab].map((college, index) => {
+              const fullText = college.description.trim();
+              const isLong = fullText.length > DESCRIPTION_LIMIT;
+              const isOpen = expanded[index];
+              const displayText =
+                isLong && !isOpen
+                  ? fullText.slice(0, DESCRIPTION_LIMIT) + "..."
+                  : fullText;
+
+              return (
+                <div key={index} className="college-card">
+                  <div className="adm-inner-card-flex">
+                    {/* College Image */}
+                    <div className="clg-img-wrap">
+                      <img src={college.img} alt={college.name} />
                     </div>
 
-                    <p className="nirf-ranking">
-                      <span className="rank-no">{college.rank}</span> NIRF
-                    </p>
-                    <div className="inline addres-admisn-wrapper">
-                      <p className="clg-sepecific">
-                        <i className="admisn-location">
-                          <FaLocationDot />
-                        </i>
-                        {college.location}
-                      </p>
-                      <button className="ranking-btn">
-                        {college.rating}
-                        <div className="star-img-container ">
-                          <img src={Star} alt="" />
+
+                    {/* Right Side Content */}
+                    <div className="admisn-clg-details">
+                      <div className="adm-card-header">
+                        <h2 className="adm-college-title">{college.name}</h2>
+                        <div className="adm-card-badges">
+                          <span className="adm-nirf-badge">{college.rank} NIRF</span>
+                          <p className="adm-rating-badge"><span>{college.rating} </span> <span className="mt2"> <i><FaStar /></i> </span></p>
                         </div>
-                        {/* <i className="clg-sepecific-icon">
-                            <CiStar />
-                          </i> */}
-                      </button>
-                    </div>
-                    <div className="inline address-certificate-container">
-                      <div>
-                        <p className="clg-sepecific">
-                          <i className="clg-sepecific-icon">
-                            <RiMoneyRupeeCircleLine />
-                          </i>
-                          {college.fees}
-                        </p>
-                        <span className="under-heading"> Fees</span>
                       </div>
-                      <div>
-                        <p className="clg-sepecific">
-                          <i className="clg-sepecific-icon">
-                            <LiaCertificateSolid />
-                          </i>
-                          {college.accerdition}
-                        </p>
-                        <span className="under-heading"> Accerdition</span>
-                      </div>
-                      <div>
-                        <p className="clg-sepecific">
-                          <i className="clg-sepecific-icon">
-                            <FaHandHoldingUsd />
-                          </i>
-                          {college.package}
-                        </p>
-                        <span className="under-heading">Avg Package</span>
-                      </div>
-                      <div>
-                        <p className="clg-sepecific">
-                          <i className="clg-sepecific-icon">
-                            <PiCertificate />
-                          </i>
-                          {college.exams}
-                        </p>
-                        <span className="under-heading">Exams</span>
-                      </div>
-                    </div>
 
-                    <div>
-                      <p className="clg-admisn-discription">
+
+                      {/* Location */}
+                      <p className="adm-college-location"><MdLocationOn /> {college.location}</p>
+
+
+                      {/* Info Grid */}
+                      <div className="adm-info-grid">
+                        <div className="adm-info-item adm-info-other">
+                          <BsCurrencyRupee className="adm-info-icon" />
+                          <div>
+                            <span className="adm-info-value">{college.fees}</span>
+                            <br />
+                            <span className="adm-info-label">Fees</span>
+                          </div>
+
+                        </div>
+                        <div className="adm-info-item">
+                          <p className="adm-info-value">{college.package}</p>
+                          <p className="adm-info-label">Avg Package</p>
+                        </div>
+                        <div className="adm-info-item adm-info-other  ">
+                          <HiOutlineBadgeCheck className="adm-info-icon " />
+                          <div>
+                            <span className="adm-info-value">{college.accerdition}</span>
+                            <br />
+                            <span className="adm-info-label">Accreditation</span>
+                          </div>
+
+                        </div>
+                        <div className="adm-info-item adm-info-other">
+                          <div>
+                            <PiExam className="adm-info-icon" />
+                          </div>
+                          <div>
+                            <span className="adm-info-value">{college.exams}</span>
+                            <br />
+                            <span className="adm-info-label">Exams</span>
+                          </div>
+
+                        </div>
+                      </div>
+
+
+                      {/* Description */}
+                      <p className="adm-college-description">
                         {displayText}
                         {isLong && (
-                          <button
-                            className="read-more-btn"
-                            onClick={() => toggleRead(index)}
-                          >
+                          <button className="adm-read-more" onClick={() => toggleRead(index)}>
                             {isOpen ? "Read Less" : "Read More"}
                           </button>
                         )}
                       </p>
+
+
+                      {/* CTA Button */}
+                      <div className="adm-card-footer">
+                        <button className="adm-counselling-btn">
+                          <a href="https://wa.me/917355308287?text=hello%20%2C%20i%20want%20to%20know%20more" target="_blank" rel="noopener noreferrer">Get Free Counselling</a>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div className="get-free-counselling-container">
-                  <hr />
-                  <button>
-                    {" "}
-                    <a
-                      href="https://wa.me/917355308287?text=hello%20%2C%20i%20want%20to%20know%20more"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Get Free Counselling
-                    </a>{" "}
-                  </button>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+              );
+            })}
+          </div>
+        </section>
+      </div>
     </Fragment>
   );
 };
