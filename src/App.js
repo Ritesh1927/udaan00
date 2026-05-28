@@ -1,26 +1,26 @@
 
 
-// import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import "./App.css"
 import { useState } from "react";
-// import Shadow from "./assets/violetgradiant.avif"
-// import shadow2 from "./assets/violetgradiant2.avif"
-// import Navbar from "./common-component/nav/Navbar";
-// import Footer from "./common-component/footer/Footer";
-// import Logowhite from "./assets/whitelogo.webp"
-// import WhatsAppButton from "./common-component/whatsup/WhatsAppButton";
+import Shadow from "./assets/violetgradiant.avif"
+import shadow2 from "./assets/violetgradiant2.avif"
+import Navbar from "./common-component/nav/Navbar";
+import Footer from "./common-component/footer/Footer";
+import Logowhite from "./assets/whitelogo.webp"
+import WhatsAppButton from "./common-component/whatsup/WhatsAppButton";
 import { AuthProvider } from "./auth/authContext";
-import Fraudalert from "./fraud/Fraudalert";
-// import AuthModal from "./auth/AuthModal";
+// import Fraudalert from "./fraud/Fraudalert";
+import AuthModal from "./auth/AuthModal";
 function App() {
-  // const navigate = useNavigate();
-  // const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
       <AuthProvider>
-      
-        {/* <div className=" main-web-wrap-udaan-home-container">
+       
+      <div className=" main-web-wrap-udaan-home-container">
           <div className="relative flex w-full home-top-shadow-container ">
             <img className='absolute left-0 w-1/2' src={Shadow} alt="" />
             <img className='absolute right-0 w-1/2 shadow-grad2' src={shadow2} alt="" />
@@ -75,10 +75,10 @@ function App() {
           <WhatsAppButton />
           <AuthModal />
           <Footer />
-        </div > */}
-        <div>
-          <Fraudalert/>
-        </div>
+        </div > 
+        // <div>
+        //   <Fraudalert/>
+        // </div>
 
       </AuthProvider>
     </>
