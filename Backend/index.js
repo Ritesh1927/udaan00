@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const connectDB = require("./Connection/Database");
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 
 // const mongoSanitize = require("express-mongo-sanitize");
